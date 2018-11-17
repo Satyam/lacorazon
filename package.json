@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Administración ventas libro La Corazón",
   "dependencies": {
+    "firebase-admin": "^6.1.0",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
     "react-scripts": "2.1.1"
@@ -11,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "upload": "node ./migrate/upload.js"
   },
   "author": "Daniel Barreiro (Satyam)",
   "license": "MIT",
