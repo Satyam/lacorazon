@@ -4,6 +4,7 @@
   "description": "Administración ventas libro La Corazón",
   "dependencies": {
     "firebase-admin": "^6.1.0",
+    "immer": "^1.7.4",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
     "react-scripts": "2.1.1"
@@ -17,6 +18,7 @@
   },
   "author": "Daniel Barreiro (Satyam)",
   "license": "MIT",
+  "repository": "https://github.com/Satyam/lacorazon",
   "eslintConfig": {
     "extends": "react-app"
   },
