@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# firebase secret key
+lacorazon-d66fd-firebase-adminsdk-thy14-92e97d72c9.json
+
+# Private data
+migrate/data.json
