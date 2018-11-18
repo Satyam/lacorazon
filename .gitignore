@@ -27,3 +27,6 @@ lacorazon-d66fd-firebase-adminsdk-thy14-92e97d72c9.json
 
 # Private data
 migrate/data.json
+
+# Old files unrelated to the application
+/varios
