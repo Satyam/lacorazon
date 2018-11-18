@@ -4,11 +4,10 @@ import "./App.css";
 import { UsersProvider, UsersContext } from "./context/users";
 
 function User() {
-  const { users, loadUsers, addUser, deleteUser } = useContext(UsersContext);
+  const { users, addUser, deleteUser } = useContext(UsersContext);
   return (
     <div>
       <pre>{JSON.stringify(users, null, 2)}</pre>
-      <button onClick={loadUsers}>cargar</button>
       <button onClick={() => addUser("yo", { name: "Daniel Barreiro" })}>
         agregar
       </button>

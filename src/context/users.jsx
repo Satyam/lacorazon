@@ -1,5 +1,5 @@
 import React from "react";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import db from "./firestore";
 import produce from "immer";
 
@@ -16,50 +16,38 @@ const usersColl = db.collection("users");
 export function UsersProvider({ children }) {
   const [state, setState] = useState({
     users: {},
-    loadUsers,
     addUser,
     updateUser: addUser,
     deleteUser
   });
 
-  function loadUsers() {
-    usersColl.get().then(querySnapshot => {
-      const users = {};
-      querySnapshot.forEach(doc => {
-        users[doc.id] = doc.data();
-      });
-      setState(previous =>
-        produce(previous, draft => {
-          draft.users = users;
-        })
-      );
-    });
-  }
+  useEffect(
+    () =>
+      usersColl.onSnapshot(snapshot => {
+        snapshot.docChanges().forEach(change => {
+          setState(previous =>
+            produce(previous, draft => {
+              switch (change.type) {
+                case "removed":
+                  delete draft.users[change.doc.id];
+                  break;
+                default:
+                  // added or modified
+                  draft.users[change.doc.id] = change.doc.data();
+              }
+            })
+          );
+        });
+      }),
+    []
+  );
 
   function addUser(id, data) {
-    usersColl
-      .doc(id)
-      .set(data)
-      .then(() => {
-        setState(previous =>
-          produce(previous, draft => {
-            draft.users[id] = data;
-          })
-        );
-      });
+    return usersColl.doc(id).set(data);
   }
 
   function deleteUser(id) {
-    usersColl
-      .doc(id)
-      .delete()
-      .then(() => {
-        setState(previous =>
-          produce(previous, draft => {
-            delete draft.users[id];
-          })
-        );
-      });
+    return usersColl.doc(id).delete();
   }
   return (
     <UsersContext.Provider value={state}>{children}</UsersContext.Provider>
