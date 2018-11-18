@@ -5,7 +5,6 @@ import produce from "immer";
 
 export const UsersContext = createContext({
   users: {},
-  loadUsers: () => {},
   addUser: () => {},
   updateUser: () => {},
   deleteUser: () => {}
@@ -23,7 +22,8 @@ export function UsersProvider({ children }) {
 
   useEffect(
     () =>
-      usersColl.onSnapshot(snapshot => {
+      // return value of onSnapshot is unsubscriber function
+      usersColl.onSnapshot(snapshot =>
         snapshot.docChanges().forEach(change => {
           setState(previous =>
             produce(previous, draft => {
@@ -37,8 +37,8 @@ export function UsersProvider({ children }) {
               }
             })
           );
-        });
-      }),
+        })
+      ),
     []
   );
 

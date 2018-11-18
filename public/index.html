@@ -20,14 +20,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Welcome to Firebase Hosting</title>
+  <title>La Corazón</title>
 
 </head>
 
 <body>
-  <p id="load">Firebase SDK Loading&hellip;</p>
   <div id="root"></div>
-  <!-- script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script -->
   <!-- Firebase App is always required and must be first -->
   <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
 
@@ -45,21 +43,6 @@
       messagingSenderId: "246780324760"
     };
     firebase.initializeApp(config);
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      try {
-        let app = firebase.app();
-        let features = ['auth', 'database', 'messaging', 'storage',
-          'firestore'
-        ].filter(feature => typeof app[feature] === 'function');
-        document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-      } catch (e) {
-        console.error(e);
-        document.getElementById('load').innerHTML =
-          'Error loading the Firebase SDK, check the console.';
-      }
-    });
   </script>
 </body>
 
