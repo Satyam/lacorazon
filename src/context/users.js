@@ -24,30 +24,41 @@ export function UsersProvider({ children }) {
     () =>
       // return value of onSnapshot is unsubscriber function
       usersColl.onSnapshot(snapshot =>
-        snapshot.docChanges().forEach(change => {
-          setState(previous =>
-            produce(previous, draft => {
-              switch (change.type) {
-                case "removed":
-                  delete draft.users[change.doc.id];
-                  break;
-                default:
-                  // added or modified
-                  draft.users[change.doc.id] = change.doc.data();
-              }
-            })
-          );
-        })
+        snapshot.docChanges().forEach(
+          change => {
+            setState(previous =>
+              produce(previous, draft => {
+                switch (change.type) {
+                  case "removed":
+                    delete draft.users[change.doc.id];
+                    break;
+                  default:
+                    // added or modified
+                    draft.users[change.doc.id] = change.doc.data();
+                }
+              })
+            );
+          },
+          err => {
+            console.error(err);
+          }
+        )
       ),
     []
   );
 
   function addUser(id, data) {
-    return usersColl.doc(id).set(data);
+    return usersColl
+      .doc(id)
+      .set(data)
+      .catch(err => console.error(err));
   }
 
   function deleteUser(id) {
-    return usersColl.doc(id).delete();
+    return usersColl
+      .doc(id)
+      .delete()
+      .catch(err => console.error(err));
   }
   return (
     <UsersContext.Provider value={state}>{children}</UsersContext.Provider>
