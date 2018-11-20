@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { Button, ButtonGroup, Table } from "reactstrap";
+import { ButtonGroup, Table } from "reactstrap";
+import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from "./Icons";
 
 import { BookstoresProvider, BookstoresContext } from "./context/bookstores";
 
@@ -16,20 +16,8 @@ function BookstoreRow(id, data) {
       <td>{data.email}</td>
       <td>
         <ButtonGroup size="sm">
-          <Button
-            outline
-            color="primary"
-            onClick={() => console.log("add", id)}
-          >
-            <Icon icon="plus-circle" color="blue" />
-          </Button>
-          <Button
-            outline
-            color="danger"
-            onClick={() => console.log("delete", id)}
-          >
-            <Icon icon="trash-alt" color="red" />
-          </Button>
+          <ButtonIconEdit onClick={() => console.log("edit", id)} />
+          <ButtonIconDelete onClick={() => console.log("delete", id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -62,17 +50,15 @@ function BookstoresTable() {
         </tbody>
       </Table>
 
-      <Button
+      <ButtonIconAdd
         className="mr-2"
-        outline
-        color="primary"
         onClick={() => addBookstore("Satyam", { nombre: "Daniel Barreiro" })}
-      >
-        <Icon icon="plus-circle" color="blue" /> agregar
-      </Button>
-      <Button outline color="danger" onClick={() => deleteBookstore("Satyam")}>
-        <Icon icon="trash-alt" color="red" /> borrar
-      </Button>
+        label="agregar"
+      />
+      <ButtonIconDelete
+        onClick={() => deleteBookstore("Satyam")}
+        label="borrar"
+      />
       <pre>{JSON.stringify(bookstores, null, 2)}</pre>
     </>
   );

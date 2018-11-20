@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UsersProvider, UsersContext } from "./context/users";
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { Button, ButtonGroup, Table } from "reactstrap";
+import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from "./Icons";
+import { ButtonGroup, Table } from "reactstrap";
 
 function UserRow(id, data) {
   return (
@@ -11,20 +11,8 @@ function UserRow(id, data) {
       <td>{data.name}</td>
       <td>
         <ButtonGroup size="sm">
-          <Button
-            outline
-            color="primary"
-            onClick={() => console.log("add", id)}
-          >
-            <Icon icon="plus-circle" color="blue" />
-          </Button>
-          <Button
-            outline
-            color="danger"
-            onClick={() => console.log("delete", id)}
-          >
-            <Icon icon="trash-alt" color="red" />
-          </Button>
+          <ButtonIconEdit onClick={() => console.log("edit", id)} />
+          <ButtonIconDelete onClick={() => console.log("delete", id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -46,17 +34,12 @@ function UsersTable() {
         </thead>
         <tbody>{Object.keys(users).map(id => UserRow(id, users[id]))}</tbody>
       </Table>
-      <Button
-        outline
-        color="primary"
+      <ButtonIconAdd
         className="mr-2"
         onClick={() => addUser("satyam", { name: "Daniel Barreiro" })}
-      >
-        <Icon icon="plus-circle" color="blue" /> agregar
-      </Button>
-      <Button outline color="danger" onClick={() => deleteUser("satyam")}>
-        <Icon icon="trash-alt" color="red" /> borrar
-      </Button>
+        label="agregar"
+      />
+      <ButtonIconDelete onClick={() => deleteUser("satyam")} label="borrar" />
       <pre>{JSON.stringify(users, null, 2)}</pre>
     </>
   );

@@ -6,25 +6,27 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faInfinity,
   faTrashAlt,
-  faCheck,
+  faCheckCircle,
+  faTimesCircle,
   faEdit,
   faExclamationTriangle,
   faMinusCircle,
   faPlusCircle,
-  faExclamationCircle
+  faExclamationCircle,
+  faCalendarAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
-  faInfinity,
   faTrashAlt,
-  faCheck,
+  faTimesCircle,
+  faCheckCircle,
   faEdit,
   faExclamationTriangle,
   faMinusCircle,
   faPlusCircle,
-  faExclamationCircle
+  faExclamationCircle,
+  faCalendarAlt
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
