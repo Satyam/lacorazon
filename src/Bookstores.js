@@ -25,9 +25,13 @@ function BookstoreRow(id, data) {
 }
 
 function BookstoresTable() {
-  const { bookstores, addBookstore, deleteBookstore } = useContext(
+  const { bookstores, error, addBookstore, deleteBookstore } = useContext(
     BookstoresContext
   );
+  if (error) {
+    throw new Error(error); // send if to the error boundary
+  }
+
   return (
     <>
       <h1>Puntos de Venta</h1>
