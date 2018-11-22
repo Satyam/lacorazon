@@ -12,8 +12,8 @@ function UserRow({ id, data, history }) {
       <td>{data.name}</td>
       <td>
         <ButtonGroup size="sm">
-          <ButtonIconEdit onClick={() => history.push(`/user/${id}`)} />
-          <ButtonIconDelete onClick={() => console.log("delete", id)} />
+          <ButtonIconEdit outline onClick={() => history.push(`/user/${id}`)} />
+          <ButtonIconDelete outline onClick={() => console.log("delete", id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -44,6 +44,7 @@ const UsersTable = withRouter(({ history }) => {
       </Table>
       <ButtonIconAdd
         className="mr-2"
+        outline
         onClick={() => {
           history.push(`/user`);
         }}

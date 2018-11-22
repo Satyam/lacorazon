@@ -1,73 +1,178 @@
 import React from "react";
 import { FontAwesomeIcon as FAIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "reactstrap";
+import classNames from "classnames";
 
-export const IconAdd = props => (
-  <FAIcon icon="plus-circle" color="blue" {...props} />
+export const IconAdd = ({
+  color = "primary",
+  outline,
+  className,
+  ...props
+}) => (
+  <FAIcon
+    icon="plus-circle"
+    className={classNames(className, {
+      [`btn-${color}`]: !outline,
+      [`btn-outline-${color}`]: outline
+    })}
+    {...props}
+  />
 );
 
-export const ButtonIconAdd = ({ label, ...props }) => (
-  <Button outline color="primary" {...props}>
-    <IconAdd {...props} style={{ marginRight: label ? "0.5em" : 0 }} />
+export const ButtonIconAdd = ({
+  label,
+  color = "primary",
+  outline,
+  className,
+  ...props
+}) => (
+  <Button color={color} outline={outline} className={className} {...props}>
+    <FAIcon
+      icon="plus-circle"
+      {...props}
+      style={{ marginRight: label ? "0.5em" : 0 }}
+    />
     {label}
   </Button>
 );
 
-export const IconDelete = props => (
-  <FAIcon icon="trash-alt" color="red" {...props} />
+export const IconDelete = ({ color = "danger", className, ...props }) => (
+  <FAIcon
+    icon="trash-alt"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
 );
 
-export const ButtonIconDelete = ({ label, ...props }) => (
-  <Button outline color="primary" {...props}>
-    <IconDelete {...props} style={{ marginRight: label ? "0.5em" : 0 }} />
+export const ButtonIconDelete = ({
+  label,
+  color = "danger",
+  outline,
+  className,
+  ...props
+}) => (
+  <Button color={color} outline={outline} className={className} {...props}>
+    <FAIcon
+      icon="trash-alt"
+      {...props}
+      style={{ marginRight: label ? "0.5em" : 0 }}
+    />
     {label}
   </Button>
 );
 
-export const IconEdit = props => <FAIcon icon="edit" color="blue" {...props} />;
+export const IconEdit = ({ color = "primary", className, ...props }) => (
+  <FAIcon
+    icon="edit"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
+);
 
-export const ButtonIconEdit = ({ label, ...props }) => (
-  <Button outline color="primary" {...props}>
-    <IconEdit {...props} style={{ marginRight: label ? "0.5em" : 0 }} />
+export const ButtonIconEdit = ({
+  label,
+  color = "primary",
+  outline,
+  className,
+  ...props
+}) => (
+  <Button color={color} outline={outline} className={className} {...props}>
+    <FAIcon
+      icon="edit"
+      {...props}
+      style={{ marginRight: label ? "0.5em" : 0 }}
+    />
     {label}
   </Button>
 );
 
-export const IconCheck = props => (
-  <FAIcon icon="check-circle" color="green" {...props} />
+export const IconCheck = ({ color = "success", className, ...props }) => (
+  <FAIcon
+    icon="check-circle"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
 );
 
-export const ButtonIconCheck = ({ label, ...props }) => (
-  <Button outline color="primary" {...props}>
-    <IconCheck {...props} style={{ marginRight: label ? "0.5em" : 0 }} />
+export const ButtonIconCheck = ({
+  label,
+  color = "primary",
+  outline,
+  className,
+  ...props
+}) => (
+  <Button color={color} outline={outline} className={className} {...props}>
+    <FAIcon
+      icon="check-circle"
+      {...props}
+      style={{ marginRight: label ? "0.5em" : 0 }}
+    />
     {label}
   </Button>
 );
 
-export const IconNotCheck = props => (
-  <FAIcon icon="times-circle" color="red" {...props} />
+export const IconNotCheck = ({ color = "danger", className, ...props }) => (
+  <FAIcon
+    icon="times-circle"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
 );
 
-export const ButtonIconNotCheck = ({ label, ...props }) => (
-  <Button outline color="danger" {...props}>
-    <IconNotCheck {...props} style={{ marginRight: label ? "0.5em" : 0 }} />
+export const ButtonIconNotCheck = ({
+  label,
+  color = "primary",
+  outline,
+  className,
+  ...props
+}) => (
+  <Button color={color} outline={outline} className={className} {...props}>
+    <FAIcon
+      icon="times-circle"
+      {...props}
+      style={{ marginRight: label ? "0.5em" : 0 }}
+    />
     {label}
   </Button>
 );
 
-export const IconCalendar = props => <FAIcon icon="calendar-alt" {...props} />;
+export const IconCalendar = ({ color = "body", className, ...props }) => (
+  <FAIcon
+    icon="calendar-alt"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
+);
 
-export const ButtonIconCalendar = ({ label, ...props }) => (
-  <Button outline {...props}>
-    <IconCalendar {...props} style={{ marginRight: label ? "0.5em" : 0 }} />
+export const ButtonIconCalendar = ({
+  label,
+  color = "primary",
+  outline,
+  className,
+  ...props
+}) => (
+  <Button color={color} outline={outline} className={className} {...props}>
+    <FAIcon
+      icon="calendar-alt"
+      {...props}
+      style={{ marginRight: label ? "0.5em" : 0 }}
+    />
     {label}
   </Button>
 );
 
-export const IconWarning = props => (
-  <FAIcon icon="exclamation-warning" color="orange" {...props} />
+export const IconWarning = ({ color = "warning", className, ...props }) => (
+  <FAIcon
+    icon="exclamation-warning"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
 );
 
-export const IconStop = props => (
-  <FAIcon icon="exclamation-circle" color="red" {...props} />
+export const IconStop = ({ color = "danger", className, ...props }) => (
+  <FAIcon
+    icon="exclamation-circle"
+    className={classNames(className, `btn-outline${color}`)}
+    {...props}
+  />
 );
