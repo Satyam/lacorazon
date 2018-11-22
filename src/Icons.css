@@ -1,0 +1,41 @@
+.active-icon {
+  background-color: transparent;
+  color: black;
+}
+.active-icon:hover {
+  filter: saturate(30%);
+}
+.disabled {
+  opacity: 0.5;
+}
+
+.icon-primary {
+  color: var(--primary);
+}
+.icon-secondary {
+  color: var(--secondary);
+}
+.icon-success {
+  color: var(--success);
+}
+.icon-danger {
+  color: var(--danger);
+}
+.icon-warning {
+  color: var(--warning);
+}
+.icon-info {
+  color: var(--info);
+}
+
+.icon-light {
+  color: var(--light);
+}
+
+.icon-dark {
+  color: var(--dark);
+}
+
+.icon-body {
+  color: var(--body);
+}
