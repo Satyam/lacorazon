@@ -3,78 +3,68 @@ import { createContext, useState, useEffect } from "react";
 import db from "./firestore";
 import produce from "immer";
 
-export const UserContext = createContext({
-  user: {},
-  error: null,
-  addUser: () => {},
-  updateUser: () => {},
-  deleteUser: () => {}
-});
+let user = {};
+let firestoreUnsubscriber = null;
+let subscribersCount = 0;
+let stateSetters = [];
 
 const usersColl = db.collection("users");
+
+function firestoreSubscribe(id) {
+  return usersColl.doc(id).onSnapshot(
+    doc => {
+      user = produce(user, draft => {
+        draft.user = { ...doc.data(), id };
+      });
+      stateSetters.forEach(setState =>
+        setState(previous =>
+          produce(previous, draft => {
+            draft.user = user;
+            draft.error = null;
+          })
+        )
+      );
+    },
+    err => {
+      console.error(err);
+      stateSetters.forEach(setState =>
+        setState(previous =>
+          produce(previous, draft => {
+            draft.error = err;
+            draft.user = {};
+          })
+        )
+      );
+    }
+  );
+}
+
+export const UserContext = createContext({
+  user: {},
+  error: null
+});
 
 export function UserProvider({ id, children }) {
   const [state, setState] = useState({
     user: {},
-    error: null,
-    addUser,
-    updateUser: addUser,
-    deleteUser
+    error: null
   });
 
-  useEffect(
-    () =>
-      // return value of onSnapshot is unsubscriber function
-      id &&
-      usersColl.doc(id).onSnapshot(
-        doc =>
-          setState(previous =>
-            produce(previous, draft => {
-              draft.user = { ...doc.data(), id };
-            })
-          ),
-        err => {
-          console.error(err);
-          setState(previous =>
-            produce(
-              (previous,
-              draft => {
-                draft.error = err;
-                draft.user = {};
-              })
-            )
-          );
-        }
-      ),
-    []
-  );
+  stateSetters.push(setState);
 
-  function addUser(data) {
-    return usersColl
-      .doc(id)
-      .set(data)
-      .catch(err => {
-        // make sure it is logged even if not caught by the Code
-        // re-throw to allow component to do something about it
-        console.error(err);
-        throw err;
-      });
-  }
+  useEffect(() => {
+    if (!subscribersCount) {
+      firestoreUnsubscriber = firestoreSubscribe(id);
+    }
+    subscribersCount++;
+    return () => {
+      subscribersCount--;
+      stateSetters = stateSetters.filter(setter => setter !== setState);
+      if (!subscribersCount) {
+        firestoreUnsubscriber();
+      }
+    };
+  }, []);
 
-  function deleteUser() {
-    return usersColl
-      .doc(id)
-      .delete()
-      .catch(err => {
-        // make sure it is logged even if not caught by the Code
-        // re-throw to allow component to do something about it
-        console.error(err);
-        throw err;
-      });
-  }
-  return (
-    <UserContext.Provider id={id} value={state}>
-      {children}
-    </UserContext.Provider>
-  );
+  return <UserContext.Provider value={state}>{children}</UserContext.Provider>;
 }

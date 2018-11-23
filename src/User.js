@@ -5,7 +5,7 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 import { Formik, Form as KForm, Field as KField } from "formik";
 
 function UserForm({ id }) {
-  const { user, error, addUser, deleteUser } = useContext(UserContext);
+  const { user, error } = useContext(UserContext);
   if (error) {
     throw new Error(error); // send if to the error boundary
   }
