@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import { UsersProvider, UsersContext } from "./context/users";
-import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from "./Icons";
-import { ButtonGroup, Table } from "reactstrap";
+import React, { useContext } from 'react';
+import { ButtonGroup, Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
+
+import { UsersProvider, UsersContext } from './context/users';
+import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 
 function UserRow({ id, data, history }) {
   return (
@@ -13,12 +14,13 @@ function UserRow({ id, data, history }) {
       <td>
         <ButtonGroup size="sm">
           <ButtonIconEdit outline onClick={() => history.push(`/user/${id}`)} />
-          <ButtonIconDelete outline onClick={() => console.log("delete", id)} />
+          <ButtonIconDelete outline onClick={() => console.log('delete', id)} />
         </ButtonGroup>
       </td>
     </tr>
   );
 }
+
 function UsersTable() {
   const { users, error } = useContext(UsersContext);
   const { history } = useReactRouter();
@@ -54,7 +56,8 @@ function UsersTable() {
       <pre>{JSON.stringify(users, null, 2)}</pre>
     </>
   );
-};
+}
+
 export default function Users() {
   return (
     <UsersProvider>

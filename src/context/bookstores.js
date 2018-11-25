@@ -1,14 +1,15 @@
-import React from "react";
-import { createContext, useState, useEffect } from "react";
-import db from "./firestore";
-import produce from "immer";
+import React from 'react';
+import { createContext, useState, useEffect } from 'react';
+import produce from 'immer';
+
+import db from './firestore';
 
 let bookstores = {};
 let firestoreUnsubscriber = null;
 let subscribersCount = 0;
 let stateSetters = [];
 
-const bookstoresColl = db.collection("puntosDeVenta");
+const bookstoresColl = db.collection('puntosDeVenta');
 
 export function addBookstore(id, data) {
   return bookstoresColl
@@ -41,7 +42,7 @@ function firestoreSubscribe() {
         snapshot.docChanges().forEach(change => {
           const id = change.doc.id;
           switch (change.type) {
-            case "removed":
+            case 'removed':
               delete draft[id];
               break;
             default:

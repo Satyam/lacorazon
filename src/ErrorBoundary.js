@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class ErrorBoundary extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class ErrorBoundary extends Component {
 
   componentDidCatch(error, info) {
     console.error(error);
-    console.error("at:");
+    console.error('at:');
     console.error(info.componentStack);
   }
 
@@ -21,7 +21,6 @@ export default class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;
     }
-
     return this.props.children;
   }
 }

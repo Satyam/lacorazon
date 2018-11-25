@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
-import { Navigation } from "./Navigation";
-import "./App.css";
-import Users from "./Users";
-import User from "./User";
-import Bookstores from "./Bookstores";
-import ErrorBoundary from "./ErrorBoundary";
+import { Navigation } from './Navigation';
+import ErrorBoundary from './ErrorBoundary';
+
+import Users from './Users';
+import User from './User';
+import Bookstores from './Bookstores';
 
 function App() {
   return (

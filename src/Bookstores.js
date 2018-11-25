@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import { ButtonGroup, Table } from "reactstrap";
-import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from "./Icons";
+import React, { useContext } from 'react';
+import { ButtonGroup, Table } from 'reactstrap';
 
-import { BookstoresProvider, BookstoresContext } from "./context/bookstores";
+import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
+
+import { BookstoresProvider, BookstoresContext } from './context/bookstores';
 
 function BookstoreRow(id, data) {
   return (
@@ -10,14 +11,14 @@ function BookstoreRow(id, data) {
       <td>{id}</td>
       <td>{data.nombre}</td>
       <td>{data.contacto}</td>
-      <td style={{ whiteSpace: "pre-line" }}>{data.direccion}</td>
+      <td style={{ whiteSpace: 'pre-line' }}>{data.direccion}</td>
       <td>{data.localidad}</td>
       <td>{data.telefono}</td>
       <td>{data.email}</td>
       <td>
         <ButtonGroup size="sm">
-          <ButtonIconEdit onClick={() => console.log("edit", id)} />
-          <ButtonIconDelete onClick={() => console.log("delete", id)} />
+          <ButtonIconEdit onClick={() => console.log('edit', id)} />
+          <ButtonIconDelete onClick={() => console.log('delete', id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -56,11 +57,11 @@ function BookstoresTable() {
 
       <ButtonIconAdd
         className="mr-2"
-        onClick={() => addBookstore("Satyam", { nombre: "Daniel Barreiro" })}
+        onClick={() => addBookstore('Satyam', { nombre: 'Daniel Barreiro' })}
         label="agregar"
       />
       <ButtonIconDelete
-        onClick={() => deleteBookstore("Satyam")}
+        onClick={() => deleteBookstore('Satyam')}
         label="borrar"
       />
       <pre>{JSON.stringify(bookstores, null, 2)}</pre>

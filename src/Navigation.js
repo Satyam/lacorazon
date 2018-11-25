@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -12,9 +12,9 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem
-} from "reactstrap";
+} from 'reactstrap';
 
-import laCorazon from "./La Corazon.png";
+import laCorazon from './La Corazon.png';
 
 export function Navigation() {
   const [isOpen, setOpen] = useState(false);
@@ -24,8 +24,8 @@ export function Navigation() {
 
   return (
     <div>
-      <Navbar expand="md" light style={{ backgroundColor: "#e4ccaa" }}>
-        <NavbarBrand href="/" style={{ color: "#644240" }}>
+      <Navbar expand="md" light style={{ backgroundColor: '#e4ccaa' }}>
+        <NavbarBrand href="/" style={{ color: '#644240' }}>
           <img
             src={laCorazon}
             width={32}

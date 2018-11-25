@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import { UserProvider, UserContext } from "./context/users";
-import { ButtonIconAdd, ButtonIconDelete } from "./Icons";
-import { Form, FormGroup, Label, Input } from "reactstrap";
-import { Formik, Form as KForm, Field as KField } from "formik";
+import React, { useContext } from 'react';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Formik, Form as KForm, Field as KField } from 'formik';
+
+import { UserProvider, UserContext } from './context/users';
+import { ButtonIconAdd, ButtonIconDelete } from './Icons';
 
 function UserForm({ id }) {
   const { user, error } = useContext(UserContext);
@@ -13,7 +14,7 @@ function UserForm({ id }) {
     <>
       <h1>Add/Edit Vendedor</h1>
       <Formik
-        initialValues={Object.assign({ id: "", name: "", alias: "" }, user)}
+        initialValues={Object.assign({ id: '', name: '', alias: '' }, user)}
         enableReinitialize={true}
         isInitialValid={true}
         onSubmit={(values, { setSubmitting }) => {
@@ -42,13 +43,13 @@ function UserForm({ id }) {
               disabled={isSubmitting || !isValid}
               className="mr-2"
               onClick={() => {
-                console.log("accept");
+                console.log('accept');
               }}
               label="Agregar"
             />
             <ButtonIconDelete
               onClick={() => {
-                console.log("borrar");
+                console.log('borrar');
               }}
               label="borrar"
             />
@@ -58,6 +59,7 @@ function UserForm({ id }) {
     </>
   );
 }
+
 export default function User({ match }) {
   return (
     <UserProvider id={match.params.id}>
