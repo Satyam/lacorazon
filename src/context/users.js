@@ -1,6 +1,7 @@
 import React from 'react';
 import { createContext, useState, useEffect } from 'react';
 import produce from 'immer';
+import * as yup from 'yup';
 
 import db from './firestore';
 
@@ -12,6 +13,16 @@ const stateSetters = {};
 const ALL = '*';
 
 const usersColl = db.collection('users');
+
+export const userSchema = yup.object().shape({
+  id: yup
+    .string()
+    .required()
+    .trim()
+    .lowercase(),
+  alias: yup.string().trim(),
+  name: yup.string().trim()
+});
 
 export function addUser(data) {
   return usersColl

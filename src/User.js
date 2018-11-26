@@ -7,7 +7,8 @@ import {
   UserProvider,
   UserContext,
   addUser,
-  deleteUser
+  deleteUser,
+  userSchema
 } from './context/users';
 import { ButtonIconAdd, ButtonIconDelete } from './Icons';
 
@@ -33,7 +34,7 @@ function UserForm({ id }) {
               setFieldError('*', err);
             });
         }}
-        validate={values => ({})}
+        validationSchema={userSchema}
       >
         {({ isSubmitting, isValid, errors, touched }) => (
           <Form tag={KForm}>
@@ -46,6 +47,7 @@ function UserForm({ id }) {
                 name="id"
                 id="id"
                 invalid={errors.id && touched.id}
+                disabled={!!id}
               />
               <ErrorMessage name="id" component={FormFeedback} />
             </FormGroup>
