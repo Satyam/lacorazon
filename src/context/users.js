@@ -60,6 +60,16 @@ export function deleteUser(id) {
   );
 }
 
+export function userExists(id) {
+  return usersColl
+    .doc(id)
+    .get()
+    .then(doc => {
+      if (doc.exists)
+        throw new yup.ValidationError('Código de usuario ya existe', id, '');
+    });
+}
+
 function usersSubscribe() {
   return usersColl.onSnapshot(
     snapshot => {
@@ -174,7 +184,11 @@ function userSubscribe(id) {
 
 export function UserProvider({ id, children }) {
   if (!id) return children;
-  if (!(id in users)) users[id] = {};
+  if (!(id in users)) {
+    users = produce(users, draft => {
+      draft[id] = {};
+    });
+  }
   if (!(id in stateSetters)) stateSetters[id] = [];
 
   const [state, setState] = useState({

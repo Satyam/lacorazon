@@ -8,6 +8,7 @@ import {
   UserContext,
   addUser,
   deleteUser,
+  userExists,
   userSchema
 } from './context/users';
 import { ButtonIconAdd, ButtonIconDelete } from './Icons';
@@ -26,6 +27,7 @@ function UserForm({ id }) {
         enableReinitialize={true}
         isInitialValid={true}
         onSubmit={(values, { setFieldError }) => {
+          values = userSchema.cast(values);
           addUser(values)
             .then(() => {
               history.replace(`/user/${values.id}`);
@@ -38,6 +40,7 @@ function UserForm({ id }) {
       >
         {({ isSubmitting, isValid, errors, touched }) => (
           <Form tag={KForm}>
+            <pre>{JSON.stringify({ isValid, errors, touched }, null, 2)}</pre>
             {errors['*'] && <Alert color="danger">{errors['*']}</Alert>}
             <FormGroup>
               <Label for="id">Código</Label>
@@ -48,8 +51,12 @@ function UserForm({ id }) {
                 id="id"
                 invalid={errors.id && touched.id}
                 disabled={!!id}
+                validate={value => (id ? '' : userExists(value.toLowerCase()))}
               />
-              <ErrorMessage name="id" component={FormFeedback} />
+
+              <FormFeedback>
+                {(errors.id && errors.id.message) || errors.id}
+              </FormFeedback>
             </FormGroup>
             <FormGroup>
               <Label for="alias">Alias</Label>
