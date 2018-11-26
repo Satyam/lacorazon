@@ -11,10 +11,15 @@ let stateSetters = [];
 
 const bookstoresColl = db.collection('puntosDeVenta');
 
-export function addBookstore(id, data) {
+export function addBookstore(data) {
   return bookstoresColl
-    .doc(id)
+    .doc(data.codigo)
     .set(data)
+    .then(() => {
+      bookstores = produce(bookstores, draft => {
+        draft[data.id] = {};
+      });
+    })
     .catch(err => {
       // make sure it is logged even if not caught by the Code
       // re-throw to allow component to do something about it
@@ -23,10 +28,15 @@ export function addBookstore(id, data) {
     });
 }
 
-export function deleteBookstore(id) {
+export function deleteBookstore(codigo) {
   return bookstoresColl
-    .doc(id)
+    .doc(codigo)
     .delete()
+    .then(() => {
+      bookstores = produce(bookstores, draft => {
+        delete draft[codigo];
+      });
+    })
     .catch(err => {
       // make sure it is logged even if not caught by the Code
       // re-throw to allow component to do something about it

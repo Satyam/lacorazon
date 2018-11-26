@@ -13,10 +13,15 @@ const ALL = '*';
 
 const usersColl = db.collection('users');
 
-export function addUser(id, data) {
+export function addUser(data) {
   return usersColl
-    .doc(id)
+    .doc(data.id)
     .set(data)
+    .then(() => {
+      users = produce(users, draft => {
+        draft[data.id] = {};
+      });
+    })
     .catch(err => {
       // make sure it is logged even if not caught by the Code
       // re-throw to allow component to do something about it
@@ -30,6 +35,11 @@ export function deleteUser(id) {
     usersColl
       .doc(id)
       .delete()
+      .then(() => {
+        users = produce(users, draft => {
+          delete draft[id];
+        });
+      })
       // make sure it is logged even if not caught by the Code
       // re-throw to allow component to do something about it
       .catch(err => {
@@ -152,6 +162,7 @@ function userSubscribe(id) {
 }
 
 export function UserProvider({ id, children }) {
+  if (!id) return children;
   if (!(id in users)) users[id] = {};
   if (!(id in stateSetters)) stateSetters[id] = [];
 
