@@ -1,12 +1,19 @@
 import React, { useContext } from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
-import { Formik, Form as KForm, Field as KField } from 'formik';
+import { Form, FormGroup, Label, Input, FormFeedback, Alert } from 'reactstrap';
+import { Formik, Form as KForm, Field as KField, ErrorMessage } from 'formik';
+import useReactRouter from 'use-react-router';
 
-import { UserProvider, UserContext } from './context/users';
+import {
+  UserProvider,
+  UserContext,
+  addUser,
+  deleteUser
+} from './context/users';
 import { ButtonIconAdd, ButtonIconDelete } from './Icons';
 
 function UserForm({ id }) {
   const { user, error } = useContext(UserContext);
+  const { history } = useReactRouter();
   if (error) {
     throw new Error(error); // send if to the error boundary
   }
@@ -17,39 +24,63 @@ function UserForm({ id }) {
         initialValues={Object.assign({ id: '', name: '', alias: '' }, user)}
         enableReinitialize={true}
         isInitialValid={true}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values, { setFieldError }) => {
+          addUser(values)
+            .then(() => {
+              history.replace(`/user/${values.id}`);
+            })
+            .catch(err => {
+              setFieldError('*', err);
+            });
         }}
+        validate={values => ({})}
       >
-        {({ isSubmitting, isValid }) => (
+        {({ isSubmitting, isValid, errors, touched }) => (
           <Form tag={KForm}>
+            {errors['*'] && <Alert color="danger">{errors['*']}</Alert>}
             <FormGroup>
               <Label for="id">Código</Label>
-              <Input tag={KField} type="text" name="id" id="id" />
+              <Input
+                tag={KField}
+                type="text"
+                name="id"
+                id="id"
+                invalid={errors.id && touched.id}
+              />
+              <ErrorMessage name="id" component={FormFeedback} />
             </FormGroup>
             <FormGroup>
               <Label for="alias">Alias</Label>
-              <Input tag={KField} type="text" name="alias" id="alias" />
+              <Input
+                tag={KField}
+                type="text"
+                name="alias"
+                id="alias"
+                invalid={errors.alias && touched.alias}
+              />
+              <ErrorMessage name="alias" component={FormFeedback} />
             </FormGroup>
             <FormGroup>
               <Label for="name">Nombre</Label>
-              <Input tag={KField} type="text" name="name" id="name" />
+              <Input
+                tag={KField}
+                type="text"
+                name="name"
+                id="name"
+                invalid={errors.name && touched.name}
+              />
+              <ErrorMessage name="name" component={FormFeedback} />
             </FormGroup>
             <ButtonIconAdd
               type="submit"
               disabled={isSubmitting || !isValid}
               className="mr-2"
-              onClick={() => {
-                console.log('accept');
-              }}
-              label="Agregar"
+              label={id ? 'Modificar' : 'Agregar'}
             />
             <ButtonIconDelete
+              disabled={!id}
               onClick={() => {
-                console.log('borrar');
+                deleteUser(id).then(() => history.replace('/users'));
               }}
               label="borrar"
             />

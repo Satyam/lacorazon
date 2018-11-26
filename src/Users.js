@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ButtonGroup, Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
 
-import { UsersProvider, UsersContext } from './context/users';
+import { UsersProvider, UsersContext, deleteUser } from './context/users';
 import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 
 function UserRow({ id, data, history }) {
@@ -14,7 +14,7 @@ function UserRow({ id, data, history }) {
       <td>
         <ButtonGroup size="sm">
           <ButtonIconEdit outline onClick={() => history.push(`/user/${id}`)} />
-          <ButtonIconDelete outline onClick={() => console.log('delete', id)} />
+          <ButtonIconDelete outline onClick={() => deleteUser(id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -51,9 +51,8 @@ function UsersTable() {
         onClick={() => {
           history.push(`/user`);
         }}
-        label="agregar"
+        label="Agregar"
       />
-      <pre>{JSON.stringify(users, null, 2)}</pre>
     </>
   );
 }
