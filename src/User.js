@@ -19,18 +19,19 @@ function UserForm({ id }) {
   if (error) {
     throw new Error(error); // send if to the error boundary
   }
+
   return (
     <>
       <h1>Add/Edit Vendedor</h1>
       <Formik
-        initialValues={Object.assign({ id: '', name: '', alias: '' }, user)}
+        initialValues={Object.assign(userSchema.default(), user)}
         enableReinitialize={true}
         isInitialValid={true}
         onSubmit={(values, { setFieldError }) => {
-          values = userSchema.cast(values);
-          addUser(values)
+          const castValues = userSchema.cast(values);
+          addUser(castValues)
             .then(() => {
-              history.replace(`/user/${values.id}`);
+              history.replace(`/user/${castValues.id}`);
             })
             .catch(err => {
               setFieldError('*', err);
@@ -40,7 +41,6 @@ function UserForm({ id }) {
       >
         {({ isSubmitting, isValid, errors, touched }) => (
           <Form tag={KForm}>
-            <pre>{JSON.stringify({ isValid, errors, touched }, null, 2)}</pre>
             {errors['*'] && <Alert color="danger">{errors['*']}</Alert>}
             <FormGroup>
               <Label for="id">Código</Label>
@@ -51,7 +51,7 @@ function UserForm({ id }) {
                 id="id"
                 invalid={errors.id && touched.id}
                 disabled={!!id}
-                validate={value => (id ? '' : userExists(value.toLowerCase()))}
+                validate={value => (id ? '' : userExists(value))}
               />
 
               <FormFeedback>

@@ -19,9 +19,16 @@ export const userSchema = yup.object().shape({
     .string()
     .required()
     .trim()
-    .lowercase(),
-  alias: yup.string().trim(),
-  name: yup.string().trim()
+    .lowercase()
+    .default(''),
+  alias: yup
+    .string()
+    .trim()
+    .default(''),
+  name: yup
+    .string()
+    .trim()
+    .default('')
 });
 
 export function addUser(data) {
@@ -62,7 +69,7 @@ export function deleteUser(id) {
 
 export function userExists(id) {
   return usersColl
-    .doc(id)
+    .doc(userSchema.fields.id.cast(id))
     .get()
     .then(doc => {
       if (doc.exists)
