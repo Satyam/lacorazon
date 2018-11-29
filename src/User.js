@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, FormGroup, Label, Input, FormFeedback, Alert } from 'reactstrap';
-import { Formik, Form as KForm, Field as KField, ErrorMessage } from 'formik';
+import { Form, TextField } from './Form';
 import useReactRouter from 'use-react-router';
 
 import {
@@ -23,79 +22,51 @@ function UserForm({ id }) {
   return (
     <>
       <h1>Add/Edit Vendedor</h1>
-      <Formik
-        initialValues={Object.assign(userSchema.default(), user)}
-        enableReinitialize={true}
-        isInitialValid={true}
+      <Form
+        values={user}
         onSubmit={(values, { setFieldError }) => {
-          const castValues = userSchema.cast(values);
-          addUser(castValues)
+          debugger;
+          addUser(values)
             .then(() => {
-              history.replace(`/user/${castValues.id}`);
+              history.replace(`/user/${values.id}`);
             })
             .catch(err => {
               setFieldError('*', err);
             });
         }}
-        validationSchema={userSchema}
+        schema={userSchema}
       >
-        {({ isSubmitting, isValid, errors, touched }) => (
-          <Form tag={KForm}>
-            {errors['*'] && <Alert color="danger">{errors['*']}</Alert>}
-            <FormGroup>
-              <Label for="id">Código</Label>
-              <Input
-                tag={KField}
-                type="text"
-                name="id"
-                id="id"
-                invalid={errors.id && touched.id}
-                disabled={!!id}
-                validate={value => (id ? '' : userExists(value))}
-              />
-
-              <FormFeedback>
-                {(errors.id && errors.id.message) || errors.id}
-              </FormFeedback>
-            </FormGroup>
-            <FormGroup>
-              <Label for="alias">Alias</Label>
-              <Input
-                tag={KField}
-                type="text"
-                name="alias"
-                id="alias"
-                invalid={errors.alias && touched.alias}
-              />
-              <ErrorMessage name="alias" component={FormFeedback} />
-            </FormGroup>
-            <FormGroup>
-              <Label for="name">Nombre</Label>
-              <Input
-                tag={KField}
-                type="text"
-                name="name"
-                id="name"
-                invalid={errors.name && touched.name}
-              />
-              <ErrorMessage name="name" component={FormFeedback} />
-            </FormGroup>
-            <ButtonIconAdd
-              type="submit"
-              disabled={isSubmitting || !isValid}
-              className="mr-2"
-              label={id ? 'Modificar' : 'Agregar'}
-            />
-            <ButtonIconDelete
-              disabled={!id}
-              onClick={() => {
-                deleteUser(id).then(() => history.replace('/users'));
-              }}
-              label="borrar"
-            />
-          </Form>
-        )}
-      </Formik>
+        <TextField
+          name="id"
+          label="Código"
+          disabled={!!id}
+          validate={value =>
+            id
+              ? ''
+              : userExists(value).then(exists => {
+                  if (exists) {
+                    // eslint-disable-next-line no-throw-literal
+                    throw `Código de usuario [${value}] ya existe`;
+                  }
+                })
+          }
+        />
+        <TextField name="alias" label="Alias" />
+        <TextField name="name" label="Nombre" />
+        <ButtonIconAdd
+          type="submit"
+          disabled={false /*isSubmitting || !isValid*/}
+          className="mr-2"
+          label={id ? 'Modificar' : 'Agregar'}
+        />
+        <ButtonIconDelete
+          disabled={!id}
+          onClick={() => {
+            deleteUser(id).then(() => history.replace('/users'));
+          }}
+          label="borrar"
+        />
+      </Form>
     </>
   );
 }

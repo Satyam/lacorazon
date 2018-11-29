@@ -71,10 +71,7 @@ export function userExists(id) {
   return usersColl
     .doc(userSchema.fields.id.cast(id))
     .get()
-    .then(doc => {
-      if (doc.exists)
-        throw new yup.ValidationError('Código de usuario ya existe', id, '');
-    });
+    .then(doc => doc.exists);
 }
 
 function usersSubscribe() {
