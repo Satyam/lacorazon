@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, TextField } from './Form';
+import { Form, TextField, SubmitButton } from './Form';
 import useReactRouter from 'use-react-router';
 
 import {
@@ -18,7 +18,6 @@ function UserForm({ id }) {
   if (error) {
     throw new Error(error); // send if to the error boundary
   }
-
   return (
     <>
       <h1>Add/Edit Vendedor</h1>
@@ -53,9 +52,8 @@ function UserForm({ id }) {
         />
         <TextField name="alias" label="Alias" />
         <TextField name="name" label="Nombre" />
-        <ButtonIconAdd
-          type="submit"
-          disabled={false /*isSubmitting || !isValid*/}
+        <SubmitButton
+          component={ButtonIconAdd}
           className="mr-2"
           label={id ? 'Modificar' : 'Agregar'}
         />

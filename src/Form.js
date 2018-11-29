@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Form as BSForm,
   FormGroup,
@@ -7,9 +7,14 @@ import {
   FormFeedback,
   FormText,
   Alert,
-  Col
+  Col,
+  Button
 } from 'reactstrap';
-import { Formik, Form as KForm, Field as KField, connect } from 'formik';
+import { Formik, Form as KForm, Field as KField, FormikConsumer } from 'formik';
+
+function useFormik() {
+  return useContext(FormikConsumer._context);
+}
 
 export function Form({
   initialValues,
@@ -19,11 +24,9 @@ export function Form({
   children,
   ...rest
 }) {
-  console.log('------------------');
   return (
     <Formik
       enableReinitialize={true}
-      isInitialValid={true}
       validationSchema={schema}
       initialValues={Object.assign(schema.default(), values)}
       onSubmit={(values, formik) => {
@@ -42,16 +45,10 @@ export function Form({
   );
 }
 
-function MyTextField({
-  formik: { errors, touched, validationSchema },
-  name,
-  label,
-  rows,
-  help,
-  validate,
-  ...rest
-}) {
+export function TextField({ name, label, rows, help, validate, ...rest }) {
+  const { errors, touched, validationSchema } = useFormik();
   const error = errors[name];
+
   return (
     <FormGroup row>
       <Label for={name} xs={12} lg={2}>
@@ -79,4 +76,9 @@ function MyTextField({
   );
 }
 
-export const TextField = connect(MyTextField);
+export function SubmitButton({ component: Component = Button, ...rest }) {
+  const { isSubmitting, isValid } = useFormik();
+  return (
+    <Component type="submit" disabled={isSubmitting || !isValid} {...rest} />
+  );
+}
