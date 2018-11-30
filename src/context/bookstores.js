@@ -5,9 +5,11 @@ import produce from 'immer';
 import db from './firestore';
 
 let bookstores = {};
-let firestoreUnsubscriber = null;
-let subscribersCount = 0;
-let stateSetters = [];
+const firestoreUnsubscriber = {};
+const subscribersCount = {};
+const stateSetters = {};
+
+const ALL = '*';
 
 const bookstoresColl = db.collection('puntosDeVenta');
 
@@ -64,7 +66,7 @@ function firestoreSubscribe() {
           }
         });
       });
-      stateSetters.forEach(setState =>
+      stateSetters[ALL].forEach(setState =>
         setState(previous =>
           produce(previous, draft => {
             draft.bookstores = bookstores;
@@ -75,7 +77,7 @@ function firestoreSubscribe() {
     },
     err => {
       console.error(err);
-      stateSetters.forEach(setState =>
+      stateSetters[ALL].forEach(setState =>
         setState(previous =>
           produce(previous, draft => {
             draft.error = err;
@@ -97,18 +99,21 @@ export function BookstoresProvider({ children }) {
     bookstores: {},
     error: null
   });
-
-  stateSetters.push(setState);
+  if (!(ALL in stateSetters)) stateSetters[ALL] = [];
+  stateSetters[ALL].push(setState);
   useEffect(() => {
-    if (!subscribersCount) {
-      firestoreUnsubscriber = firestoreSubscribe();
+    if (!subscribersCount[ALL]) {
+      firestoreUnsubscriber[ALL] = firestoreSubscribe();
+      subscribersCount[ALL] = 0;
     }
-    subscribersCount++;
+    subscribersCount[ALL]++;
     return () => {
-      subscribersCount--;
-      stateSetters = stateSetters.filter(setter => setter !== setState);
-      if (!subscribersCount) {
-        firestoreUnsubscriber();
+      subscribersCount[ALL]--;
+      stateSetters[ALL] = stateSetters[ALL].filter(
+        setter => setter !== setState
+      );
+      if (!subscribersCount[ALL]) {
+        firestoreUnsubscriber[ALL]();
       }
     };
   }, []);
