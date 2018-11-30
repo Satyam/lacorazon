@@ -1,13 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { Button } from 'reactstrap';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 
-import './Icons.css';
+import styles from './Icons.module.css';
+
+const cx = classNames.bind(styles);
 
 export const Icon = ({ color, button, disabled, className, ...props }) => (
   <FAIcon
-    className={classNames(className, {
+    className={cx(className, {
       'active-icon': button && !disabled,
       [`icon-${color}`]: color,
       disabled: disabled
@@ -29,7 +31,7 @@ export const ButtonIconAdd = ({
 }) => (
   <Button color={color} className={className} {...props}>
     <FAIcon icon="plus-circle" />
-    <span>{children}</span>
+    <span className={styles.label}>{children}</span>
   </Button>
 );
 
@@ -46,7 +48,7 @@ export const ButtonIconDelete = ({
 }) => (
   <Button color={color} className={className} {...props}>
     <FAIcon icon="trash-alt" />
-    <span>{children}</span>
+    <span className={styles.label}>{children}</span>
   </Button>
 );
 export const IconEdit = ({ color = 'primary', ...props }) => (
@@ -62,7 +64,7 @@ export const ButtonIconEdit = ({
 }) => (
   <Button color={color} className={className} {...props}>
     <FAIcon icon="edit" />
-    <span>{children}</span>
+    <span className={styles.label}>{children}</span>
   </Button>
 );
 export const IconCheck = ({ color = 'success', ...props }) => (
@@ -78,7 +80,7 @@ export const ButtonIconCheck = ({
 }) => (
   <Button color={color} className={className} {...props}>
     <FAIcon icon="check-circle" />
-    <span>{children}</span>
+    <span className={styles.label}>{children}</span>
   </Button>
 );
 export const IconNotCheck = ({ color = 'danger', ...props }) => (
@@ -94,7 +96,7 @@ export const ButtonIconNotCheck = ({
 }) => (
   <Button color={color} className={className} {...props}>
     <FAIcon icon="times-circle" />
-    <span>{children}</span>
+    <span className={styles.label}>{children}</span>
   </Button>
 );
 export const IconCalendar = ({ color = 'body', ...props }) => (
@@ -110,7 +112,7 @@ export const ButtonIconCalendar = ({
 }) => (
   <Button color={color} className={className} {...props}>
     <FAIcon icon="calendar-alt" />
-    <span>{children}</span>
+    <span className={styles.label}>{children}</span>
   </Button>
 );
 export const IconWarning = ({ color = 'warning', ...props }) => (
@@ -122,5 +124,5 @@ export const IconStop = ({ color = 'danger', ...props }) => (
 );
 
 export const ButtonSet = ({ className, children, ...rest }) => (
-  <div className={classNames('button-set', className)}>{children}</div>
+  <div className={cx('buttonSet', className)}>{children}</div>
 );

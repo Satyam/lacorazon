@@ -47,14 +47,14 @@
     color: var(--body);
 }
 
-.btn span:not(:empty) {
+.label:not(:empty) {
     margin-left: 0.5em;
 }
 
-.button-set .btn {
+.buttonSet button {
     margin-left: 0.5em;
 }
 
-.button-set .btn:first-child {
+.buttonSet button:first-child {
     margin-left: 0;
 }
