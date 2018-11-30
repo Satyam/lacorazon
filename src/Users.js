@@ -52,7 +52,9 @@ function UsersTable() {
           history.push(`/user`);
         }}
         label="Agregar"
-      />
+      >
+        Agregar
+      </ButtonIconAdd>
     </>
   );
 }

@@ -52,18 +52,17 @@ function UserForm({ id }) {
         />
         <TextField name="alias" label="Alias" />
         <TextField name="name" label="Nombre" />
-        <SubmitButton
-          component={ButtonIconAdd}
-          className="mr-2"
-          label={id ? 'Modificar' : 'Agregar'}
-        />
+        <SubmitButton component={ButtonIconAdd} className="mr-2">
+          {id ? 'Modificar' : 'Agregar'}
+        </SubmitButton>
         <ButtonIconDelete
           disabled={!id}
           onClick={() => {
             deleteUser(id).then(() => history.replace('/users'));
           }}
-          label="borrar"
-        />
+        >
+          Borrar
+        </ButtonIconDelete>
       </Form>
     </>
   );

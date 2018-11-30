@@ -58,12 +58,12 @@ function BookstoresTable() {
       <ButtonIconAdd
         className="mr-2"
         onClick={() => addBookstore('Satyam', { nombre: 'Daniel Barreiro' })}
-        label="agregar"
-      />
-      <ButtonIconDelete
-        onClick={() => deleteBookstore('Satyam')}
-        label="borrar"
-      />
+      >
+        agregar
+      </ButtonIconAdd>
+      <ButtonIconDelete onClick={() => deleteBookstore('Satyam')}>
+        Borrar
+      </ButtonIconDelete>
       <pre>{JSON.stringify(bookstores, null, 2)}</pre>
     </>
   );

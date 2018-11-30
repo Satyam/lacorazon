@@ -21,15 +21,15 @@ export const IconAdd = ({ color = 'primary', ...props }) => (
 );
 
 export const ButtonIconAdd = ({
-  label,
+  children,
   color = 'primary',
 
   className,
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="plus-circle" className={classNames({ 'mr-2': label })} />
-    {label}
+    <FAIcon icon="plus-circle" className={classNames({ 'mr-2': children })} />
+    {children}
   </Button>
 );
 
@@ -38,15 +38,15 @@ export const IconDelete = ({ color = 'danger', ...props }) => (
 );
 
 export const ButtonIconDelete = ({
-  label,
+  children,
   color = 'danger',
 
   className,
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="trash-alt" className={classNames({ 'mr-2': label })} />
-    {label}
+    <FAIcon icon="trash-alt" className={classNames({ 'mr-2': children })} />
+    {children}
   </Button>
 );
 export const IconEdit = ({ color = 'primary', ...props }) => (
@@ -54,15 +54,15 @@ export const IconEdit = ({ color = 'primary', ...props }) => (
 );
 
 export const ButtonIconEdit = ({
-  label,
+  children,
   color = 'primary',
 
   className,
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="edit" className={classNames({ 'mr-2': label })} />
-    {label}
+    <FAIcon icon="edit" className={classNames({ 'mr-2': children })} />
+    {children}
   </Button>
 );
 export const IconCheck = ({ color = 'success', ...props }) => (
@@ -70,15 +70,15 @@ export const IconCheck = ({ color = 'success', ...props }) => (
 );
 
 export const ButtonIconCheck = ({
-  label,
+  children,
   color = 'success',
 
   className,
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="check-circle" className={classNames({ 'mr-2': label })} />
-    {label}
+    <FAIcon icon="check-circle" className={classNames({ 'mr-2': children })} />
+    {children}
   </Button>
 );
 export const IconNotCheck = ({ color = 'danger', ...props }) => (
@@ -86,15 +86,15 @@ export const IconNotCheck = ({ color = 'danger', ...props }) => (
 );
 
 export const ButtonIconNotCheck = ({
-  label,
+  children,
   color = 'primary',
 
   className,
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="times-circle" className={classNames({ 'mr-2': label })} />
-    {label}
+    <FAIcon icon="times-circle" className={classNames({ 'mr-2': children })} />
+    {children}
   </Button>
 );
 export const IconCalendar = ({ color = 'body', ...props }) => (
@@ -102,15 +102,15 @@ export const IconCalendar = ({ color = 'body', ...props }) => (
 );
 
 export const ButtonIconCalendar = ({
-  label,
+  children,
   color = 'primary',
 
   className,
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="calendar-alt" className={classNames({ 'mr-2': label })} />
-    {label}
+    <FAIcon icon="calendar-alt" className={classNames({ 'mr-2': children })} />
+    {children}
   </Button>
 );
 export const IconWarning = ({ color = 'warning', ...props }) => (
