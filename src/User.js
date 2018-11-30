@@ -10,7 +10,7 @@ import {
   userExists,
   userSchema
 } from './context/users';
-import { ButtonIconAdd, ButtonIconDelete } from './Icons';
+import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 
 function UserForm({ id }) {
   const { user, error } = useContext(UserContext);
@@ -52,17 +52,19 @@ function UserForm({ id }) {
         />
         <TextField name="alias" label="Alias" />
         <TextField name="name" label="Nombre" />
-        <SubmitButton component={ButtonIconAdd} className="mr-2">
-          {id ? 'Modificar' : 'Agregar'}
-        </SubmitButton>
-        <ButtonIconDelete
-          disabled={!id}
-          onClick={() => {
-            deleteUser(id).then(() => history.replace('/users'));
-          }}
-        >
-          Borrar
-        </ButtonIconDelete>
+        <ButtonSet>
+          <SubmitButton component={ButtonIconAdd}>
+            {id ? 'Modificar' : 'Agregar'}
+          </SubmitButton>
+          <ButtonIconDelete
+            disabled={!id}
+            onClick={() => {
+              deleteUser(id).then(() => history.replace('/users'));
+            }}
+          >
+            Borrar
+          </ButtonIconDelete>
+        </ButtonSet>
       </Form>
     </>
   );

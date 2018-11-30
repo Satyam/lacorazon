@@ -46,7 +46,6 @@ function UsersTable() {
         </tbody>
       </Table>
       <ButtonIconAdd
-        className="mr-2"
         outline
         onClick={() => {
           history.push(`/user`);

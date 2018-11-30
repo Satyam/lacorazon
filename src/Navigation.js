@@ -26,14 +26,8 @@ export function Navigation() {
     <div>
       <Navbar expand="md" light style={{ backgroundColor: '#e4ccaa' }}>
         <NavbarBrand href="/" style={{ color: '#644240' }}>
-          <img
-            src={laCorazon}
-            width={32}
-            height={32}
-            alt="La Corazón"
-            className="mr-2"
-          />
-          La Corazón
+          <img src={laCorazon} width={32} height={32} alt="La Corazón" />
+          &nbsp;La Corazón
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

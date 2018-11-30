@@ -1,7 +1,12 @@
 import React, { useContext } from 'react';
 import { ButtonGroup, Table } from 'reactstrap';
 
-import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
+import {
+  ButtonIconAdd,
+  ButtonIconEdit,
+  ButtonIconDelete,
+  ButtonSet
+} from './Icons';
 
 import { BookstoresProvider, BookstoresContext } from './context/bookstores';
 
@@ -54,16 +59,16 @@ function BookstoresTable() {
           {Object.keys(bookstores).map(id => BookstoreRow(id, bookstores[id]))}
         </tbody>
       </Table>
-
-      <ButtonIconAdd
-        className="mr-2"
-        onClick={() => addBookstore('Satyam', { nombre: 'Daniel Barreiro' })}
-      >
-        agregar
-      </ButtonIconAdd>
-      <ButtonIconDelete onClick={() => deleteBookstore('Satyam')}>
-        Borrar
-      </ButtonIconDelete>
+      <ButtonSet>
+        <ButtonIconAdd
+          onClick={() => addBookstore('Satyam', { nombre: 'Daniel Barreiro' })}
+        >
+          agregar
+        </ButtonIconAdd>
+        <ButtonIconDelete onClick={() => deleteBookstore('Satyam')}>
+          Borrar
+        </ButtonIconDelete>
+      </ButtonSet>
       <pre>{JSON.stringify(bookstores, null, 2)}</pre>
     </>
   );

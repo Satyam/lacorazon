@@ -28,8 +28,8 @@ export const ButtonIconAdd = ({
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="plus-circle" className={classNames({ 'mr-2': children })} />
-    {children}
+    <FAIcon icon="plus-circle" />
+    <span>{children}</span>
   </Button>
 );
 
@@ -45,8 +45,8 @@ export const ButtonIconDelete = ({
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="trash-alt" className={classNames({ 'mr-2': children })} />
-    {children}
+    <FAIcon icon="trash-alt" />
+    <span>{children}</span>
   </Button>
 );
 export const IconEdit = ({ color = 'primary', ...props }) => (
@@ -61,8 +61,8 @@ export const ButtonIconEdit = ({
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="edit" className={classNames({ 'mr-2': children })} />
-    {children}
+    <FAIcon icon="edit" />
+    <span>{children}</span>
   </Button>
 );
 export const IconCheck = ({ color = 'success', ...props }) => (
@@ -77,8 +77,8 @@ export const ButtonIconCheck = ({
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="check-circle" className={classNames({ 'mr-2': children })} />
-    {children}
+    <FAIcon icon="check-circle" />
+    <span>{children}</span>
   </Button>
 );
 export const IconNotCheck = ({ color = 'danger', ...props }) => (
@@ -93,8 +93,8 @@ export const ButtonIconNotCheck = ({
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="times-circle" className={classNames({ 'mr-2': children })} />
-    {children}
+    <FAIcon icon="times-circle" />
+    <span>{children}</span>
   </Button>
 );
 export const IconCalendar = ({ color = 'body', ...props }) => (
@@ -109,8 +109,8 @@ export const ButtonIconCalendar = ({
   ...props
 }) => (
   <Button color={color} className={className} {...props}>
-    <FAIcon icon="calendar-alt" className={classNames({ 'mr-2': children })} />
-    {children}
+    <FAIcon icon="calendar-alt" />
+    <span>{children}</span>
   </Button>
 );
 export const IconWarning = ({ color = 'warning', ...props }) => (
@@ -119,4 +119,8 @@ export const IconWarning = ({ color = 'warning', ...props }) => (
 
 export const IconStop = ({ color = 'danger', ...props }) => (
   <Icon icon="exclamation-circle" color={color} {...props} />
+);
+
+export const ButtonSet = ({ className, children, ...rest }) => (
+  <div className={classNames('button-set', className)}>{children}</div>
 );
