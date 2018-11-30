@@ -77,8 +77,12 @@ export function TextField({ name, label, rows, help, validate, ...rest }) {
 }
 
 export function SubmitButton({ component: Component = Button, ...rest }) {
-  const { isSubmitting, isValid } = useFormik();
+  const { isSubmitting, isValid, dirty } = useFormik();
   return (
-    <Component type="submit" disabled={isSubmitting || !isValid} {...rest} />
+    <Component
+      type="submit"
+      disabled={isSubmitting || !isValid || !dirty}
+      {...rest}
+    />
   );
 }
