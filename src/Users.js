@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ButtonGroup, Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
 
-import { UsersProvider, UsersContext, deleteUser } from './context/users';
 import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
+
+import { useDispatch, useSelector } from './store/hooks';
+import { getUsers, deleteUser } from './store/users/actions';
 
 function UserRow({ id, data, history }) {
   return (
@@ -21,12 +23,14 @@ function UserRow({ id, data, history }) {
   );
 }
 
-function UsersTable() {
-  const { users, error } = useContext(UsersContext);
+export default function Users() {
+  const doGetThem = useDispatch(getUsers);
+  const selUsers = useSelector('users');
+  const [users, setUsers] = useState(selUsers());
+  useEffect(() => {
+    doGetThem().then(() => setUsers(selUsers()));
+  }, []);
   const { history } = useReactRouter();
-  if (error) {
-    throw new Error(error); // send if to the error boundary
-  }
   return (
     <>
       <h1>Vendedores</h1>
@@ -55,13 +59,5 @@ function UsersTable() {
         Agregar
       </ButtonIconAdd>
     </>
-  );
-}
-
-export default function Users() {
-  return (
-    <UsersProvider>
-      <UsersTable />
-    </UsersProvider>
   );
 }
