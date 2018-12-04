@@ -1,23 +1,25 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Form, TextField, SubmitButton } from './Form';
 import useReactRouter from 'use-react-router';
 
 import {
-  UserProvider,
-  UserContext,
-  addUser,
+  getUser,
+  setUser,
   deleteUser,
-  userExists,
-  userSchema
-} from './context/users';
+  userExists
+} from './store/users/actions';
+import { useDispatch, useSelector } from './store/hooks';
+import userSchema from './store/users/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 
-function UserForm({ id }) {
-  const { user, error } = useContext(UserContext);
+export default function User({ match }) {
+  const id = match.params.id;
+  const user = useSelector('users.$0', id);
+  useDispatch(getUser, true, id);
+  const addUser = useDispatch(setUser);
+  const delUser = useDispatch(deleteUser);
   const { history } = useReactRouter();
-  if (error) {
-    throw new Error(error); // send if to the error boundary
-  }
+
   return (
     <>
       <h1>Add/Edit Vendedor</h1>
@@ -59,7 +61,7 @@ function UserForm({ id }) {
           <ButtonIconDelete
             disabled={!id}
             onClick={() => {
-              deleteUser(id).then(() => history.replace('/users'));
+              delUser(id).then(() => history.replace('/users'));
             }}
           >
             Borrar
@@ -67,13 +69,5 @@ function UserForm({ id }) {
         </ButtonSet>
       </Form>
     </>
-  );
-}
-
-export default function User({ match }) {
-  return (
-    <UserProvider id={match.params.id}>
-      <UserForm id={match.params.id} />
-    </UserProvider>
   );
 }
