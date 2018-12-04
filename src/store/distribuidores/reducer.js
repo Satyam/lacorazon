@@ -6,26 +6,26 @@ import {
 } from '../promiseMiddleware';
 
 import {
-  COLLECTION,
-  GET_PDVS,
-  GET_PDV,
-  SET_PDV,
-  DELETE_PDV
+  NAME,
+  GET_DISTRIBUIDORES,
+  GET_DISTRIBUIDOR,
+  SET_DISTRIBUIDOR,
+  DELETE_DISTRIBUIDOR
 } from './constants';
 
-export const PDVS = COLLECTION;
+export const DISTRIBUIDORES = NAME;
 
 export default (state = {}, { stage, type, payload = {} }) =>
   produce(state, draft => {
-    const codigo = payload.codigo;
+    const id = payload.id;
     switch (stage) {
       case REQUEST_SENT:
         switch (type) {
-          case GET_PDV:
-            if (!(codigo in draft)) draft[codigo] = {};
+          case GET_DISTRIBUIDOR:
+            if (!(id in draft)) draft[id] = {};
             break;
-          case SET_PDV:
-            if (!(codigo in draft)) draft[codigo] = {};
+          case SET_DISTRIBUIDOR:
+            if (!(id in draft)) draft[id] = {};
             break;
           default:
             break;
@@ -36,19 +36,19 @@ export default (state = {}, { stage, type, payload = {} }) =>
         break;
       case REPLY_RECEIVED:
         switch (type) {
-          case GET_PDV:
-            draft[codigo] = payload;
+          case GET_DISTRIBUIDOR:
+            draft[id] = payload;
             break;
-          case GET_PDVS:
+          case GET_DISTRIBUIDORES:
             payload.list.forEach(pdv => {
-              draft[pdv.codigo] = pdv;
+              draft[pdv.id] = pdv;
             });
             break;
-          case SET_PDV:
-            draft[codigo] = payload;
+          case SET_DISTRIBUIDOR:
+            draft[id] = payload;
             break;
-          case DELETE_PDV:
-            delete draft[codigo];
+          case DELETE_DISTRIBUIDOR:
+            delete draft[id];
             break;
           default:
             break;

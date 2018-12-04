@@ -7,7 +7,7 @@ import ErrorBoundary from './ErrorBoundary';
 
 import Users from './Users';
 import User from './User';
-import Bookstores from './Bookstores';
+import Distribuidores from './Distribuidores';
 
 function App() {
   return (
@@ -23,7 +23,10 @@ function App() {
                     <div className="main-content-container container-fluid px-4">
                       <Route path="/users" component={Users} />
                       <Route path="/user/:id?" component={User} />
-                      <Route path="/bookstores" component={Bookstores} />
+                      <Route
+                        path="/distribuidores"
+                        component={Distribuidores}
+                      />
                     </div>
                   </ErrorBoundary>
                 </Col>

@@ -6,15 +6,9 @@ import {
   FAILURE_RECEIVED
 } from '../promiseMiddleware';
 
-import {
-  COLLECTION,
-  GET_USERS,
-  GET_USER,
-  SET_USER,
-  DELETE_USER
-} from './constants';
+import { NAME, GET_USERS, GET_USER, SET_USER, DELETE_USER } from './constants';
 
-export const USERS = COLLECTION;
+export const USERS = NAME;
 
 export default (state = {}, { stage, type, payload = {} }) =>
   produce(state, draft => {

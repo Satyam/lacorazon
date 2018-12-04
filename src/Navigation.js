@@ -34,12 +34,12 @@ export function Navigation() {
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink tag={Link} to="/users">
-                Users
+                Usuarios
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/bookstores">
-                Puntos de Venta
+              <NavLink tag={Link} to="/distribuidores">
+                Distribuidores
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>

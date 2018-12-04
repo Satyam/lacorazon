@@ -12,8 +12,8 @@ function UserRow({ id, data, history, delUser }) {
   return (
     <tr key={id}>
       <td>{id}</td>
-      <td>{data.alias}</td>
-      <td>{data.name}</td>
+      <td>{data.email}</td>
+      <td>{data.nombre}</td>
       <td>
         <ButtonGroup size="sm">
           <ButtonIconEdit outline onClick={() => history.push(`/user/${id}`)} />

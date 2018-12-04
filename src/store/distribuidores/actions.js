@@ -1,17 +1,23 @@
-import { NAME, GET_USERS, GET_USER, SET_USER, DELETE_USER } from './constants';
+import {
+  NAME,
+  GET_DISTRIBUIDORES,
+  GET_DISTRIBUIDOR,
+  SET_DISTRIBUIDOR,
+  DELETE_DISTRIBUIDOR
+} from './constants';
 import db from '../firestore';
 import schema from './schema';
 
-export const getUsers = () => ({
-  type: GET_USERS,
+export const getDistribuidores = () => ({
+  type: GET_DISTRIBUIDORES,
   promise: db
     .collection(NAME)
     .get()
     .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()))
 });
 
-export const getUser = id => ({
-  type: GET_USER,
+export const getDistribuidor = id => ({
+  type: GET_DISTRIBUIDOR,
   payload: { id },
   promise: id
     ? db
@@ -22,8 +28,8 @@ export const getUser = id => ({
     : {}
 });
 
-export const setUser = data => ({
-  type: SET_USER,
+export const setDistribuidor = data => ({
+  type: SET_DISTRIBUIDOR,
   payload: data,
   promise: db
     .collection(NAME)
@@ -31,8 +37,8 @@ export const setUser = data => ({
     .set(data)
 });
 
-export const deleteUser = id => ({
-  type: DELETE_USER,
+export const deleteDistribuidor = id => ({
+  type: DELETE_DISTRIBUIDOR,
   payload: { id },
   promise: db
     .collection(NAME)
@@ -40,7 +46,7 @@ export const deleteUser = id => ({
     .delete()
 });
 
-export const userExists = id =>
+export const pdvExists = id =>
   db
     .collection(NAME)
     .doc(schema.fields.id.cast(id))

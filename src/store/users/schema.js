@@ -6,10 +6,11 @@ export default object().shape({
     .trim()
     .lowercase()
     .default(''),
-  alias: string()
+  email: string()
     .trim()
+    .email()
     .default(''),
-  name: string()
+  nombre: string()
     .trim()
     .default('')
 });

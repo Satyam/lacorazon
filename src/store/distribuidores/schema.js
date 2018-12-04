@@ -1,7 +1,7 @@
 import { object, string, number } from 'yup';
 
 export default object().shape({
-  codigo: string()
+  id: string()
     .required()
     .trim()
     .lowercase()

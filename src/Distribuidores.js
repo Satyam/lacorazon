@@ -9,13 +9,17 @@ import {
 } from './Icons';
 
 import { useDispatch, useSelector } from './store/hooks';
-import { getPdvs, deletePdv, setPdv } from './store/puntosDeVenta/actions';
-import { PDVS } from './store/puntosDeVenta/reducer';
+import {
+  getDistribuidores,
+  deleteDistribuidor,
+  setDistribuidor
+} from './store/distribuidores/actions';
+import { DISTRIBUIDORES } from './store/distribuidores/reducer';
 
-function BookstoreRow(codigo, data, delPdv) {
+function Distribuidor(id, data, delDistribuidor) {
   return (
-    <tr key={codigo}>
-      <td>{codigo}</td>
+    <tr key={id}>
+      <td>{id}</td>
       <td>{data.nombre}</td>
       <td>{data.contacto}</td>
       <td style={{ whiteSpace: 'pre-line' }}>{data.direccion}</td>
@@ -24,27 +28,27 @@ function BookstoreRow(codigo, data, delPdv) {
       <td>{data.email}</td>
       <td>
         <ButtonGroup size="sm">
-          <ButtonIconEdit onClick={() => console.log('edit', codigo)} />
-          <ButtonIconDelete onClick={() => console.log('delete', codigo)} />
+          <ButtonIconEdit onClick={() => console.log('edit', id)} />
+          <ButtonIconDelete onClick={() => console.log('delete', id)} />
         </ButtonGroup>
       </td>
     </tr>
   );
 }
 
-export default function Bookstores() {
-  const pdvs = useSelector(PDVS);
-  useDispatch(getPdvs, true);
-  const delPdv = useDispatch(deletePdv);
+export default function Distribuidores() {
+  const distribuidores = useSelector(DISTRIBUIDORES);
+  useDispatch(getDistribuidores, true);
+  const delDistribuidor = useDispatch(deleteDistribuidor);
   // const { history } = useReactRouter();
   return (
-    (pdvs || null) && (
+    (distribuidores || null) && (
       <>
         <h1>Puntos de Venta</h1>
         <Table striped hover size="sm" responsive>
           <thead>
             <tr>
-              <th>Código</th>
+              <th>Id</th>
               <th>Nombre</th>
               <th>Contacto</th>
               <th>Dirección</th>
@@ -56,22 +60,24 @@ export default function Bookstores() {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(pdvs).map(codigo =>
-              BookstoreRow(codigo, pdvs[codigo])
+            {Object.keys(distribuidores).map(id =>
+              Distribuidor(id, distribuidores[id])
             )}
           </tbody>
         </Table>
         <ButtonSet>
           <ButtonIconAdd
-            onClick={() => setPdv('Satyam', { nombre: 'Daniel Barreiro' })}
+            onClick={() =>
+              setDistribuidor('Satyam', { nombre: 'Daniel Barreiro' })
+            }
           >
             Agregar
           </ButtonIconAdd>
-          <ButtonIconDelete onClick={() => delPdv('Satyam')}>
+          <ButtonIconDelete onClick={() => delDistribuidor('Satyam')}>
             Borrar
           </ButtonIconDelete>
         </ButtonSet>
-        <pre>{JSON.stringify(pdvs, null, 2)}</pre>
+        <pre>{JSON.stringify(distribuidores, null, 2)}</pre>
       </>
     )
   );

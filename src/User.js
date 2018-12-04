@@ -52,8 +52,8 @@ export default function User({ match }) {
                 })
           }
         />
-        <TextField name="alias" label="Alias" />
-        <TextField name="name" label="Nombre" />
+        <TextField name="email" label="eMail" />
+        <TextField name="nombre" label="Nombre" />
         <ButtonSet>
           <SubmitButton component={ButtonIconAdd}>
             {id ? 'Modificar' : 'Agregar'}
