@@ -14,26 +14,52 @@ export function Provider({ store, children }) {
   return <Context.Provider value={store}>{children}</Context.Provider>;
 }
 
-export function useDispatch(fn) {
+export function useDispatch(fn, onMount, ...args) {
   const { dispatch } = useContext(Context);
-  return (...args) => dispatch(fn(...args));
-}
 
-export function useSelector(sel) {
-  const { getState } = useContext(Context);
-  switch (typeof sel) {
-    case 'string':
-      return (...args) =>
-        sel
+  if (typeof fn === 'undefined') return dispatch;
+
+  const dispatcher = (...args) => {
+    dispatch(fn(...args));
+  };
+  useEffect(() => {
+    if (onMount) {
+      dispatcher(...args);
+    }
+  }, []);
+  if (!onMount) {
+    return dispatcher;
+  }
+}
+export function useSelector(sel, ...args) {
+  const { getState, subscribe } = useContext(Context);
+  function doSelect() {
+    switch (typeof sel) {
+      case 'string':
+        return sel
           .split('.')
           .reduce(
             (acc, prop) =>
-              prop[0] === '$' ? acc[Number(args.shift())] : acc[prop],
+              typeof acc === 'object'
+                ? prop[0] === '$'
+                  ? acc[args[Number(prop.substr(1))]]
+                  : acc[prop]
+                : acc,
             getState()
           );
-    case 'function':
-      return (...args) => sel(getState(), ...args);
-    default:
-      break;
+      case 'function':
+        return sel(getState(), ...args);
+      case 'undefined':
+        return getState();
+      default:
+        break;
+    }
   }
+  const [selection, setSelected] = useState(doSelect());
+  useEffect(() => {
+    return subscribe(() => {
+      setSelected(doSelect());
+    });
+  }, []);
+  return selection;
 }

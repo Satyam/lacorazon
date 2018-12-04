@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ButtonGroup, Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
 
@@ -24,40 +24,38 @@ function UserRow({ id, data, history }) {
 }
 
 export default function Users() {
-  const doGetThem = useDispatch(getUsers);
-  const selUsers = useSelector('users');
-  const [users, setUsers] = useState(selUsers());
-  useEffect(() => {
-    doGetThem().then(() => setUsers(selUsers()));
-  }, []);
+  const users = useSelector('users');
+  useDispatch(getUsers, true);
   const { history } = useReactRouter();
   return (
-    <>
-      <h1>Vendedores</h1>
-      <Table striped hover size="sm" responsive>
-        <thead>
-          <tr>
-            <th>Código</th>
-            <th>Alias</th>
-            <th>Nombre</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(users).map(id =>
-            UserRow({ id, data: users[id], history })
-          )}
-        </tbody>
-      </Table>
-      <ButtonIconAdd
-        outline
-        onClick={() => {
-          history.push(`/user`);
-        }}
-        label="Agregar"
-      >
-        Agregar
-      </ButtonIconAdd>
-    </>
+    (users || null) && (
+      <>
+        <h1>Vendedores</h1>
+        <Table striped hover size="sm" responsive>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Alias</th>
+              <th>Nombre</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(users).map(id =>
+              UserRow({ id, data: users[id], history })
+            )}
+          </tbody>
+        </Table>
+        <ButtonIconAdd
+          outline
+          onClick={() => {
+            history.push(`/user`);
+          }}
+          label="Agregar"
+        >
+          Agregar
+        </ButtonIconAdd>
+      </>
+    )
   );
 }
