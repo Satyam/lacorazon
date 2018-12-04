@@ -24,14 +24,16 @@ export const getUsers = () => ({
 export const getUser = id => ({
   type: GET_USER,
   payload: { id },
-  promise: db
-    .collection(COLLECTION)
-    .doc(id)
-    .get()
-    .then(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }))
+  promise: id
+    ? db
+        .collection(COLLECTION)
+        .doc(id)
+        .get()
+        .then(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+    : {}
 });
 
 export const setUser = data => ({
