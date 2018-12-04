@@ -19,9 +19,7 @@ export function useDispatch(fn, onMount, ...args) {
 
   if (typeof fn === 'undefined') return dispatch;
 
-  const dispatcher = (...args) => {
-    dispatch(fn(...args));
-  };
+  const dispatcher = (...args) => dispatch(fn(...args));
   useEffect(() => {
     if (onMount) {
       dispatcher(...args);
