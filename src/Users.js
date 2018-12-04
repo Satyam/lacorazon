@@ -6,6 +6,7 @@ import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 
 import { useDispatch, useSelector } from './store/hooks';
 import { getUsers, deleteUser } from './store/users/actions';
+import { USERS } from './store/users/reducer';
 
 function UserRow({ id, data, history, delUser }) {
   return (
@@ -24,7 +25,7 @@ function UserRow({ id, data, history, delUser }) {
 }
 
 export default function Users() {
-  const users = useSelector('users');
+  const users = useSelector(USERS);
   useDispatch(getUsers, true);
   const delUser = useDispatch(deleteUser);
   const { history } = useReactRouter();
