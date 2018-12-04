@@ -4,10 +4,12 @@ import promiseMiddleware from './promiseMiddleware';
 
 import users, { USERS } from './users/reducer';
 import status, { STATUS } from './status/reducer';
+import pdvs, { PDVS } from './puntosDeVenta/reducer';
 
 const reducers = combineReducers({
   [USERS]: users,
-  [STATUS]: status
+  [STATUS]: status,
+  [PDVS]: pdvs
 });
 
 export default initialState => {

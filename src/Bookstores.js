@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ButtonGroup, Table } from 'reactstrap';
 
 import {
@@ -8,12 +8,14 @@ import {
   ButtonSet
 } from './Icons';
 
-import { BookstoresProvider, BookstoresContext } from './context/bookstores';
+import { useDispatch, useSelector } from './store/hooks';
+import { getPdvs, deletePdv, setPdv } from './store/puntosDeVenta/actions';
+import { PDVS } from './store/puntosDeVenta/reducer';
 
-function BookstoreRow(id, data) {
+function BookstoreRow(codigo, data, delPdv) {
   return (
-    <tr key={id}>
-      <td>{id}</td>
+    <tr key={codigo}>
+      <td>{codigo}</td>
       <td>{data.nombre}</td>
       <td>{data.contacto}</td>
       <td style={{ whiteSpace: 'pre-line' }}>{data.direccion}</td>
@@ -22,61 +24,55 @@ function BookstoreRow(id, data) {
       <td>{data.email}</td>
       <td>
         <ButtonGroup size="sm">
-          <ButtonIconEdit onClick={() => console.log('edit', id)} />
-          <ButtonIconDelete onClick={() => console.log('delete', id)} />
+          <ButtonIconEdit onClick={() => console.log('edit', codigo)} />
+          <ButtonIconDelete onClick={() => console.log('delete', codigo)} />
         </ButtonGroup>
       </td>
     </tr>
   );
 }
 
-function BookstoresTable() {
-  const { bookstores, error, addBookstore, deleteBookstore } = useContext(
-    BookstoresContext
-  );
-  if (error) {
-    throw new Error(error); // send if to the error boundary
-  }
-
-  return (
-    <>
-      <h1>Puntos de Venta</h1>
-      <Table striped hover size="sm" responsive>
-        <thead>
-          <tr>
-            <th>Código</th>
-            <th>Nombre</th>
-            <th>Contacto</th>
-            <th>Dirección</th>
-            <th>Localidad</th>
-            <th>Teléfono</th>
-            <th>e-Mail</th>
-
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(bookstores).map(id => BookstoreRow(id, bookstores[id]))}
-        </tbody>
-      </Table>
-      <ButtonSet>
-        <ButtonIconAdd
-          onClick={() => addBookstore('Satyam', { nombre: 'Daniel Barreiro' })}
-        >
-          agregar
-        </ButtonIconAdd>
-        <ButtonIconDelete onClick={() => deleteBookstore('Satyam')}>
-          Borrar
-        </ButtonIconDelete>
-      </ButtonSet>
-      <pre>{JSON.stringify(bookstores, null, 2)}</pre>
-    </>
-  );
-}
 export default function Bookstores() {
+  const pdvs = useSelector(PDVS);
+  useDispatch(getPdvs, true);
+  const delPdv = useDispatch(deletePdv);
+  // const { history } = useReactRouter();
   return (
-    <BookstoresProvider>
-      <BookstoresTable />
-    </BookstoresProvider>
+    (pdvs || null) && (
+      <>
+        <h1>Puntos de Venta</h1>
+        <Table striped hover size="sm" responsive>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Contacto</th>
+              <th>Dirección</th>
+              <th>Localidad</th>
+              <th>Teléfono</th>
+              <th>e-Mail</th>
+
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(pdvs).map(codigo =>
+              BookstoreRow(codigo, pdvs[codigo])
+            )}
+          </tbody>
+        </Table>
+        <ButtonSet>
+          <ButtonIconAdd
+            onClick={() => setPdv('Satyam', { nombre: 'Daniel Barreiro' })}
+          >
+            Agregar
+          </ButtonIconAdd>
+          <ButtonIconDelete onClick={() => delPdv('Satyam')}>
+            Borrar
+          </ButtonIconDelete>
+        </ButtonSet>
+        <pre>{JSON.stringify(pdvs, null, 2)}</pre>
+      </>
+    )
   );
 }
