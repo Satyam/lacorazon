@@ -6,14 +6,11 @@ import {
 } from '../promiseMiddleware';
 
 import {
-  NAME,
   GET_DISTRIBUIDORES,
   GET_DISTRIBUIDOR,
   SET_DISTRIBUIDOR,
   DELETE_DISTRIBUIDOR
 } from './constants';
-
-export const DISTRIBUIDORES = NAME;
 
 export default (state = {}, { stage, type, payload = {} }) =>
   produce(state, draft => {

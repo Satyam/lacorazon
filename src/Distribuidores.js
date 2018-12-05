@@ -13,8 +13,8 @@ import {
   getDistribuidores,
   deleteDistribuidor,
   setDistribuidor
-} from './store/distribuidores/actions';
-import { DISTRIBUIDORES } from './store/distribuidores/reducer';
+} from './store/actions';
+import { NAME as DISTRIBUIDORES } from './store/distribuidores/constants';
 
 function Distribuidor(id, data, delDistribuidor) {
   return (

@@ -1,3 +1,3 @@
-export const NAME = 'Status';
+export const NAME = 'status';
 
 export const CLEAR_ERRORS = `${NAME} / Clear errors`;

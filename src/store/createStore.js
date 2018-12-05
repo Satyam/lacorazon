@@ -2,14 +2,14 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 import promiseMiddleware from './promiseMiddleware';
 
-import users, { USERS } from './users/reducer';
-import status, { STATUS } from './status/reducer';
-import distribuidores, { DISTRIBUIDORES } from './distribuidores/reducer';
+import users from './users/reducer';
+import status from './status/reducer';
+import distribuidores from './distribuidores/reducer';
 
 const reducers = combineReducers({
-  [USERS]: users,
-  [STATUS]: status,
-  [DISTRIBUIDORES]: distribuidores
+  users,
+  status,
+  distribuidores
 });
 
 export default initialState => {

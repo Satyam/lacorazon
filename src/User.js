@@ -2,19 +2,17 @@ import React from 'react';
 import { Form, TextField, SubmitButton } from './Form';
 import useReactRouter from 'use-react-router';
 
-import {
-  getUser,
-  setUser,
-  deleteUser,
-  userExists
-} from './store/users/actions';
+import { getUser, setUser, deleteUser, userExists } from './store/actions';
+
+import { NAME as USERS } from './store/users/constants';
+
 import { useDispatch, useSelector } from './store/hooks';
 import userSchema from './store/users/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 
 export default function User({ match }) {
   const id = match.params.id;
-  const user = useSelector('users.$0', id);
+  const user = useSelector(`${USERS}.$0`, id);
   useDispatch(getUser, true, id);
   const addUser = useDispatch(setUser);
   const delUser = useDispatch(deleteUser);
@@ -25,16 +23,15 @@ export default function User({ match }) {
       <h1>Add/Edit Vendedor</h1>
       <Form
         values={user}
-        onSubmit={(values, { setFieldError }) => {
-          debugger;
+        onSubmit={(values, { setFieldError }) =>
           addUser(values)
             .then(() => {
               history.replace(`/user/${values.id}`);
             })
             .catch(err => {
               setFieldError('*', err);
-            });
-        }}
+            })
+        }
         schema={userSchema}
       >
         <TextField

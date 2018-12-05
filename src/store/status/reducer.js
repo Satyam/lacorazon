@@ -6,9 +6,8 @@ import {
   FAILURE_RECEIVED
 } from '../promiseMiddleware';
 
-import { NAME, CLEAR_ERRORS } from './constants';
+import { CLEAR_ERRORS } from './constants';
 
-export const STATUS = NAME;
 export default (
   state = { pending: 0, errors: [] },
   { stage, type, payload, error }

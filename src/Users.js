@@ -5,8 +5,8 @@ import useReactRouter from 'use-react-router';
 import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 
 import { useDispatch, useSelector } from './store/hooks';
-import { getUsers, deleteUser } from './store/users/actions';
-import { USERS } from './store/users/reducer';
+import { getUsers, deleteUser } from './store/actions';
+import { NAME as USERS } from './store/users/constants';
 
 function UserRow({ id, data, history, delUser }) {
   return (
