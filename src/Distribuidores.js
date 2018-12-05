@@ -9,6 +9,9 @@ import {
 } from './Icons';
 
 import { useDispatch, useSelector } from './store/hooks';
+import { isEmpty } from './utils';
+import Loading from './Loading';
+
 import {
   getDistribuidores,
   deleteDistribuidor,
@@ -16,7 +19,7 @@ import {
 } from './store/actions';
 import { NAME as DISTRIBUIDORES } from './store/distribuidores/constants';
 
-function Distribuidor(id, data, delDistribuidor) {
+function Distribuidor(id, data, doDeleteDistribuidor) {
   return (
     <tr key={id}>
       <td>{id}</td>
@@ -38,47 +41,51 @@ function Distribuidor(id, data, delDistribuidor) {
 
 export default function Distribuidores() {
   const distribuidores = useSelector(DISTRIBUIDORES);
-  useDispatch(getDistribuidores, true);
-  const delDistribuidor = useDispatch(deleteDistribuidor);
+  const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
+    getDistribuidores,
+    deleteDistribuidor
+  ]);
+  if (isEmpty(distribuidores) || !distribuidores.$$gotAll) {
+    doGetDistrib();
+    return <Loading title="Distribuidores" />;
+  }
   // const { history } = useReactRouter();
   return (
-    (distribuidores || null) && (
-      <>
-        <h1>Puntos de Venta</h1>
-        <Table striped hover size="sm" responsive>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Contacto</th>
-              <th>Dirección</th>
-              <th>Localidad</th>
-              <th>Teléfono</th>
-              <th>e-Mail</th>
+    <>
+      <h1>Puntos de Venta</h1>
+      <Table striped hover size="sm" responsive>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Contacto</th>
+            <th>Dirección</th>
+            <th>Localidad</th>
+            <th>Teléfono</th>
+            <th>e-Mail</th>
 
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {Object.keys(distribuidores).map(id =>
-              Distribuidor(id, distribuidores[id])
-            )}
-          </tbody>
-        </Table>
-        <ButtonSet>
-          <ButtonIconAdd
-            onClick={() =>
-              setDistribuidor('Satyam', { nombre: 'Daniel Barreiro' })
-            }
-          >
-            Agregar
-          </ButtonIconAdd>
-          <ButtonIconDelete onClick={() => delDistribuidor('Satyam')}>
-            Borrar
-          </ButtonIconDelete>
-        </ButtonSet>
-        <pre>{JSON.stringify(distribuidores, null, 2)}</pre>
-      </>
-    )
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(distribuidores).map(id =>
+            id.startsWith('$$') ? null : Distribuidor(id, distribuidores[id])
+          )}
+        </tbody>
+      </Table>
+      <ButtonSet>
+        <ButtonIconAdd
+          onClick={() =>
+            setDistribuidor('Satyam', { nombre: 'Daniel Barreiro' })
+          }
+        >
+          Agregar
+        </ButtonIconAdd>
+        <ButtonIconDelete onClick={() => doDeleteDistribuidor('Satyam')}>
+          Borrar
+        </ButtonIconDelete>
+      </ButtonSet>
+      <pre>{JSON.stringify(distribuidores, null, 2)}</pre>
+    </>
   );
 }

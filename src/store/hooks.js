@@ -14,19 +14,20 @@ export function Provider({ store, children }) {
   return <Context.Provider value={store}>{children}</Context.Provider>;
 }
 
-export function useDispatch(fn, onMount, ...args) {
+export function useDispatch(fn) {
   const { dispatch } = useContext(Context);
-
-  if (typeof fn === 'undefined') return dispatch;
-
-  const dispatcher = (...args) => dispatch(fn(...args));
-  useEffect(() => {
-    if (onMount) {
-      dispatcher(...args);
-    }
-  }, []);
-  if (!onMount) {
-    return dispatcher;
+  switch (typeof fn) {
+    case 'undefined':
+      return dispatch;
+    case 'function':
+      return (...args) => dispatch(fn(...args));
+    case 'object':
+      if (Array.isArray(fn)) {
+        return fn.map(fn => (...args) => dispatch(fn(...args)));
+      }
+      break;
+    default:
+      break;
   }
 }
 export function useSelector(sel, ...args) {
