@@ -23,9 +23,16 @@ export function useDispatch(fn) {
       return (...args) => dispatch(fn(...args));
     case 'object':
       if (Array.isArray(fn)) {
-        return fn.map(fn => (...args) => dispatch(fn(...args)));
+        return fn.map(f => (...args) => dispatch(f(...args)));
+      } else {
+        return Object.keys(fn).reduce(
+          (result, name) => ({
+            ...result,
+            name: (...args) => dispatch(fn[name](...args))
+          }),
+          {}
+        );
       }
-      break;
     default:
       break;
   }
