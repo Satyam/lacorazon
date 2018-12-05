@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+}
+
+.header {
+    background-color: var(--primary);
+    color: var(--light);
+}
