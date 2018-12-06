@@ -6,7 +6,7 @@ import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 import Loading from './Loading';
 import { useDispatch, useSelector } from './store/hooks';
 import { getUsers, deleteUser } from './store/actions';
-import { NAME as USERS } from './store/users/constants';
+import { selUsers } from './store/selectors';
 
 function UserRow({ id, data, history, doDeleteUser }) {
   return (
@@ -25,7 +25,7 @@ function UserRow({ id, data, history, doDeleteUser }) {
 }
 
 export default function Users() {
-  const users = useSelector(USERS, true)();
+  const users = useSelector(selUsers, true)();
   const [doGetUsers, doDeleteUser] = useDispatch([getUsers, deleteUser]);
   if (isEmpty(users) || !users.$$gotAll) {
     doGetUsers();

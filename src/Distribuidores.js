@@ -17,7 +17,7 @@ import {
   deleteDistribuidor,
   setDistribuidor
 } from './store/actions';
-import { NAME as DISTRIBUIDORES } from './store/distribuidores/constants';
+import { selDistribuidores } from './store/selectors';
 
 function Distribuidor(id, data, doDeleteDistribuidor) {
   return (
@@ -40,7 +40,7 @@ function Distribuidor(id, data, doDeleteDistribuidor) {
 }
 
 export default function Distribuidores() {
-  const distribuidores = useSelector(DISTRIBUIDORES, true)();
+  const distribuidores = useSelector(selDistribuidores, true)();
   const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
     getDistribuidores,
     deleteDistribuidor

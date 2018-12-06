@@ -6,7 +6,7 @@ import { isEmpty } from './utils';
 import Loading from './Loading';
 import { getUser, setUser, deleteUser, userExists } from './store/actions';
 
-import { NAME as USERS } from './store/users/constants';
+import { selUser } from './store/selectors';
 
 import { useDispatch, useSelector } from './store/hooks';
 import userSchema from './store/users/schema';
@@ -14,7 +14,7 @@ import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 
 export default function User({ match }) {
   const id = match.params.id;
-  const user = useSelector(`${USERS}.$0`, true)(id);
+  const user = useSelector(selUser, true)(id);
   const [doGetUser, doSetUser, doDeleteUser] = useDispatch([
     getUser,
     setUser,
