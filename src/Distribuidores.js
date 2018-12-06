@@ -40,7 +40,7 @@ function Distribuidor(id, data, doDeleteDistribuidor) {
 }
 
 export default function Distribuidores() {
-  const distribuidores = useSelector(DISTRIBUIDORES);
+  const distribuidores = useSelector(DISTRIBUIDORES, true)();
   const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
     getDistribuidores,
     deleteDistribuidor

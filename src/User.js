@@ -14,7 +14,7 @@ import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 
 export default function User({ match }) {
   const id = match.params.id;
-  const user = useSelector(`${USERS}.$0`, id);
+  const user = useSelector(`${USERS}.$0`, true)(id);
   const [doGetUser, doSetUser, doDeleteUser] = useDispatch([
     getUser,
     setUser,

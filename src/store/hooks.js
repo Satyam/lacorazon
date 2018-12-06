@@ -37,9 +37,9 @@ export function useDispatch(fn) {
       break;
   }
 }
-export function useSelector(sel, ...args) {
-  const { getState, subscribe } = useContext(Context);
-  function doSelect() {
+
+function doSelect(getState, sel) {
+  return (...args) => {
     switch (typeof sel) {
       case 'string':
         return sel
@@ -60,12 +60,21 @@ export function useSelector(sel, ...args) {
       default:
         break;
     }
-  }
-  const [selection, setSelected] = useState(doSelect());
-  useEffect(() => {
-    return subscribe(() => {
-      setSelected(doSelect());
-    });
-  }, []);
-  return selection;
+  };
+}
+export function useSelector(selector, subs) {
+  return (...args) => {
+    const { subscribe, getState } = useContext(Context);
+    const sel = doSelect(getState, selector);
+    const [selection, setSelected] = useState(sel(...args));
+    useEffect(
+      () =>
+        subs &&
+        subscribe(() => {
+          setSelected(sel(...args));
+        }),
+      []
+    );
+    return selection;
+  };
 }
