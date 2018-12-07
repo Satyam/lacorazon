@@ -6,7 +6,7 @@ import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 import Loading from './Loading';
 import { useDispatch, useSelector } from './store/hooks';
 import { getUsers, deleteUser } from './store/actions';
-import { selUsers } from './store/selectors';
+import { selUsers, selUsersIsLoading, selUsersGotAll } from './store/selectors';
 
 function UserRow({ id, data, history, doDeleteUser }) {
   return (
@@ -25,9 +25,12 @@ function UserRow({ id, data, history, doDeleteUser }) {
 }
 
 export default function Users() {
-  const users = useSelector(selUsers, true)();
+  const [users, isLoading, gotAll] = useSelector(
+    [selUsers, selUsersIsLoading, selUsersGotAll],
+    true
+  ).map(sel => sel());
   const [doGetUsers, doDeleteUser] = useDispatch([getUsers, deleteUser]);
-  if (isEmpty(users) || !users.$$gotAll) {
+  if ((!isLoading && isEmpty(users)) || !gotAll) {
     doGetUsers();
     return <Loading title="Usuarios" />;
   }
@@ -47,9 +50,7 @@ export default function Users() {
         </thead>
         <tbody>
           {Object.keys(users).map(id =>
-            id.startsWith('$$')
-              ? null
-              : UserRow({ id, data: users[id], history, doDeleteUser })
+            UserRow({ id, data: users[id], history, doDeleteUser })
           )}
         </tbody>
       </Table>

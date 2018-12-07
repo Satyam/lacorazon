@@ -17,7 +17,11 @@ import {
   deleteDistribuidor,
   setDistribuidor
 } from './store/actions';
-import { selDistribuidores } from './store/selectors';
+import {
+  selDistribuidores,
+  selDistribuidoresIsLoading,
+  selDistribuidoresGotAll
+} from './store/selectors';
 
 function Distribuidor(id, data, doDeleteDistribuidor) {
   return (
@@ -40,12 +44,15 @@ function Distribuidor(id, data, doDeleteDistribuidor) {
 }
 
 export default function Distribuidores() {
-  const distribuidores = useSelector(selDistribuidores, true)();
+  const [distribuidores, isLoading, gotAll] = useSelector(
+    [selDistribuidores, selDistribuidoresIsLoading, selDistribuidoresGotAll],
+    true
+  ).map(sel => sel());
   const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
     getDistribuidores,
     deleteDistribuidor
   ]);
-  if (isEmpty(distribuidores) || !distribuidores.$$gotAll) {
+  if ((!isLoading && isEmpty(distribuidores)) || !gotAll) {
     doGetDistrib();
     return <Loading title="Distribuidores" />;
   }
@@ -69,7 +76,7 @@ export default function Distribuidores() {
         </thead>
         <tbody>
           {Object.keys(distribuidores).map(id =>
-            id.startsWith('$$') ? null : Distribuidor(id, distribuidores[id])
+            Distribuidor(id, distribuidores[id])
           )}
         </tbody>
       </Table>

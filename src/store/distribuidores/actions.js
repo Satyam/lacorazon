@@ -18,7 +18,7 @@ export const getDistribuidores = () => ({
 
 export const getDistribuidor = id => ({
   type: GET_DISTRIBUIDOR,
-  payload: { id },
+  id,
   promise: id
     ? db
         .collection(NAME)
@@ -30,23 +30,25 @@ export const getDistribuidor = id => ({
 
 export const setDistribuidor = data => ({
   type: SET_DISTRIBUIDOR,
+  id: data.id,
   payload: data,
   promise: db
     .collection(NAME)
     .doc(data.id)
     .set(data)
+    .then(() => data)
 });
 
 export const deleteDistribuidor = id => ({
   type: DELETE_DISTRIBUIDOR,
-  payload: { id },
+  id,
   promise: db
     .collection(NAME)
     .doc(id)
     .delete()
 });
 
-export const pdvExists = id =>
+export const distribuidorExists = id =>
   db
     .collection(NAME)
     .doc(schema.fields.id.cast(id))

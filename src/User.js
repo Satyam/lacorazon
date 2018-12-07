@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, TextField, SubmitButton } from './Form';
 import useReactRouter from 'use-react-router';
+import { Alert } from 'reactstrap';
 
 import { isEmpty } from './utils';
 import Loading from './Loading';
 import { getUser, setUser, deleteUser, userExists } from './store/actions';
 
-import { selUser } from './store/selectors';
+import { selUser, selUsersIsLoading } from './store/selectors';
 
 import { useDispatch, useSelector } from './store/hooks';
 import userSchema from './store/users/schema';
@@ -14,17 +15,26 @@ import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 
 export default function User({ match }) {
   const id = match.params.id;
-  const user = useSelector(selUser, true)(id);
+  const { history } = useReactRouter();
+  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], true).map(
+    fn => fn(id)
+  );
   const [doGetUser, doSetUser, doDeleteUser] = useDispatch([
     getUser,
     setUser,
     deleteUser
   ]);
-  if (id && isEmpty(user)) {
-    doGetUser(id);
-    return <Loading title="Usuario" />;
+  const [notFound, setNotFound] = useState(false);
+  if (notFound) {
+    return <Alert color="danger">El usuario no existe o fue borrado</Alert>;
+  } else if (id) {
+    if (!isLoading && isEmpty(user)) {
+      doGetUser(id).then(action => {
+        if (isEmpty(action.payload)) setNotFound(true);
+      });
+      return <Loading title="Usuario" />;
+    }
   }
-  const { history } = useReactRouter();
 
   return (
     <>

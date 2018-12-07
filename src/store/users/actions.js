@@ -12,7 +12,7 @@ export const getUsers = () => ({
 
 export const getUser = id => ({
   type: GET_USER,
-  payload: { id },
+  id,
   promise: id
     ? db
         .collection(NAME)
@@ -24,16 +24,18 @@ export const getUser = id => ({
 
 export const setUser = data => ({
   type: SET_USER,
+  id: data.id,
   payload: data,
   promise: db
     .collection(NAME)
     .doc(data.id)
     .set(data)
+    .then(res => data)
 });
 
 export const deleteUser = id => ({
   type: DELETE_USER,
-  payload: { id },
+  id,
   promise: db
     .collection(NAME)
     .doc(id)

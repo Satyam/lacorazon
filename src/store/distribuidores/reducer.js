@@ -12,25 +12,18 @@ import {
   DELETE_DISTRIBUIDOR
 } from './constants';
 
-export default (state = {}, { stage, type, payload = {}, error }) =>
+import { indexBy } from '../../utils';
+
+export default (state = {}, { stage, type, id, response, error }) =>
   produce(state, draft => {
-    const id = payload.id;
     switch (stage) {
       case REQUEST_SENT:
         switch (type) {
           case GET_DISTRIBUIDOR:
-            if (!(id in draft)) draft[id] = {};
-            draft[id].$$isLoading = true;
-            break;
           case GET_DISTRIBUIDORES:
-            draft.$$isLoading = true;
-            break;
           case SET_DISTRIBUIDOR:
-            if (!(id in draft)) draft[id] = {};
-            draft[id].$$isLoading = true;
-            break;
           case DELETE_DISTRIBUIDOR:
-            draft[id].$$isLoading = true;
+            draft.isLoading = true;
             break;
           default:
             break;
@@ -40,10 +33,11 @@ export default (state = {}, { stage, type, payload = {}, error }) =>
         switch (type) {
           case GET_DISTRIBUIDORES:
             draft = {
-              $$error: {
+              error: {
                 message: error,
                 actionType: type,
-                payload
+                id,
+                response
               }
             };
             break;
@@ -51,10 +45,11 @@ export default (state = {}, { stage, type, payload = {}, error }) =>
           case DELETE_DISTRIBUIDOR:
           case SET_DISTRIBUIDOR:
             draft[id] = {
-              $$error: {
+              error: {
                 message: error,
                 actionType: type,
-                payload
+                id,
+                response
               }
             };
             break;
@@ -65,20 +60,22 @@ export default (state = {}, { stage, type, payload = {}, error }) =>
       case REPLY_RECEIVED:
         switch (type) {
           case GET_DISTRIBUIDOR:
-            draft[id] = payload;
+            if (response) draft.data[id] = response;
+            draft.isLoading = false;
             break;
           case GET_DISTRIBUIDORES:
-            payload.list.forEach(pdv => {
-              draft[pdv.id] = pdv;
-            });
-            draft.$$gotAll = true;
-            delete draft.$$isLoading;
+            draft.data = indexBy(response, 'id');
+            draft.gotAll = true;
+            draft.isLoading = false;
             break;
           case SET_DISTRIBUIDOR:
-            draft[id] = payload;
+            draft.data[id] = response;
+            draft.isLoading = false;
+            draft.gotAll = false;
             break;
           case DELETE_DISTRIBUIDOR:
-            delete draft[id];
+            delete draft.data[id];
+            draft.isLoading = false;
             break;
           default:
             break;

@@ -8,73 +8,55 @@ import {
 
 import { GET_USERS, GET_USER, SET_USER, DELETE_USER } from './constants';
 
-export default (state = {}, { stage, type, payload = {}, error }) =>
+import { indexBy } from '../../utils';
+
+export default (
+  state = { data: {}, isLoading: false, gotAll: false },
+  { stage, type, id, response, error }
+) =>
   produce(state, draft => {
-    const id = payload.id;
     switch (stage) {
       case REQUEST_SENT:
         switch (type) {
           case GET_USER:
-            if (!(id in draft)) draft[id] = {};
-            draft[id].$$isLoading = true;
-            break;
           case GET_USERS:
-            draft.$$isLoading = true;
-            break;
           case SET_USER:
-            if (!(id in draft)) draft[id] = {};
-            draft[id].$$isLoading = true;
-            break;
           case DELETE_USER:
-            draft[id].$$isLoading = true;
+            draft.isLoading = true;
             break;
           default:
             break;
         }
         break;
       case FAILURE_RECEIVED:
-        switch (type) {
-          case GET_USERS:
-            draft = {
-              $$error: {
-                message: error,
-                actionType: type,
-                payload
-              }
-            };
-            break;
-          case GET_USER:
-          case DELETE_USER:
-          case SET_USER:
-            draft[id] = {
-              $$error: {
-                message: error,
-                actionType: type,
-                payload
-              }
-            };
-            break;
-          default:
-            break;
-        }
+        draft = {
+          error: {
+            message: error,
+            actionType: type,
+            id,
+            response
+          }
+        };
         break;
       case REPLY_RECEIVED:
         switch (type) {
           case GET_USER:
-            draft[id] = payload;
+            if (response) draft.data[id] = response;
+            draft.isLoading = false;
             break;
           case GET_USERS:
-            payload.list.forEach(user => {
-              draft[user.id] = user;
-            });
-            draft.$$gotAll = true;
-            delete draft.$$isLoading;
+            draft.data = indexBy(response, 'id');
+            draft.gotAll = true;
+            draft.isLoading = false;
             break;
           case SET_USER:
-            draft[id] = payload;
+            draft.data[id] = response;
+            draft.isLoading = false;
+            draft.gotAll = false;
             break;
           case DELETE_USER:
-            delete draft[id];
+            delete draft.data[id];
+            draft.isLoading = false;
             break;
           default:
             break;

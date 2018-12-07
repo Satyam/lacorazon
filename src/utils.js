@@ -4,3 +4,13 @@ export function isEmpty(obj) {
   }
   return true;
 }
+
+export function indexBy(array, key) {
+  return array.reduce(
+    (result, item) => ({
+      ...result,
+      [item[key]]: item
+    }),
+    {}
+  );
+}
