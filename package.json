@@ -1,47 +1,47 @@
 {
-  "name": "lacorazon",
-  "version": "0.1.0",
-  "description": "Administración ventas libro La Corazón",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.8",
-    "@fortawesome/free-solid-svg-icons": "^5.5.0",
-    "@fortawesome/react-fontawesome": "^0.1.3",
-    "bootstrap": "^4.1.3",
-    "classnames": "^2.2.6",
-    "formik": "^1.3.2",
-    "immer": "^1.7.4",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
-    "react-router-dom": "^4.4.0-beta.6",
-    "react-scripts": "2.1.1",
-    "reactstrap": "^6.5.0",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
-    "use-react-router": "^1.0.2",
-    "yup": "^0.26.6"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "upload": "node ./migrate/upload.js",
-    "analyze": "source-map-explorer build/static/js/main.* & source-map-explorer build/static/js/runtime*.* & source-map-explorer build/static/js/1.*"
-  },
-  "author": "Daniel Barreiro (Satyam)",
-  "license": "MIT",
-  "repository": "https://github.com/Satyam/lacorazon",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "firebase-admin": "^6.1.0",
-    "source-map-explorer": "^1.6.0"
-  }
+    "name": "lacorazon",
+    "version": "0.1.0",
+    "description": "Administración ventas libro La Corazón",
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.8",
+        "@fortawesome/free-solid-svg-icons": "^5.5.0",
+        "@fortawesome/react-fontawesome": "^0.1.3",
+        "bootstrap": "^4.1.3",
+        "classnames": "^2.2.6",
+        "formik": "^1.3.2",
+        "immer": "^1.8.0",
+        "react": "^16.7.0-alpha.2",
+        "react-dom": "^16.7.0-alpha.2",
+        "react-router-dom": "^4.4.0-beta.6",
+        "reactstrap": "^6.5.0",
+        "redux": "^4.0.1",
+        "redux-thunk": "^2.3.0",
+        "use-react-router": "^1.0.2",
+        "yup": "^0.26.6"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "upload": "node ./migrate/upload.js",
+        "analyze": "source-map-explorer build/static/js/main.* & source-map-explorer build/static/js/runtime*.* & source-map-explorer build/static/js/1.*"
+    },
+    "author": "Daniel Barreiro (Satyam)",
+    "license": "MIT",
+    "repository": "https://github.com/Satyam/lacorazon",
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "firebase-admin": "^6.3.0",
+        "react-scripts": "2.1.1",
+        "source-map-explorer": "^1.6.0"
+    }
 }
