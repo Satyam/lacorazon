@@ -160,7 +160,8 @@ export function useSelector(selector, subs, ...args) {
     () =>
       subs &&
       subscribe(() => {
-        setSelected(getState());
+        const newState = getState();
+        if (state !== newState) setSelected(newState);
       }),
     []
   );
