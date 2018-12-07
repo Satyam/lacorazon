@@ -80,8 +80,9 @@ export function useDispatch(fn) {
   }
 }
 
-function doSelect(state, sel) {
-  return (...args) => {
+// This one is used later:
+function doSelect(state, sel, ...args) {
+  const fn = (...args) => {
     switch (typeof sel) {
       case 'string':
         return sel
@@ -101,11 +102,12 @@ function doSelect(state, sel) {
         break;
     }
   };
+  return args ? fn(...args) : fn;
 }
 
 /*
  * Returns a function that, when called, will return a slice of the store
- * as given by the selector, and optionally subscribe to it
+ * as given by the selector, optionally subscribe to it and call it at once.
  *
  * `selector` can be one of:
  * * string: a dot-separated path to the slice of the store to be returned.
@@ -114,13 +116,19 @@ function doSelect(state, sel) {
  *   Numbers preceded with a `%` will be replaced by the argument given when called.
  *   The first argument is %0
  * * function: a selector function.  It will receive a snapshot of the store via `store.getState`
+ * * array of strings or functions: will return an array of selectors
+ * * object: will return an object of selectors, suitable to merge with an equal
+ *   object of dispatch-bound actions.
+ *
  * `subs`, if true, it will subscribe to the slice and re-render when changed
+ *
  * `...args` if provided, instead of returning a bound selector function it will
  *   call those selector functions with the given arguments
  *
  * // to read all the todo items in the store and re-render if they change.
  * // note the immediate execution of the resulting function, with no arguments
  * const getTodos = useSelector('todos', true);
+ *
  * // or, with a function:
  * const getTodos = useSelector(state => state.todos, true);
  *
@@ -142,6 +150,8 @@ function doSelect(state, sel) {
  *
  * // or all in one go:
  * const item3 = useSelector('todos.%0', false, 3);
+ * // in this case, since `subs` is false, the result is a snapshot
+ * // and will not refresh the component when the store changes.
  */
 export function useSelector(selector, subs, ...args) {
   const { subscribe, getState } = useContext(Context);
@@ -159,20 +169,14 @@ export function useSelector(selector, subs, ...args) {
       return getState;
     case 'function':
     case 'string':
-      return args
-        ? doSelect(state, selector)(...args)
-        : doSelect(state, selector);
+      return doSelect(state, selector, ...args);
     case 'object':
       if (Array.isArray(selector)) {
-        return selector.map(sel =>
-          args ? doSelect(state, sel)(...args) : doSelect(state, sel)
-        );
+        return selector.map(sel => doSelect(state, sel, ...args));
       } else {
         return Object.keys(selector).reduce((result, name) => ({
           ...result,
-          name: args
-            ? doSelect(state, selector[name])(...args)
-            : doSelect(state, selector[name])
+          name: doSelect(state, selector[name], ...args)
         }));
       }
     default:
