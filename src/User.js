@@ -16,9 +16,7 @@ import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 export default function User({ match }) {
   const id = match.params.id;
   const { history } = useReactRouter();
-  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], true).map(
-    fn => fn(id)
-  );
+  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], true, id);
   const [doGetUser, doSetUser, doDeleteUser] = useDispatch([
     getUser,
     setUser,

@@ -46,8 +46,9 @@ function Distribuidor(id, data, doDeleteDistribuidor) {
 export default function Distribuidores() {
   const [distribuidores, isLoading, gotAll] = useSelector(
     [selDistribuidores, selDistribuidoresIsLoading, selDistribuidoresGotAll],
-    true
-  ).map(sel => sel());
+    true,
+    null
+  );
   const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
     getDistribuidores,
     deleteDistribuidor

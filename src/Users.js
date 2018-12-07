@@ -27,8 +27,9 @@ function UserRow({ id, data, history, doDeleteUser }) {
 export default function Users() {
   const [users, isLoading, gotAll] = useSelector(
     [selUsers, selUsersIsLoading, selUsersGotAll],
-    true
-  ).map(sel => sel());
+    true,
+    null
+  );
   const [doGetUsers, doDeleteUser] = useDispatch([getUsers, deleteUser]);
   if ((!isLoading && isEmpty(users)) || !gotAll) {
     doGetUsers();

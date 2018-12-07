@@ -35,6 +35,7 @@ export function Provider({ store, children }) {
  * * Array of functions: Returns an array of bound functions.
  *   Same as calling it multiple times with a single function.
  * * Object: Same as with an array, but the functions as properties in an object
+ *   Suitable to merge with other objects to provide props to children
  *
  * ```
  * // Returns the dispatch function
@@ -44,13 +45,13 @@ export function Provider({ store, children }) {
  * const addTodo = useDispatch(addTodoActionCreator);
  * const toggleItem = useDispatch(toggleItemActionCreator);
  *
- * // Or, much easier:
+ * // Or, much easier and faster:
  * const [addTodo, toggleItem] = useDispatch([addTodoActionCreator, toggleItemActionCreator]);
  *
  * // Or, if you really want it:
  * const actions = useDispatch({addItem: addTodoActionCreator, toggleItem: toggleItemActionCreator});
  *
- * // then, you can do:
+ * // later, you can do:
  * addTodo(newItem);
  * // or, if an object was used:
  * actions.addItem(newItem);
@@ -110,10 +111,12 @@ function doSelect(state, sel) {
  * * string: a dot-separated path to the slice of the store to be returned.
  *   Very much like lodash `_.get()`.
  *   Numbers are allowed in path, to indicate array elements
- *   Numbers preceded with a `$` will be replaced by the argument given when called.
- *   the first argument is $0
+ *   Numbers preceded with a `%` will be replaced by the argument given when called.
+ *   The first argument is %0
  * * function: a selector function.  It will receive a snapshot of the store via `store.getState`
  * `subs`, if true, it will subscribe to the slice and re-render when changed
+ * `...args` if provided, instead of returning a bound selector function it will
+ *   call those selector functions with the given arguments
  *
  * // to read all the todo items in the store and re-render if they change.
  * // note the immediate execution of the resulting function, with no arguments
@@ -121,19 +124,26 @@ function doSelect(state, sel) {
  * // or, with a function:
  * const getTodos = useSelector(state => state.todos, true);
  *
- * // then, they can be called:
+ * // later, it can be called:
  * const todos = getTodos();
  *
+ * // or all at once:
+ * const todos = useSelector('todos', true, null);
+ * // the last null ensures the extra argument count is not 0, though the argument
+ * // is actually ignored by the selector.
+ *
  * // returns a function that can read any record:
- * const getItem = useSelector('todos.$0');
- * // or:
+ * const getItem = useSelector('todos.%0');
+ * // which is the same as:
  * const getItem = useSelector((state, id) => state.todos[id])
  *
  * // When needed, it can be called:
- * const item = getItem(3);
+ * const item3 = getItem(3);
  *
+ * // or all in one go:
+ * const item3 = useSelector('todos.%0', false, 3);
  */
-export function useSelector(selector, subs) {
+export function useSelector(selector, subs, ...args) {
   const { subscribe, getState } = useContext(Context);
   const [state, setSelected] = useState(getState());
   useEffect(
@@ -149,14 +159,20 @@ export function useSelector(selector, subs) {
       return getState;
     case 'function':
     case 'string':
-      return doSelect(state, selector);
+      return args
+        ? doSelect(state, selector)(...args)
+        : doSelect(state, selector);
     case 'object':
       if (Array.isArray(selector)) {
-        return selector.map(sel => doSelect(state, sel));
+        return selector.map(sel =>
+          args ? doSelect(state, sel)(...args) : doSelect(state, sel)
+        );
       } else {
         return Object.keys(selector).reduce((result, name) => ({
           ...result,
-          name: doSelect(state, selector[name])
+          name: args
+            ? doSelect(state, selector[name])(...args)
+            : doSelect(state, selector[name])
         }));
       }
     default:
