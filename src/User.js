@@ -28,7 +28,7 @@ export default function User({ match }) {
   } else if (id) {
     if (!isLoading && isEmpty(user)) {
       doGetUser(id).then(action => {
-        if (isEmpty(action.payload)) setNotFound(true);
+        if (!action.response) setNotFound(true);
       });
       return <Loading title="Usuario" />;
     }
