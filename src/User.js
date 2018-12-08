@@ -5,7 +5,6 @@ import { Alert } from 'reactstrap';
 
 import { isEmpty } from './utils';
 import Loading from './Loading';
-import Users from './Users';
 import { getUser, setUser, deleteUser, userExists } from './store/actions';
 
 import { selUser, selUsersIsLoading } from './store/selectors';
@@ -38,7 +37,6 @@ export default function User({ match }) {
   return (
     <>
       <h1>{id ? 'Edit' : 'Add'} Vendedor</h1>
-      <Users />
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>
