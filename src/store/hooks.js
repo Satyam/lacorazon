@@ -197,16 +197,18 @@ export function useSelector(selectors, ...args) {
   const [state, setState] = useState(() =>
     doSelectors(getState(), selectors, ...args)
   );
-  useEffect(() =>
-    subscribe(() => {
-      const newState = doSelectors(getState(), selectors, ...args);
-      if (typeof newState === 'object') {
-        if (Object.keys(newState).some(key => newState[key] !== state[key]))
-          setState(newState);
-      } else {
-        if (state !== newState) setState(newState);
-      }
-    })
+  useEffect(
+    () =>
+      subscribe(() => {
+        const newState = doSelectors(getState(), selectors, ...args);
+        if (typeof newState === 'object') {
+          if (Object.keys(newState).some(key => newState[key] !== state[key]))
+            setState(newState);
+        } else {
+          if (state !== newState) setState(newState);
+        }
+      }),
+    []
   );
   return state;
 }
