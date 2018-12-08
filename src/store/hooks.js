@@ -22,6 +22,13 @@ const Context = createContext(null);
  *
  */
 export function Provider({ store, children }) {
+  if (
+    typeof store !== 'object' &&
+    typeof store.dispatch !== 'function' &&
+    typeof store.getState !== 'function'
+  ) {
+    throw new Error('store property of Provider should be a Redux store');
+  }
   return <Context.Provider value={store}>{children}</Context.Provider>;
 }
 
@@ -80,107 +87,126 @@ export function useDispatch(fn) {
   }
 }
 
-// This one is used later:
-function doSelect(state, sel, ...args) {
-  const fn = (...args) => {
-    switch (typeof sel) {
-      case 'string':
-        return sel
-          .split('.')
-          .reduce(
-            (acc, prop) =>
-              typeof acc === 'object'
-                ? prop[0] === '%'
-                  ? acc[args[Number(prop.substr(1))]]
-                  : acc[prop]
-                : acc,
-            state
-          );
-      case 'function':
-        return sel(state, ...args);
-      default:
-        break;
-    }
-  };
-  return args ? fn(...args) : fn;
-}
-
-/*
- * Returns a function that, when called, will return a slice of the store
- * as given by the selector, optionally subscribe to it and call it at once.
- *
- * `selector` can be one of:
+/* Returns the current value of an individual selector
+ * @param {Object} state: the current state of the store from store.getState().
+ * @param {String or Function} sel, can be either:
  * * string: a dot-separated path to the slice of the store to be returned.
  *   Very much like lodash `_.get()`.
  *   Numbers are allowed in path, to indicate array elements
  *   Numbers preceded with a `%` will be replaced by the argument given when called.
  *   The first argument is %0
  * * function: a selector function.  It will receive a snapshot of the store via `store.getState`
- * * array of strings or functions: will return an array of selectors
- * * object: will return an object of selectors, suitable to merge with an equal
- *   object of dispatch-bound actions.
- *
- * `subs`, if true, it will subscribe to the slice and re-render when changed
- *
- * `...args` if provided, instead of returning a bound selector function it will
- *   call those selector functions with the given arguments
- *
- * // to read all the todo items in the store and re-render if they change.
- * // note the immediate execution of the resulting function, with no arguments
- * const getTodos = useSelector('todos', true);
- *
- * // or, with a function:
- * const getTodos = useSelector(state => state.todos, true);
- *
- * // later, it can be called:
- * const todos = getTodos();
- *
- * // or all at once:
- * const todos = useSelector('todos', true, null);
- * // the last null ensures the extra argument count is not 0, though the argument
- * // is actually ignored by the selector.
- *
- * // returns a function that can read any record:
- * const getItem = useSelector('todos.%0');
- * // which is the same as:
- * const getItem = useSelector((state, id) => state.todos[id])
- *
- * // When needed, it can be called:
- * const item3 = getItem(3);
- *
- * // or all in one go:
- * const item3 = useSelector('todos.%0', false, 3);
- * // in this case, since `subs` is false, the result is a snapshot
- * // and will not refresh the component when the store changes.
+ * @param {any} args: extra arguments to be provided to the selector.
+ *    a %0 in a string selector would be replaced by the first of these.
  */
-export function useSelector(selector, subs, ...args) {
-  const { subscribe, getState } = useContext(Context);
-  const [state, setSelected] = useState(getState());
-  useEffect(
-    () =>
-      subs &&
-      subscribe(() => {
-        const newState = getState();
-        if (state !== newState) setSelected(newState);
-      }),
-    []
-  );
-  switch (typeof selector) {
+function doSelect(state, sel, ...args) {
+  switch (typeof sel) {
+    case 'string':
+      return sel
+        .split('.')
+        .reduce(
+          (acc, prop) =>
+            typeof acc === 'object'
+              ? prop[0] === '%'
+                ? acc[args[Number(prop.substr(1))]]
+                : acc[prop]
+              : acc,
+          state
+        );
+    case 'function':
+      return sel(state, ...args);
+    default:
+      break;
+  }
+}
+
+/**
+ * Processes one or more selectors and returns their values.
+ * @param {object} state: as obtained from store.getState()
+ * @param {mixed} sels: one or more selector functions or strings
+ *  as understood by `doSelect` above.
+ * It can be:
+ * * undefined: it will return the current full state of the store
+ * * function or string: as per `doSelect` above, it will return the value selected
+ * * array of selectors: it will return an array with the values of each of the selectors
+ * * object with selectors as values: it will return an object with its properties set to the values selected
+ *   Such object is suitable to merge with a similar object of bound actions as produced by useDispatch
+ * @param {mixed} args extra arguments to be passed to the selectors
+ */
+
+function doSelectors(state, sels, ...args) {
+  switch (typeof sels) {
     case 'undefined':
-      return getState;
+      return state;
     case 'function':
     case 'string':
-      return doSelect(state, selector, ...args);
+      return doSelect(state, sels, ...args);
     case 'object':
-      if (Array.isArray(selector)) {
-        return selector.map(sel => doSelect(state, sel, ...args));
+      if (Array.isArray(sels)) {
+        return sels.map(sel => doSelect(state, sel, ...args));
       } else {
-        return Object.keys(selector).reduce((result, name) => ({
-          ...result,
-          name: doSelect(state, selector[name], ...args)
-        }));
+        return Object.keys(sels).reduce(
+          (result, key) => ({
+            ...result,
+            [key]: doSelect(state, sels[key], ...args)
+          }),
+          {}
+        );
       }
     default:
       break;
   }
+}
+
+/**
+ * Retrieves one or more selected values from the store,
+ * and subscribes to changes in them.
+ * The advantage of using multiple selectors in one call is that
+ * it has a single subscription for all of them.
+ *
+ * @param {mixed} selectors see `doSelectors` above
+ * @param {mixed} args arguments to be passed to all the selectors
+ *   If different selectors use different arguments, call useSelector multiple times.
+ *
+ * @example
+ * // to read all the todo items in the store.  The selector is a simple string.
+ * const todos = useSelector('todos');
+ *
+ * // or, with a function:
+ * const todos = useSelector(state => state.todos);
+ *
+ * // returns the element with id 3:
+ * const item3 = useSelector('todos.%0', 3);
+ * // which is the same as:
+ * const item3 = useSelector((state, id) => state.todos[id], 3)
+ *
+ * //Both can be read at once:
+ * const [todos, item3] = useSelector('todos', 'todos.%0', 3)
+ * // actually, the 'todos' selector ignores the extra argument
+ *
+ * // Using an object along useDispatch:
+ * const props = Object.assign(
+ *    useSelector({todos:'todos', item3: 'todos.%3'}, 3),
+ *    useDispatch({addItem: addTodoActionCreator, toggleItem: toggleItemActionCreator})
+ * )
+ * // which can be used with
+ * <div><SomeChild {...props} /></div>
+ */
+export function useSelector(selectors, ...args) {
+  const { subscribe, getState } = useContext(Context);
+  const [state, setState] = useState(() =>
+    doSelectors(getState(), selectors, ...args)
+  );
+  useEffect(() =>
+    subscribe(() => {
+      const newState = doSelectors(getState(), selectors, ...args);
+      if (typeof newState === 'object') {
+        if (Object.keys(newState).some(key => newState[key] !== state[key]))
+          setState(newState);
+      } else {
+        if (state !== newState) setState(newState);
+      }
+    })
+  );
+  return state;
 }

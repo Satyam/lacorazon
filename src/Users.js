@@ -25,13 +25,13 @@ function UserRow({ id, data, history, doDeleteUser }) {
 }
 
 export default function Users() {
-  const [users, isLoading, gotAll] = useSelector(
-    [selUsers, selUsersIsLoading, selUsersGotAll],
-    true,
-    null
-  );
+  const [users, isLoading, gotAll] = useSelector([
+    selUsers,
+    selUsersIsLoading,
+    selUsersGotAll
+  ]);
   const [doGetUsers, doDeleteUser] = useDispatch([getUsers, deleteUser]);
-  if ((!isLoading && isEmpty(users)) || !gotAll) {
+  if (!isLoading && (isEmpty(users) || !gotAll)) {
     doGetUsers();
     return <Loading title="Usuarios" />;
   }

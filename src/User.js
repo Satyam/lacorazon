@@ -5,6 +5,7 @@ import { Alert } from 'reactstrap';
 
 import { isEmpty } from './utils';
 import Loading from './Loading';
+import Users from './Users';
 import { getUser, setUser, deleteUser, userExists } from './store/actions';
 
 import { selUser, selUsersIsLoading } from './store/selectors';
@@ -16,7 +17,7 @@ import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
 export default function User({ match }) {
   const id = match.params.id;
   const { history } = useReactRouter();
-  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], true, id);
+  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], id);
   const [doGetUser, doSetUser, doDeleteUser] = useDispatch([
     getUser,
     setUser,
@@ -37,6 +38,7 @@ export default function User({ match }) {
   return (
     <>
       <h1>{id ? 'Edit' : 'Add'} Vendedor</h1>
+      <Users />
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>

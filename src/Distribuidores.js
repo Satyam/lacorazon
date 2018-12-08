@@ -44,11 +44,11 @@ function Distribuidor(id, data, doDeleteDistribuidor) {
 }
 
 export default function Distribuidores() {
-  const [distribuidores, isLoading, gotAll] = useSelector(
-    [selDistribuidores, selDistribuidoresIsLoading, selDistribuidoresGotAll],
-    true,
-    null
-  );
+  const [distribuidores, isLoading, gotAll] = useSelector([
+    selDistribuidores,
+    selDistribuidoresIsLoading,
+    selDistribuidoresGotAll
+  ]);
   const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
     getDistribuidores,
     deleteDistribuidor

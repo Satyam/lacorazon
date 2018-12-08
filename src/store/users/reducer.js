@@ -11,7 +11,7 @@ import { GET_USERS, GET_USER, SET_USER, DELETE_USER } from './constants';
 import { indexBy } from '../../utils';
 
 export default (
-  state = { data: {}, isLoading: false, gotAll: false },
+  state = { data: {}, isLoading: 0, gotAll: false },
   { stage, type, id, response, error }
 ) =>
   produce(state, draft => {
@@ -22,7 +22,7 @@ export default (
           case GET_USERS:
           case SET_USER:
           case DELETE_USER:
-            draft.isLoading = true;
+            draft.isLoading++;
             break;
           default:
             break;
@@ -42,21 +42,21 @@ export default (
         switch (type) {
           case GET_USER:
             if (response) draft.data[id] = response;
-            draft.isLoading = false;
+            draft.isLoading--;
             break;
           case GET_USERS:
             draft.data = indexBy(response, 'id');
             draft.gotAll = true;
-            draft.isLoading = false;
+            draft.isLoading--;
             break;
           case SET_USER:
             draft.data[id] = response;
-            draft.isLoading = false;
+            draft.isLoading--;
             draft.gotAll = false;
             break;
           case DELETE_USER:
             delete draft.data[id];
-            draft.isLoading = false;
+            draft.isLoading--;
             break;
           default:
             break;
