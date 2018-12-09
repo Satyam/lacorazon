@@ -14,7 +14,10 @@ import {
 
 import { indexBy } from '../../utils';
 
-export default (state = {}, { stage, type, id, response, error }) =>
+export default (
+  state = { data: {}, isLoading: 0, gotAll: false },
+  { stage, type, id, response, error }
+) =>
   produce(state, draft => {
     switch (stage) {
       case REQUEST_SENT:
@@ -23,7 +26,7 @@ export default (state = {}, { stage, type, id, response, error }) =>
           case GET_DISTRIBUIDORES:
           case SET_DISTRIBUIDOR:
           case DELETE_DISTRIBUIDOR:
-            draft.isLoading = true;
+            draft.isLoading++;
             break;
           default:
             break;
@@ -61,21 +64,21 @@ export default (state = {}, { stage, type, id, response, error }) =>
         switch (type) {
           case GET_DISTRIBUIDOR:
             if (response) draft.data[id] = response;
-            draft.isLoading = false;
+            draft.isLoading--;
             break;
           case GET_DISTRIBUIDORES:
             draft.data = indexBy(response, 'id');
             draft.gotAll = true;
-            draft.isLoading = false;
+            draft.isLoading--;
             break;
           case SET_DISTRIBUIDOR:
             draft.data[id] = response;
-            draft.isLoading = false;
+            draft.isLoading--;
             draft.gotAll = false;
             break;
           case DELETE_DISTRIBUIDOR:
             delete draft.data[id];
-            draft.isLoading = false;
+            draft.isLoading--;
             break;
           default:
             break;
