@@ -8,6 +8,7 @@ import ErrorBoundary from './ErrorBoundary';
 import Users from './Users';
 import User from './User';
 import Distribuidores from './Distribuidores';
+import Distribuidor from './Distribuidor';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
                       <Route
                         path="/distribuidores"
                         component={Distribuidores}
+                      />
+                      <Route
+                        path="/distribuidor/:id?"
+                        component={Distribuidor}
                       />
                     </div>
                   </ErrorBoundary>

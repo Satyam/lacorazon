@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup, Table } from 'reactstrap';
-
+import useReactRouter from 'use-react-router';
 import {
   ButtonIconAdd,
   ButtonIconEdit,
@@ -12,18 +12,15 @@ import { useDispatch, useSelector } from './store/hooks';
 import { isEmpty } from './utils';
 import Loading from './Loading';
 
-import {
-  getDistribuidores,
-  deleteDistribuidor,
-  setDistribuidor
-} from './store/actions';
+import { getDistribuidores, deleteDistribuidor } from './store/actions';
+
 import {
   selDistribuidores,
   selDistribuidoresIsLoading,
   selDistribuidoresGotAll
 } from './store/selectors';
 
-function Distribuidor(id, data, doDeleteDistribuidor) {
+function Distribuidor(id, data, history, doDeleteDistribuidor) {
   return (
     <tr key={id}>
       <td>{id}</td>
@@ -35,8 +32,8 @@ function Distribuidor(id, data, doDeleteDistribuidor) {
       <td>{data.email}</td>
       <td>
         <ButtonGroup size="sm">
-          <ButtonIconEdit onClick={() => console.log('edit', id)} />
-          <ButtonIconDelete onClick={() => console.log('delete', id)} />
+          <ButtonIconEdit onClick={() => history.push(`/distribuidor/${id}`)} />
+          <ButtonIconDelete onClick={() => doDeleteDistribuidor(id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -57,10 +54,10 @@ export default function Distribuidores() {
     doGetDistrib();
     return <Loading title="Distribuidores" />;
   }
-  // const { history } = useReactRouter();
+  const { history } = useReactRouter();
   return (
     <>
-      <h1>Puntos de Venta</h1>
+      <h1>Distribuidores</h1>
       <Table striped hover size="sm" responsive>
         <thead>
           <tr>
@@ -77,23 +74,15 @@ export default function Distribuidores() {
         </thead>
         <tbody>
           {Object.keys(distribuidores).map(id =>
-            Distribuidor(id, distribuidores[id])
+            Distribuidor(id, distribuidores[id], history, doDeleteDistribuidor)
           )}
         </tbody>
       </Table>
       <ButtonSet>
-        <ButtonIconAdd
-          onClick={() =>
-            setDistribuidor('Satyam', { nombre: 'Daniel Barreiro' })
-          }
-        >
+        <ButtonIconAdd onClick={() => history.push('/distribuidor')}>
           Agregar
         </ButtonIconAdd>
-        <ButtonIconDelete onClick={() => doDeleteDistribuidor('Satyam')}>
-          Borrar
-        </ButtonIconDelete>
       </ButtonSet>
-      <pre>{JSON.stringify(distribuidores, null, 2)}</pre>
     </>
   );
 }
