@@ -59,12 +59,10 @@ export default (
           case ADD_USER:
             draft.data[response.id] = response;
             draft.isLoading--;
-            draft.gotAll = false;
             break;
           case UPDATE_USER:
             draft.data[id] = response;
             draft.isLoading--;
-            draft.gotAll = false;
             break;
           case DELETE_USER:
             delete draft.data[id];

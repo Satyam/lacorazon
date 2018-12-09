@@ -2,7 +2,8 @@ import {
   NAME,
   GET_DISTRIBUIDORES,
   GET_DISTRIBUIDOR,
-  SET_DISTRIBUIDOR,
+  ADD_DISTRIBUIDOR,
+  UPDATE_DISTRIBUIDOR,
   DELETE_DISTRIBUIDOR
 } from './constants';
 import db from '../firestore';
@@ -13,7 +14,9 @@ export const getDistribuidores = () => ({
   promise: db
     .collection(NAME)
     .get()
-    .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()))
+    .then(querySnapshot =>
+      querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+    )
 });
 
 export const getDistribuidor = id => ({
@@ -24,21 +27,29 @@ export const getDistribuidor = id => ({
         .collection(NAME)
         .doc(id)
         .get()
-        .then(doc => doc.data())
+        .then(doc => doc.exists && { ...doc.data(), id })
     : {}
 });
 
-export const setDistribuidor = data => ({
-  type: SET_DISTRIBUIDOR,
-  id: data.id,
+export const addDistribuidor = data => ({
+  type: ADD_DISTRIBUIDOR,
   payload: data,
   promise: db
     .collection(NAME)
-    .doc(data.id)
-    .set(data)
-    .then(() => data)
+    .add(data)
+    .then(doc => ({ ...data, id: doc.id }))
 });
 
+export const updateDistribuidor = (id, data) => ({
+  type: UPDATE_DISTRIBUIDOR,
+  id,
+  payload: data,
+  promise: db
+    .collection(NAME)
+    .doc(id)
+    .set(data)
+    .then(res => ({ ...data, id }))
+});
 export const deleteDistribuidor = id => ({
   type: DELETE_DISTRIBUIDOR,
   id,

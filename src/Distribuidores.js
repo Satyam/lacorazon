@@ -23,7 +23,6 @@ import {
 function Distribuidor(id, data, history, doDeleteDistribuidor) {
   return (
     <tr key={id}>
-      <td>{id}</td>
       <td>{data.nombre}</td>
       <td>{data.contacto}</td>
       <td style={{ whiteSpace: 'pre-line' }}>{data.direccion}</td>
@@ -61,7 +60,6 @@ export default function Distribuidores() {
       <Table striped hover size="sm" responsive>
         <thead>
           <tr>
-            <th>Id</th>
             <th>Nombre</th>
             <th>Contacto</th>
             <th>Dirección</th>

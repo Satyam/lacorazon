@@ -7,9 +7,9 @@ import { isEmpty } from './utils';
 import Loading from './Loading';
 import {
   getDistribuidor,
-  setDistribuidor,
-  deleteDistribuidor,
-  distribuidorExists
+  addDistribuidor,
+  updateDistribuidor,
+  deleteDistribuidor
 } from './store/actions';
 
 import { selDistribuidor, selDistribuidoresIsLoading } from './store/selectors';
@@ -27,9 +27,15 @@ export default function Distribuidor({ match }) {
   );
   const [
     doGetDistribuidor,
-    doSetDistribuidor,
+    doAddDistribuidor,
+    doUpdateDistribuidor,
     doDeleteDistribuidor
-  ] = useDispatch([getDistribuidor, setDistribuidor, deleteDistribuidor]);
+  ] = useDispatch([
+    getDistribuidor,
+    addDistribuidor,
+    updateDistribuidor,
+    deleteDistribuidor
+  ]);
   const [notFound, setNotFound] = useState(false);
   if (notFound) {
     return (
@@ -50,9 +56,9 @@ export default function Distribuidor({ match }) {
       <Form
         values={distribuidor}
         onSubmit={(values, { setFieldError }) =>
-          doSetDistribuidor(values)
-            .then(() => {
-              history.replace(`/distribuidor/${values.id}`);
+          (id ? doUpdateDistribuidor(id, values) : doAddDistribuidor(values))
+            .then(({ response }) => {
+              history.replace(`/distribuidor/${response.id}`);
             })
             .catch(err => {
               setFieldError('*', err);
@@ -60,21 +66,6 @@ export default function Distribuidor({ match }) {
         }
         schema={distribuidorSchema}
       >
-        <TextField
-          name="id"
-          label="Código"
-          disabled={!!id}
-          validate={value =>
-            id
-              ? ''
-              : distribuidorExists(value).then(exists => {
-                  if (exists) {
-                    // eslint-disable-next-line no-throw-literal
-                    throw `Código de usuario [${value}] ya existe`;
-                  }
-                })
-          }
-        />
         <TextField name="email" label="eMail" />
         <TextField name="nombre" label="Nombre" />
         <TextField name="entregados" label="entregados" />

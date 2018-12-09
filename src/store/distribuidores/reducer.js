@@ -8,7 +8,8 @@ import {
 import {
   GET_DISTRIBUIDORES,
   GET_DISTRIBUIDOR,
-  SET_DISTRIBUIDOR,
+  ADD_DISTRIBUIDOR,
+  UPDATE_DISTRIBUIDOR,
   DELETE_DISTRIBUIDOR
 } from './constants';
 
@@ -24,7 +25,8 @@ export default (
         switch (type) {
           case GET_DISTRIBUIDOR:
           case GET_DISTRIBUIDORES:
-          case SET_DISTRIBUIDOR:
+          case ADD_DISTRIBUIDOR:
+          case UPDATE_DISTRIBUIDOR:
           case DELETE_DISTRIBUIDOR:
             draft.isLoading++;
             break;
@@ -33,32 +35,14 @@ export default (
         }
         break;
       case FAILURE_RECEIVED:
-        switch (type) {
-          case GET_DISTRIBUIDORES:
-            draft = {
-              error: {
-                message: error,
-                actionType: type,
-                id,
-                response
-              }
-            };
-            break;
-          case GET_DISTRIBUIDOR:
-          case DELETE_DISTRIBUIDOR:
-          case SET_DISTRIBUIDOR:
-            draft[id] = {
-              error: {
-                message: error,
-                actionType: type,
-                id,
-                response
-              }
-            };
-            break;
-          default:
-            break;
-        }
+        draft = {
+          error: {
+            message: error,
+            actionType: type,
+            id,
+            response
+          }
+        };
         break;
       case REPLY_RECEIVED:
         switch (type) {
@@ -71,10 +55,13 @@ export default (
             draft.gotAll = true;
             draft.isLoading--;
             break;
-          case SET_DISTRIBUIDOR:
+          case ADD_DISTRIBUIDOR:
             draft.data[id] = response;
             draft.isLoading--;
-            draft.gotAll = false;
+            break;
+          case UPDATE_DISTRIBUIDOR:
+            draft.data[id] = response;
+            draft.isLoading--;
             break;
           case DELETE_DISTRIBUIDOR:
             delete draft.data[id];

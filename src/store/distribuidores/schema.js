@@ -1,11 +1,6 @@
 import { object, string, number } from 'yup';
 
 export default object().shape({
-  id: string()
-    .required()
-    .trim()
-    .lowercase()
-    .default(''),
   nombre: string()
     .required()
     .trim()
