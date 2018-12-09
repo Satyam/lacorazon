@@ -11,7 +11,6 @@ import { selUsers, selUsersIsLoading, selUsersGotAll } from './store/selectors';
 function UserRow({ id, data, history, doDeleteUser }) {
   return (
     <tr key={id}>
-      <td>{id}</td>
       <td>{data.email}</td>
       <td>{data.nombre}</td>
       <td>
@@ -43,7 +42,6 @@ export default function Users() {
       <Table striped hover size="sm" responsive>
         <thead>
           <tr>
-            <th>Código</th>
             <th>Alias</th>
             <th>Nombre</th>
             <th />

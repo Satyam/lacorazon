@@ -5,7 +5,7 @@ import { Alert } from 'reactstrap';
 
 import { isEmpty } from './utils';
 import Loading from './Loading';
-import { getUser, setUser, deleteUser, userExists } from './store/actions';
+import { getUser, addUser, updateUser, deleteUser } from './store/actions';
 
 import { selUser, selUsersIsLoading } from './store/selectors';
 
@@ -17,9 +17,10 @@ export default function User({ match }) {
   const id = match.params.id;
   const { history } = useReactRouter();
   const [user, isLoading] = useSelector([selUser, selUsersIsLoading], id);
-  const [doGetUser, doSetUser, doDeleteUser] = useDispatch([
+  const [doGetUser, doAddUser, doUpdateUser, doDeleteUser] = useDispatch([
     getUser,
-    setUser,
+    addUser,
+    updateUser,
     deleteUser
   ]);
   const [notFound, setNotFound] = useState(false);
@@ -40,9 +41,9 @@ export default function User({ match }) {
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>
-          doSetUser(values)
-            .then(() => {
-              history.replace(`/user/${values.id}`);
+          (id ? doUpdateUser(id, values) : doAddUser(values))
+            .then(({ response }) => {
+              history.replace(`/user/${response.id}`);
             })
             .catch(err => {
               setFieldError('*', err);
@@ -50,21 +51,6 @@ export default function User({ match }) {
         }
         schema={userSchema}
       >
-        <TextField
-          name="id"
-          label="Código"
-          disabled={!!id}
-          validate={value =>
-            id
-              ? ''
-              : userExists(value).then(exists => {
-                  if (exists) {
-                    // eslint-disable-next-line no-throw-literal
-                    throw `Código de usuario [${value}] ya existe`;
-                  }
-                })
-          }
-        />
         <TextField name="email" label="eMail" />
         <TextField name="nombre" label="Nombre" />
         <ButtonSet>

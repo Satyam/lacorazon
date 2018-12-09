@@ -6,7 +6,13 @@ import {
   FAILURE_RECEIVED
 } from '../promiseMiddleware';
 
-import { GET_USERS, GET_USER, SET_USER, DELETE_USER } from './constants';
+import {
+  GET_USERS,
+  GET_USER,
+  ADD_USER,
+  UPDATE_USER,
+  DELETE_USER
+} from './constants';
 
 import { indexBy } from '../../utils';
 
@@ -20,7 +26,8 @@ export default (
         switch (type) {
           case GET_USER:
           case GET_USERS:
-          case SET_USER:
+          case ADD_USER:
+          case UPDATE_USER:
           case DELETE_USER:
             draft.isLoading++;
             break;
@@ -49,7 +56,12 @@ export default (
             draft.gotAll = true;
             draft.isLoading--;
             break;
-          case SET_USER:
+          case ADD_USER:
+            draft.data[response.id] = response;
+            draft.isLoading--;
+            draft.gotAll = false;
+            break;
+          case UPDATE_USER:
             draft.data[id] = response;
             draft.isLoading--;
             draft.gotAll = false;
