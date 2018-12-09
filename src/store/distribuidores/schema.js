@@ -24,7 +24,7 @@ export default object().shape({
     .default(''),
   telefono: string()
     .trim()
-    .matches(/[\n\s\-()]+/, { excludeEmptyString: true })
+    .matches(/[\d\s\-()]+/, { excludeEmptyString: true })
     .default(''),
   email: string()
     .trim()
