@@ -3,7 +3,6 @@ import {
   Form as BSForm,
   FormGroup,
   Label,
-  Input,
   FormFeedback,
   FormText,
   Alert,
@@ -52,9 +51,9 @@ export function TextField({ name, label, rows, help, validate, ...rest }) {
         {label}
       </Label>
       <Col xs={12} lg={8}>
-        <Input
-          tag={KField}
-          type={rows ? 'textarea' : 'text'}
+        <KField
+          component={rows ? 'textarea' : 'input'}
+          className="form-control"
           rows={rows}
           name={name}
           id={name}
