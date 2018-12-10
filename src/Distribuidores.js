@@ -24,11 +24,19 @@ function Distribuidor(id, data, history, doDeleteDistribuidor) {
   return (
     <tr key={id}>
       <td>{data.nombre}</td>
-      <td>{data.contacto}</td>
-      <td style={{ whiteSpace: 'pre-line' }}>{data.direccion}</td>
-      <td>{data.localidad}</td>
-      <td>{data.telefono}</td>
-      <td>{data.email}</td>
+      <td>
+        {data.contacto}
+        <hr />
+        {data.telefono}
+      </td>
+      <td style={{ whiteSpace: 'pre-line' }}>
+        {data.direccion}
+        <hr />
+        {data.localidad}
+      </td>
+      <td style={{ whiteSpace: 'pre-line' }}>
+        {(data.email || '').replace('@', '\n@')}
+      </td>
       <td>
         <ButtonGroup size="sm">
           <ButtonIconEdit onClick={() => history.push(`/distribuidor/${id}`)} />
@@ -61,10 +69,16 @@ export default function Distribuidores() {
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Contacto</th>
-            <th>Dirección</th>
-            <th>Localidad</th>
-            <th>Teléfono</th>
+            <th>
+              Contacto
+              <br />
+              Teléfono
+            </th>
+            <th>
+              Dirección
+              <br />
+              Localidad
+            </th>
             <th>e-Mail</th>
 
             <th />
