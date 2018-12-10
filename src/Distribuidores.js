@@ -11,6 +11,7 @@ import {
 import { useDispatch, useSelector } from './store/hooks';
 import { isEmpty } from './utils';
 import Loading from './Loading';
+import Page from './Page';
 
 import { getDistribuidores, deleteDistribuidor } from './store/actions';
 
@@ -24,17 +25,13 @@ function Distribuidor(id, data, history, doDeleteDistribuidor) {
   return (
     <tr key={id}>
       <td>{data.nombre}</td>
-      <td>
-        {data.contacto}
-        <hr />
-        {data.telefono}
-      </td>
-      <td style={{ whiteSpace: 'pre-line' }}>
+      <td>{data.contacto}</td>
+      <td>{data.telefono}</td>
+      <td style={{ whiteSpace: 'pre-line', fontSize: 'small' }}>
         {data.direccion}
-        <hr />
-        {data.localidad}
       </td>
-      <td style={{ whiteSpace: 'pre-line' }}>
+      <td>{data.localidad}</td>
+      <td style={{ whiteSpace: 'pre-line', fontSize: 'small' }}>
         {(data.email || '').replace('@', '\n@')}
       </td>
       <td>
@@ -63,22 +60,15 @@ export default function Distribuidores() {
   }
   const { history } = useReactRouter();
   return (
-    <>
-      <h1>Distribuidores</h1>
+    <Page wide title="Distribuidores" heading="Distribuidores">
       <Table striped hover size="sm" responsive>
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>
-              Contacto
-              <br />
-              Teléfono
-            </th>
-            <th>
-              Dirección
-              <br />
-              Localidad
-            </th>
+            <th>Contacto</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Localidad</th>
             <th>e-Mail</th>
 
             <th />
@@ -95,6 +85,6 @@ export default function Distribuidores() {
           Agregar
         </ButtonIconAdd>
       </ButtonSet>
-    </>
+    </Page>
   );
 }

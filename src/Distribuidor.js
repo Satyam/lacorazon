@@ -17,6 +17,7 @@ import { selDistribuidor, selDistribuidoresIsLoading } from './store/selectors';
 import { useDispatch, useSelector } from './store/hooks';
 import distribuidorSchema from './store/distribuidores/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
+import Page from './Page';
 
 export default function Distribuidor({ match }) {
   const id = match.params.id;
@@ -51,8 +52,10 @@ export default function Distribuidor({ match }) {
   }
 
   return (
-    <>
-      <h1>{id ? 'Edit' : 'Add'} Distribuidor</h1>
+    <Page
+      title={`Distribuidor - ${distribuidor.nombre}`}
+      heading={`${id ? 'Edit' : 'Add'} Distribuidor`}
+    >
       <Form
         values={distribuidor}
         onSubmit={(values, { setFieldError }) =>
@@ -90,6 +93,6 @@ export default function Distribuidor({ match }) {
           </ButtonIconDelete>
         </ButtonSet>
       </Form>
-    </>
+    </Page>
   );
 }

@@ -5,6 +5,7 @@ import { Alert } from 'reactstrap';
 
 import { isEmpty } from './utils';
 import Loading from './Loading';
+import Page from './Page';
 import { getUser, addUser, updateUser, deleteUser } from './store/actions';
 
 import { selUser, selUsersIsLoading } from './store/selectors';
@@ -36,8 +37,10 @@ export default function User({ match }) {
   }
 
   return (
-    <>
-      <h1>{id ? 'Edit' : 'Add'} Vendedor</h1>
+    <Page
+      title={`Vendedor - ${user.nombre}`}
+      heading={`${id ? 'Edit' : 'Add'} Vendedor`}
+    >
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>
@@ -67,6 +70,6 @@ export default function User({ match }) {
           </ButtonIconDelete>
         </ButtonSet>
       </Form>
-    </>
+    </Page>
   );
 }

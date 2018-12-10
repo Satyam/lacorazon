@@ -4,6 +4,8 @@ import useReactRouter from 'use-react-router';
 import { isEmpty } from './utils';
 import { ButtonIconAdd, ButtonIconEdit, ButtonIconDelete } from './Icons';
 import Loading from './Loading';
+import Page from './Page';
+
 import { useDispatch, useSelector } from './store/hooks';
 import { getUsers, deleteUser } from './store/actions';
 import { selUsers, selUsersIsLoading, selUsersGotAll } from './store/selectors';
@@ -37,8 +39,7 @@ export default function Users() {
 
   const { history } = useReactRouter();
   return (
-    <>
-      <h1>Vendedores</h1>
+    <Page title="Vendedores" heading="Vendedores">
       <Table striped hover size="sm" responsive>
         <thead>
           <tr>
@@ -62,6 +63,6 @@ export default function Users() {
       >
         Agregar
       </ButtonIconAdd>
-    </>
+    </Page>
   );
 }
