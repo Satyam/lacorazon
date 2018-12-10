@@ -13,7 +13,7 @@ import { isEmpty } from './utils';
 import Loading from './Loading';
 import Page from './Page';
 
-import { getDistribuidores, deleteDistribuidor } from './store/actions';
+import { acGetDistribuidores, acDeleteDistribuidor } from './store/actions';
 
 import {
   selDistribuidores,
@@ -21,7 +21,7 @@ import {
   selDistribuidoresGotAll
 } from './store/selectors';
 
-function Distribuidor(id, data, history, doDeleteDistribuidor) {
+function Distribuidor(id, data, history, deleteDistribuidor) {
   return (
     <tr key={id}>
       <td>{data.nombre}</td>
@@ -37,7 +37,7 @@ function Distribuidor(id, data, history, doDeleteDistribuidor) {
       <td>
         <ButtonGroup size="sm">
           <ButtonIconEdit onClick={() => history.push(`/distribuidor/${id}`)} />
-          <ButtonIconDelete onClick={() => doDeleteDistribuidor(id)} />
+          <ButtonIconDelete onClick={() => deleteDistribuidor(id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -50,12 +50,12 @@ export default function Distribuidores() {
     selDistribuidoresIsLoading,
     selDistribuidoresGotAll
   ]);
-  const [doGetDistrib, doDeleteDistribuidor] = useDispatch([
-    getDistribuidores,
-    deleteDistribuidor
+  const [getDistrib, deleteDistribuidor] = useDispatch([
+    acGetDistribuidores,
+    acDeleteDistribuidor
   ]);
   if ((!isLoading && isEmpty(distribuidores)) || !gotAll) {
-    doGetDistrib();
+    getDistrib();
     return <Loading title="Distribuidores" />;
   }
   const { history } = useReactRouter();
@@ -76,7 +76,7 @@ export default function Distribuidores() {
         </thead>
         <tbody>
           {Object.keys(distribuidores).map(id =>
-            Distribuidor(id, distribuidores[id], history, doDeleteDistribuidor)
+            Distribuidor(id, distribuidores[id], history, deleteDistribuidor)
           )}
         </tbody>
       </Table>

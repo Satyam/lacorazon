@@ -9,7 +9,7 @@ import {
 import db from '../firestore';
 import schema from './schema';
 
-export const getDistribuidores = () => ({
+export const acGetDistribuidores = () => ({
   type: GET_DISTRIBUIDORES,
   promise: db
     .collection(NAME)
@@ -17,7 +17,7 @@ export const getDistribuidores = () => ({
     .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()))
 });
 
-export const getDistribuidor = id => ({
+export const acGetDistribuidor = id => ({
   type: GET_DISTRIBUIDOR,
   id,
   promise: id
@@ -29,7 +29,7 @@ export const getDistribuidor = id => ({
     : {}
 });
 
-export const addDistribuidor = data => ({
+export const acAddDistribuidor = data => ({
   type: ADD_DISTRIBUIDOR,
   payload: data,
   promise: db
@@ -38,7 +38,7 @@ export const addDistribuidor = data => ({
     .then(doc => ({ ...data, id: doc.id }))
 });
 
-export const updateDistribuidor = (id, data) => ({
+export const acUpdateDistribuidor = (id, data) => ({
   type: UPDATE_DISTRIBUIDOR,
   id,
   payload: data,
@@ -48,7 +48,7 @@ export const updateDistribuidor = (id, data) => ({
     .set(data)
     .then(() => data)
 });
-export const deleteDistribuidor = id => ({
+export const acDeleteDistribuidor = id => ({
   type: DELETE_DISTRIBUIDOR,
   id,
   promise: db

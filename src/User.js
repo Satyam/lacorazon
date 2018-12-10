@@ -6,7 +6,12 @@ import { Alert } from 'reactstrap';
 import { isEmpty } from './utils';
 import Loading from './Loading';
 import Page from './Page';
-import { getUser, addUser, updateUser, deleteUser } from './store/actions';
+import {
+  acGetUser,
+  acAddUser,
+  acUpdateUser,
+  acDeleteUser
+} from './store/actions';
 
 import { selUser, selUsersIsLoading } from './store/selectors';
 
@@ -18,18 +23,18 @@ export default function User({ match }) {
   const id = match.params.id;
   const { history } = useReactRouter();
   const [user, isLoading] = useSelector([selUser, selUsersIsLoading], id);
-  const [doGetUser, doAddUser, doUpdateUser, doDeleteUser] = useDispatch([
-    getUser,
-    addUser,
-    updateUser,
-    deleteUser
+  const [getUser, addUser, updateUser, deleteUser] = useDispatch([
+    acGetUser,
+    acAddUser,
+    acUpdateUser,
+    acDeleteUser
   ]);
   const [notFound, setNotFound] = useState(false);
   if (notFound) {
     return <Alert color="danger">El usuario no existe o fue borrado</Alert>;
   } else if (id) {
     if (!isLoading && isEmpty(user)) {
-      doGetUser(id).then(action => {
+      getUser(id).then(action => {
         if (!action.response) setNotFound(true);
       });
       return <Loading title="Usuario" />;
@@ -38,13 +43,13 @@ export default function User({ match }) {
 
   return (
     <Page
-      title={`Vendedor - ${user.nombre}`}
+      title={`Vendedor - ${user ? user.nombre : 'nuevo'}`}
       heading={`${id ? 'Edit' : 'Add'} Vendedor`}
     >
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>
-          (id ? doUpdateUser(id, values) : doAddUser(values))
+          (id ? updateUser(id, values) : addUser(values))
             .then(({ response }) => {
               history.replace(`/user/${response.id}`);
             })
@@ -63,7 +68,7 @@ export default function User({ match }) {
           <ButtonIconDelete
             disabled={!id}
             onClick={() => {
-              doDeleteUser(id).then(() => history.replace('/users'));
+              deleteUser(id).then(() => history.replace('/users'));
             }}
           >
             Borrar

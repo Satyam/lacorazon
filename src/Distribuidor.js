@@ -6,10 +6,10 @@ import { Alert } from 'reactstrap';
 import { isEmpty } from './utils';
 import Loading from './Loading';
 import {
-  getDistribuidor,
-  addDistribuidor,
-  updateDistribuidor,
-  deleteDistribuidor
+  acGetDistribuidor,
+  acAddDistribuidor,
+  acUpdateDistribuidor,
+  acDeleteDistribuidor
 } from './store/actions';
 
 import { selDistribuidor, selDistribuidoresIsLoading } from './store/selectors';
@@ -27,15 +27,15 @@ export default function Distribuidor({ match }) {
     id
   );
   const [
-    doGetDistribuidor,
-    doAddDistribuidor,
-    doUpdateDistribuidor,
-    doDeleteDistribuidor
-  ] = useDispatch([
     getDistribuidor,
     addDistribuidor,
     updateDistribuidor,
     deleteDistribuidor
+  ] = useDispatch([
+    acGetDistribuidor,
+    acAddDistribuidor,
+    acUpdateDistribuidor,
+    acDeleteDistribuidor
   ]);
   const [notFound, setNotFound] = useState(false);
   if (notFound) {
@@ -44,7 +44,7 @@ export default function Distribuidor({ match }) {
     );
   } else if (id) {
     if (!isLoading && isEmpty(distribuidor)) {
-      doGetDistribuidor(id).then(action => {
+      getDistribuidor(id).then(action => {
         if (!action.response) setNotFound(true);
       });
       return <Loading title="Distribuidor" />;
@@ -53,13 +53,13 @@ export default function Distribuidor({ match }) {
 
   return (
     <Page
-      title={`Distribuidor - ${distribuidor.nombre}`}
+      title={`Distribuidor - ${distribuidor ? distribuidor.nombre : 'nuevo'}`}
       heading={`${id ? 'Edit' : 'Add'} Distribuidor`}
     >
       <Form
         values={distribuidor}
         onSubmit={(values, { setFieldError }) =>
-          (id ? doUpdateDistribuidor(id, values) : doAddDistribuidor(values))
+          (id ? updateDistribuidor(id, values) : addDistribuidor(values))
             .then(({ response }) => {
               history.replace(`/distribuidor/${response.id}`);
             })
@@ -84,7 +84,7 @@ export default function Distribuidor({ match }) {
           <ButtonIconDelete
             disabled={!id}
             onClick={() => {
-              doDeleteDistribuidor(id).then(() =>
+              deleteDistribuidor(id).then(() =>
                 history.replace('/distribuidores')
               );
             }}

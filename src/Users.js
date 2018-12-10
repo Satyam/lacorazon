@@ -7,10 +7,10 @@ import Loading from './Loading';
 import Page from './Page';
 
 import { useDispatch, useSelector } from './store/hooks';
-import { getUsers, deleteUser } from './store/actions';
+import { acGetUsers, acDeleteUser } from './store/actions';
 import { selUsers, selUsersIsLoading, selUsersGotAll } from './store/selectors';
 
-function UserRow({ id, data, history, doDeleteUser }) {
+function UserRow({ id, data, history, deleteUser }) {
   return (
     <tr key={id}>
       <td>{data.email}</td>
@@ -18,7 +18,7 @@ function UserRow({ id, data, history, doDeleteUser }) {
       <td>
         <ButtonGroup size="sm">
           <ButtonIconEdit outline onClick={() => history.push(`/user/${id}`)} />
-          <ButtonIconDelete outline onClick={() => doDeleteUser(id)} />
+          <ButtonIconDelete outline onClick={() => deleteUser(id)} />
         </ButtonGroup>
       </td>
     </tr>
@@ -31,9 +31,9 @@ export default function Users() {
     selUsersIsLoading,
     selUsersGotAll
   ]);
-  const [doGetUsers, doDeleteUser] = useDispatch([getUsers, deleteUser]);
+  const [getUsers, deleteUser] = useDispatch([acGetUsers, acDeleteUser]);
   if (!isLoading && (isEmpty(users) || !gotAll)) {
-    doGetUsers();
+    getUsers();
     return <Loading title="Usuarios" />;
   }
 
@@ -50,7 +50,7 @@ export default function Users() {
         </thead>
         <tbody>
           {Object.keys(users).map(id =>
-            UserRow({ id, data: users[id], history, doDeleteUser })
+            UserRow({ id, data: users[id], history, deleteUser })
           )}
         </tbody>
       </Table>
