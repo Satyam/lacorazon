@@ -56,7 +56,7 @@ export default (
             draft.isLoading--;
             break;
           case ADD_DISTRIBUIDOR:
-            draft.data[id] = response;
+            draft.data[response.id] = response;
             draft.isLoading--;
             break;
           case UPDATE_DISTRIBUIDOR:

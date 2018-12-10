@@ -14,9 +14,7 @@ export const getDistribuidores = () => ({
   promise: db
     .collection(NAME)
     .get()
-    .then(querySnapshot =>
-      querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-    )
+    .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()))
 });
 
 export const getDistribuidor = id => ({
@@ -27,7 +25,7 @@ export const getDistribuidor = id => ({
         .collection(NAME)
         .doc(id)
         .get()
-        .then(doc => doc.exists && { ...doc.data(), id })
+        .then(doc => doc.exists && doc.data())
     : {}
 });
 
@@ -48,7 +46,7 @@ export const updateDistribuidor = (id, data) => ({
     .collection(NAME)
     .doc(id)
     .set(data)
-    .then(res => ({ ...data, id }))
+    .then(() => data)
 });
 export const deleteDistribuidor = id => ({
   type: DELETE_DISTRIBUIDOR,

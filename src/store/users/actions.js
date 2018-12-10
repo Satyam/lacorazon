@@ -14,12 +14,7 @@ export const getUsers = () => ({
   promise: db
     .collection(NAME)
     .get()
-    .then(querySnapshot =>
-      querySnapshot.docs.map(doc => ({
-        ...doc.data(),
-        id: doc.id
-      }))
-    )
+    .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()))
 });
 
 export const getUser = id => ({
@@ -30,7 +25,7 @@ export const getUser = id => ({
         .collection(NAME)
         .doc(id)
         .get()
-        .then(doc => doc.exists && { ...doc.data(), id })
+        .then(doc => doc.exists && doc.data())
     : {}
 });
 
@@ -51,7 +46,7 @@ export const updateUser = (id, data) => ({
     .collection(NAME)
     .doc(id)
     .set(data)
-    .then(res => ({ ...data, id }))
+    .then(() => data)
 });
 
 export const deleteUser = id => ({
