@@ -1,4 +1,9 @@
-export const NAME = 'distribuidores';
+import path from 'path';
+
+export const NAME = path
+  .dirname(module.id)
+  .split('/')
+  .pop();
 
 export const GET_DISTRIBUIDORES = `${NAME} / get distribuidores`;
 export const GET_DISTRIBUIDOR = `${NAME} / get distribuidor`;
