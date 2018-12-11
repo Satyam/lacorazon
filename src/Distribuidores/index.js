@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
-import { ButtonIconAdd, ButtonSet } from '../Icons';
+import { ButtonIconAdd } from '../Icons';
 
 import { useDispatch, useSelector } from '../store/hooks';
 import { isEmpty } from '../utils';
@@ -52,11 +52,9 @@ export default function Distribuidores() {
           )}
         </tbody>
       </Table>
-      <ButtonSet>
-        <ButtonIconAdd onClick={() => history.push('/distribuidor?edit=true')}>
-          Agregar
-        </ButtonIconAdd>
-      </ButtonSet>
+      <ButtonIconAdd onClick={() => history.push('/distribuidor?edit=true')}>
+        Agregar
+      </ButtonIconAdd>
     </Page>
   );
 }
