@@ -1,46 +1,21 @@
-import React, { useState } from 'react';
-import { Form, TextField, SubmitButton } from './Form';
+import React from 'react';
 import useReactRouter from 'use-react-router';
-import { Alert } from 'reactstrap';
+import { Form, TextField, SubmitButton } from '../Form';
+import Page from '../Page';
 
-import { isEmpty } from './utils';
-import Loading from './Loading';
-import Page from './Page';
-import {
-  acGetUser,
-  acAddUser,
-  acUpdateUser,
-  acDeleteUser
-} from './store/actions';
+import { acAddUser, acUpdateUser, acDeleteUser } from '../store/actions';
 
-import { selUser, selUsersIsLoading } from './store/selectors';
+import { useDispatch } from '../store/hooks';
+import userSchema from '../store/users/schema';
+import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 
-import { useDispatch, useSelector } from './store/hooks';
-import userSchema from './store/users/schema';
-import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from './Icons';
-
-export default function User({ match }) {
-  const id = match.params.id;
+export default function EditUser({ id, user }) {
   const { history } = useReactRouter();
-  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], id);
-  const [getUser, addUser, updateUser, deleteUser] = useDispatch([
-    acGetUser,
+  const [addUser, updateUser, deleteUser] = useDispatch([
     acAddUser,
     acUpdateUser,
     acDeleteUser
   ]);
-  const [notFound, setNotFound] = useState(false);
-  if (notFound) {
-    return <Alert color="danger">El usuario no existe o fue borrado</Alert>;
-  } else if (id) {
-    if (!isLoading && isEmpty(user)) {
-      getUser(id).then(action => {
-        if (!action.response) setNotFound(true);
-      });
-      return <Loading title="Usuario" />;
-    }
-  }
-
   return (
     <Page
       title={`Vendedor - ${user ? user.nombre : 'nuevo'}`}
