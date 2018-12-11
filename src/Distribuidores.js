@@ -23,7 +23,7 @@ import {
 
 function Distribuidor(id, data, history, deleteDistribuidor) {
   return (
-    <tr key={id}>
+    <tr key={id} onClick={() => history.push(`/distribuidor/${id}`)}>
       <td>{data.nombre}</td>
       <td>{data.contacto}</td>
       <td>{data.telefono}</td>
@@ -36,8 +36,18 @@ function Distribuidor(id, data, history, deleteDistribuidor) {
       </td>
       <td>
         <ButtonGroup size="sm">
-          <ButtonIconEdit onClick={() => history.push(`/distribuidor/${id}`)} />
-          <ButtonIconDelete onClick={() => deleteDistribuidor(id)} />
+          <ButtonIconEdit
+            onClick={ev => {
+              ev.stopPropagation();
+              history.push(`/distribuidor/${id}?edit=true`);
+            }}
+          />
+          <ButtonIconDelete
+            onClick={ev => {
+              ev.stopPropagation();
+              deleteDistribuidor(id);
+            }}
+          />
         </ButtonGroup>
       </td>
     </tr>
@@ -81,7 +91,7 @@ export default function Distribuidores() {
         </tbody>
       </Table>
       <ButtonSet>
-        <ButtonIconAdd onClick={() => history.push('/distribuidor')}>
+        <ButtonIconAdd onClick={() => history.push('/distribuidor?edit=true')}>
           Agregar
         </ButtonIconAdd>
       </ButtonSet>
