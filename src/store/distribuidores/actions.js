@@ -14,7 +14,9 @@ export const acGetDistribuidores = () => ({
   promise: db
     .collection(NAME)
     .get()
-    .then(querySnapshot => querySnapshot.docs.map(doc => doc.data()))
+    .then(querySnapshot =>
+      querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+    )
 });
 
 export const acGetDistribuidor = id => ({
