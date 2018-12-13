@@ -20,6 +20,7 @@ import * as serviceWorker from './serviceWorker';
 
 import createStore from './store/createStore';
 import { Provider } from './store/hooks';
+import { AuthProvider } from './Auth';
 
 library.add(
   faTrashAlt,
@@ -37,7 +38,9 @@ const store = createStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </Provider>,
   document.getElementById('root')
 );
