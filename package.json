@@ -3,13 +3,13 @@
     "version": "0.1.0",
     "description": "Administración ventas libro La Corazón",
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.8",
-        "@fortawesome/free-solid-svg-icons": "^5.5.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.10",
+        "@fortawesome/free-solid-svg-icons": "^5.6.1",
         "@fortawesome/react-fontawesome": "^0.1.3",
         "bootstrap": "^4.1.3",
         "classnames": "^2.2.6",
-        "formik": "^1.3.2",
-        "immer": "^1.8.0",
+        "formik": "^1.4.0",
+        "immer": "^1.8.2",
         "react": "^16.7.0-alpha.2",
         "react-dom": "^16.7.0-alpha.2",
         "react-router-dom": "^4.4.0-beta.6",
@@ -40,7 +40,7 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "firebase-admin": "^6.3.0",
+        "firebase-admin": "^6.4.0",
         "react-scripts": "2.1.1",
         "source-map-explorer": "^1.6.0"
     }
