@@ -14,9 +14,11 @@ import {
   DropdownItem
 } from 'reactstrap';
 
-import laCorazon from './La Corazon.png';
+import laCorazon from '../La Corazon.png';
 
-import { UserContext, signIn, signOut } from './Auth';
+import { UserContext, signIn, signOut } from '../Auth';
+
+import styles from './styles.module.css';
 
 export function Navigation() {
   const [isOpen, setOpen] = useState(false);
@@ -24,13 +26,12 @@ export function Navigation() {
   function toggle() {
     setOpen(!isOpen);
   }
-  console.log('Navigation', user);
   return (
     <div>
-      <Navbar expand="md" light style={{ backgroundColor: '#e4ccaa' }}>
-        <NavbarBrand href="/" style={{ color: '#644240' }}>
-          <img src={laCorazon} width={32} height={32} alt="La Corazón" />
-          &nbsp;La Corazón
+      <Navbar expand="md" light className={styles.navbar}>
+        <NavbarBrand href="/" className={styles.navbrand}>
+          <img src={laCorazon} alt="La Corazón" />
+          La Corazón
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -46,20 +47,11 @@ export function Navigation() {
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret className={styles.user}>
                 {user ? (
                   <>
-                    <img
-                      alt={user.displayName}
-                      src={user.photoURL}
-                      style={{
-                        width: '2em',
-                        borderRadius: '1em',
-                        marginRight: '1em',
-                        height: '2em'
-                      }}
-                    />
-                    {`Hola ${user.displayName}`}
+                    <img alt={user.displayName} src={user.photoURL} />
+                    {user.displayName}
                   </>
                 ) : (
                   'guest'
@@ -70,8 +62,7 @@ export function Navigation() {
                   {user ? 'Logout' : 'Login'}
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem onClick={signIn}>Login</DropdownItem>
-                <DropdownItem onClick={signOut}>Logout</DropdownItem>
+                <DropdownItem>Create Account</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
