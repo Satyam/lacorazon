@@ -1,9 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-/* global firebase: true  */
+import firebase, { auth } from './store/firebase';
+
 const provider = new firebase.auth.GoogleAuthProvider();
-const auth = firebase.auth();
-auth.useDeviceLanguage();
 
 export function signIn() {
   if (!auth.currentUser) {
