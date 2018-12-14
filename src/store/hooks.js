@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 
-const Context = createContext(null);
+export const StoreContext = createContext(null);
 
 /*
  * Component to provide access to a Redux store anywhere in the App.
@@ -13,23 +13,26 @@ const Context = createContext(null);
  * const store = createStore( .... );
  *
  * ReactDOM.render(
- *   <Provider store={store}>
+ *   <StoreProvider store={store}>
  *     <App />
- *   </Provider>,
+ *   </StoreProvider>,
  *   document.getElementById('root')
  * );
  * ```
  *
  */
-export function Provider({ store, children }) {
+export function StoreProvider({ store, children }) {
   if (
+    process.env.NODE_ENV !== 'production' &&
     typeof store !== 'object' &&
     typeof store.dispatch !== 'function' &&
     typeof store.getState !== 'function'
   ) {
     throw new Error('store property of Provider should be a Redux store');
   }
-  return <Context.Provider value={store}>{children}</Context.Provider>;
+  return (
+    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+  );
 }
 
 /*
@@ -64,7 +67,7 @@ export function Provider({ store, children }) {
  * actions.addItem(newItem);
  */
 export function useDispatch(fn) {
-  const { dispatch } = useContext(Context);
+  const { dispatch } = useContext(StoreContext);
   switch (typeof fn) {
     case 'undefined':
       return dispatch;
@@ -193,7 +196,7 @@ function doSelectors(state, sels, ...args) {
  * <div><SomeChild {...props} /></div>
  */
 export function useSelector(selectors, ...args) {
-  const { subscribe, getState } = useContext(Context);
+  const { subscribe, getState } = useContext(StoreContext);
   const [state, setState] = useState(() =>
     doSelectors(getState(), selectors, ...args)
   );

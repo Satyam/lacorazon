@@ -19,7 +19,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import createStore from './store/createStore';
-import { Provider } from './store/hooks';
+import { StoreProvider } from './store/hooks';
 import { AuthProvider } from './Auth';
 
 library.add(
@@ -37,11 +37,11 @@ library.add(
 const store = createStore();
 
 ReactDOM.render(
-  <Provider store={store}>
+  <StoreProvider store={store}>
     <AuthProvider>
       <App />
     </AuthProvider>
-  </Provider>,
+  </StoreProvider>,
   document.getElementById('root')
 );
 
