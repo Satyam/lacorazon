@@ -197,21 +197,21 @@ function doSelectors(state, sels, ...args) {
  */
 export function useSelector(selectors, ...args) {
   const { subscribe, getState } = useContext(StoreContext);
-  const [state, setState] = useState(() =>
+  const [slice, setSlice] = useState(() =>
     doSelectors(getState(), selectors, ...args)
   );
   useEffect(
     () =>
       subscribe(() => {
-        const newState = doSelectors(getState(), selectors, ...args);
-        if (typeof newState === 'object') {
-          if (Object.keys(newState).some(key => newState[key] !== state[key]))
-            setState(newState);
+        const newSlice = doSelectors(getState(), selectors, ...args);
+        if (typeof newSlice === 'object') {
+          if (Object.keys(newSlice).some(key => newSlice[key] !== slice[key]))
+            setSlice(newSlice);
         } else {
-          if (state !== newState) setState(newState);
+          if (slice !== newSlice) setSlice(newSlice);
         }
       }),
     []
   );
-  return state;
+  return slice;
 }
