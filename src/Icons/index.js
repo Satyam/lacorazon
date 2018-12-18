@@ -3,7 +3,7 @@ import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { Button } from 'reactstrap';
 import classNames from 'classnames/bind';
 
-import styles from './Icons.module.css';
+import styles from './styles.module.css';
 
 const cx = classNames.bind(styles);
 
