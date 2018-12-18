@@ -59,13 +59,13 @@ export const ButtonIconDelete = ({
     <span className={styles.label}>{children}</span>
   </Button>
 );
-export const IconEdit = ({ color = 'primary', ...props }) => (
+export const IconEdit = ({ color = 'secondary', ...props }) => (
   <Icon icon="edit" color={color} {...props} />
 );
 
 export const ButtonIconEdit = ({
   children,
-  color = 'primary',
+  color = 'secondary',
 
   className,
   ...props
@@ -97,7 +97,7 @@ export const IconNotCheck = ({ color = 'danger', ...props }) => (
 
 export const ButtonIconNotCheck = ({
   children,
-  color = 'primary',
+  color = 'warning',
 
   className,
   ...props
@@ -107,13 +107,13 @@ export const ButtonIconNotCheck = ({
     <span className={styles.label}>{children}</span>
   </Button>
 );
-export const IconCalendar = ({ color = 'body', ...props }) => (
+export const IconCalendar = ({ color = 'secondary', ...props }) => (
   <Icon icon="calendar-alt" color={color} {...props} />
 );
 
 export const ButtonIconCalendar = ({
   children,
-  color = 'primary',
+  color = 'secondary',
 
   className,
   ...props
@@ -131,6 +131,8 @@ export const IconStop = ({ color = 'danger', ...props }) => (
   <Icon icon="exclamation-circle" color={color} {...props} />
 );
 
-export const ButtonSet = ({ className, children, ...rest }) => (
-  <div className={cx('buttonSet', className)}>{children}</div>
+export const ButtonSet = ({ className, children, size, ...rest }) => (
+  <div className={cx('buttonSet', { [`btn-group-${size}`]: size }, className)}>
+    {children}
+  </div>
 );
