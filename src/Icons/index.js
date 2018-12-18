@@ -7,13 +7,21 @@ import styles from './styles.module.css';
 
 const cx = classNames.bind(styles);
 
-export const Icon = ({ color, button, disabled, className, ...props }) => (
+export const Icon = ({
+  color,
+  button,
+  disabled,
+  className,
+  onClick,
+  ...props
+}) => (
   <FAIcon
     className={cx(className, {
       'active-icon': button && !disabled,
       [`icon-${color}`]: color,
       disabled: disabled
     })}
+    onClick={disabled ? undefined : onClick}
     {...props}
   />
 );
