@@ -80,7 +80,7 @@ export function useDispatch(fn) {
         return Object.keys(fn).reduce(
           (result, name) => ({
             ...result,
-            name: (...args) => dispatch(fn[name](...args))
+            [name]: (...args) => dispatch(fn[name](...args))
           }),
           {}
         );
