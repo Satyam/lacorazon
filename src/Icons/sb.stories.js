@@ -16,7 +16,9 @@ import {
   IconCalendar,
   IconCheck,
   IconEdit,
-  IconNotCheck
+  IconNotCheck,
+  IconStop,
+  IconWarning
 } from './';
 
 storiesOf('Icons/ButtonIconAdd', module)
@@ -84,5 +86,7 @@ storiesOf('Icons/ButtonSet', module)
       <IconCalendar style={{ margin: '1em' }} />
       <IconCheck style={{ margin: '1em' }} />
       <IconNotCheck style={{ margin: '1em' }} />
+      <IconWarning style={{ margin: '1em' }} />
+      <IconStop style={{ margin: '1em' }} />
     </div>
   ));

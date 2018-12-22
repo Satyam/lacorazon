@@ -7,10 +7,11 @@ export default function Loading({
   title = '',
   children,
   noIcon,
-  isOpen = true
+  isOpen = true,
+  ...props
 }) {
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} {...props}>
       <ModalHeader className={styles.header}>{title}</ModalHeader>
       <ModalBody className={styles.container}>
         {children}
