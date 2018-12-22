@@ -3,12 +3,18 @@ import icon from './loading.gif';
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import styles from './styles.module.css';
 
-export default function Loading({ title = '' }) {
+export default function Loading({
+  title = '',
+  children,
+  noIcon,
+  isOpen = true
+}) {
   return (
-    <Modal isOpen={true}>
+    <Modal isOpen={isOpen}>
       <ModalHeader className={styles.header}>{title}</ModalHeader>
       <ModalBody className={styles.container}>
-        <img src={icon} alt="loading..." />
+        {children}
+        {!noIcon && <img className={styles.img} src={icon} alt="loading..." />}
       </ModalBody>
     </Modal>
   );
