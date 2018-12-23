@@ -28,7 +28,9 @@
         "upload": "node ./migrate/upload.js",
         "analyze": "source-map-explorer build/static/js/main.* & source-map-explorer build/static/js/runtime*.* & source-map-explorer build/static/js/1.*",
         "storybook": "start-storybook -p 9009 -s public",
-        "build-storybook": "build-storybook -s public"
+        "build-storybook": "build-storybook -s public",
+        "test:debug": "react-scripts --inspect-brk test --runInBand",
+        "coverage": "react-scripts test --coverage"
     },
     "author": "Daniel Barreiro (Satyam)",
     "license": "MIT",

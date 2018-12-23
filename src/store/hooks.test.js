@@ -13,6 +13,10 @@ describe('Provider setup', () => {
     expect(() => renderer.create(<StoreProvider />)).toThrow();
   });
 
+  it('Should fail with a simple object', () => {
+    expect(() => renderer.create(<StoreProvider store={{}} />)).toThrow();
+  });
+
   it('Should work with a store', () => {
     const store = mockStore({});
     const wrapper = renderer.create(
@@ -123,6 +127,18 @@ describe('useDispatch', () => {
       </StoreProvider>
     );
   });
+
+  it('With an invalid argument it show throw and error', () => {
+    const MockComponent = () => {
+      expect(() => useDispatch(5)).toThrow();
+      return null;
+    };
+    mount(
+      <StoreProvider store={store}>
+        <MockComponent />
+      </StoreProvider>
+    );
+  });
 });
 
 describe('useSelect', () => {
@@ -192,6 +208,42 @@ describe('useSelect', () => {
       const MockComponent = () => {
         expect(useSelector('qqq')).toBeUndefined();
         expect(useSelector('jose.c')).toBeUndefined();
+        return null;
+      };
+      mount(
+        <StoreProvider store={store}>
+          <MockComponent />
+        </StoreProvider>
+      );
+    });
+
+    it('with a bad selector it should throw and error', () => {
+      const MockComponent = () => {
+        expect(() => useSelector(5)).toThrow();
+        return null;
+      };
+      mount(
+        <StoreProvider store={store}>
+          <MockComponent />
+        </StoreProvider>
+      );
+    });
+
+    it('with an array of bad selectors it should throw and error', () => {
+      const MockComponent = () => {
+        expect(() => useSelector([1, 2])).toThrow();
+        return null;
+      };
+      mount(
+        <StoreProvider store={store}>
+          <MockComponent />
+        </StoreProvider>
+      );
+    });
+
+    it('with a selector overshooting it should return undefined', () => {
+      const MockComponent = () => {
+        expect(useSelector(selOne + '.a.b')).toBeUndefined();
         return null;
       };
       mount(

@@ -24,9 +24,9 @@ export const StoreContext = createContext(null);
 export function StoreProvider({ store, children }) {
   if (
     process.env.NODE_ENV !== 'production' &&
-    typeof store !== 'object' &&
-    typeof store.dispatch !== 'function' &&
-    typeof store.getState !== 'function'
+    (typeof store !== 'object' ||
+      typeof store.dispatch !== 'function' ||
+      typeof store.getState !== 'function')
   ) {
     throw new Error('store property of Provider should be a Redux store');
   }
@@ -86,6 +86,10 @@ export function useDispatch(fn) {
         );
       }
     default:
+      /* istanbul ignore else */
+      if (process.env.NODE_ENV !== 'production')
+        throw new Error('Invalid argument passed to useDispatch');
+      /* istanbul ignore next */
       break;
   }
 }
@@ -119,6 +123,12 @@ function doSelect(state, sel, ...args) {
     case 'function':
       return sel(state, ...args);
     default:
+      /* istanbul ignore else */
+      if (process.env.NODE_ENV !== 'production')
+        throw new Error(
+          `Selectors should be strings or functions, was ${typeof sel}`
+        );
+      /* istanbul ignore next */
       break;
   }
 }
@@ -157,6 +167,12 @@ function doSelectors(state, sels, ...args) {
         );
       }
     default:
+      /* istanbul ignore else */
+      if (process.env.NODE_ENV !== 'production')
+        throw new Error(
+          `Selectors should be strings, functions or arrays or objects of either , was ${typeof sel}`
+        );
+      /* istanbul ignore next */
       break;
   }
 }
