@@ -66,6 +66,7 @@
     "jest": {
         "coverageReporters": [
             "lcov"
-        ]
+        ],
+        "snapshotSerializers": ["enzyme-to-json/serializer"]
     }
 }

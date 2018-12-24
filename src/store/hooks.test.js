@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-// import { createStore, combineReducers } from 'redux';
 import configureStore from 'redux-mock-store';
-import { mount } from 'enzyme';
-import renderer from 'react-test-renderer';
+import { mount, shallow } from 'enzyme';
 
 import { StoreContext, StoreProvider, useDispatch, useSelector } from './hooks';
 
@@ -10,18 +8,20 @@ const mockStore = configureStore();
 
 describe('Provider setup', () => {
   it('Should fail with no store', () => {
-    expect(() => renderer.create(<StoreProvider />)).toThrow();
+    try {
+      expect(() => shallow(<StoreProvider />)).toThrow();
+    } catch (err) {}
   });
 
   it('Should fail with a simple object', () => {
-    expect(() => renderer.create(<StoreProvider store={{}} />)).toThrow();
+    try {
+      expect(() => shallow(<StoreProvider store={{}} />)).toThrow();
+    } catch (err) {}
   });
 
   it('Should work with a store', () => {
     const store = mockStore({});
-    const wrapper = renderer.create(
-      <StoreProvider store={store}>hola</StoreProvider>
-    );
+    const wrapper = shallow(<StoreProvider store={store}>hola</StoreProvider>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -130,7 +130,10 @@ describe('useDispatch', () => {
 
   it('With an invalid argument it show throw and error', () => {
     const MockComponent = () => {
-      expect(() => useDispatch(5)).toThrow();
+      try {
+        expect(() => useDispatch(5)).toThrow();
+      } catch (err) {}
+
       return null;
     };
     mount(
@@ -219,7 +222,9 @@ describe('useSelect', () => {
 
     it('with a bad selector it should throw and error', () => {
       const MockComponent = () => {
-        expect(() => useSelector(5)).toThrow();
+        try {
+          expect(() => useSelector(5)).toThrow();
+        } catch (err) {}
         return null;
       };
       mount(
@@ -231,7 +236,10 @@ describe('useSelect', () => {
 
     it('with an array of bad selectors it should throw and error', () => {
       const MockComponent = () => {
-        expect(() => useSelector([1, 2])).toThrow();
+        try {
+          expect(() => useSelector([1, 2])).toThrow();
+        } catch (err) {}
+
         return null;
       };
       mount(
