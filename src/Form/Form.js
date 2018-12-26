@@ -14,7 +14,7 @@ export default function Form({
     <Formik
       enableReinitialize={true}
       validationSchema={schema}
-      initialValues={Object.assign(schema.default(), values)}
+      initialValues={schema ? Object.assign(schema.default(), values) : values}
       onSubmit={(values, formik) => onSubmit(schema.cast(values), formik)}
       {...rest}
     >
