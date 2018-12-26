@@ -32,7 +32,12 @@ export default function TextField({
           invalid={error && touched[name]}
           validate={
             validate
-              ? value => validate(validationSchema.fields[name].cast(value))
+              ? value =>
+                  validate(
+                    validationSchema
+                      ? validationSchema.fields[name].cast(value)
+                      : value
+                  )
               : void 0
           }
           {...rest}
