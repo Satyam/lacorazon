@@ -1,0 +1,990 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Loading With Title 1`] = `
+<Loading
+  fade={false}
+  title="With Title"
+>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={false}
+    isOpen={true}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    zIndex={1050}
+  >
+    <Portal
+      node={
+        <div
+          style="position: relative; z-index: 1050;"
+          tabindex="-1"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="modal show"
+              role="dialog"
+              style="display: block;"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="header modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                    >
+                      With Title
+                    </h5>
+                  </div>
+                  <div
+                    class="container modal-body"
+                  >
+                    <img
+                      alt="loading..."
+                      class="img"
+                      src="loading.gif"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-backdrop show"
+            />
+          </div>
+        </div>
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            style="position: relative; z-index: 1050;"
+            tabindex="-1"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="modal show"
+                role="dialog"
+                style="display: block;"
+                tabindex="-1"
+              >
+                <div
+                  class="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="header modal-header"
+                    >
+                      <h5
+                        class="modal-title"
+                      >
+                        With Title
+                      </h5>
+                    </div>
+                    <div
+                      class="container modal-body"
+                    >
+                      <img
+                        alt="loading..."
+                        class="img"
+                        src="loading.gif"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal-backdrop show"
+              />
+            </div>
+          </div>
+        }
+      >
+        <div
+          className=""
+        >
+          <Fade
+            appear={true}
+            baseClass=""
+            baseClassActive="show"
+            className="modal"
+            enter={true}
+            exit={true}
+            in={true}
+            mountOnEnter={false}
+            onClick={[Function]}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            role="dialog"
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            tabIndex="-1"
+            tag="div"
+            timeout={0}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={true}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={0}
+              unmountOnExit={false}
+            >
+              <div
+                className="modal show"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="dialog"
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div
+                  className="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <ModalHeader
+                      charCode={215}
+                      className="header"
+                      closeAriaLabel="Close"
+                      tag="h5"
+                      wrapTag="div"
+                    >
+                      <div
+                        className="header modal-header"
+                      >
+                        <h5
+                          className="modal-title"
+                        >
+                          With Title
+                        </h5>
+                      </div>
+                    </ModalHeader>
+                    <ModalBody
+                      className="container"
+                      tag="div"
+                    >
+                      <div
+                        className="container modal-body"
+                      >
+                        <img
+                          alt="loading..."
+                          className="img"
+                          src="loading.gif"
+                        />
+                      </div>
+                    </ModalBody>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </Fade>
+          <div
+            className="modal-backdrop show"
+          />
+        </div>
+      </Portal>
+    </Portal>
+  </Modal>
+</Loading>
+`;
+
+exports[`Storyshots Loading no title 1`] = `
+<Loading
+  fade={false}
+>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={false}
+    isOpen={true}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    zIndex={1050}
+  >
+    <Portal
+      node={
+        <div
+          style="position: relative; z-index: 1050;"
+          tabindex="-1"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="modal show"
+              role="dialog"
+              style="display: block;"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="header modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                    />
+                  </div>
+                  <div
+                    class="container modal-body"
+                  >
+                    <img
+                      alt="loading..."
+                      class="img"
+                      src="loading.gif"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-backdrop show"
+            />
+          </div>
+        </div>
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            style="position: relative; z-index: 1050;"
+            tabindex="-1"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="modal show"
+                role="dialog"
+                style="display: block;"
+                tabindex="-1"
+              >
+                <div
+                  class="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="header modal-header"
+                    >
+                      <h5
+                        class="modal-title"
+                      />
+                    </div>
+                    <div
+                      class="container modal-body"
+                    >
+                      <img
+                        alt="loading..."
+                        class="img"
+                        src="loading.gif"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal-backdrop show"
+              />
+            </div>
+          </div>
+        }
+      >
+        <div
+          className=""
+        >
+          <Fade
+            appear={true}
+            baseClass=""
+            baseClassActive="show"
+            className="modal"
+            enter={true}
+            exit={true}
+            in={true}
+            mountOnEnter={false}
+            onClick={[Function]}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            role="dialog"
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            tabIndex="-1"
+            tag="div"
+            timeout={0}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={true}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={0}
+              unmountOnExit={false}
+            >
+              <div
+                className="modal show"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="dialog"
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div
+                  className="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <ModalHeader
+                      charCode={215}
+                      className="header"
+                      closeAriaLabel="Close"
+                      tag="h5"
+                      wrapTag="div"
+                    >
+                      <div
+                        className="header modal-header"
+                      >
+                        <h5
+                          className="modal-title"
+                        />
+                      </div>
+                    </ModalHeader>
+                    <ModalBody
+                      className="container"
+                      tag="div"
+                    >
+                      <div
+                        className="container modal-body"
+                      >
+                        <img
+                          alt="loading..."
+                          className="img"
+                          src="loading.gif"
+                        />
+                      </div>
+                    </ModalBody>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </Fade>
+          <div
+            className="modal-backdrop show"
+          />
+        </div>
+      </Portal>
+    </Portal>
+  </Modal>
+</Loading>
+`;
+
+exports[`Storyshots Loading not open 1`] = `
+<Loading
+  fade={false}
+  isOpen={false}
+  title="With Title"
+>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={false}
+    isOpen={false}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    zIndex={1050}
+  />
+</Loading>
+`;
+
+exports[`Storyshots Loading title and body 1`] = `
+<Loading
+  fade={false}
+  title="With Title"
+>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={false}
+    isOpen={true}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    zIndex={1050}
+  >
+    <Portal
+      node={
+        <div
+          style="position: relative; z-index: 1050;"
+          tabindex="-1"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="modal show"
+              role="dialog"
+              style="display: block;"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="header modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                    >
+                      With Title
+                    </h5>
+                  </div>
+                  <div
+                    class="container modal-body"
+                  >
+                    Body
+                    <img
+                      alt="loading..."
+                      class="img"
+                      src="loading.gif"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-backdrop show"
+            />
+          </div>
+        </div>
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            style="position: relative; z-index: 1050;"
+            tabindex="-1"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="modal show"
+                role="dialog"
+                style="display: block;"
+                tabindex="-1"
+              >
+                <div
+                  class="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="header modal-header"
+                    >
+                      <h5
+                        class="modal-title"
+                      >
+                        With Title
+                      </h5>
+                    </div>
+                    <div
+                      class="container modal-body"
+                    >
+                      Body
+                      <img
+                        alt="loading..."
+                        class="img"
+                        src="loading.gif"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal-backdrop show"
+              />
+            </div>
+          </div>
+        }
+      >
+        <div
+          className=""
+        >
+          <Fade
+            appear={true}
+            baseClass=""
+            baseClassActive="show"
+            className="modal"
+            enter={true}
+            exit={true}
+            in={true}
+            mountOnEnter={false}
+            onClick={[Function]}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            role="dialog"
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            tabIndex="-1"
+            tag="div"
+            timeout={0}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={true}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={0}
+              unmountOnExit={false}
+            >
+              <div
+                className="modal show"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="dialog"
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div
+                  className="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <ModalHeader
+                      charCode={215}
+                      className="header"
+                      closeAriaLabel="Close"
+                      tag="h5"
+                      wrapTag="div"
+                    >
+                      <div
+                        className="header modal-header"
+                      >
+                        <h5
+                          className="modal-title"
+                        >
+                          With Title
+                        </h5>
+                      </div>
+                    </ModalHeader>
+                    <ModalBody
+                      className="container"
+                      tag="div"
+                    >
+                      <div
+                        className="container modal-body"
+                      >
+                        Body
+                        <img
+                          alt="loading..."
+                          className="img"
+                          src="loading.gif"
+                        />
+                      </div>
+                    </ModalBody>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </Fade>
+          <div
+            className="modal-backdrop show"
+          />
+        </div>
+      </Portal>
+    </Portal>
+  </Modal>
+</Loading>
+`;
+
+exports[`Storyshots Loading title and body, no icon 1`] = `
+<Loading
+  fade={false}
+  noIcon={true}
+  title="With Title"
+>
+  <Modal
+    autoFocus={true}
+    backdrop={true}
+    backdropTransition={
+      Object {
+        "mountOnEnter": true,
+        "timeout": 150,
+      }
+    }
+    centered={false}
+    fade={false}
+    isOpen={true}
+    keyboard={true}
+    modalTransition={
+      Object {
+        "timeout": 300,
+      }
+    }
+    onClosed={[Function]}
+    onOpened={[Function]}
+    role="dialog"
+    zIndex={1050}
+  >
+    <Portal
+      node={
+        <div
+          style="position: relative; z-index: 1050;"
+          tabindex="-1"
+        >
+          <div
+            class=""
+          >
+            <div
+              class="modal show"
+              role="dialog"
+              style="display: block;"
+              tabindex="-1"
+            >
+              <div
+                class="modal-dialog"
+                role="document"
+              >
+                <div
+                  class="modal-content"
+                >
+                  <div
+                    class="header modal-header"
+                  >
+                    <h5
+                      class="modal-title"
+                    >
+                      With Title
+                    </h5>
+                  </div>
+                  <div
+                    class="container modal-body"
+                  >
+                    Body
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal-backdrop show"
+            />
+          </div>
+        </div>
+      }
+    >
+      <Portal
+        containerInfo={
+          <div
+            style="position: relative; z-index: 1050;"
+            tabindex="-1"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="modal show"
+                role="dialog"
+                style="display: block;"
+                tabindex="-1"
+              >
+                <div
+                  class="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    class="modal-content"
+                  >
+                    <div
+                      class="header modal-header"
+                    >
+                      <h5
+                        class="modal-title"
+                      >
+                        With Title
+                      </h5>
+                    </div>
+                    <div
+                      class="container modal-body"
+                    >
+                      Body
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="modal-backdrop show"
+              />
+            </div>
+          </div>
+        }
+      >
+        <div
+          className=""
+        >
+          <Fade
+            appear={true}
+            baseClass=""
+            baseClassActive="show"
+            className="modal"
+            enter={true}
+            exit={true}
+            in={true}
+            mountOnEnter={false}
+            onClick={[Function]}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            role="dialog"
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            tabIndex="-1"
+            tag="div"
+            timeout={0}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={true}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={0}
+              unmountOnExit={false}
+            >
+              <div
+                className="modal show"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                role="dialog"
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div
+                  className="modal-dialog"
+                  role="document"
+                >
+                  <div
+                    className="modal-content"
+                  >
+                    <ModalHeader
+                      charCode={215}
+                      className="header"
+                      closeAriaLabel="Close"
+                      tag="h5"
+                      wrapTag="div"
+                    >
+                      <div
+                        className="header modal-header"
+                      >
+                        <h5
+                          className="modal-title"
+                        >
+                          With Title
+                        </h5>
+                      </div>
+                    </ModalHeader>
+                    <ModalBody
+                      className="container"
+                      tag="div"
+                    >
+                      <div
+                        className="container modal-body"
+                      >
+                        Body
+                      </div>
+                    </ModalBody>
+                  </div>
+                </div>
+              </div>
+            </Transition>
+          </Fade>
+          <div
+            className="modal-backdrop show"
+          />
+        </div>
+      </Portal>
+    </Portal>
+  </Modal>
+</Loading>
+`;

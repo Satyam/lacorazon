@@ -1,0 +1,345 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Form no attributes 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#eee",
+      "border": "solid thin silver",
+      "borderRadius": "0.5em",
+      "margin": "1em",
+      "padding": "1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "white",
+      }
+    }
+  >
+    <Form>
+      <Formik
+        enableReinitialize={true}
+        isInitialValid={false}
+        onSubmit={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+      >
+        <Form
+          tag={[Function]}
+        >
+          <Form
+            className=""
+          >
+            <Component
+              className=""
+              formik={
+                Object {
+                  "dirty": false,
+                  "errors": Object {},
+                  "handleBlur": [Function],
+                  "handleChange": [Function],
+                  "handleReset": [Function],
+                  "handleSubmit": [Function],
+                  "initialValues": Object {},
+                  "isSubmitting": false,
+                  "isValid": false,
+                  "isValidating": false,
+                  "registerField": [Function],
+                  "resetForm": [Function],
+                  "setError": [Function],
+                  "setErrors": [Function],
+                  "setFieldError": [Function],
+                  "setFieldTouched": [Function],
+                  "setFieldValue": [Function],
+                  "setFormikState": [Function],
+                  "setStatus": [Function],
+                  "setSubmitting": [Function],
+                  "setTouched": [Function],
+                  "setValues": [Function],
+                  "submitCount": 0,
+                  "submitForm": [Function],
+                  "touched": Object {},
+                  "unregisterField": [Function],
+                  "validate": undefined,
+                  "validateField": [Function],
+                  "validateForm": [Function],
+                  "validateOnBlur": true,
+                  "validateOnChange": true,
+                  "validationSchema": undefined,
+                  "values": Object {},
+                }
+              }
+            >
+              <form
+                className=""
+                onReset={[Function]}
+                onSubmit={[Function]}
+              />
+            </Component>
+          </Form>
+        </Form>
+      </Formik>
+    </Form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Form with error 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#eee",
+      "border": "solid thin silver",
+      "borderRadius": "0.5em",
+      "margin": "1em",
+      "padding": "1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "white",
+      }
+    }
+  >
+    <Form
+      isInitialValid={false}
+      validate={[Function]}
+      values={Object {}}
+    >
+      <Formik
+        enableReinitialize={true}
+        initialValues={Object {}}
+        isInitialValid={false}
+        onSubmit={[Function]}
+        validate={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+      >
+        <Form
+          tag={[Function]}
+        >
+          <Form
+            className=""
+          >
+            <Component
+              className=""
+              formik={
+                Object {
+                  "dirty": false,
+                  "errors": Object {
+                    "*": "some made-up error",
+                  },
+                  "handleBlur": [Function],
+                  "handleChange": [Function],
+                  "handleReset": [Function],
+                  "handleSubmit": [Function],
+                  "initialValues": Object {},
+                  "isSubmitting": false,
+                  "isValid": false,
+                  "isValidating": false,
+                  "registerField": [Function],
+                  "resetForm": [Function],
+                  "setError": [Function],
+                  "setErrors": [Function],
+                  "setFieldError": [Function],
+                  "setFieldTouched": [Function],
+                  "setFieldValue": [Function],
+                  "setFormikState": [Function],
+                  "setStatus": [Function],
+                  "setSubmitting": [Function],
+                  "setTouched": [Function],
+                  "setValues": [Function],
+                  "submitCount": 0,
+                  "submitForm": [Function],
+                  "touched": Object {},
+                  "unregisterField": [Function],
+                  "validate": [Function],
+                  "validateField": [Function],
+                  "validateForm": [Function],
+                  "validateOnBlur": true,
+                  "validateOnChange": true,
+                  "validationSchema": undefined,
+                  "values": Object {},
+                }
+              }
+            >
+              <form
+                className=""
+                onReset={[Function]}
+                onSubmit={[Function]}
+              >
+                <Alert
+                  closeAriaLabel="Close"
+                  color="danger"
+                  fade={true}
+                  isOpen={true}
+                  tag="div"
+                  transition={
+                    Object {
+                      "appear": true,
+                      "baseClass": "fade",
+                      "baseClassActive": "show",
+                      "enter": true,
+                      "exit": true,
+                      "in": true,
+                      "mountOnEnter": false,
+                      "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
+                      "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
+                      "tag": "div",
+                      "timeout": 150,
+                      "unmountOnExit": true,
+                    }
+                  }
+                >
+                  <Fade
+                    appear={true}
+                    baseClass="fade"
+                    baseClassActive="show"
+                    className="alert alert-danger"
+                    enter={true}
+                    exit={true}
+                    in={true}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    onEntered={[Function]}
+                    onEntering={[Function]}
+                    onExit={[Function]}
+                    onExited={[Function]}
+                    onExiting={[Function]}
+                    role="alert"
+                    tag="div"
+                    timeout={150}
+                    unmountOnExit={true}
+                  >
+                    <Transition
+                      appear={true}
+                      enter={true}
+                      exit={true}
+                      in={true}
+                      mountOnEnter={false}
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={150}
+                      unmountOnExit={true}
+                    >
+                      <div
+                        className="alert alert-danger fade"
+                        role="alert"
+                      >
+                        some made-up error
+                      </div>
+                    </Transition>
+                  </Fade>
+                </Alert>
+                <ForceValidate />
+              </form>
+            </Component>
+          </Form>
+        </Form>
+      </Formik>
+    </Form>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/Form with some child 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#eee",
+      "border": "solid thin silver",
+      "borderRadius": "0.5em",
+      "margin": "1em",
+      "padding": "1em",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "white",
+      }
+    }
+  >
+    <Form>
+      <Formik
+        enableReinitialize={true}
+        isInitialValid={false}
+        onSubmit={[Function]}
+        validateOnBlur={true}
+        validateOnChange={true}
+      >
+        <Form
+          tag={[Function]}
+        >
+          <Form
+            className=""
+          >
+            <Component
+              className=""
+              formik={
+                Object {
+                  "dirty": false,
+                  "errors": Object {},
+                  "handleBlur": [Function],
+                  "handleChange": [Function],
+                  "handleReset": [Function],
+                  "handleSubmit": [Function],
+                  "initialValues": Object {},
+                  "isSubmitting": false,
+                  "isValid": false,
+                  "isValidating": false,
+                  "registerField": [Function],
+                  "resetForm": [Function],
+                  "setError": [Function],
+                  "setErrors": [Function],
+                  "setFieldError": [Function],
+                  "setFieldTouched": [Function],
+                  "setFieldValue": [Function],
+                  "setFormikState": [Function],
+                  "setStatus": [Function],
+                  "setSubmitting": [Function],
+                  "setTouched": [Function],
+                  "setValues": [Function],
+                  "submitCount": 0,
+                  "submitForm": [Function],
+                  "touched": Object {},
+                  "unregisterField": [Function],
+                  "validate": undefined,
+                  "validateField": [Function],
+                  "validateForm": [Function],
+                  "validateOnBlur": true,
+                  "validateOnChange": true,
+                  "validationSchema": undefined,
+                  "values": Object {},
+                }
+              }
+            >
+              <form
+                className=""
+                onReset={[Function]}
+                onSubmit={[Function]}
+              >
+                Hello
+              </form>
+            </Component>
+          </Form>
+        </Form>
+      </Formik>
+    </Form>
+  </div>
+</div>
+`;

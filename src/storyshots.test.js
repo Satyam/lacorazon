@@ -1,8 +1,8 @@
 import initStoryshots, {
-  snapshotWithOptions
+  Stories2SnapsConverter
 } from '@storybook/addon-storyshots';
 import { mount } from 'enzyme';
-import { createSerializer } from 'enzyme-to-json';
+import toJson from 'enzyme-to-json';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -30,11 +30,24 @@ library.add(
 );
 
 initStoryshots({
-  /* configuration options */
-  test: snapshotWithOptions({
-    // Overwrite the default react test renderer, as it does not support
-    // refs and portals, both of which are heavily used by antd
-    renderer: mount,
-    snapshotSerializers: [createSerializer()]
-  })
+  asyncJest: true, // this is the option that activates the async behaviour
+  test: ({
+    story,
+    context,
+    done // --> callback passed to test method when asyncJest option is true
+  }) => {
+    const converter = new Stories2SnapsConverter();
+    const snapshotFilename = converter.getSnapshotFileName(context);
+    const storyElement = story.render(context);
+
+    const tree = mount(storyElement);
+    const waitTime = 1;
+    setTimeout(() => {
+      if (snapshotFilename) {
+        expect(toJson(tree.update())).toMatchSpecificSnapshot(snapshotFilename);
+      }
+      done();
+    }, waitTime);
+  }
+  // other options here
 });

@@ -38,10 +38,7 @@ storiesOf('Form/Form', module)
   .add('with error', () => (
     <Form
       isInitialValid={false}
-      validate={() => {
-        console.log('am validating');
-        return { '*': 'some made-up error' };
-      }}
+      validate={() => ({ '*': 'some made-up error' })}
       values={{}}
     >
       <ForceValidate />
