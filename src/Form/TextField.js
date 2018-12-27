@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { Field as KField, FormikConsumer } from 'formik';
+import classNames from 'classnames';
 
 function useFormik() {
   return useContext(FormikConsumer._context);
@@ -25,11 +26,12 @@ export default function TextField({
       <Col xs={12} lg={8}>
         <KField
           component={rows ? 'textarea' : 'input'}
-          className="form-control"
+          className={classNames('form-control', {
+            'is-invalid': error && touched[name]
+          })}
           rows={rows}
           name={name}
           id={name}
-          invalid={error && touched[name]}
           validate={
             validate
               ? value =>
@@ -42,8 +44,12 @@ export default function TextField({
           }
           {...rest}
         />
-        <FormFeedback>{error}</FormFeedback>
         {help && <FormText>{help}</FormText>}
+        <FormFeedback
+          style={{ display: error && touched[name] ? 'block' : 'none' }}
+        >
+          {error}
+        </FormFeedback>
       </Col>
     </FormGroup>
   );

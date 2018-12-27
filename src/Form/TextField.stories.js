@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { storiesOf } from '@storybook/react';
 
@@ -11,21 +11,18 @@ function useFormik() {
 }
 
 function SetFieldError({ name, message }) {
-  const [done, setDone] = useState(false);
-  if (done) return null;
-  const { setFieldError } = useFormik();
-  setFieldError(name, message);
-  setDone(true);
+  const { setFieldError, errors } = useFormik();
+  if (errors[name] !== message) {
+    setFieldError(name, message);
+  }
   return null;
 }
 
 function TouchField({ name }) {
-  const [done, setDone] = useState(false);
-  if (done) return null;
   const { setFieldTouched, touched } = useFormik();
-  setFieldTouched(name, true, false);
-  setDone(true);
-  console.log(name, touched);
+  if (!touched[name]) {
+    setFieldTouched(name, true, false);
+  }
   return null;
 }
 
@@ -118,6 +115,7 @@ storiesOf('Form/TextField', module)
         three: 3
       }}
     >
+      <TouchField name="three" />
       <SetFieldError name="three" message="some error message" />
       <TextField
         label="Field 3"
