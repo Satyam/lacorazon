@@ -20,19 +20,6 @@ function ForceValidate() {
 }
 
 storiesOf('Form/Form', module)
-  .addDecorator(story => (
-    <div
-      style={{
-        border: 'solid thin silver',
-        padding: '1em',
-        margin: '1em',
-        borderRadius: '0.5em',
-        backgroundColor: '#eee'
-      }}
-    >
-      <div style={{ backgroundColor: 'white' }}>{story()}</div>
-    </div>
-  ))
   .add('no attributes', () => <Form />)
   .add('with some child', () => <Form>Hello</Form>)
   .add('with error', () => (

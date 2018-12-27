@@ -27,19 +27,6 @@ function TouchField({ name }) {
 }
 
 storiesOf('Form/TextField', module)
-  .addDecorator(story => (
-    <div
-      style={{
-        border: 'solid thin silver',
-        padding: '1em',
-        margin: '1em',
-        borderRadius: '0.5em',
-        backgroundColor: '#eee'
-      }}
-    >
-      {story()}
-    </div>
-  ))
   .add('no props', () => (
     <Form values="{no values}">
       <TextField />

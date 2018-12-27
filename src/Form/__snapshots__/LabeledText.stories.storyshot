@@ -1,475 +1,355 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Form/LabeledText label and children 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<LabeledText
+  label="Some label"
 >
-  <div
-    style={
-      Object {
-        "backgroundColor": "white",
-      }
-    }
+  <FormGroup
+    row={true}
+    tag="div"
   >
-    <LabeledText
-      label="Some label"
+    <div
+      className="position-relative row form-group"
     >
-      <FormGroup
-        row={true}
+      <Label
+        lg={2}
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
+      >
+        <label
+          className="col-12 col-lg-2 col-form-label"
+        >
+          Some label
+        </label>
+      </Label>
+      <Col
+        lg={8}
         tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
       >
         <div
-          className="position-relative row form-group"
+          className="col-12 col-lg-8"
         >
-          <Label
-            lg={2}
-            tag="label"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
+          <div
+            className="form-control"
           >
-            <label
-              className="col-12 col-lg-2 col-form-label"
-            >
-              Some label
-            </label>
-          </Label>
-          <Col
-            lg={8}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <div
-              className="col-12 col-lg-8"
-            >
-              <div
-                className="form-control"
-              >
-                I'm a child
-              </div>
-            </div>
-          </Col>
+            I'm a child
+          </div>
         </div>
-      </FormGroup>
-    </LabeledText>
-  </div>
-</div>
+      </Col>
+    </div>
+  </FormGroup>
+</LabeledText>
 `;
 
 exports[`Storyshots Form/LabeledText label and pre-formated children 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<LabeledText
+  label="Some label"
+  pre={true}
 >
-  <div
-    style={
-      Object {
-        "backgroundColor": "white",
-      }
-    }
+  <FormGroup
+    row={true}
+    tag="div"
   >
-    <LabeledText
-      label="Some label"
-      pre={true}
+    <div
+      className="position-relative row form-group"
     >
-      <FormGroup
-        row={true}
+      <Label
+        lg={2}
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
+      >
+        <label
+          className="col-12 col-lg-2 col-form-label"
+        >
+          Some label
+        </label>
+      </Label>
+      <Col
+        lg={8}
         tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
       >
         <div
-          className="position-relative row form-group"
+          className="col-12 col-lg-8"
         >
-          <Label
-            lg={2}
-            tag="label"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
+          <div
+            className="form-control labeled-pre"
           >
-            <label
-              className="col-12 col-lg-2 col-form-label"
-            >
-              Some label
-            </label>
-          </Label>
-          <Col
-            lg={8}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <div
-              className="col-12 col-lg-8"
-            >
-              <div
-                className="form-control labeled-pre"
-              >
-                I'm a child
+            I'm a child
 spread over
 a few lines
-              </div>
-            </div>
-          </Col>
+          </div>
         </div>
-      </FormGroup>
-    </LabeledText>
-  </div>
-</div>
+      </Col>
+    </div>
+  </FormGroup>
+</LabeledText>
 `;
 
 exports[`Storyshots Form/LabeledText label and value 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<LabeledText
+  label="Some label"
+  value="Some value"
 >
-  <div
-    style={
-      Object {
-        "backgroundColor": "white",
-      }
-    }
+  <FormGroup
+    row={true}
+    tag="div"
   >
-    <LabeledText
-      label="Some label"
-      value="Some value"
+    <div
+      className="position-relative row form-group"
     >
-      <FormGroup
-        row={true}
+      <Label
+        lg={2}
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
+      >
+        <label
+          className="col-12 col-lg-2 col-form-label"
+        >
+          Some label
+        </label>
+      </Label>
+      <Col
+        lg={8}
         tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
       >
         <div
-          className="position-relative row form-group"
+          className="col-12 col-lg-8"
         >
-          <Label
-            lg={2}
-            tag="label"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
+          <div
+            className="form-control"
           >
-            <label
-              className="col-12 col-lg-2 col-form-label"
-            >
-              Some label
-            </label>
-          </Label>
-          <Col
-            lg={8}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <div
-              className="col-12 col-lg-8"
-            >
-              <div
-                className="form-control"
-              >
-                Some value
-              </div>
-            </div>
-          </Col>
+            Some value
+          </div>
         </div>
-      </FormGroup>
-    </LabeledText>
-  </div>
-</div>
+      </Col>
+    </div>
+  </FormGroup>
+</LabeledText>
 `;
 
 exports[`Storyshots Form/LabeledText label, no value 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<LabeledText
+  label="Some label"
 >
-  <div
-    style={
-      Object {
-        "backgroundColor": "white",
-      }
-    }
+  <FormGroup
+    row={true}
+    tag="div"
   >
-    <LabeledText
-      label="Some label"
+    <div
+      className="position-relative row form-group"
     >
-      <FormGroup
-        row={true}
+      <Label
+        lg={2}
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
+      >
+        <label
+          className="col-12 col-lg-2 col-form-label"
+        >
+          Some label
+        </label>
+      </Label>
+      <Col
+        lg={8}
         tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
       >
         <div
-          className="position-relative row form-group"
+          className="col-12 col-lg-8"
         >
-          <Label
-            lg={2}
-            tag="label"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <label
-              className="col-12 col-lg-2 col-form-label"
-            >
-              Some label
-            </label>
-          </Label>
-          <Col
-            lg={8}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <div
-              className="col-12 col-lg-8"
-            >
-              <div
-                className="form-control"
-              />
-            </div>
-          </Col>
+          <div
+            className="form-control"
+          />
         </div>
-      </FormGroup>
-    </LabeledText>
-  </div>
-</div>
+      </Col>
+    </div>
+  </FormGroup>
+</LabeledText>
 `;
 
 exports[`Storyshots Form/LabeledText no props 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "backgroundColor": "white",
-      }
-    }
+<LabeledText>
+  <FormGroup
+    row={true}
+    tag="div"
   >
-    <LabeledText>
-      <FormGroup
-        row={true}
+    <div
+      className="position-relative row form-group"
+    >
+      <Label
+        lg={2}
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
+      >
+        <label
+          className="col-12 col-lg-2 col-form-label"
+        />
+      </Label>
+      <Col
+        lg={8}
         tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
       >
         <div
-          className="position-relative row form-group"
+          className="col-12 col-lg-8"
         >
-          <Label
-            lg={2}
-            tag="label"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <label
-              className="col-12 col-lg-2 col-form-label"
-            />
-          </Label>
-          <Col
-            lg={8}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <div
-              className="col-12 col-lg-8"
-            >
-              <div
-                className="form-control"
-              />
-            </div>
-          </Col>
+          <div
+            className="form-control"
+          />
         </div>
-      </FormGroup>
-    </LabeledText>
-  </div>
-</div>
+      </Col>
+    </div>
+  </FormGroup>
+</LabeledText>
 `;
 
 exports[`Storyshots Form/LabeledText value, no label 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<LabeledText
+  value="some value"
 >
-  <div
-    style={
-      Object {
-        "backgroundColor": "white",
-      }
-    }
+  <FormGroup
+    row={true}
+    tag="div"
   >
-    <LabeledText
-      value="some value"
+    <div
+      className="position-relative row form-group"
     >
-      <FormGroup
-        row={true}
+      <Label
+        lg={2}
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
+      >
+        <label
+          className="col-12 col-lg-2 col-form-label"
+        />
+      </Label>
+      <Col
+        lg={8}
         tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+        xs={12}
       >
         <div
-          className="position-relative row form-group"
+          className="col-12 col-lg-8"
         >
-          <Label
-            lg={2}
-            tag="label"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
+          <div
+            className="form-control"
           >
-            <label
-              className="col-12 col-lg-2 col-form-label"
-            />
-          </Label>
-          <Col
-            lg={8}
-            tag="div"
-            widths={
-              Array [
-                "xs",
-                "sm",
-                "md",
-                "lg",
-                "xl",
-              ]
-            }
-            xs={12}
-          >
-            <div
-              className="col-12 col-lg-8"
-            >
-              <div
-                className="form-control"
-              >
-                some value
-              </div>
-            </div>
-          </Col>
+            some value
+          </div>
         </div>
-      </FormGroup>
-    </LabeledText>
-  </div>
-</div>
+      </Col>
+    </div>
+  </FormGroup>
+</LabeledText>
 `;

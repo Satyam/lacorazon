@@ -5,19 +5,6 @@ import { storiesOf } from '@storybook/react';
 import LabeledText from './LabeledText';
 
 storiesOf('Form/LabeledText', module)
-  .addDecorator(story => (
-    <div
-      style={{
-        border: 'solid thin silver',
-        padding: '1em',
-        margin: '1em',
-        borderRadius: '0.5em',
-        backgroundColor: '#eee'
-      }}
-    >
-      <div style={{ backgroundColor: 'white' }}>{story()}</div>
-    </div>
-  ))
   .add('no props', () => <LabeledText />)
   .add('label, no value', () => <LabeledText label="Some label" />)
   .add('value, no label', () => <LabeledText value="some value" />)

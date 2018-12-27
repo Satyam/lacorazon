@@ -1,2067 +1,1959 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Form/TextField label and name 1`] = `
-<div
-  style={
+<Form
+  values={
     Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
+      "two": 2,
     }
   }
 >
-  <Form
-    values={
+  <Formik
+    enableReinitialize={true}
+    initialValues={
       Object {
         "two": 2,
       }
     }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Object {
-          "two": 2,
-        }
-      }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": Object {
-                  "two": 2,
-                },
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": Object {
-                  "two": 2,
-                },
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "two": 2,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "two": 2,
+              },
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TextField
+              label="field two"
+              name="two"
             >
-              <TextField
-                label="field two"
-                name="two"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    for="two"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      for="two"
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="two"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                        htmlFor="two"
-                      >
-                        field two
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      field two
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
+                        id="two"
+                        name="two"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "two": 2,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "two": 2,
+                              },
+                            }
+                          }
                           id="two"
                           name="two"
                         >
-                          <FieldInner
+                          <input
                             className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": Object {
-                                  "two": 2,
-                                },
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": Object {
-                                  "two": 2,
-                                },
-                              }
-                            }
                             id="two"
                             name="two"
-                          >
-                            <input
-                              className="form-control"
-                              id="two"
-                              name="two"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value={2}
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value={2}
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField label and pre-formated value in multi-row field 1`] = `
-<div
-  style={
+<Form
+  values={
     Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
+      "multi": "I'm a child
+spread over
+a few lines",
     }
   }
 >
-  <Form
-    values={
+  <Formik
+    enableReinitialize={true}
+    initialValues={
       Object {
         "multi": "I'm a child
 spread over
 a few lines",
       }
     }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Object {
-          "multi": "I'm a child
-spread over
-a few lines",
-        }
-      }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": Object {
-                  "multi": "I'm a child
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "multi": "I'm a child
 spread over
 a few lines",
-                },
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": Object {
-                  "multi": "I'm a child
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "multi": "I'm a child
 spread over
 a few lines",
-                },
-              }
+              },
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TextField
+              label="multi-line field"
+              name="multi"
+              rows={5}
             >
-              <TextField
-                label="multi-line field"
-                name="multi"
-                rows={5}
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    for="multi"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      for="multi"
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="multi"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                        htmlFor="multi"
-                      >
-                        multi-line field
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      multi-line field
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="textarea"
+                        id="multi"
+                        name="multi"
+                        rows={5}
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="textarea"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "multi": "I'm a child
+spread over
+a few lines",
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "multi": "I'm a child
+spread over
+a few lines",
+                              },
+                            }
+                          }
                           id="multi"
                           name="multi"
                           rows={5}
                         >
-                          <FieldInner
+                          <textarea
                             className="form-control"
-                            component="textarea"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": Object {
-                                  "multi": "I'm a child
-spread over
-a few lines",
-                                },
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": Object {
-                                  "multi": "I'm a child
-spread over
-a few lines",
-                                },
-                              }
-                            }
                             id="multi"
                             name="multi"
+                            onBlur={[Function]}
+                            onChange={[Function]}
                             rows={5}
-                          >
-                            <textarea
-                              className="form-control"
-                              id="multi"
-                              name="multi"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              rows={5}
-                              value="I'm a child
+                            value="I'm a child
 spread over
 a few lines"
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField label and value 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<Form
+  values="nothing"
 >
-  <Form
-    values="nothing"
+  <Formik
+    enableReinitialize={true}
+    initialValues="nothing"
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues="nothing"
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": "nothing",
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": "nothing",
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": "nothing",
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": "nothing",
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TextField
+              label="Raw value"
+              value="Some value"
             >
-              <TextField
-                label="Raw value"
-                value="Some value"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                      >
-                        Raw value
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      Raw value
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
+                        value="Some value"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": "nothing",
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": "nothing",
+                            }
+                          }
                           value="Some value"
                         >
-                          <FieldInner
+                          <input
                             className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": "nothing",
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": "nothing",
-                              }
-                            }
+                            onBlur={[Function]}
+                            onChange={[Function]}
                             value="Some value"
-                          >
-                            <input
-                              className="form-control"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value="Some value"
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField label, name and help 1`] = `
-<div
-  style={
+<Form
+  values={
     Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
+      "three": 3,
     }
   }
 >
-  <Form
-    values={
+  <Formik
+    enableReinitialize={true}
+    initialValues={
       Object {
         "three": 3,
       }
     }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Object {
-          "three": 3,
-        }
-      }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": Object {
-                  "three": 3,
-                },
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": Object {
-                  "three": 3,
-                },
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 3,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "three": 3,
+              },
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TextField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
             >
-              <TextField
-                help="A little help from my friends"
-                label="Field 3"
-                name="three"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      for="three"
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                        htmlFor="three"
-                      >
-                        Field 3
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
+                        id="three"
+                        name="three"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 3,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "three": 3,
+                              },
+                            }
+                          }
                           id="three"
                           name="three"
                         >
-                          <FieldInner
+                          <input
                             className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": Object {
-                                  "three": 3,
-                                },
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": Object {
-                                  "three": 3,
-                                },
-                              }
-                            }
                             id="three"
                             name="three"
-                          >
-                            <input
-                              className="form-control"
-                              id="three"
-                              name="three"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value={3}
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value={3}
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                        <FormText
-                          color="muted"
-                          tag="small"
-                        >
-                          <small
-                            className="form-text text-muted"
-                          >
-                            A little help from my friends
-                          </small>
-                        </FormText>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
-<div
-  style={
+<Form
+  values={
     Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
+      "three": 3,
     }
   }
 >
-  <Form
-    values={
+  <Formik
+    enableReinitialize={true}
+    initialValues={
       Object {
         "three": 3,
       }
     }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Object {
-          "three": 3,
-        }
-      }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {
-                  "three": "some error message",
-                },
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": Object {
-                  "three": 3,
-                },
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {
-                  "three": true,
-                },
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": Object {
-                  "three": 3,
-                },
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {
+                "three": "some error message",
+              },
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 3,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "three": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "three": 3,
+              },
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TouchField
+              name="three"
+            />
+            <SetFieldError
+              message="some error message"
+              name="three"
+            />
+            <TextField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
             >
-              <TouchField
-                name="three"
-              />
-              <SetFieldError
-                message="some error message"
-                name="three"
-              />
-              <TextField
-                help="A little help from my friends"
-                label="Field 3"
-                name="three"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      for="three"
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                        htmlFor="three"
-                      >
-                        Field 3
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control is-invalid"
+                        component="input"
+                        id="three"
+                        name="three"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control is-invalid"
                           component="input"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {
+                                "three": "some error message",
+                              },
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 3,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {
+                                "three": true,
+                              },
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "three": 3,
+                              },
+                            }
+                          }
                           id="three"
                           name="three"
                         >
-                          <FieldInner
+                          <input
                             className="form-control is-invalid"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {
-                                  "three": "some error message",
-                                },
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": Object {
-                                  "three": 3,
-                                },
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {
-                                  "three": true,
-                                },
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": Object {
-                                  "three": 3,
-                                },
-                              }
-                            }
                             id="three"
                             name="three"
-                          >
-                            <input
-                              className="form-control is-invalid"
-                              id="three"
-                              name="three"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value={3}
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value={3}
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "block",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "block",
                             }
                           }
-                          tag="div"
                         >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "block",
-                              }
-                            }
-                          >
-                            some error message
-                          </div>
-                        </FormFeedback>
-                        <FormText
-                          color="muted"
-                          tag="small"
-                        >
-                          <small
-                            className="form-text text-muted"
-                          >
-                            A little help from my friends
-                          </small>
-                        </FormText>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                          some error message
+                        </div>
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
-<div
-  style={
+<Form
+  values={
     Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
+      "three": 3,
     }
   }
 >
-  <Form
-    values={
+  <Formik
+    enableReinitialize={true}
+    initialValues={
       Object {
         "three": 3,
       }
     }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Object {
-          "three": 3,
-        }
-      }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": Object {
-                  "three": 3,
-                },
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {
-                  "three": true,
-                },
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": Object {
-                  "three": 3,
-                },
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 3,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "three": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "three": 3,
+              },
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TouchField
+              name="three"
+            />
+            <TextField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
             >
-              <TouchField
-                name="three"
-              />
-              <TextField
-                help="A little help from my friends"
-                label="Field 3"
-                name="three"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      for="three"
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                        htmlFor="three"
-                      >
-                        Field 3
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
+                        id="three"
+                        name="three"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 3,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {
+                                "three": true,
+                              },
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "three": 3,
+                              },
+                            }
+                          }
                           id="three"
                           name="three"
                         >
-                          <FieldInner
+                          <input
                             className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": Object {
-                                  "three": 3,
-                                },
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {
-                                  "three": true,
-                                },
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": Object {
-                                  "three": 3,
-                                },
-                              }
-                            }
                             id="three"
                             name="three"
-                          >
-                            <input
-                              className="form-control"
-                              id="three"
-                              name="three"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value={3}
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value={3}
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                        <FormText
-                          color="muted"
-                          tag="small"
-                        >
-                          <small
-                            className="form-text text-muted"
-                          >
-                            A little help from my friends
-                          </small>
-                        </FormText>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField label, no name 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<Form
+  values="{no values}"
 >
-  <Form
-    values="{no values}"
+  <Formik
+    enableReinitialize={true}
+    initialValues="{no values}"
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues="{no values}"
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": "{no values}",
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": "{no values}",
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": "{no values}",
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": "{no values}",
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TextField
+              label="Some label"
             >
-              <TextField
-                label="Some label"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                      >
-                        Some label
-                      </label>
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                      Some label
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
-                        >
-                          <FieldInner
-                            className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": "{no values}",
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": "{no values}",
-                              }
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": "{no values}",
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": "{no values}",
                             }
-                          >
-                            <input
-                              className="form-control"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value="{no values}"
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                          }
+                        >
+                          <input
+                            className="form-control"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value="{no values}"
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField name, no label 1`] = `
-<div
-  style={
+<Form
+  values={
     Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
+      "one": 1,
     }
   }
 >
-  <Form
-    values={
+  <Formik
+    enableReinitialize={true}
+    initialValues={
       Object {
         "one": 1,
       }
     }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues={
-        Object {
-          "one": 1,
-        }
-      }
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": Object {
-                  "one": 1,
-                },
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": Object {
-                  "one": 1,
-                },
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "one": 1,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "one": 1,
+              },
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
+            <TextField
+              name="one"
             >
-              <TextField
-                name="one"
+              <FormGroup
+                row={true}
+                tag="div"
               >
-                <FormGroup
-                  row={true}
-                  tag="div"
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    for="one"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      for="one"
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="one"
+                    />
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                        htmlFor="one"
-                      />
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
-                    >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
+                        id="one"
+                        name="one"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "one": 1,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "one": 1,
+                              },
+                            }
+                          }
                           id="one"
                           name="one"
                         >
-                          <FieldInner
+                          <input
                             className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": Object {
-                                  "one": 1,
-                                },
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": Object {
-                                  "one": 1,
-                                },
-                              }
-                            }
                             id="one"
                             name="one"
-                          >
-                            <input
-                              className="form-control"
-                              id="one"
-                              name="one"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value={1}
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value={1}
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
 
 exports[`Storyshots Form/TextField no props 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "#eee",
-      "border": "solid thin silver",
-      "borderRadius": "0.5em",
-      "margin": "1em",
-      "padding": "1em",
-    }
-  }
+<Form
+  values="{no values}"
 >
-  <Form
-    values="{no values}"
+  <Formik
+    enableReinitialize={true}
+    initialValues="{no values}"
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
   >
-    <Formik
-      enableReinitialize={true}
-      initialValues="{no values}"
-      isInitialValid={false}
-      onSubmit={[Function]}
-      validateOnBlur={true}
-      validateOnChange={true}
+    <Form
+      tag={[Function]}
     >
       <Form
-        tag={[Function]}
+        className=""
       >
-        <Form
+        <Component
           className=""
-        >
-          <Component
-            className=""
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialValues": "{no values}",
-                "isSubmitting": false,
-                "isValid": false,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setError": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validate": undefined,
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validationSchema": undefined,
-                "values": "{no values}",
-              }
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": "{no values}",
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": "{no values}",
             }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            <form
-              className=""
-              onReset={[Function]}
-              onSubmit={[Function]}
-            >
-              <TextField>
-                <FormGroup
-                  row={true}
-                  tag="div"
+            <TextField>
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
                 >
-                  <div
-                    className="position-relative row form-group"
+                  <Label
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
                   >
-                    <Label
-                      lg={2}
-                      tag="label"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                    />
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
                     >
-                      <label
-                        className="col-12 col-lg-2 col-form-label"
-                      />
-                    </Label>
-                    <Col
-                      lg={8}
-                      tag="div"
-                      widths={
-                        Array [
-                          "xs",
-                          "sm",
-                          "md",
-                          "lg",
-                          "xl",
-                        ]
-                      }
-                      xs={12}
-                    >
-                      <div
-                        className="col-12 col-lg-8"
+                      <FormikConnect(FieldInner)
+                        className="form-control"
+                        component="input"
                       >
-                        <FormikConnect(FieldInner)
+                        <FieldInner
                           className="form-control"
                           component="input"
-                        >
-                          <FieldInner
-                            className="form-control"
-                            component="input"
-                            formik={
-                              Object {
-                                "dirty": false,
-                                "errors": Object {},
-                                "handleBlur": [Function],
-                                "handleChange": [Function],
-                                "handleReset": [Function],
-                                "handleSubmit": [Function],
-                                "initialValues": "{no values}",
-                                "isSubmitting": false,
-                                "isValid": false,
-                                "isValidating": false,
-                                "registerField": [Function],
-                                "resetForm": [Function],
-                                "setError": [Function],
-                                "setErrors": [Function],
-                                "setFieldError": [Function],
-                                "setFieldTouched": [Function],
-                                "setFieldValue": [Function],
-                                "setFormikState": [Function],
-                                "setStatus": [Function],
-                                "setSubmitting": [Function],
-                                "setTouched": [Function],
-                                "setValues": [Function],
-                                "submitCount": 0,
-                                "submitForm": [Function],
-                                "touched": Object {},
-                                "unregisterField": [Function],
-                                "validate": undefined,
-                                "validateField": [Function],
-                                "validateForm": [Function],
-                                "validateOnBlur": true,
-                                "validateOnChange": true,
-                                "validationSchema": undefined,
-                                "values": "{no values}",
-                              }
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": "{no values}",
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": "{no values}",
                             }
-                          >
-                            <input
-                              className="form-control"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              value="{no values}"
-                            />
-                          </FieldInner>
-                        </FormikConnect(FieldInner)>
-                        <FormFeedback
+                          }
+                        >
+                          <input
+                            className="form-control"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            value="{no values}"
+                          />
+                        </FieldInner>
+                      </FormikConnect(FieldInner)>
+                      <FormFeedback
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                        tag="div"
+                      >
+                        <div
+                          className="invalid-feedback"
                           style={
                             Object {
                               "display": "none",
                             }
                           }
-                          tag="div"
-                        >
-                          <div
-                            className="invalid-feedback"
-                            style={
-                              Object {
-                                "display": "none",
-                              }
-                            }
-                          />
-                        </FormFeedback>
-                      </div>
-                    </Col>
-                  </div>
-                </FormGroup>
-              </TextField>
-            </form>
-          </Component>
-        </Form>
+                        />
+                      </FormFeedback>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </TextField>
+          </form>
+        </Component>
       </Form>
-    </Formik>
-  </Form>
-</div>
+    </Form>
+  </Formik>
+</Form>
 `;
