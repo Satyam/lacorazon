@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/SubmitButton no props, nothing dirty to submit 1`] = `
+<Form
+  onSubmit={[Function]}
+>
+  <Formik
+    enableReinitialize={true}
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {},
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {},
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={true}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary disabled"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="submit"
+                />
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, nothing dirty to submit 1`] = `
+<Form
+  onSubmit={[Function]}
+>
+  <Formik
+    enableReinitialize={true}
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {},
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {},
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={true}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary disabled"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, something dirty to submit 1`] = `
+<Form
+  isInitialValid={true}
+  onSubmit={[Function]}
+  values={
+    Object {
+      "one": 1,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "one": 1,
+      }
+    }
+    isInitialValid={true}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": true,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "one": 1,
+              },
+              "isSubmitting": false,
+              "isValid": true,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "one": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "one": 2,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <ChangeField
+              name="one"
+              value={2}
+            />
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={false}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, something dirty to submit, isSubmitting true 1`] = `
+<Form
+  isInitialValid={true}
+  onSubmit={[Function]}
+  values={
+    Object {
+      "one": 1,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "one": 1,
+      }
+    }
+    isInitialValid={true}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": true,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "one": 1,
+              },
+              "isSubmitting": true,
+              "isValid": true,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "one": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "one": 2,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <ChangeField
+              name="one"
+              value={2}
+            />
+            <SetSubmitting />
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={true}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary disabled"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, with error 1`] = `
+<Form
+  isInitialValid={true}
+  onSubmit={[Function]}
+  values={
+    Object {
+      "one": 1,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "one": 1,
+      }
+    }
+    isInitialValid={true}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": true,
+              "errors": Object {
+                "one": "it won't show",
+              },
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "one": 1,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "one": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "one": 2,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <ChangeField
+              name="one"
+              value={2}
+            />
+            <SetFieldError
+              message="it won't show"
+              name="one"
+            />
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={true}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary disabled"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
