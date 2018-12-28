@@ -15,6 +15,9 @@ export default function TextField({
   validate,
   ...rest
 }) {
+  if (process.env.NODE_ENV !== 'production' && !name) {
+    throw new Error('TextField: name argument is mandatory');
+  }
   const { errors, touched, validationSchema } = useFormik();
   const error = errors[name];
 
