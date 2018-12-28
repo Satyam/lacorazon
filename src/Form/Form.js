@@ -15,7 +15,9 @@ export default function Form({
       enableReinitialize={true}
       validationSchema={schema}
       initialValues={schema ? Object.assign(schema.default(), values) : values}
-      onSubmit={(values, formik) => onSubmit(schema.cast(values), formik)}
+      onSubmit={(values, formik) =>
+        onSubmit(schema ? schema.cast(values) : values, formik)
+      }
       {...rest}
     >
       {({ errors }) => (
