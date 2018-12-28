@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
-import { Field as KField, FormikConsumer } from 'formik';
+import { Field as KField, FormikConsumer, ErrorMessage } from 'formik';
 import classNames from 'classnames';
 
 function useFormik() {
@@ -45,11 +45,7 @@ export default function TextField({
           {...rest}
         />
         {help && <FormText>{help}</FormText>}
-        <FormFeedback
-          style={{ display: error && touched[name] ? 'block' : 'none' }}
-        >
-          {error}
-        </FormFeedback>
+        <ErrorMessage name={name} component={FormFeedback} />
       </Col>
     </FormGroup>
   );
