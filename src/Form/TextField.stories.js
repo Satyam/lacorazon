@@ -1,4 +1,4 @@
-import React, { useContext, Component } from 'react';
+import React, { useContext } from 'react';
 
 import { storiesOf } from '@storybook/react';
 
@@ -8,27 +8,6 @@ import { FormikConsumer } from 'formik';
 
 function useFormik() {
   return useContext(FormikConsumer._context);
-}
-
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
-    return { hasError: true };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <h1>Property `name` is mandatory for TextField .</h1>;
-    }
-
-    return this.props.children;
-  }
 }
 
 function SetFieldError({ name, message }) {
@@ -48,20 +27,6 @@ function TouchField({ name }) {
 }
 
 storiesOf('Form/TextField', module)
-  .add('no props', () => (
-    <ErrorBoundary>
-      <Form values="{no values}">
-        <TextField />
-      </Form>
-    </ErrorBoundary>
-  ))
-  .add('label, no name', () => (
-    <ErrorBoundary>
-      <Form values="{no values}">
-        <TextField label="Some label" />
-      </Form>
-    </ErrorBoundary>
-  ))
   .add('name, no label', () => (
     <Form
       values={{
@@ -79,13 +44,6 @@ storiesOf('Form/TextField', module)
     >
       <TextField label="field two" name="two" />
     </Form>
-  ))
-  .add('label and value', () => (
-    <ErrorBoundary>
-      <Form values="nothing">
-        <TextField label="Raw value" value="Some value" />
-      </Form>
-    </ErrorBoundary>
   ))
   .add('label and pre-formated value in multi-row field', () => (
     <Form
