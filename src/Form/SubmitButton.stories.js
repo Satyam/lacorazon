@@ -7,6 +7,8 @@ import SubmitButton from './SubmitButton';
 import Form from './Form';
 import { FormikConsumer } from 'formik';
 
+// next one cannot be execute in batch mode test
+/* istanbul ignore next */
 const firstArg = decorate([args => args.slice(0, 1)]);
 
 function useFormik() {
