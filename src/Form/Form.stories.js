@@ -19,6 +19,15 @@ function ForceValidate() {
   return null;
 }
 
+function ForceSubmit() {
+  const [done, setDone] = useState(false);
+  if (done) return null;
+  const { submitForm } = useFormik();
+  submitForm();
+  setDone(true);
+  return null;
+}
+
 storiesOf('Form/Form', module)
   .add('no attributes', () => <Form />)
   .add('with some child', () => <Form>Hello</Form>)
@@ -29,5 +38,14 @@ storiesOf('Form/Form', module)
       values={{}}
     >
       <ForceValidate />
+    </Form>
+  ))
+  .add('with rejected promise validation', () => (
+    <Form
+      isInitialValid={false}
+      onSubmit={() => Promise.reject('some made-up error')}
+      values={{}}
+    >
+      <ForceSubmit />
     </Form>
   ));

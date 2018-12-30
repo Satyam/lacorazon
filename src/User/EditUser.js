@@ -24,13 +24,11 @@ export default function EditUser({ id, user }) {
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>
-          (id ? updateUser(id, values) : addUser(values))
-            .then(({ response }) => {
-              history.replace(`/user/${response.id}`);
-            })
-            .catch(err => {
-              setFieldError('*', err);
-            })
+          (id ? updateUser(id, values) : addUser(values)).then(
+            ({ response }) => {
+              history.replace(`/user/${response.id}?edit=true`);
+            }
+          )
         }
         schema={userSchema}
       >

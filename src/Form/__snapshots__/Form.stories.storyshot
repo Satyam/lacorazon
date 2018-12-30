@@ -215,6 +215,153 @@ exports[`Storyshots Form/Form with error 1`] = `
 </Form>
 `;
 
+exports[`Storyshots Form/Form with rejected promise validation 1`] = `
+<Form
+  isInitialValid={false}
+  onSubmit={[Function]}
+  values={Object {}}
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={Object {}}
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {
+                "*": "some made-up error",
+              },
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {},
+              "isSubmitting": true,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 1,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {},
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <Alert
+              closeAriaLabel="Close"
+              color="danger"
+              fade={true}
+              isOpen={true}
+              tag="div"
+              transition={
+                Object {
+                  "appear": true,
+                  "baseClass": "fade",
+                  "baseClassActive": "show",
+                  "enter": true,
+                  "exit": true,
+                  "in": true,
+                  "mountOnEnter": false,
+                  "onEnter": [Function],
+                  "onEntered": [Function],
+                  "onEntering": [Function],
+                  "onExit": [Function],
+                  "onExited": [Function],
+                  "onExiting": [Function],
+                  "tag": "div",
+                  "timeout": 150,
+                  "unmountOnExit": true,
+                }
+              }
+            >
+              <Fade
+                appear={true}
+                baseClass="fade"
+                baseClassActive="show"
+                className="alert alert-danger"
+                enter={true}
+                exit={true}
+                in={true}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                role="alert"
+                tag="div"
+                timeout={150}
+                unmountOnExit={true}
+              >
+                <Transition
+                  appear={true}
+                  enter={true}
+                  exit={true}
+                  in={true}
+                  mountOnEnter={false}
+                  onEnter={[Function]}
+                  onEntered={[Function]}
+                  onEntering={[Function]}
+                  onExit={[Function]}
+                  onExited={[Function]}
+                  onExiting={[Function]}
+                  timeout={150}
+                  unmountOnExit={true}
+                >
+                  <div
+                    className="alert alert-danger fade"
+                    role="alert"
+                  >
+                    some made-up error
+                  </div>
+                </Transition>
+              </Fade>
+            </Alert>
+            <ForceSubmit />
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
 exports[`Storyshots Form/Form with some child 1`] = `
 <Form>
   <Formik

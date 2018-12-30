@@ -25,13 +25,11 @@ export default function EditDistribuidor({ id, distribuidor }) {
       <Form
         values={distribuidor}
         onSubmit={(values, { setFieldError }) =>
-          (id ? updateDistribuidor(id, values) : addDistribuidor(values))
-            .then(({ response }) => {
-              history.replace(`/distribuidor/${response.id}`);
-            })
-            .catch(err => {
-              setFieldError('*', err);
-            })
+          (id ? updateDistribuidor(id, values) : addDistribuidor(values)).then(
+            ({ response }) => {
+              history.replace(`/distribuidor/${response.id}?edit=true`);
+            }
+          )
         }
         schema={distribuidorSchema}
       >

@@ -15,9 +15,19 @@ export default function Form({
       enableReinitialize={true}
       validationSchema={schema}
       initialValues={schema ? Object.assign(schema.default(), values) : values}
-      onSubmit={(values, formik) =>
-        onSubmit(schema ? schema.cast(values) : values, formik)
-      }
+      onSubmit={(values, formik) => {
+        const result = onSubmit(schema ? schema.cast(values) : values, formik);
+        if (result && typeof result.then === 'function') {
+          result.then(
+            () => {
+              formik.setSubmitting(false);
+            },
+            err => {
+              formik.setFieldError('*', err);
+            }
+          );
+        }
+      }}
       {...rest}
     >
       {({ errors }) => (
