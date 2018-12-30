@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, render } from 'enzyme';
 import * as Yup from 'yup';
 
 import Form from './Form';
@@ -7,26 +7,30 @@ import TextField from './TextField';
 
 describe('Form/TextField', () => {
   it('should throw with no props as name argument is mandatory', () => {
+    const catcher = jest.fn();
     try {
-      expect(() =>
-        mount(
-          <Form>
-            <TextField />
-          </Form>
-        )
-      ).toThrow();
-    } catch (err) {}
+      render(
+        <Form>
+          <TextField />
+        </Form>
+      );
+    } catch (err) {
+      catcher();
+    }
+    expect(catcher).toBeCalled();
   });
   it('should throw with any extra property but name as argument is mandatory', () => {
+    const catcher = jest.fn();
     try {
-      expect(() =>
-        mount(
-          <Form>
-            <TextField label="some label" value="Some value" />
-          </Form>
-        )
-      ).toThrow();
-    } catch (err) {}
+      render(
+        <Form>
+          <TextField label="some label" value="Some value" />
+        </Form>
+      );
+    } catch (err) {
+      catcher();
+    }
+    expect(catcher).toBeCalled();
   });
   it('should validate on field change', () => {
     const validate = jest.fn(() => '');
