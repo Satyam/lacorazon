@@ -362,6 +362,78 @@ exports[`Storyshots Form/Form with rejected promise validation 1`] = `
 </Form>
 `;
 
+exports[`Storyshots Form/Form with some border and child 1`] = `
+<Form
+  className="form-border"
+>
+  <Formik
+    enableReinitialize={true}
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      className="form-border"
+      tag={[Function]}
+    >
+      <Form
+        className="form-border"
+      >
+        <Component
+          className="form-border"
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {},
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {},
+            }
+          }
+        >
+          <form
+            className="form-border"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            Hello
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
 exports[`Storyshots Form/Form with some child 1`] = `
 <Form>
   <Formik

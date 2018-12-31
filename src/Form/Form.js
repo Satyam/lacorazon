@@ -3,16 +3,20 @@ import { Form as BSForm, Alert } from 'reactstrap';
 import { Formik, Form as KForm } from 'formik';
 
 export default function Form({
-  initialValues,
   schema,
   values,
   onSubmit,
   children,
+  enableReinitialize = true,
+  isInitialValid = false,
+  onReset,
+  validate,
+  validateOnBlur = true,
+  validateOnChange = true,
   ...rest
 }) {
   return (
     <Formik
-      enableReinitialize={true}
       validationSchema={schema}
       initialValues={schema ? Object.assign(schema.default(), values) : values}
       onSubmit={(values, formik) => {
@@ -28,10 +32,15 @@ export default function Form({
           );
         }
       }}
-      {...rest}
+      enableReinitialize={enableReinitialize}
+      isInitialValid={isInitialValid}
+      onReset={onReset}
+      validate={validate}
+      validateOnBlur={validateOnBlur}
+      validateOnChange={validateOnChange}
     >
       {({ errors }) => (
-        <BSForm tag={KForm}>
+        <BSForm tag={KForm} {...rest}>
           {errors['*'] && <Alert color="danger">{errors['*']}</Alert>}
           {children}
         </BSForm>

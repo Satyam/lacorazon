@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { FormikConsumer } from 'formik';
 
 import Form from './Form';
+import styles from './styles.module.css';
 
 function useFormik() {
   return useContext(FormikConsumer._context);
@@ -31,6 +32,9 @@ function ForceSubmit() {
 storiesOf('Form/Form', module)
   .add('no attributes', () => <Form />)
   .add('with some child', () => <Form>Hello</Form>)
+  .add('with some border and child', () => (
+    <Form className={styles['form-border']}>Hello</Form>
+  ))
   .add('with error', () => (
     <Form
       isInitialValid={false}
