@@ -1,0 +1,2664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
+<Form
+  onSubmit={[Function]}
+  schema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": false,
+      "_nodes": Array [
+        "three",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "three": DateSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {},
+          "_mutate": false,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "date",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
+  values={
+    Object {
+      "three": 2019-01-01T17:59:13.667Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "three": 2019-01-01T17:59:13.667Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": false,
+        "_nodes": Array [
+          "three",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "three": DateSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {},
+            "_mutate": false,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "date",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      }
+    }
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 2019-01-01T17:59:13.667Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": ObjectSchema {
+                "_blacklist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "_conditions": Array [],
+                "_defaultDefault": [Function],
+                "_deps": Array [],
+                "_excludedEdges": Array [],
+                "_exclusive": Object {},
+                "_mutate": false,
+                "_nodes": Array [
+                  "three",
+                ],
+                "_options": Object {
+                  "abortEarly": true,
+                  "recursive": true,
+                },
+                "_type": "object",
+                "_typeError": [Function],
+                "_whitelist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "fields": Object {
+                  "three": DateSchema {
+                    "_blacklist": RefSet {
+                      "list": Set {},
+                      "refs": Map {},
+                    },
+                    "_conditions": Array [],
+                    "_deps": Array [],
+                    "_exclusive": Object {},
+                    "_mutate": false,
+                    "_options": Object {
+                      "abortEarly": true,
+                      "recursive": true,
+                    },
+                    "_type": "date",
+                    "_typeError": [Function],
+                    "_whitelist": RefSet {
+                      "list": Set {},
+                      "refs": Map {},
+                    },
+                    "tests": Array [],
+                    "transforms": Array [
+                      [Function],
+                    ],
+                  },
+                },
+                "tests": Array [],
+                "transforms": Array [
+                  [Function],
+                ],
+              },
+              "values": Object {
+                "three": 2019-01-01T17:59:13.667Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <DateField
+              dateFormat="yyyy/MM/dd"
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
+                    >
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control"
+                        dateFormat="yyyy/MM/dd"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="three"
+                        monthsShown={1}
+                        name="three"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.667Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control"
+                                disabled={false}
+                                id="three"
+                                name="three"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="2019/01/01"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control"
+                                      disabled={false}
+                                      id="three"
+                                      name="three"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="2019/01/01"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="three"
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 2019-01-01T17:59:13.667Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": ObjectSchema {
+                                "_blacklist": RefSet {
+                                  "list": Set {},
+                                  "refs": Map {},
+                                },
+                                "_conditions": Array [],
+                                "_defaultDefault": [Function],
+                                "_deps": Array [],
+                                "_excludedEdges": Array [],
+                                "_exclusive": Object {},
+                                "_mutate": false,
+                                "_nodes": Array [
+                                  "three",
+                                ],
+                                "_options": Object {
+                                  "abortEarly": true,
+                                  "recursive": true,
+                                },
+                                "_type": "object",
+                                "_typeError": [Function],
+                                "_whitelist": RefSet {
+                                  "list": Set {},
+                                  "refs": Map {},
+                                },
+                                "fields": Object {
+                                  "three": DateSchema {
+                                    "_blacklist": RefSet {
+                                      "list": Set {},
+                                      "refs": Map {},
+                                    },
+                                    "_conditions": Array [],
+                                    "_deps": Array [],
+                                    "_exclusive": Object {},
+                                    "_mutate": false,
+                                    "_options": Object {
+                                      "abortEarly": true,
+                                      "recursive": true,
+                                    },
+                                    "_type": "date",
+                                    "_typeError": [Function],
+                                    "_whitelist": RefSet {
+                                      "list": Set {},
+                                      "refs": Map {},
+                                    },
+                                    "tests": Array [],
+                                    "transforms": Array [
+                                      [Function],
+                                    ],
+                                  },
+                                },
+                                "tests": Array [],
+                                "transforms": Array [
+                                  [Function],
+                                ],
+                              },
+                              "values": Object {
+                                "three": 2019-01-01T17:59:13.667Z,
+                              },
+                            }
+                          }
+                          name="three"
+                          style={
+                            Object {
+                              "display": "none",
+                            }
+                          }
+                        />
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={true}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary disabled"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Accept
+                </button>
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/DateField label and name 1`] = `
+<Form
+  values={
+    Object {
+      "two": 2019-01-01T17:59:13.506Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "two": 2019-01-01T17:59:13.506Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "two": 2019-01-01T17:59:13.506Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "two": 2019-01-01T17:59:13.506Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <DateField
+              label="field two"
+              name="two"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="two"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="two"
+                    >
+                      field two
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control"
+                        dateFormat="MM/dd/yyyy"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="two"
+                        monthsShown={1}
+                        name="two"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.506Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control"
+                                disabled={false}
+                                id="two"
+                                name="two"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="01/01/2019"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control"
+                                      disabled={false}
+                                      id="two"
+                                      name="two"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="01/01/2019"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="two"
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "two": 2019-01-01T17:59:13.506Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "two": 2019-01-01T17:59:13.506Z,
+                              },
+                            }
+                          }
+                          name="two"
+                          style={
+                            Object {
+                              "display": "none",
+                            }
+                          }
+                        />
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/DateField label, name and help 1`] = `
+<Form
+  values={
+    Object {
+      "three": 2019-01-01T17:59:13.545Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "three": 2019-01-01T17:59:13.545Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 2019-01-01T17:59:13.545Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "three": 2019-01-01T17:59:13.545Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <DateField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
+                    >
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control"
+                        dateFormat="MM/dd/yyyy"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="three"
+                        monthsShown={1}
+                        name="three"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.545Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control"
+                                disabled={false}
+                                id="three"
+                                name="three"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="01/01/2019"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control"
+                                      disabled={false}
+                                      id="three"
+                                      name="three"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="01/01/2019"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="three"
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 2019-01-01T17:59:13.545Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "three": 2019-01-01T17:59:13.545Z,
+                              },
+                            }
+                          }
+                          name="three"
+                          style={
+                            Object {
+                              "display": "none",
+                            }
+                          }
+                        />
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
+<Form
+  values={
+    Object {
+      "three": 2019-01-01T17:59:13.620Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "three": 2019-01-01T17:59:13.620Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {
+                "three": "some error message",
+              },
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 2019-01-01T17:59:13.620Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "three": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "three": 2019-01-01T17:59:13.620Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <TouchField
+              name="three"
+            />
+            <SetFieldError
+              message="some error message"
+              name="three"
+            />
+            <DateField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
+                    >
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control is-invalid"
+                        dateFormat="MM/dd/yyyy"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="three"
+                        monthsShown={1}
+                        name="three"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.620Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control is-invalid"
+                                disabled={false}
+                                id="three"
+                                name="three"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="01/01/2019"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control is-invalid"
+                                      disabled={false}
+                                      id="three"
+                                      name="three"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="01/01/2019"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="three"
+                        style={
+                          Object {
+                            "display": "block",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {
+                                "three": "some error message",
+                              },
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 2019-01-01T17:59:13.620Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {
+                                "three": true,
+                              },
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "three": 2019-01-01T17:59:13.620Z,
+                              },
+                            }
+                          }
+                          name="three"
+                          style={
+                            Object {
+                              "display": "block",
+                            }
+                          }
+                        >
+                          <FormFeedback
+                            style={
+                              Object {
+                                "display": "block",
+                              }
+                            }
+                            tag="div"
+                          >
+                            <div
+                              className="invalid-feedback"
+                              style={
+                                Object {
+                                  "display": "block",
+                                }
+                              }
+                            >
+                              some error message
+                            </div>
+                          </FormFeedback>
+                        </ErrorMessageImpl>
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
+<Form
+  values={
+    Object {
+      "three": 2019-01-01T17:59:13.574Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "three": 2019-01-01T17:59:13.574Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 2019-01-01T17:59:13.574Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {
+                "three": true,
+              },
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "three": 2019-01-01T17:59:13.574Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <TouchField
+              name="three"
+            />
+            <DateField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
+                    >
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control"
+                        dateFormat="MM/dd/yyyy"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="three"
+                        monthsShown={1}
+                        name="three"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.574Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control"
+                                disabled={false}
+                                id="three"
+                                name="three"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="01/01/2019"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control"
+                                      disabled={false}
+                                      id="three"
+                                      name="three"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="01/01/2019"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="three"
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 2019-01-01T17:59:13.574Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {
+                                "three": true,
+                              },
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "three": 2019-01-01T17:59:13.574Z,
+                              },
+                            }
+                          }
+                          name="three"
+                          style={
+                            Object {
+                              "display": "none",
+                            }
+                          }
+                        />
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/DateField name, no label 1`] = `
+<Form
+  values={
+    Object {
+      "one": 2019-01-01T17:59:13.364Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "one": 2019-01-01T17:59:13.364Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "one": 2019-01-01T17:59:13.364Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": undefined,
+              "values": Object {
+                "one": 2019-01-01T17:59:13.364Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <DateField
+              name="one"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="one"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="one"
+                    />
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control"
+                        dateFormat="MM/dd/yyyy"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="one"
+                        monthsShown={1}
+                        name="one"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.364Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control"
+                                disabled={false}
+                                id="one"
+                                name="one"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="01/01/2019"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control"
+                                      disabled={false}
+                                      id="one"
+                                      name="one"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="01/01/2019"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="one"
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "one": 2019-01-01T17:59:13.364Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": undefined,
+                              "values": Object {
+                                "one": 2019-01-01T17:59:13.364Z,
+                              },
+                            }
+                          }
+                          name="one"
+                          style={
+                            Object {
+                              "display": "none",
+                            }
+                          }
+                        />
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
+
+exports[`Storyshots Form/DateField validate via schema 1`] = `
+<Form
+  onSubmit={[Function]}
+  schema={
+    ObjectSchema {
+      "_blacklist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "_conditions": Array [],
+      "_defaultDefault": [Function],
+      "_deps": Array [],
+      "_excludedEdges": Array [],
+      "_exclusive": Object {},
+      "_mutate": false,
+      "_nodes": Array [
+        "three",
+      ],
+      "_options": Object {
+        "abortEarly": true,
+        "recursive": true,
+      },
+      "_type": "object",
+      "_typeError": [Function],
+      "_whitelist": RefSet {
+        "list": Set {},
+        "refs": Map {},
+      },
+      "fields": Object {
+        "three": DateSchema {
+          "_blacklist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "_conditions": Array [],
+          "_deps": Array [],
+          "_exclusive": Object {},
+          "_mutate": false,
+          "_options": Object {
+            "abortEarly": true,
+            "recursive": true,
+          },
+          "_type": "date",
+          "_typeError": [Function],
+          "_whitelist": RefSet {
+            "list": Set {},
+            "refs": Map {},
+          },
+          "tests": Array [],
+          "transforms": Array [
+            [Function],
+          ],
+        },
+      },
+      "tests": Array [],
+      "transforms": Array [
+        [Function],
+      ],
+    }
+  }
+  values={
+    Object {
+      "three": 2019-01-01T17:59:13.641Z,
+    }
+  }
+>
+  <Formik
+    enableReinitialize={true}
+    initialValues={
+      Object {
+        "three": 2019-01-01T17:59:13.641Z,
+      }
+    }
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+    validationSchema={
+      ObjectSchema {
+        "_blacklist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "_conditions": Array [],
+        "_defaultDefault": [Function],
+        "_deps": Array [],
+        "_excludedEdges": Array [],
+        "_exclusive": Object {},
+        "_mutate": false,
+        "_nodes": Array [
+          "three",
+        ],
+        "_options": Object {
+          "abortEarly": true,
+          "recursive": true,
+        },
+        "_type": "object",
+        "_typeError": [Function],
+        "_whitelist": RefSet {
+          "list": Set {},
+          "refs": Map {},
+        },
+        "fields": Object {
+          "three": DateSchema {
+            "_blacklist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "_conditions": Array [],
+            "_deps": Array [],
+            "_exclusive": Object {},
+            "_mutate": false,
+            "_options": Object {
+              "abortEarly": true,
+              "recursive": true,
+            },
+            "_type": "date",
+            "_typeError": [Function],
+            "_whitelist": RefSet {
+              "list": Set {},
+              "refs": Map {},
+            },
+            "tests": Array [],
+            "transforms": Array [
+              [Function],
+            ],
+          },
+        },
+        "tests": Array [],
+        "transforms": Array [
+          [Function],
+        ],
+      }
+    }
+  >
+    <Form
+      tag={[Function]}
+    >
+      <Form
+        className=""
+      >
+        <Component
+          className=""
+          formik={
+            Object {
+              "dirty": false,
+              "errors": Object {},
+              "handleBlur": [Function],
+              "handleChange": [Function],
+              "handleReset": [Function],
+              "handleSubmit": [Function],
+              "initialValues": Object {
+                "three": 2019-01-01T17:59:13.641Z,
+              },
+              "isSubmitting": false,
+              "isValid": false,
+              "isValidating": false,
+              "registerField": [Function],
+              "resetForm": [Function],
+              "setError": [Function],
+              "setErrors": [Function],
+              "setFieldError": [Function],
+              "setFieldTouched": [Function],
+              "setFieldValue": [Function],
+              "setFormikState": [Function],
+              "setStatus": [Function],
+              "setSubmitting": [Function],
+              "setTouched": [Function],
+              "setValues": [Function],
+              "submitCount": 0,
+              "submitForm": [Function],
+              "touched": Object {},
+              "unregisterField": [Function],
+              "validate": undefined,
+              "validateField": [Function],
+              "validateForm": [Function],
+              "validateOnBlur": true,
+              "validateOnChange": true,
+              "validationSchema": ObjectSchema {
+                "_blacklist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "_conditions": Array [],
+                "_defaultDefault": [Function],
+                "_deps": Array [],
+                "_excludedEdges": Array [],
+                "_exclusive": Object {},
+                "_mutate": false,
+                "_nodes": Array [
+                  "three",
+                ],
+                "_options": Object {
+                  "abortEarly": true,
+                  "recursive": true,
+                },
+                "_type": "object",
+                "_typeError": [Function],
+                "_whitelist": RefSet {
+                  "list": Set {},
+                  "refs": Map {},
+                },
+                "fields": Object {
+                  "three": DateSchema {
+                    "_blacklist": RefSet {
+                      "list": Set {},
+                      "refs": Map {},
+                    },
+                    "_conditions": Array [],
+                    "_deps": Array [],
+                    "_exclusive": Object {},
+                    "_mutate": false,
+                    "_options": Object {
+                      "abortEarly": true,
+                      "recursive": true,
+                    },
+                    "_type": "date",
+                    "_typeError": [Function],
+                    "_whitelist": RefSet {
+                      "list": Set {},
+                      "refs": Map {},
+                    },
+                    "tests": Array [],
+                    "transforms": Array [
+                      [Function],
+                    ],
+                  },
+                },
+                "tests": Array [],
+                "transforms": Array [
+                  [Function],
+                ],
+              },
+              "values": Object {
+                "three": 2019-01-01T17:59:13.641Z,
+              },
+            }
+          }
+        >
+          <form
+            className=""
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <DateField
+              help="A little help from my friends"
+              label="Field 3"
+              name="three"
+            >
+              <FormGroup
+                row={true}
+                tag="div"
+              >
+                <div
+                  className="position-relative row form-group"
+                >
+                  <Label
+                    for="three"
+                    lg={2}
+                    tag="label"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <label
+                      className="col-12 col-lg-2 col-form-label"
+                      htmlFor="three"
+                    >
+                      Field 3
+                    </label>
+                  </Label>
+                  <Col
+                    lg={8}
+                    tag="div"
+                    widths={
+                      Array [
+                        "xs",
+                        "sm",
+                        "md",
+                        "lg",
+                        "xl",
+                      ]
+                    }
+                    xs={12}
+                  >
+                    <div
+                      className="col-12 col-lg-8"
+                    >
+                      <DatePicker
+                        allowSameDay={false}
+                        className="form-control"
+                        dateFormat="MM/dd/yyyy"
+                        dateFormatCalendar="LLLL yyyy"
+                        disabled={false}
+                        disabledKeyboardNavigation={false}
+                        dropdownMode="scroll"
+                        id="three"
+                        monthsShown={1}
+                        name="three"
+                        nextMonthButtonLabel="Next month"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onClickOutside={[Function]}
+                        onFocus={[Function]}
+                        onInputClick={[Function]}
+                        onInputError={[Function]}
+                        onKeyDown={[Function]}
+                        onMonthChange={[Function]}
+                        onSelect={[Function]}
+                        onYearChange={[Function]}
+                        preventOpenOnFocus={false}
+                        previousMonthButtonLabel="Previous Month"
+                        readOnly={false}
+                        renderDayContents={[Function]}
+                        selected={2019-01-01T17:59:13.641Z}
+                        shouldCloseOnSelect={true}
+                        showTimeSelect={false}
+                        timeCaption="Time"
+                        timeIntervals={30}
+                        withPortal={false}
+                      >
+                        <PopperComponent
+                          hidePopper={true}
+                          popperComponent={null}
+                          popperModifiers={
+                            Object {
+                              "preventOverflow": Object {
+                                "boundariesElement": "viewport",
+                                "enabled": true,
+                                "escapeWithReference": true,
+                              },
+                            }
+                          }
+                          popperPlacement="bottom-start"
+                          popperProps={Object {}}
+                          targetComponent={
+                            <div
+                              className="react-datepicker__input-container"
+                            >
+                              <input
+                                className="form-control"
+                                disabled={false}
+                                id="three"
+                                name="three"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                readOnly={false}
+                                type="text"
+                                value="01/01/2019"
+                              />
+                            </div>
+                          }
+                        >
+                          <Manager>
+                            <Reference>
+                              <InnerReference
+                                getReferenceRef={[Function]}
+                              >
+                                <div
+                                  className="react-datepicker-wrapper"
+                                >
+                                  <div
+                                    className="react-datepicker__input-container"
+                                  >
+                                    <input
+                                      className="form-control"
+                                      disabled={false}
+                                      id="three"
+                                      name="three"
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onClick={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      readOnly={false}
+                                      type="text"
+                                      value="01/01/2019"
+                                    />
+                                  </div>
+                                </div>
+                              </InnerReference>
+                            </Reference>
+                          </Manager>
+                        </PopperComponent>
+                      </DatePicker>
+                      <FormText
+                        color="muted"
+                        tag="small"
+                      >
+                        <small
+                          className="form-text text-muted"
+                        >
+                          A little help from my friends
+                        </small>
+                      </FormText>
+                      <FormikConnect(ErrorMessageImpl)
+                        component={[Function]}
+                        name="three"
+                        style={
+                          Object {
+                            "display": "none",
+                          }
+                        }
+                      >
+                        <ErrorMessageImpl
+                          component={[Function]}
+                          formik={
+                            Object {
+                              "dirty": false,
+                              "errors": Object {},
+                              "handleBlur": [Function],
+                              "handleChange": [Function],
+                              "handleReset": [Function],
+                              "handleSubmit": [Function],
+                              "initialValues": Object {
+                                "three": 2019-01-01T17:59:13.641Z,
+                              },
+                              "isSubmitting": false,
+                              "isValid": false,
+                              "isValidating": false,
+                              "registerField": [Function],
+                              "resetForm": [Function],
+                              "setError": [Function],
+                              "setErrors": [Function],
+                              "setFieldError": [Function],
+                              "setFieldTouched": [Function],
+                              "setFieldValue": [Function],
+                              "setFormikState": [Function],
+                              "setStatus": [Function],
+                              "setSubmitting": [Function],
+                              "setTouched": [Function],
+                              "setValues": [Function],
+                              "submitCount": 0,
+                              "submitForm": [Function],
+                              "touched": Object {},
+                              "unregisterField": [Function],
+                              "validate": undefined,
+                              "validateField": [Function],
+                              "validateForm": [Function],
+                              "validateOnBlur": true,
+                              "validateOnChange": true,
+                              "validationSchema": ObjectSchema {
+                                "_blacklist": RefSet {
+                                  "list": Set {},
+                                  "refs": Map {},
+                                },
+                                "_conditions": Array [],
+                                "_defaultDefault": [Function],
+                                "_deps": Array [],
+                                "_excludedEdges": Array [],
+                                "_exclusive": Object {},
+                                "_mutate": false,
+                                "_nodes": Array [
+                                  "three",
+                                ],
+                                "_options": Object {
+                                  "abortEarly": true,
+                                  "recursive": true,
+                                },
+                                "_type": "object",
+                                "_typeError": [Function],
+                                "_whitelist": RefSet {
+                                  "list": Set {},
+                                  "refs": Map {},
+                                },
+                                "fields": Object {
+                                  "three": DateSchema {
+                                    "_blacklist": RefSet {
+                                      "list": Set {},
+                                      "refs": Map {},
+                                    },
+                                    "_conditions": Array [],
+                                    "_deps": Array [],
+                                    "_exclusive": Object {},
+                                    "_mutate": false,
+                                    "_options": Object {
+                                      "abortEarly": true,
+                                      "recursive": true,
+                                    },
+                                    "_type": "date",
+                                    "_typeError": [Function],
+                                    "_whitelist": RefSet {
+                                      "list": Set {},
+                                      "refs": Map {},
+                                    },
+                                    "tests": Array [],
+                                    "transforms": Array [
+                                      [Function],
+                                    ],
+                                  },
+                                },
+                                "tests": Array [],
+                                "transforms": Array [
+                                  [Function],
+                                ],
+                              },
+                              "values": Object {
+                                "three": 2019-01-01T17:59:13.641Z,
+                              },
+                            }
+                          }
+                          name="three"
+                          style={
+                            Object {
+                              "display": "none",
+                            }
+                          }
+                        />
+                      </FormikConnect(ErrorMessageImpl)>
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </DateField>
+            <SubmitButton>
+              <Button
+                color="secondary"
+                disabled={true}
+                tag="button"
+                type="submit"
+              >
+                <button
+                  aria-label={null}
+                  className="btn btn-secondary disabled"
+                  disabled={true}
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Accept
+                </button>
+              </Button>
+            </SubmitButton>
+          </form>
+        </Component>
+      </Form>
+    </Form>
+  </Formik>
+</Form>
+`;
