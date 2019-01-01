@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { createStore, combineReducers } from 'redux';
 import configureStore from 'redux-mock-store';
 import { mount, shallow } from 'enzyme';
 
@@ -338,23 +339,19 @@ describe('useSelect', () => {
     });
   });
 
-  /***************************************
-
-  At the time being, useEffect cannot be tested
-  https://github.com/facebook/react/issues/14050
-  
   describe('test for listener', () => {
     const INCREMENT_ONE = 'increment one';
     const INCREMENT_TWO = 'increment two';
     const INCREMENT_BOTH = 'increment both';
-    const RESET_BOTH = 'reset both';
+    const INCREMENT_OBJ = 'increment object';
+    const RESET_ALL = 'reset all';
 
     function counterOne(state = 0, action) {
       switch (action.type) {
         case INCREMENT_ONE:
         case INCREMENT_BOTH:
           return state + 1;
-        case RESET_BOTH:
+        case RESET_ALL:
           return 0;
         default:
           return state;
@@ -365,91 +362,229 @@ describe('useSelect', () => {
         case INCREMENT_TWO:
         case INCREMENT_BOTH:
           return state + 1;
-        case RESET_BOTH:
+        case RESET_ALL:
           return 0;
         default:
           return state;
       }
     }
 
-    const store = createStore(combineReducers({ counterOne, counterTwo }));
+    function objectOne(state = { counter: 0, fixed: 'fixed' }, action) {
+      switch (action.type) {
+        case INCREMENT_OBJ:
+          return {
+            ...state,
+            counter: state.counter + 1
+          };
+        case RESET_ALL:
+          return {
+            ...state,
+            counter: 0
+          };
+        default:
+          return state;
+      }
+    }
+
+    const store = createStore(
+      combineReducers({ counterOne, counterTwo, objectOne })
+    );
 
     const acIncrementOne = () => ({ type: INCREMENT_ONE });
     const acIncrementTwo = () => ({ type: INCREMENT_TWO });
     const acIncrementBoth = () => ({ type: INCREMENT_BOTH });
-    const acResetBoth = () => ({ type: RESET_BOTH });
+    const acIncrementObj = () => ({ type: INCREMENT_OBJ });
+    const acResetAll = () => ({ type: RESET_ALL });
 
     const selOne = 'counterOne';
     const selTwo = 'counterTwo';
+    const selObjCounter = 'objectOne.counter';
+    const selObjFixed = 'objectOne.fixed';
 
+    const MockComponentOne = jest.fn(() => {
+      const value = useSelector(selOne);
+      return <h1>{value}</h1>;
+    });
+    const MockComponentTwo = jest.fn(() => {
+      const value = useSelector(selTwo);
+      return <h2>{value}</h2>;
+    });
+    const MockComponentObjCounter = jest.fn(() => {
+      const counter = useSelector(selObjCounter);
+      return <h3>{counter}</h3>;
+    });
+
+    const MockComponentObjFixed = jest.fn(() => {
+      const fixed = useSelector(selObjFixed);
+      return <h4>{fixed}</h4>;
+    });
+
+    const MockComponentObjArraySel = jest.fn(() => {
+      const [counter, fixed] = useSelector([selObjCounter, selObjFixed]);
+      return (
+        <div>
+          <h3>{counter}</h3>
+          <h4>{fixed}</h4>
+        </div>
+      );
+    });
+
+    const MockComponentObjObjSel = jest.fn(() => {
+      const props = useSelector({ counter: selObjCounter, fixed: selObjFixed });
+      return (
+        <div>
+          <h3>{props.counter}</h3>
+          <h4>{props.fixed}</h4>
+        </div>
+      );
+    });
     beforeEach(() => {
-      store.dispatch(acResetBoth());
+      store.dispatch(acResetAll());
+      jest.clearAllMocks();
     });
 
-    it('should detect state changes', done => {
-      expect.assertions(3);
-      let count = 0;
-      const MockComponent = () => {
-        const value = useSelector(selOne);
-        expect(value).toBe(count);
-        return <p>{value}</p>;
-      };
+    it('should detect state changes', () => {
       const wrapper = mount(
         <StoreProvider store={store}>
-          <div>
-            <MockComponent />
-          </div>
+          <MockComponentOne />
         </StoreProvider>
       );
-      console.log('store 1', store.getState());
-      console.log('html 1', wrapper.html());
-      count++;
+      expect(MockComponentOne).toBeCalledTimes(1);
+      expect(wrapper.find('h1').text()).toBe('0');
+
       store.dispatch(acIncrementOne());
 
-      setTimeout(() => {
-        console.log('store 2', store.getState());
-        console.log('html 2', wrapper.html());
-        expect(count).toBe(1);
-        expect(store.getState()).toEqual({ counterOne: 1, counterTwo: 0 });
-        done();
-      }, 10);
+      expect(store.getState()).toEqual({
+        counterOne: 1,
+        counterTwo: 0,
+        objectOne: { counter: 0, fixed: 'fixed' }
+      });
+      expect(wrapper.find('h1').text()).toBe('1');
+      expect(MockComponentOne).toBeCalledTimes(2);
     });
 
-    it('should not affect other listeners', done => {
-      expect.assertions(5);
-      let count = 0;
-      const MockComponentOne = () => {
-        const value = useSelector(selOne);
-        expect(value).toBe(count);
-        return <h1>{value}</h1>;
-      };
-      const MockComponentTwo = () => {
-        const value = useSelector(selTwo);
-        expect(value).toBe(0);
-        return <h2>{value}</h2>;
-      };
+    it('should not affect other listeners', () => {
       const wrapper = mount(
         <StoreProvider store={store}>
-          <div>
-            <MockComponentOne />
-            <MockComponentTwo />
-          </div>
+          <MockComponentOne />
+          <MockComponentTwo />
         </StoreProvider>
       );
 
-      console.log('store 1', store.getState());
-      console.log('html 1', wrapper.html());
-      count++;
+      expect(MockComponentOne).toBeCalledTimes(1);
+      expect(MockComponentTwo).toBeCalledTimes(1);
+      expect(wrapper.find('h1').text()).toBe('0');
+      expect(wrapper.find('h2').text()).toBe('0');
+
       store.dispatch(acIncrementOne());
 
-      setTimeout(() => {
-        console.log('store 2', store.getState());
-        console.log('html 2', wrapper.html());
-        expect(count).toBe(1);
-        expect(store.getState()).toEqual({ counterOne: 1, counterTwo: 0 });
-        done();
-      }, 10);
+      // TODO why 3 times?  Should be two
+      expect(MockComponentOne).toBeCalledTimes(3);
+      expect(MockComponentTwo).toBeCalledTimes(1);
+      expect(wrapper.find('h1').text()).toBe('1');
+      expect(wrapper.find('h2').text()).toBe('0');
+      expect(store.getState()).toEqual({
+        counterOne: 1,
+        counterTwo: 0,
+        objectOne: { counter: 0, fixed: 'fixed' }
+      });
+    });
+
+    it('should do two at a time', () => {
+      const wrapper = mount(
+        <StoreProvider store={store}>
+          <MockComponentOne />
+          <MockComponentTwo />
+        </StoreProvider>
+      );
+
+      expect(MockComponentOne).toBeCalledTimes(1);
+      expect(MockComponentTwo).toBeCalledTimes(1);
+      expect(wrapper.find('h1').text()).toBe('0');
+      expect(wrapper.find('h2').text()).toBe('0');
+
+      store.dispatch(acIncrementBoth());
+
+      // TODO why 4, should be two
+      expect(MockComponentOne).toBeCalledTimes(4);
+      // TODO why 3, should be two
+      expect(MockComponentTwo).toBeCalledTimes(3);
+      expect(wrapper.find('h1').text()).toBe('1');
+      expect(wrapper.find('h2').text()).toBe('1');
+      expect(store.getState()).toEqual({
+        counterOne: 1,
+        counterTwo: 1,
+        objectOne: { counter: 0, fixed: 'fixed' }
+      });
+    });
+
+    it('should detect state changes in object properties', () => {
+      const wrapper = mount(
+        <StoreProvider store={store}>
+          <MockComponentObjCounter />
+          <MockComponentObjFixed />
+        </StoreProvider>
+      );
+      expect(MockComponentObjCounter).toBeCalledTimes(1);
+      expect(wrapper.find('h3').text()).toBe('0');
+      expect(MockComponentObjFixed).toBeCalledTimes(1);
+      expect(wrapper.find('h4').text()).toBe('fixed');
+
+      store.dispatch(acIncrementObj());
+
+      expect(store.getState()).toEqual({
+        counterOne: 0,
+        counterTwo: 0,
+        objectOne: { counter: 1, fixed: 'fixed' }
+      });
+      expect(MockComponentObjCounter).toBeCalledTimes(2);
+      expect(wrapper.find('h3').text()).toBe('1');
+      expect(MockComponentObjFixed).toBeCalledTimes(1);
+      expect(wrapper.find('h4').text()).toBe('fixed');
+    });
+
+    it('should detect state changes in array of selectors', () => {
+      const wrapper = mount(
+        <StoreProvider store={store}>
+          <MockComponentObjArraySel />
+        </StoreProvider>
+      );
+      expect(MockComponentObjArraySel).toBeCalledTimes(1);
+      expect(wrapper.find('h3').text()).toBe('0');
+      expect(wrapper.find('h4').text()).toBe('fixed');
+
+      store.dispatch(acIncrementObj());
+
+      expect(store.getState()).toEqual({
+        counterOne: 0,
+        counterTwo: 0,
+        objectOne: { counter: 1, fixed: 'fixed' }
+      });
+      expect(MockComponentObjArraySel).toBeCalledTimes(2);
+      expect(wrapper.find('h3').text()).toBe('1');
+      expect(wrapper.find('h4').text()).toBe('fixed');
+    });
+
+    it('should detect state changes in object of selectors', () => {
+      const wrapper = mount(
+        <StoreProvider store={store}>
+          <MockComponentObjObjSel />
+        </StoreProvider>
+      );
+      expect(MockComponentObjObjSel).toBeCalledTimes(1);
+      expect(wrapper.find('h3').text()).toBe('0');
+      expect(wrapper.find('h4').text()).toBe('fixed');
+
+      store.dispatch(acIncrementObj());
+
+      expect(store.getState()).toEqual({
+        counterOne: 0,
+        counterTwo: 0,
+        objectOne: { counter: 1, fixed: 'fixed' }
+      });
+      expect(MockComponentObjObjSel).toBeCalledTimes(2);
+      expect(wrapper.find('h3').text()).toBe('1');
+      expect(wrapper.find('h4').text()).toBe('fixed');
     });
   });
-  */
 });

@@ -221,9 +221,11 @@ export function useSelector(selectors, ...args) {
       subscribe(() => {
         const newSlice = doSelectors(getState(), selectors, ...args);
         if (typeof newSlice === 'object') {
+          /* istanbul ignore else */
           if (Object.keys(newSlice).some(key => newSlice[key] !== slice[key]))
             setSlice(newSlice);
         } else {
+          /* istanbul ignore else */
           if (slice !== newSlice) setSlice(newSlice);
         }
       }),
