@@ -36,7 +36,7 @@ storiesOf('Form/DateField', module)
   .add('name, no label', () => (
     <Form
       values={{
-        one: new Date()
+        one: new Date(2019, 2, 3)
       }}
     >
       <DateField name="one" />
@@ -45,7 +45,7 @@ storiesOf('Form/DateField', module)
   .add('label and name', () => (
     <Form
       values={{
-        two: new Date()
+        two: new Date(2019, 2, 3)
       }}
     >
       <DateField label="field two" name="two" />
@@ -54,7 +54,7 @@ storiesOf('Form/DateField', module)
   .add('label, name and help', () => (
     <Form
       values={{
-        three: new Date()
+        three: new Date(2019, 2, 3)
       }}
     >
       <DateField
@@ -67,7 +67,7 @@ storiesOf('Form/DateField', module)
   .add('label, name, help plus touched', () => (
     <Form
       values={{
-        three: new Date()
+        three: new Date(2019, 2, 3)
       }}
     >
       <TouchField name="three" />
@@ -81,7 +81,7 @@ storiesOf('Form/DateField', module)
   .add('label, name, help plus error', () => (
     <Form
       values={{
-        three: new Date()
+        three: new Date(2019, 2, 3)
       }}
     >
       <TouchField name="three" />
@@ -96,7 +96,7 @@ storiesOf('Form/DateField', module)
   .add('validate via schema', () => (
     <Form
       values={{
-        three: new Date()
+        three: new Date(2019, 2, 3)
       }}
       schema={schema}
       onSubmit={action('validate via schema')}
@@ -112,10 +112,10 @@ storiesOf('Form/DateField', module)
   .add('Passing a format for dates', () => (
     <Form
       values={{
-        three: new Date()
+        three: new Date(2019, 2, 3)
       }}
       schema={schema}
-      onSubmit={action('validate via schema')}
+      onSubmit={action('Whatever the format, always a date')}
     >
       <DateField
         label="Field 3"
