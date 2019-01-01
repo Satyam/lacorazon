@@ -391,7 +391,7 @@ describe('useSelect', () => {
     );
 
     const acIncrementOne = () => ({ type: INCREMENT_ONE });
-    const acIncrementTwo = () => ({ type: INCREMENT_TWO });
+    // const acIncrementTwo = () => ({ type: INCREMENT_TWO });
     const acIncrementBoth = () => ({ type: INCREMENT_BOTH });
     const acIncrementObj = () => ({ type: INCREMENT_OBJ });
     const acResetAll = () => ({ type: RESET_ALL });
@@ -449,7 +449,8 @@ describe('useSelect', () => {
           <MockComponentOne />
         </StoreProvider>
       );
-      expect(MockComponentOne).toBeCalledTimes(1);
+      expect(MockComponentOne).toBeCalled();
+      MockComponentOne.mockClear();
       expect(wrapper.find('h1').text()).toBe('0');
 
       store.dispatch(acIncrementOne());
@@ -460,7 +461,7 @@ describe('useSelect', () => {
         objectOne: { counter: 0, fixed: 'fixed' }
       });
       expect(wrapper.find('h1').text()).toBe('1');
-      expect(MockComponentOne).toBeCalledTimes(2);
+      expect(MockComponentOne).toBeCalled();
     });
 
     it('should not affect other listeners', () => {
@@ -471,16 +472,18 @@ describe('useSelect', () => {
         </StoreProvider>
       );
 
-      expect(MockComponentOne).toBeCalledTimes(1);
-      expect(MockComponentTwo).toBeCalledTimes(1);
+      expect(MockComponentOne).toBeCalled();
+      expect(MockComponentTwo).toBeCalled();
+      MockComponentOne.mockClear();
+      MockComponentTwo.mockClear();
+
       expect(wrapper.find('h1').text()).toBe('0');
       expect(wrapper.find('h2').text()).toBe('0');
 
       store.dispatch(acIncrementOne());
 
-      // TODO why 3 times?  Should be two
-      expect(MockComponentOne).toBeCalledTimes(3);
-      expect(MockComponentTwo).toBeCalledTimes(1);
+      expect(MockComponentOne).toBeCalled();
+      expect(MockComponentTwo).not.toBeCalled();
       expect(wrapper.find('h1').text()).toBe('1');
       expect(wrapper.find('h2').text()).toBe('0');
       expect(store.getState()).toEqual({
@@ -498,17 +501,17 @@ describe('useSelect', () => {
         </StoreProvider>
       );
 
-      expect(MockComponentOne).toBeCalledTimes(1);
-      expect(MockComponentTwo).toBeCalledTimes(1);
+      expect(MockComponentOne).toBeCalled();
+      expect(MockComponentTwo).toBeCalled();
+      MockComponentOne.mockClear();
+      MockComponentTwo.mockClear();
       expect(wrapper.find('h1').text()).toBe('0');
       expect(wrapper.find('h2').text()).toBe('0');
 
       store.dispatch(acIncrementBoth());
 
-      // TODO why 4, should be two
-      expect(MockComponentOne).toBeCalledTimes(4);
-      // TODO why 3, should be two
-      expect(MockComponentTwo).toBeCalledTimes(3);
+      expect(MockComponentOne).toBeCalled();
+      expect(MockComponentTwo).toBeCalled();
       expect(wrapper.find('h1').text()).toBe('1');
       expect(wrapper.find('h2').text()).toBe('1');
       expect(store.getState()).toEqual({
@@ -525,10 +528,12 @@ describe('useSelect', () => {
           <MockComponentObjFixed />
         </StoreProvider>
       );
-      expect(MockComponentObjCounter).toBeCalledTimes(1);
+      expect(MockComponentObjCounter).toBeCalled();
       expect(wrapper.find('h3').text()).toBe('0');
-      expect(MockComponentObjFixed).toBeCalledTimes(1);
+      expect(MockComponentObjFixed).toBeCalled();
       expect(wrapper.find('h4').text()).toBe('fixed');
+      MockComponentObjCounter.mockClear();
+      MockComponentObjFixed.mockClear();
 
       store.dispatch(acIncrementObj());
 
@@ -537,9 +542,9 @@ describe('useSelect', () => {
         counterTwo: 0,
         objectOne: { counter: 1, fixed: 'fixed' }
       });
-      expect(MockComponentObjCounter).toBeCalledTimes(2);
+      expect(MockComponentObjCounter).toBeCalled();
       expect(wrapper.find('h3').text()).toBe('1');
-      expect(MockComponentObjFixed).toBeCalledTimes(1);
+      expect(MockComponentObjFixed).not.toBeCalled();
       expect(wrapper.find('h4').text()).toBe('fixed');
     });
 
@@ -549,7 +554,8 @@ describe('useSelect', () => {
           <MockComponentObjArraySel />
         </StoreProvider>
       );
-      expect(MockComponentObjArraySel).toBeCalledTimes(1);
+      expect(MockComponentObjArraySel).toBeCalled();
+      MockComponentObjArraySel.mockClear();
       expect(wrapper.find('h3').text()).toBe('0');
       expect(wrapper.find('h4').text()).toBe('fixed');
 
@@ -560,7 +566,7 @@ describe('useSelect', () => {
         counterTwo: 0,
         objectOne: { counter: 1, fixed: 'fixed' }
       });
-      expect(MockComponentObjArraySel).toBeCalledTimes(2);
+      expect(MockComponentObjArraySel).toBeCalled();
       expect(wrapper.find('h3').text()).toBe('1');
       expect(wrapper.find('h4').text()).toBe('fixed');
     });
