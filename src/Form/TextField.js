@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { Field as KField, FormikConsumer, ErrorMessage } from 'formik';
 import classNames from 'classnames';
@@ -7,9 +7,12 @@ function useFormik() {
   return useContext(FormikConsumer._context);
 }
 
+let counter = 0;
+
 export default function TextField({
   name,
   label,
+  id,
   rows,
   help,
   validate,
@@ -19,22 +22,24 @@ export default function TextField({
     throw new Error('TextField: name argument is mandatory');
   }
   const { errors, touched, validationSchema } = useFormik();
-  const error = errors[name];
+  const invalid = errors[name] && touched[name];
+  const [actualId] = useState(id || `F_TF_${counter}`);
+  counter = (counter + 1) % Number.MAX_SAFE_INTEGER;
 
   return (
     <FormGroup row>
-      <Label for={name} xs={12} lg={2}>
+      <Label for={actualId} xs={12} lg={2}>
         {label}
       </Label>
       <Col xs={12} lg={8}>
         <KField
           component={rows ? 'textarea' : 'input'}
           className={classNames('form-control', {
-            'is-invalid': error && touched[name]
+            'is-invalid': invalid
           })}
           rows={rows}
           name={name}
-          id={name}
+          id={actualId}
           validate={
             validate
               ? value =>

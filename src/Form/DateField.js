@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { FormikConsumer, ErrorMessage } from 'formik';
 
@@ -11,12 +11,15 @@ function useFormik() {
   return useContext(FormikConsumer._context);
 }
 
+let counter = 0;
+
 export default function DateField({
   name,
   label,
   help,
   validate,
   className,
+  id,
   ...rest
 }) {
   if (process.env.NODE_ENV !== 'production' && !name) {
@@ -41,10 +44,14 @@ export default function DateField({
     return () => unregisterField(name, this);
   });
 
+  const [actualId] = useState(id || `F_DF_${counter}`);
+
+  counter = (counter + 1) % Number.MAX_SAFE_INTEGER;
+
   const invalid = errors[name] && touched[name];
   return (
     <FormGroup row>
-      <Label for={name} xs={12} lg={2}>
+      <Label for={actualId} xs={12} lg={2}>
         {label}
       </Label>
       <Col xs={12} lg={8}>
@@ -53,7 +60,7 @@ export default function DateField({
             'is-invalid': invalid
           })}
           name={name}
-          id={name}
+          id={actualId}
           onChange={value => {
             setFieldValue(name, value);
             if (validateOnChange) {

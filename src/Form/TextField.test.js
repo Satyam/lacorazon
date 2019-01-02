@@ -44,6 +44,25 @@ describe('Form/TextField', () => {
       .simulate('change', { target: { name: 'one', value: '2' } });
     expect(validate.mock.calls).toEqual([['2']]);
   });
+
+  it('should generate an id when no id provided', () => {
+    const wrapper = mount(
+      <Form values={{ one: 1 }}>
+        <TextField label="one" name="one" />
+      </Form>
+    );
+    expect(wrapper.find('input').prop('id')).toMatch(/^F_TF_\d+$/);
+  });
+
+  it('should respect the id provided', () => {
+    const wrapper = mount(
+      <Form values={{ one: 1 }}>
+        <TextField label="one" name="one" id="abcd" />
+      </Form>
+    );
+    expect(wrapper.find('input').prop('id')).toBe('abcd');
+  });
+
   it('should cast value to an integer before validate with schema on field change', () => {
     const schema = Yup.object().shape({
       one: Yup.number()
