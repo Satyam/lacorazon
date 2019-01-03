@@ -17,7 +17,6 @@ export default function DateField({
   name,
   label,
   help,
-  validate,
   className,
   id,
   ...rest
@@ -29,19 +28,34 @@ export default function DateField({
     values,
     errors,
     touched,
-    validationSchema,
     registerField,
     unregisterField,
-    setTouched,
-    setFieldValue,
-    validateField,
-    validateOnBlur,
-    validateOnChange
+    setFieldTouched,
+    setFieldValue
   } = useFormik();
 
   useEffect(() => {
-    registerField(name, this);
-    return () => unregisterField(name, this);
+    registerField(name, {
+      props: {
+        name,
+        label,
+        help,
+        className,
+        id,
+        ...rest
+      }
+    });
+    return () =>
+      unregisterField(name, {
+        props: {
+          name,
+          label,
+          help,
+          className,
+          id,
+          ...rest
+        }
+      });
   });
 
   const [actualId] = useState(id || `F_DF_${counter}`);
@@ -62,28 +76,14 @@ export default function DateField({
           name={name}
           id={actualId}
           onChange={value => {
+            debugger;
             setFieldValue(name, value);
-            if (validateOnChange) {
-              validateField(name);
-            }
           }}
           onBlur={() => {
-            setTouched(name, true);
-            if (validateOnBlur) {
-              validateField(name);
-            }
+            debugger;
+            setFieldTouched(name, true);
           }}
           selected={values[name]}
-          validate={
-            validate
-              ? value =>
-                  validate(
-                    validationSchema
-                      ? validationSchema.fields[name].cast(value)
-                      : value
-                  )
-              : void 0
-          }
           {...rest}
         />
         {help && <FormText>{help}</FormText>}
