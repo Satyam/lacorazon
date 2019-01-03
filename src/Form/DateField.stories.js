@@ -125,4 +125,94 @@ storiesOf('Form/DateField', module)
       />
       <SubmitButton>Accept</SubmitButton>
     </Form>
-  ));
+  ))
+  .add('validation schema with min date', () => {
+    const schema = Yup.object().shape({
+      three: Yup.date().min(new Date(2019, 5, 10))
+    });
+    return (
+      <Form
+        values={{
+          three: new Date(2019, 5, 15)
+        }}
+        schema={schema}
+        onSubmit={action('Only enabled dates')}
+      >
+        <DateField
+          label="Field 3"
+          name="three"
+          help="should disable dates prior to may 10th"
+        />
+        <SubmitButton>Accept</SubmitButton>
+      </Form>
+    );
+  })
+  .add('validation schema with max date', () => {
+    const schema = Yup.object().shape({
+      three: Yup.date().max(new Date(2019, 5, 20))
+    });
+    return (
+      <Form
+        values={{
+          three: new Date(2019, 5, 15)
+        }}
+        schema={schema}
+        onSubmit={action('Only enabled dates')}
+      >
+        <DateField
+          label="Field 3"
+          name="three"
+          help="should disable dates after may 20th"
+        />
+        <SubmitButton>Accept</SubmitButton>
+      </Form>
+    );
+  })
+  .add('validation schema with min and max date', () => {
+    const schema = Yup.object().shape({
+      three: Yup.date()
+        .min(new Date(2019, 5, 10))
+        .max(new Date(2019, 5, 20))
+    });
+    return (
+      <Form
+        values={{
+          three: new Date(2019, 5, 15)
+        }}
+        schema={schema}
+        onSubmit={action('Only enabled dates')}
+      >
+        <DateField
+          label="Field 3"
+          name="three"
+          help="should disable dates prior to may 10th or  after may 20th"
+        />
+        <SubmitButton>Accept</SubmitButton>
+      </Form>
+    );
+  })
+  .add('explicit minDate and maxDate properties should override schema', () => {
+    const schema = Yup.object().shape({
+      three: Yup.date()
+        .min(new Date(2019, 5, 10))
+        .max(new Date(2019, 5, 20))
+    });
+    return (
+      <Form
+        values={{
+          three: new Date(2019, 5, 15)
+        }}
+        schema={schema}
+        onSubmit={action('Only enabled dates')}
+      >
+        <DateField
+          label="Field 3"
+          name="three"
+          minDate={new Date(2019, 5, 13)}
+          maxDate={new Date(2019, 5, 17)}
+          help="should disable dates prior to may 13th or  after may 17th"
+        />
+        <SubmitButton>Accept</SubmitButton>
+      </Form>
+    );
+  });

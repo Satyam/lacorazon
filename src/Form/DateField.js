@@ -31,7 +31,8 @@ export default function DateField({
     registerField,
     unregisterField,
     setFieldTouched,
-    setFieldValue
+    setFieldValue,
+    validationSchema
   } = useFormik();
 
   useEffect(() => {
@@ -63,6 +64,25 @@ export default function DateField({
   counter = (counter + 1) % Number.MAX_SAFE_INTEGER;
 
   const invalid = errors[name] && touched[name];
+
+  let actualMin = rest.minDate;
+  let actualMax = rest.maxDate;
+
+  if (validationSchema) {
+    const tests = validationSchema.fields[name].tests;
+    if (!actualMin) {
+      const minTest = tests.filter(t => t.TEST_NAME === 'min')[0];
+      if (minTest) {
+        actualMin = minTest.TEST.params.min;
+      }
+    }
+    if (!actualMax) {
+      const maxTest = tests.filter(t => t.TEST_NAME === 'max')[0];
+      if (maxTest) {
+        actualMax = maxTest.TEST.params.max;
+      }
+    }
+  }
   return (
     <FormGroup row>
       <Label for={actualId} xs={12} lg={2}>
@@ -75,14 +95,10 @@ export default function DateField({
           })}
           name={name}
           id={actualId}
-          onChange={value => {
-            debugger;
-            setFieldValue(name, value);
-          }}
-          onBlur={() => {
-            debugger;
-            setFieldTouched(name, true);
-          }}
+          minDate={actualMin}
+          maxDate={actualMax}
+          onChange={value => setFieldValue(name, value)}
+          onBlur={() => setFieldTouched(name, true)}
           selected={values[name]}
           {...rest}
         />
