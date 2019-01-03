@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Form from './Form';
-import TextField from './TextField';
-import SubmitButton from './SubmitButton';
+import Form from '../Form';
+import TextField from '../TextField';
+import SubmitButton from '.';
 
 describe('Form / SubmitButton', () => {
   it('on a pristine form, it should be disabled', () => {

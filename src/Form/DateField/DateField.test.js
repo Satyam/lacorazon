@@ -3,9 +3,9 @@ import { mount, render } from 'enzyme';
 
 import * as Yup from 'yup';
 
-import Form from './Form';
-import DateField from './DateField';
-import TextField from './TextField';
+import Form from '../Form';
+import DateField from './';
+import TextField from '../TextField';
 
 import DatePicker from 'react-datepicker';
 

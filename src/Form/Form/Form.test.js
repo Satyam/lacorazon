@@ -2,9 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import * as Yup from 'yup';
 
-import Form from './Form';
-import TextField from './TextField';
-import SubmitButton from './SubmitButton';
+import Form from '.';
+import TextField from '../TextField';
+import SubmitButton from '../SubmitButton';
 
 describe('Form / Form', () => {
   describe('with no validationSchema', () => {

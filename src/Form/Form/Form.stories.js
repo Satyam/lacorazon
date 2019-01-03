@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FormikConsumer } from 'formik';
 
-import Form from './Form';
+import Form from '.';
 import styles from './styles.module.css';
 
 function useFormik() {

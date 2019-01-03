@@ -2,8 +2,8 @@ import React from 'react';
 import { mount, render } from 'enzyme';
 import * as Yup from 'yup';
 
-import Form from './Form';
-import TextField from './TextField';
+import Form from '../Form';
+import TextField from '.';
 
 describe('Form/TextField', () => {
   it('should throw with no props as name argument is mandatory', () => {

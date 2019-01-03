@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import DateField from './DateField';
-import Form from './Form';
-import SubmitButton from './SubmitButton';
+import DateField from './';
+import Form from '../Form';
+import SubmitButton from '../SubmitButton';
 import { FormikConsumer } from 'formik';
 import * as Yup from 'yup';
 

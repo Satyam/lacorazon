@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import LabeledText from './LabeledText';
+import LabeledText from '.';
 
 storiesOf('Form/LabeledText', module)
   .add('no props', () => <LabeledText />)
