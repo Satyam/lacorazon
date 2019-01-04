@@ -31,3 +31,7 @@ migrate/data.json
 
 # Old files unrelated to the application
 /varios
+
+#documentation
+/docs
+/styleguide

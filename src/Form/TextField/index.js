@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { Field as KField, FormikConsumer, ErrorMessage } from 'formik';
 import classNames from 'classnames';
@@ -8,7 +9,12 @@ function useFormik() {
 }
 
 let counter = 0;
-
+/**
+ * Produces a labeled input box within form
+ * @param {Object} props
+ * @param {String} props.name key for the field within the Form ´values´ to be used
+ * @param {String} [props.label] Label to be shown to the user along this field
+ */
 export default function TextField({
   name,
   label,
@@ -58,3 +64,42 @@ export default function TextField({
     </FormGroup>
   );
 }
+
+TextField.propTypes = {
+  /**
+   * Name of the field this component is to show or edit.
+   * It should match the key of one of the values in the
+   * enclosing `Form` `values` property.
+   */
+  name: PropTypes.string.isRequired,
+  /**
+   * The label to be shown to the user along the input box
+   */
+  label: PropTypes.string,
+  /**
+   * An optional `id` attribute.
+   * If none is provided, the component will generate a unique one
+   * so the `<label for="inputId">` element can match it
+   */
+  id: PropTypes.string,
+  /**
+   * If provided, a `<textarea>` will be produced with as many rows
+   * as given, instead of a regular `<input>`box
+   */
+  rows: PropTypes.number,
+  /**
+   * An optional help text to be shown below the input field
+   */
+  help: PropTypes.string,
+  /**
+   * A validation function.
+   * It will be called with the value of the field and
+   * it should return a text with an error message, if any,
+   * or nothing if Ok.
+   */
+  validate: PropTypes.func,
+  /**
+   * Any other properties will be passed on to the `<input>` or `<textarea>` elements
+   */
+  '...rest': PropTypes.object
+};

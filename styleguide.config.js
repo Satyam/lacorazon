@@ -13,5 +13,24 @@ module.exports = {
     'src/setupTests.js',
     'src/utils.js',
     'src/Form/index.js'
-  ]
+  ],
+  template: {
+    head: {
+      links: [
+        {
+          rel: 'stylesheet',
+          href:
+            'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'
+        }
+      ]
+    }
+  },
+  styles: {
+    Code: {
+      code: {
+        fontSize: '14px',
+        backgroundColor: '#eee'
+      }
+    }
+  }
 };
