@@ -5,10 +5,10 @@ import {
   acAddDistribuidor,
   acUpdateDistribuidor,
   acDeleteDistribuidor
-} from '../store/actions';
+} from '../../store/actions';
 
-import { useDispatch } from '../store/hooks';
-import distribuidorSchema from '../store/distribuidores/schema';
+import { useDispatch } from '../../store/hooks';
+import distribuidorSchema from '../../store/distribuidores/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 import Page from '../Page';
 

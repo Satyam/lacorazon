@@ -3,18 +3,18 @@ import { Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
 import { ButtonIconAdd } from '../Icons';
 
-import { useDispatch, useSelector } from '../store/hooks';
-import { isEmpty } from '../utils';
+import { useDispatch, useSelector } from '../../store/hooks';
+import { isEmpty } from '../../utils';
 import Loading from '../Loading';
 import Page from '../Page';
 import RowDistr from './RowDistr';
-import { acGetDistribuidores, acDeleteDistribuidor } from '../store/actions';
+import { acGetDistribuidores, acDeleteDistribuidor } from '../../store/actions';
 
 import {
   selDistribuidores,
   selDistribuidoresIsLoading,
   selDistribuidoresGotAll
-} from '../store/selectors';
+} from '../../store/selectors';
 
 export default function Distribuidores() {
   const [distribuidores, isLoading, gotAll] = useSelector([

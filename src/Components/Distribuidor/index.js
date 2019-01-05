@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { Alert } from 'reactstrap';
 import querystring from 'querystring';
 
-import { isEmpty } from '../utils';
+import { isEmpty } from '../../utils';
 import Loading from '../Loading';
 import EditDistribuidor from './EditDistribuidor';
 import ShowDistribuidor from './ShowDistribuidor';
 
-import { acGetDistribuidor } from '../store/actions';
+import { acGetDistribuidor } from '../../store/actions';
 
 import {
   selDistribuidor,
   selDistribuidoresIsLoading
-} from '../store/selectors';
+} from '../../store/selectors';
 
-import { useDispatch, useSelector } from '../store/hooks';
+import { useDispatch, useSelector } from '../../store/hooks';
 
 export default function Distribuidor({ match, location }) {
   const id = match.params.id;

@@ -15,12 +15,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './index.css';
-import App from './App';
+import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 
 import createStore from './store/createStore';
 import { StoreProvider } from './store/hooks';
-import { AuthProvider } from './Auth';
+import { AuthProvider } from './Components/Auth';
 
 library.add(
   faTrashAlt,

@@ -1,20 +1,20 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
-import { isEmpty } from '../utils';
+import { isEmpty } from '../../utils';
 
 import { ButtonIconAdd } from '../Icons';
 import Loading from '../Loading';
 import Page from '../Page';
 import UserRow from './UserRow';
 
-import { useDispatch, useSelector } from '../store/hooks';
-import { acGetUsers, acDeleteUser } from '../store/actions';
+import { useDispatch, useSelector } from '../../store/hooks';
+import { acGetUsers, acDeleteUser } from '../../store/actions';
 import {
   selUsers,
   selUsersIsLoading,
   selUsersGotAll
-} from '../store/selectors';
+} from '../../store/selectors';
 
 export default function Users() {
   const [users, isLoading, gotAll] = useSelector([

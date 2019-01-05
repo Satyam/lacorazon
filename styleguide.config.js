@@ -1,5 +1,5 @@
 module.exports = {
-  components: 'src/**/*.js',
+  components: 'src/Components/**/*.js',
   ignore: [
     '**/__tests__/**',
     '**/*.test.{js,jsx,ts,tsx}',
@@ -7,12 +7,7 @@ module.exports = {
     '**/*.d.ts',
     // added by me
     '**/*.stories.{js,jsx,ts,tsx}',
-    'src/store/**',
-    'src/index.js',
-    'src/serviceWorker.js',
-    'src/setupTests.js',
-    'src/utils.js',
-    'src/Form/index.js'
+    'src/Components/Form/index.js'
   ],
   template: {
     head: {

@@ -3,10 +3,10 @@ import useReactRouter from 'use-react-router';
 import { Form, TextField, SubmitButton } from '../Form';
 import Page from '../Page';
 
-import { acAddUser, acUpdateUser, acDeleteUser } from '../store/actions';
+import { acAddUser, acUpdateUser, acDeleteUser } from '../../store/actions';
 
-import { useDispatch } from '../store/hooks';
-import userSchema from '../store/users/schema';
+import { useDispatch } from '../../store/hooks';
+import userSchema from '../../store/users/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 
 export default function EditUser({ id, user }) {

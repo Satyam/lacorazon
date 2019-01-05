@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-import firebase, { auth } from './store/firebase';
+import firebase, { auth } from '../store/firebase';
 
 const provider = new firebase.auth.GoogleAuthProvider();
 

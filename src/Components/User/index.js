@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Alert } from 'reactstrap';
 import querystring from 'querystring';
 
-import { isEmpty } from '../utils';
+import { isEmpty } from '../../utils';
 import Loading from '../Loading';
 
 import EditUser from './EditUser';
 import ShowUser from './ShowUser';
-import { acGetUser } from '../store/actions';
+import { acGetUser } from '../../store/actions';
 
-import { selUser, selUsersIsLoading } from '../store/selectors';
+import { selUser, selUsersIsLoading } from '../../store/selectors';
 
-import { useDispatch, useSelector } from '../store/hooks';
+import { useDispatch, useSelector } from '../../store/hooks';
 
 export default function User({ match, location }) {
   const id = match.params.id;
