@@ -2,14 +2,14 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 
 export const StoreContext = createContext(null);
 
-/*
+/**
  * Component to provide access to a Redux store anywhere in the App.
  * Receives a Redux store and creates a Context for its children with the store.
  * Renders its children and re-renders them if the store root is changed.
  *
  * Usage:
  *
- * ```
+ * ```js
  * const store = createStore( .... );
  *
  * ReactDOM.render(
@@ -19,7 +19,9 @@ export const StoreContext = createContext(null);
  *   document.getElementById('root')
  * );
  * ```
- *
+ * @param {Object} props Component properties
+ * @param {ReduxStore} props.store A store created via Redux `createStore` method
+ * @param {ReactComponents} props.children React components that will have access to this store
  */
 export function StoreProvider({ store, children }) {
   if (
@@ -35,19 +37,13 @@ export function StoreProvider({ store, children }) {
   );
 }
 
-/*
+/**
  * Hook to dispatch Redux actions.
- * Its behaviour depends on the arguments provided:
+ * It returns dispatch-bound action creators in several formats.
+ * Its behaviour depends on the arguments provided.
+ * In general, you get what you pass on.
  *
- * * No argument: returns the `dispatch` function.
- * * Single function: returns a function that will dispatch the given function
- *   with the arguments provided
- * * Array of functions: Returns an array of bound functions.
- *   Same as calling it multiple times with a single function.
- * * Object: Same as with an array, but the functions as properties in an object
- *   Suitable to merge with other objects to provide props to children
- *
- * ```
+ * ```js
  * // Returns the dispatch function
  * const dispatch = useDispatch();
  *
@@ -65,6 +61,18 @@ export function StoreProvider({ store, children }) {
  * addTodo(newItem);
  * // or, if an object was used:
  * actions.addItem(newItem);
+ * // and if you just retrieved the `dispatch` function, you can even do:
+ * dispatch(addTodoActionCreator(newItem));
+ *
+ * @param {any} fn
+ * * No argument: returns the `dispatch` function.
+ * * Single action creator: returns a function that will dispatch the given function
+ *   with the arguments provided, that is, a dispatch-bound action creator
+ * * Array of action creators: Returns an array of bound action creators.
+ *   Same as calling it multiple times with a single action creator.
+ * * Object: Same as with an array, but the action creators as properties in an object.
+ *   Suitable to merge with other objects to provide props to children
+ * @return {any} Depending on the arguments, see above and examples
  */
 export function useDispatch(fn) {
   const { dispatch } = useContext(StoreContext);

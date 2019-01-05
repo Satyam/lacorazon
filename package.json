@@ -34,7 +34,9 @@
         "test:debug": "react-scripts --inspect-brk test --runInBand",
         "coverage": "react-scripts test --coverage",
         "styleguide": "styleguidist server",
-        "styleguide:build": "styleguidist build"
+        "styleguide:build": "styleguidist build",
+        "docs": "documentation serve src/store/**  --watch --document-exported --sort-order alpha",
+        "docs:build": "documentation build src/store/** -f html -o docs --document-exported --sort-order alpha"
     },
     "author": "Daniel Barreiro (Satyam)",
     "license": "MIT",
@@ -56,6 +58,7 @@
         "@storybook/addons": "4.1.3",
         "@storybook/react": "4.1.3",
         "babel-loader": "^8.0.4",
+        "documentation": "^9.1.1",
         "enzyme": "^3.8.0",
         "enzyme-adapter-react-16": "^1.7.1",
         "enzyme-to-json": "^3.3.5",
