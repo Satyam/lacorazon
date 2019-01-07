@@ -11,9 +11,6 @@ function useFormik() {
 let counter = 0;
 /**
  * Produces a labeled input box within form
- * @param {Object} props
- * @param {String} props.name key for the field within the Form ´values´ to be used
- * @param {String} [props.label] Label to be shown to the user along this field
  */
 export default function TextField({
   name,
@@ -69,7 +66,7 @@ TextField.propTypes = {
   /**
    * Name of the field this component is to show or edit.
    * It should match the key of one of the values in the
-   * enclosing `Form` `values` property.
+   * enclosing [`Form`](#form) `values` property.
    */
   name: PropTypes.string.isRequired,
   /**

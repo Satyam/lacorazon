@@ -102,19 +102,21 @@ export function useDispatch(fn) {
   }
 }
 
-/* Returns the current value of an individual selector
- * @param {Object} state: the current state of the store from store.getState().
- * @param {String or Function} sel, can be either:
+/**
+ *  Returns the current value of an individual selector
+ * @param {Object} state The current state of the store from store.getState().
+ * @param {(String|Function)} sel Can be either:
  * * string: a dot-separated path to the slice of the store to be returned.
  *   Very much like lodash `_.get()`.
  *   Numbers are allowed in path, to indicate array elements
  *   Numbers preceded with a `%` will be replaced by the argument given when called.
  *   The first argument is %0
  * * function: a selector function.  It will receive a snapshot of the store via `store.getState`
- * @param {any} args: extra arguments to be provided to the selector.
- *    a %0 in a string selector would be replaced by the first of these.
+ * @param {...any} args Extra arguments to be provided to the selector.
+ *    A %0 in a string selector would be replaced by the first of these.
+ * @return {any} The selected data
  */
-function doSelect(state, sel, ...args) {
+export function doSelect(state, sel, ...args) {
   switch (typeof sel) {
     case 'string':
       return sel
@@ -143,19 +145,20 @@ function doSelect(state, sel, ...args) {
 
 /**
  * Processes one or more selectors and returns their values.
- * @param {object} state: as obtained from store.getState()
- * @param {mixed} sels: one or more selector functions or strings
- *  as understood by `doSelect` above.
+ * @param {object} state As obtained from store.getState()
+ * @param {(String|Function|String[]|Function[]|Object<String, Function>)} sels One or more selector functions or strings
+ *  as understood by [`doSelect`](#doselect).
  * It can be:
  * * undefined: it will return the current full state of the store
- * * function or string: as per `doSelect` above, it will return the value selected
+ * * function or string: as per [`doSelect`](#doselect), it will return the value selected
  * * array of selectors: it will return an array with the values of each of the selectors
  * * object with selectors as values: it will return an object with its properties set to the values selected
  *   Such object is suitable to merge with a similar object of bound actions as produced by useDispatch
- * @param {mixed} args extra arguments to be passed to the selectors
+ * @param {...any} args Extra arguments to be passed to the selectors
+ * @return {any} The data selected
  */
 
-function doSelectors(state, sels, ...args) {
+export function doSelectors(state, sels, ...args) {
   switch (typeof sels) {
     case 'undefined':
       return state;
@@ -190,10 +193,11 @@ function doSelectors(state, sels, ...args) {
  * and subscribes to changes in them.
  * The advantage of using multiple selectors in one call is that
  * it has a single subscription for all of them.
+ * If different selectors use different arguments, call useSelector multiple times.
  *
- * @param {mixed} selectors see `doSelectors` above
- * @param {mixed} args arguments to be passed to all the selectors
- *   If different selectors use different arguments, call useSelector multiple times.
+ * @param {(String|Function|String[]|Function[]|Object<String, Function>)} selectors See [`doSelectors`](#doselectors)
+ * @param {...any} args Arguments to be passed to all the selectors
+ * @return {any} The selected piece of data.
  *
  * @example
  * // to read all the todo items in the store.  The selector is a simple string.
