@@ -25,6 +25,7 @@ yarn-error.log*
 # firebase secret key
 lacorazon-d66fd-firebase-adminsdk-thy14-92e97d72c9.json
 firebase.config.js
+/.firebase
 
 # Private data
 migrate/data.json
