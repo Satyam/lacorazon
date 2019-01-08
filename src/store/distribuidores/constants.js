@@ -1,15 +1,11 @@
-import path from 'path';
 /**
  * Prefix for all action types for distribuidores.
- * It defaults to the folder this slice of the store is stored in.
+ * It should match the folder this slice of the store is stored in.
  *
  * @constant {String}
- * @default users
+ * @default distribuidores
  */
-export const NAME = path
-  .dirname(module.id)
-  .split('/')
-  .pop();
+export const NAME = 'distribuidores';
 
 /**
  * Action type
