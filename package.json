@@ -79,5 +79,6 @@
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
         ]
-    }
+    },
+    "homepage": "https://lacorazon-d66fd.firebaseapp.com/"
 }
