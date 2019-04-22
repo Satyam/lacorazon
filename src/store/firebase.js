@@ -10,10 +10,15 @@ firebase.initializeApp(config);
 export default firebase;
 
 export const db = firebase.firestore();
-db.settings({
-  timestampsInSnapshots: true
-});
-db.enablePersistence().catch(function(err) {
+// [2019-04-20T16:36:03.179Z]  @firebase/firestore: Firestore (5.10.0): 
+//   The timestampsInSnapshots setting now defaults to true and you no
+//   longer need to explicitly set it. In a future release, the setting
+//   will be removed entirely and so it is recommended that you remove it
+//   from your firestore.settings() call now.
+// db.settings({
+//   timestampsInSnapshots: true
+// });
+db.enablePersistence().catch(function (err) {
   if (err.code === 'failed-precondition') {
     // Multiple tabs open, persistence can only be enabled
     // in one tab at a a time.
