@@ -43,7 +43,7 @@ export const CounterComponent = () => {
  */
 export function useSelector(selector, ...args) {
   invariant(selector, `You must pass a selector to useSelectors`)
-  debugger
+
   const { store, subscription: contextSub } = useReduxContext()
   const [, forceRender] = useReducer(s => s + 1, 0)
 
@@ -51,7 +51,8 @@ export function useSelector(selector, ...args) {
     store,
     contextSub
   ])
-  const memoizedSelector = useMemo(() => selector(...args), [args, selector])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const memoizedSelector = useMemo(() => selector(...args), [selector, ...args])
 
   const latestSubscriptionCallbackError = useRef()
   const latestSelector = useRef(memoizedSelector)
