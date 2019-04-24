@@ -3,7 +3,8 @@ import { Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
 import { ButtonIconAdd } from '../Icons';
 
-import { useDispatch, useSelector } from '../../store/hooks';
+import { useActions } from 'react-redux';
+import { useSelector } from '../../store/useSelector'
 import { isEmpty } from '../../utils';
 import Loading from '../Loading';
 import Page from '../Page';
@@ -17,20 +18,18 @@ import {
 } from '../../store/selectors';
 
 export default function Distribuidores() {
-  const [distribuidores, isLoading, gotAll] = useSelector([
-    selDistribuidores,
-    selDistribuidoresIsLoading,
-    selDistribuidoresGotAll
-  ]);
-  const [getDistrib, deleteDistribuidor] = useDispatch([
+  const distribuidores = useSelector(selDistribuidores);
+  const isLoading = useSelector(selDistribuidoresIsLoading);
+  const gotAll = useSelector(selDistribuidoresGotAll);
+  const [getDistrib, deleteDistribuidor] = useActions([
     acGetDistribuidores,
     acDeleteDistribuidor
   ]);
+  const { history } = useReactRouter();
   if ((!isLoading && isEmpty(distribuidores)) || !gotAll) {
     getDistrib();
     return <Loading title="Distribuidores" />;
   }
-  const { history } = useReactRouter();
   return (
     <Page wide title="Distribuidores" heading="Distribuidores">
       <Table striped hover size="sm" responsive>

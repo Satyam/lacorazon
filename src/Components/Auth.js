@@ -21,17 +21,18 @@ export const UserContext = createContext(auth.currentUser);
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(auth.currentUser);
 
-  function userChanged(newUser) {
-    return (newUser && newUser.uid) !== (user && user.uid);
-  }
+
   useEffect(
-    () =>
-      auth.onAuthStateChanged(newUser => {
+    () => {
+      function userChanged(newUser) {
+        return (newUser && newUser.uid) !== (user && user.uid);
+      } auth.onAuthStateChanged(newUser => {
         if (userChanged(newUser)) {
           setUser(newUser);
         }
-      }),
-    []
+      })
+    },
+    [user]
   );
   return (
     <UserContext.Provider value={user || ''}>{children}</UserContext.Provider>

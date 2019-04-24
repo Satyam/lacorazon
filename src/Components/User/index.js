@@ -11,13 +11,14 @@ import { acGetUser } from '../../store/actions';
 
 import { selUser, selUsersIsLoading } from '../../store/selectors';
 
-import { useDispatch, useSelector } from '../../store/hooks';
-
+import { useActions } from 'react-redux';
+import { useSelector } from '../../store/useSelector'
 export default function User({ match, location }) {
   const id = match.params.id;
   const edit = querystring.parse(location.search.substring(1)).edit;
-  const [user, isLoading] = useSelector([selUser, selUsersIsLoading], id);
-  const [getUser] = useDispatch([acGetUser]);
+  const user = useSelector(selUser, id);
+  const isLoading = useSelector(selUsersIsLoading, id);
+  const getUser = useActions(acGetUser);
   const [notFound, setNotFound] = useState(false);
   if (notFound) {
     return <Alert color="danger">El usuario no existe o fue borrado</Alert>;
@@ -32,6 +33,6 @@ export default function User({ match, location }) {
   return edit || !id ? (
     <EditUser id={id} user={user} />
   ) : (
-    <ShowUser id={id} user={user} />
-  );
+      <ShowUser id={id} user={user} />
+    );
 }

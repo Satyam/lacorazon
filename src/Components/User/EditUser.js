@@ -5,13 +5,13 @@ import Page from '../Page';
 
 import { acAddUser, acUpdateUser, acDeleteUser } from '../../store/actions';
 
-import { useDispatch } from '../../store/hooks';
+import { useActions } from 'react-redux';
 import userSchema from '../../store/users/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 
 export default function EditUser({ id, user }) {
   const { history } = useReactRouter();
-  const [addUser, updateUser, deleteUser] = useDispatch([
+  const [addUser, updateUser, deleteUser] = useActions([
     acAddUser,
     acUpdateUser,
     acDeleteUser

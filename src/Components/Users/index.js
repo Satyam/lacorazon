@@ -8,7 +8,8 @@ import Loading from '../Loading';
 import Page from '../Page';
 import UserRow from './UserRow';
 
-import { useDispatch, useSelector } from '../../store/hooks';
+import { useActions } from 'react-redux';
+import { useSelector } from '../../store/useSelector'
 import { acGetUsers, acDeleteUser } from '../../store/actions';
 import {
   selUsers,
@@ -17,18 +18,16 @@ import {
 } from '../../store/selectors';
 
 export default function Users() {
-  const [users, isLoading, gotAll] = useSelector([
-    selUsers,
-    selUsersIsLoading,
-    selUsersGotAll
-  ]);
-  const [getUsers, deleteUser] = useDispatch([acGetUsers, acDeleteUser]);
+  const users = useSelector(selUsers);
+  const isLoading = useSelector(selUsersIsLoading);
+  const gotAll = useSelector(selUsersGotAll);
+  const [getUsers, deleteUser] = useActions([acGetUsers, acDeleteUser]);
+  const { history } = useReactRouter();
   if (!isLoading && (isEmpty(users) || !gotAll)) {
     getUsers();
     return <Loading title="Usuarios" />;
   }
 
-  const { history } = useReactRouter();
   return (
     <Page title="Vendedores" heading="Vendedores">
       <Table striped hover size="sm" responsive>

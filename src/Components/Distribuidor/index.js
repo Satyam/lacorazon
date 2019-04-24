@@ -14,16 +14,15 @@ import {
   selDistribuidoresIsLoading
 } from '../../store/selectors';
 
-import { useDispatch, useSelector } from '../../store/hooks';
+import { useActions } from 'react-redux';
+import { useSelector } from '../../store/useSelector'
 
 export default function Distribuidor({ match, location }) {
   const id = match.params.id;
   const edit = querystring.parse(location.search.substring(1)).edit;
-  const [distribuidor, isLoading] = useSelector(
-    [selDistribuidor, selDistribuidoresIsLoading],
-    id
-  );
-  const [getDistribuidor] = useDispatch([acGetDistribuidor]);
+  const distribuidor = useSelector(selDistribuidor, id);
+  const isLoading = useSelector(selDistribuidoresIsLoading, id);
+  const getDistribuidor = useActions(acGetDistribuidor);
   const [notFound, setNotFound] = useState(false);
   if (notFound) {
     return (
@@ -41,6 +40,6 @@ export default function Distribuidor({ match, location }) {
   return edit || !id ? (
     <EditDistribuidor id={id} distribuidor={distribuidor} />
   ) : (
-    <ShowDistribuidor id={id} distribuidor={distribuidor} />
-  );
+      <ShowDistribuidor id={id} distribuidor={distribuidor} />
+    );
 }

@@ -19,7 +19,7 @@ import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 
 import createStore from './store/createStore';
-import { StoreProvider } from './store/hooks';
+import { Provider } from 'react-redux'
 import { AuthProvider } from './Components/Auth';
 
 library.add(
@@ -37,11 +37,11 @@ library.add(
 const store = createStore();
 
 ReactDOM.render(
-  <StoreProvider store={store}>
+  <Provider store={store}>
     <AuthProvider>
       <App />
     </AuthProvider>
-  </StoreProvider>,
+  </Provider>,
   document.getElementById('root')
 );
 

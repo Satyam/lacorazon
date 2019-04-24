@@ -7,14 +7,14 @@ import {
   acDeleteDistribuidor
 } from '../../store/actions';
 
-import { useDispatch } from '../../store/hooks';
+import { useActions } from 'react-redux';
 import distribuidorSchema from '../../store/distribuidores/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 import Page from '../Page';
 
 export default function EditDistribuidor({ id, distribuidor }) {
   const { history } = useReactRouter();
-  const [addDistribuidor, updateDistribuidor, deleteDistribuidor] = useDispatch(
+  const [addDistribuidor, updateDistribuidor, deleteDistribuidor] = useActions(
     [acAddDistribuidor, acUpdateDistribuidor, acDeleteDistribuidor]
   );
   return (
