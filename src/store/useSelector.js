@@ -52,20 +52,25 @@ export function useSelector(selector, ...args) {
     contextSub
   ])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const memoizedSelector = useMemo(() => typeof selector === 'string' ?
-    state => selector
-      .split('.')
-      .reduce(
-        (acc, prop) =>
-          typeof acc === 'object'
-            ? prop[0] === '%'
-              ? acc[args[Number(prop.substr(1))]]
-              : acc[prop]
-            : acc,
-        state
-      ) :
-    selector(...args), [args, selector])
+
+  const memoizedSelector = useMemo(
+    () => typeof selector === 'string' ?
+      state => selector
+        .split('.')
+        .reduce(
+          (acc, prop) =>
+            typeof acc === 'object'
+              ? prop[0] === '%'
+                ? acc[args[Number(prop.substr(1))]]
+                : acc[prop]
+              : undefined,
+          state
+        ) :
+      selector(...args)
+    ,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [...args, selector]
+  )
 
   const latestSubscriptionCallbackError = useRef()
   const latestSelector = useRef(memoizedSelector)
