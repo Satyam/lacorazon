@@ -26,7 +26,7 @@ export default function Distribuidores() {
     acDeleteDistribuidor
   ]);
   const { history } = useReactRouter();
-  if ((!isLoading && isEmpty(distribuidores)) || !gotAll) {
+  if (!isLoading && (isEmpty(distribuidores) || !gotAll)) {
     getDistrib();
     return <Loading title="Distribuidores" />;
   }
