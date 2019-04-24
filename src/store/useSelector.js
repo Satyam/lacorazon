@@ -51,8 +51,21 @@ export function useSelector(selector, ...args) {
     store,
     contextSub
   ])
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const memoizedSelector = useMemo(() => selector(...args), [selector, ...args])
+  const memoizedSelector = useMemo(() => typeof selector === 'string' ?
+    state => selector
+      .split('.')
+      .reduce(
+        (acc, prop) =>
+          typeof acc === 'object'
+            ? prop[0] === '%'
+              ? acc[args[Number(prop.substr(1))]]
+              : acc[prop]
+            : acc,
+        state
+      ) :
+    selector(...args), [args, selector])
 
   const latestSubscriptionCallbackError = useRef()
   const latestSelector = useRef(memoizedSelector)
