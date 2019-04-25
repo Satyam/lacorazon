@@ -14,7 +14,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
       "_deps": Array [],
       "_excludedEdges": Array [],
       "_exclusive": Object {},
-      "_mutate": false,
+      "_mutate": undefined,
       "_nodes": Array [
         "three",
       ],
@@ -37,7 +37,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
           "_conditions": Array [],
           "_deps": Array [],
           "_exclusive": Object {},
-          "_mutate": false,
+          "_mutate": undefined,
           "_options": Object {
             "abortEarly": true,
             "recursive": true,
@@ -88,7 +88,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
         "_deps": Array [],
         "_excludedEdges": Array [],
         "_exclusive": Object {},
-        "_mutate": false,
+        "_mutate": undefined,
         "_nodes": Array [
           "three",
         ],
@@ -111,7 +111,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
             "_conditions": Array [],
             "_deps": Array [],
             "_exclusive": Object {},
-            "_mutate": false,
+            "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
@@ -169,6 +169,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -188,7 +189,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                 "_deps": Array [],
                 "_excludedEdges": Array [],
                 "_exclusive": Object {},
-                "_mutate": false,
+                "_mutate": undefined,
                 "_nodes": Array [
                   "three",
                 ],
@@ -211,7 +212,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                     "_conditions": Array [],
                     "_deps": Array [],
                     "_exclusive": Object {},
-                    "_mutate": false,
+                    "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
                       "recursive": true,
@@ -255,7 +256,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_8"
@@ -305,6 +306,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_8"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -324,8 +326,12 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -367,7 +373,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -443,6 +449,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -462,7 +469,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                                 "_deps": Array [],
                                 "_excludedEdges": Array [],
                                 "_exclusive": Object {},
-                                "_mutate": false,
+                                "_mutate": undefined,
                                 "_nodes": Array [
                                   "three",
                                 ],
@@ -485,7 +492,7 @@ exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
                                     "_conditions": Array [],
                                     "_deps": Array [],
                                     "_exclusive": Object {},
-                                    "_mutate": false,
+                                    "_mutate": undefined,
                                     "_options": Object {
                                       "abortEarly": true,
                                       "recursive": true,
@@ -565,7 +572,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
       "_deps": Array [],
       "_excludedEdges": Array [],
       "_exclusive": Object {},
-      "_mutate": false,
+      "_mutate": undefined,
       "_nodes": Array [
         "three",
       ],
@@ -591,7 +598,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
             "max": true,
             "min": true,
           },
-          "_mutate": false,
+          "_mutate": undefined,
           "_options": Object {
             "abortEarly": true,
             "recursive": true,
@@ -645,7 +652,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
         "_deps": Array [],
         "_excludedEdges": Array [],
         "_exclusive": Object {},
-        "_mutate": false,
+        "_mutate": undefined,
         "_nodes": Array [
           "three",
         ],
@@ -671,7 +678,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
               "max": true,
               "min": true,
             },
-            "_mutate": false,
+            "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
@@ -732,6 +739,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -751,7 +759,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                 "_deps": Array [],
                 "_excludedEdges": Array [],
                 "_exclusive": Object {},
-                "_mutate": false,
+                "_mutate": undefined,
                 "_nodes": Array [
                   "three",
                 ],
@@ -777,7 +785,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                       "max": true,
                       "min": true,
                     },
-                    "_mutate": false,
+                    "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
                       "recursive": true,
@@ -825,7 +833,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_12"
@@ -875,6 +883,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_12"
+                        inlineFocusSelectedMonth={false}
                         maxDate={2019-06-16T22:00:00.000Z}
                         minDate={2019-06-12T22:00:00.000Z}
                         monthsShown={1}
@@ -896,8 +905,12 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                         renderDayContents={[Function]}
                         selected={2019-06-14T22:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -939,7 +952,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -1015,6 +1028,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -1034,7 +1048,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                                 "_deps": Array [],
                                 "_excludedEdges": Array [],
                                 "_exclusive": Object {},
-                                "_mutate": false,
+                                "_mutate": undefined,
                                 "_nodes": Array [
                                   "three",
                                 ],
@@ -1060,7 +1074,7 @@ exports[`Storyshots Form/DateField explicit minDate and maxDate properties shoul
                                       "max": true,
                                       "min": true,
                                     },
-                                    "_mutate": false,
+                                    "_mutate": undefined,
                                     "_options": Object {
                                       "abortEarly": true,
                                       "recursive": true,
@@ -1183,6 +1197,7 @@ exports[`Storyshots Form/DateField label and name 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -1213,7 +1228,7 @@ exports[`Storyshots Form/DateField label and name 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_1"
@@ -1263,6 +1278,7 @@ exports[`Storyshots Form/DateField label and name 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_1"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="two"
                         nextMonthButtonLabel="Next month"
@@ -1282,8 +1298,12 @@ exports[`Storyshots Form/DateField label and name 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -1325,7 +1345,7 @@ exports[`Storyshots Form/DateField label and name 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -1391,6 +1411,7 @@ exports[`Storyshots Form/DateField label and name 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -1481,6 +1502,7 @@ exports[`Storyshots Form/DateField label, name and help 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -1512,7 +1534,7 @@ exports[`Storyshots Form/DateField label, name and help 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_2"
@@ -1562,6 +1584,7 @@ exports[`Storyshots Form/DateField label, name and help 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_2"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -1581,8 +1604,12 @@ exports[`Storyshots Form/DateField label, name and help 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -1624,7 +1651,7 @@ exports[`Storyshots Form/DateField label, name and help 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -1700,6 +1727,7 @@ exports[`Storyshots Form/DateField label, name and help 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -1792,6 +1820,7 @@ exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {
@@ -1832,7 +1861,7 @@ exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_5"
@@ -1882,6 +1911,7 @@ exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_5"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -1901,8 +1931,12 @@ exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -1944,7 +1978,7 @@ exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -2022,6 +2056,7 @@ exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {
@@ -2134,6 +2169,7 @@ exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {
@@ -2170,7 +2206,7 @@ exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_3"
@@ -2220,6 +2256,7 @@ exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_3"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -2239,8 +2276,12 @@ exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -2282,7 +2323,7 @@ exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -2358,6 +2399,7 @@ exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {
@@ -2450,6 +2492,7 @@ exports[`Storyshots Form/DateField name, no label 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -2479,7 +2522,7 @@ exports[`Storyshots Form/DateField name, no label 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_0"
@@ -2527,6 +2570,7 @@ exports[`Storyshots Form/DateField name, no label 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_0"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="one"
                         nextMonthButtonLabel="Next month"
@@ -2546,8 +2590,12 @@ exports[`Storyshots Form/DateField name, no label 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -2589,7 +2637,7 @@ exports[`Storyshots Form/DateField name, no label 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -2655,6 +2703,7 @@ exports[`Storyshots Form/DateField name, no label 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -2705,7 +2754,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
       "_deps": Array [],
       "_excludedEdges": Array [],
       "_exclusive": Object {},
-      "_mutate": false,
+      "_mutate": undefined,
       "_nodes": Array [
         "three",
       ],
@@ -2728,7 +2777,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
           "_conditions": Array [],
           "_deps": Array [],
           "_exclusive": Object {},
-          "_mutate": false,
+          "_mutate": undefined,
           "_options": Object {
             "abortEarly": true,
             "recursive": true,
@@ -2779,7 +2828,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
         "_deps": Array [],
         "_excludedEdges": Array [],
         "_exclusive": Object {},
-        "_mutate": false,
+        "_mutate": undefined,
         "_nodes": Array [
           "three",
         ],
@@ -2802,7 +2851,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
             "_conditions": Array [],
             "_deps": Array [],
             "_exclusive": Object {},
-            "_mutate": false,
+            "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
@@ -2860,6 +2909,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -2879,7 +2929,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                 "_deps": Array [],
                 "_excludedEdges": Array [],
                 "_exclusive": Object {},
-                "_mutate": false,
+                "_mutate": undefined,
                 "_nodes": Array [
                   "three",
                 ],
@@ -2902,7 +2952,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                     "_conditions": Array [],
                     "_deps": Array [],
                     "_exclusive": Object {},
-                    "_mutate": false,
+                    "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
                       "recursive": true,
@@ -2945,7 +2995,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_7"
@@ -2995,6 +3045,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_7"
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -3014,8 +3065,12 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-03-02T23:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -3057,7 +3112,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -3133,6 +3188,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -3152,7 +3208,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                                 "_deps": Array [],
                                 "_excludedEdges": Array [],
                                 "_exclusive": Object {},
-                                "_mutate": false,
+                                "_mutate": undefined,
                                 "_nodes": Array [
                                   "three",
                                 ],
@@ -3175,7 +3231,7 @@ exports[`Storyshots Form/DateField validate via schema 1`] = `
                                     "_conditions": Array [],
                                     "_deps": Array [],
                                     "_exclusive": Object {},
-                                    "_mutate": false,
+                                    "_mutate": undefined,
                                     "_options": Object {
                                       "abortEarly": true,
                                       "recursive": true,
@@ -3255,7 +3311,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
       "_deps": Array [],
       "_excludedEdges": Array [],
       "_exclusive": Object {},
-      "_mutate": false,
+      "_mutate": undefined,
       "_nodes": Array [
         "three",
       ],
@@ -3280,7 +3336,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
           "_exclusive": Object {
             "max": true,
           },
-          "_mutate": false,
+          "_mutate": undefined,
           "_options": Object {
             "abortEarly": true,
             "recursive": true,
@@ -3333,7 +3389,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
         "_deps": Array [],
         "_excludedEdges": Array [],
         "_exclusive": Object {},
-        "_mutate": false,
+        "_mutate": undefined,
         "_nodes": Array [
           "three",
         ],
@@ -3358,7 +3414,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
             "_exclusive": Object {
               "max": true,
             },
-            "_mutate": false,
+            "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
@@ -3418,6 +3474,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -3437,7 +3494,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                 "_deps": Array [],
                 "_excludedEdges": Array [],
                 "_exclusive": Object {},
-                "_mutate": false,
+                "_mutate": undefined,
                 "_nodes": Array [
                   "three",
                 ],
@@ -3462,7 +3519,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                     "_exclusive": Object {
                       "max": true,
                     },
-                    "_mutate": false,
+                    "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
                       "recursive": true,
@@ -3507,7 +3564,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_10"
@@ -3557,7 +3614,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_10"
-                        maxDate={2019-06-19T22:00:00.000Z}
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -3577,8 +3634,12 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-06-14T22:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -3620,7 +3681,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -3696,6 +3757,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -3715,7 +3777,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                                 "_deps": Array [],
                                 "_excludedEdges": Array [],
                                 "_exclusive": Object {},
-                                "_mutate": false,
+                                "_mutate": undefined,
                                 "_nodes": Array [
                                   "three",
                                 ],
@@ -3740,7 +3802,7 @@ exports[`Storyshots Form/DateField validation schema with max date 1`] = `
                                     "_exclusive": Object {
                                       "max": true,
                                     },
-                                    "_mutate": false,
+                                    "_mutate": undefined,
                                     "_options": Object {
                                       "abortEarly": true,
                                       "recursive": true,
@@ -3822,7 +3884,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
       "_deps": Array [],
       "_excludedEdges": Array [],
       "_exclusive": Object {},
-      "_mutate": false,
+      "_mutate": undefined,
       "_nodes": Array [
         "three",
       ],
@@ -3848,7 +3910,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
             "max": true,
             "min": true,
           },
-          "_mutate": false,
+          "_mutate": undefined,
           "_options": Object {
             "abortEarly": true,
             "recursive": true,
@@ -3902,7 +3964,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
         "_deps": Array [],
         "_excludedEdges": Array [],
         "_exclusive": Object {},
-        "_mutate": false,
+        "_mutate": undefined,
         "_nodes": Array [
           "three",
         ],
@@ -3928,7 +3990,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
               "max": true,
               "min": true,
             },
-            "_mutate": false,
+            "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
@@ -3989,6 +4051,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -4008,7 +4071,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                 "_deps": Array [],
                 "_excludedEdges": Array [],
                 "_exclusive": Object {},
-                "_mutate": false,
+                "_mutate": undefined,
                 "_nodes": Array [
                   "three",
                 ],
@@ -4034,7 +4097,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                       "max": true,
                       "min": true,
                     },
-                    "_mutate": false,
+                    "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
                       "recursive": true,
@@ -4080,7 +4143,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_11"
@@ -4130,8 +4193,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_11"
-                        maxDate={2019-06-19T22:00:00.000Z}
-                        minDate={2019-06-09T22:00:00.000Z}
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -4151,8 +4213,12 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                         renderDayContents={[Function]}
                         selected={2019-06-14T22:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -4194,7 +4260,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -4270,6 +4336,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -4289,7 +4356,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                                 "_deps": Array [],
                                 "_excludedEdges": Array [],
                                 "_exclusive": Object {},
-                                "_mutate": false,
+                                "_mutate": undefined,
                                 "_nodes": Array [
                                   "three",
                                 ],
@@ -4315,7 +4382,7 @@ exports[`Storyshots Form/DateField validation schema with min and max date 1`] =
                                       "max": true,
                                       "min": true,
                                     },
-                                    "_mutate": false,
+                                    "_mutate": undefined,
                                     "_options": Object {
                                       "abortEarly": true,
                                       "recursive": true,
@@ -4398,7 +4465,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
       "_deps": Array [],
       "_excludedEdges": Array [],
       "_exclusive": Object {},
-      "_mutate": false,
+      "_mutate": undefined,
       "_nodes": Array [
         "three",
       ],
@@ -4423,7 +4490,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
           "_exclusive": Object {
             "min": true,
           },
-          "_mutate": false,
+          "_mutate": undefined,
           "_options": Object {
             "abortEarly": true,
             "recursive": true,
@@ -4476,7 +4543,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
         "_deps": Array [],
         "_excludedEdges": Array [],
         "_exclusive": Object {},
-        "_mutate": false,
+        "_mutate": undefined,
         "_nodes": Array [
           "three",
         ],
@@ -4501,7 +4568,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
             "_exclusive": Object {
               "min": true,
             },
-            "_mutate": false,
+            "_mutate": undefined,
             "_options": Object {
               "abortEarly": true,
               "recursive": true,
@@ -4561,6 +4628,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -4580,7 +4648,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                 "_deps": Array [],
                 "_excludedEdges": Array [],
                 "_exclusive": Object {},
-                "_mutate": false,
+                "_mutate": undefined,
                 "_nodes": Array [
                   "three",
                 ],
@@ -4605,7 +4673,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                     "_exclusive": Object {
                       "min": true,
                     },
-                    "_mutate": false,
+                    "_mutate": undefined,
                     "_options": Object {
                       "abortEarly": true,
                       "recursive": true,
@@ -4650,7 +4718,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_DF_9"
@@ -4700,7 +4768,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                         disabledKeyboardNavigation={false}
                         dropdownMode="scroll"
                         id="F_DF_9"
-                        minDate={2019-06-09T22:00:00.000Z}
+                        inlineFocusSelectedMonth={false}
                         monthsShown={1}
                         name="three"
                         nextMonthButtonLabel="Next month"
@@ -4720,8 +4788,12 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                         renderDayContents={[Function]}
                         selected={2019-06-14T22:00:00.000Z}
                         shouldCloseOnSelect={true}
+                        showMonthYearPicker={false}
+                        showTimeInput={false}
                         showTimeSelect={false}
+                        strictParsing={false}
                         timeCaption="Time"
+                        timeInputLabel="Time"
                         timeIntervals={30}
                         withPortal={false}
                       >
@@ -4763,7 +4835,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                           <Manager>
                             <Reference>
                               <InnerReference
-                                getReferenceRef={[Function]}
+                                setReferenceNode={[Function]}
                               >
                                 <div
                                   className="react-datepicker-wrapper"
@@ -4839,6 +4911,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -4858,7 +4931,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                                 "_deps": Array [],
                                 "_excludedEdges": Array [],
                                 "_exclusive": Object {},
-                                "_mutate": false,
+                                "_mutate": undefined,
                                 "_nodes": Array [
                                   "three",
                                 ],
@@ -4883,7 +4956,7 @@ exports[`Storyshots Form/DateField validation schema with min date 1`] = `
                                     "_exclusive": Object {
                                       "min": true,
                                     },
-                                    "_mutate": false,
+                                    "_mutate": undefined,
                                     "_options": Object {
                                       "abortEarly": true,
                                       "recursive": true,

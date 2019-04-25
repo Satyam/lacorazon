@@ -25,13 +25,16 @@ exports[`Storyshots Loading With Title 1`] = `
     }
     onClosed={[Function]}
     onOpened={[Function]}
+    returnFocusAfterClose={true}
     role="dialog"
+    scrollable={false}
+    unmountOnClose={true}
     zIndex={1050}
   >
     <Portal
       node={
         <div
-          style="position: relative; z-index: 1050;"
+          style="position: relative; z-index: 1050; display: block;"
           tabindex="-1"
         >
           <div
@@ -81,7 +84,7 @@ exports[`Storyshots Loading With Title 1`] = `
       <Portal
         containerInfo={
           <div
-            style="position: relative; z-index: 1050;"
+            style="position: relative; z-index: 1050; display: block;"
             tabindex="-1"
           >
             <div
@@ -267,13 +270,16 @@ exports[`Storyshots Loading no title 1`] = `
     }
     onClosed={[Function]}
     onOpened={[Function]}
+    returnFocusAfterClose={true}
     role="dialog"
+    scrollable={false}
+    unmountOnClose={true}
     zIndex={1050}
   >
     <Portal
       node={
         <div
-          style="position: relative; z-index: 1050;"
+          style="position: relative; z-index: 1050; display: block;"
           tabindex="-1"
         >
           <div
@@ -321,7 +327,7 @@ exports[`Storyshots Loading no title 1`] = `
       <Portal
         containerInfo={
           <div
-            style="position: relative; z-index: 1050;"
+            style="position: relative; z-index: 1050; display: block;"
             tabindex="-1"
           >
             <div
@@ -505,7 +511,10 @@ exports[`Storyshots Loading not open 1`] = `
     }
     onClosed={[Function]}
     onOpened={[Function]}
+    returnFocusAfterClose={true}
     role="dialog"
+    scrollable={false}
+    unmountOnClose={true}
     zIndex={1050}
   />
 </Loading>
@@ -536,13 +545,16 @@ exports[`Storyshots Loading title and body 1`] = `
     }
     onClosed={[Function]}
     onOpened={[Function]}
+    returnFocusAfterClose={true}
     role="dialog"
+    scrollable={false}
+    unmountOnClose={true}
     zIndex={1050}
   >
     <Portal
       node={
         <div
-          style="position: relative; z-index: 1050;"
+          style="position: relative; z-index: 1050; display: block;"
           tabindex="-1"
         >
           <div
@@ -593,7 +605,7 @@ exports[`Storyshots Loading title and body 1`] = `
       <Portal
         containerInfo={
           <div
-            style="position: relative; z-index: 1050;"
+            style="position: relative; z-index: 1050; display: block;"
             tabindex="-1"
           >
             <div
@@ -783,13 +795,16 @@ exports[`Storyshots Loading title and body, no icon 1`] = `
     }
     onClosed={[Function]}
     onOpened={[Function]}
+    returnFocusAfterClose={true}
     role="dialog"
+    scrollable={false}
+    unmountOnClose={true}
     zIndex={1050}
   >
     <Portal
       node={
         <div
-          style="position: relative; z-index: 1050;"
+          style="position: relative; z-index: 1050; display: block;"
           tabindex="-1"
         >
           <div
@@ -835,7 +850,7 @@ exports[`Storyshots Loading title and body, no icon 1`] = `
       <Portal
         containerInfo={
           <div
-            style="position: relative; z-index: 1050;"
+            style="position: relative; z-index: 1050; display: block;"
             tabindex="-1"
           >
             <div

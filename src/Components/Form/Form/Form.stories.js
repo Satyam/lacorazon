@@ -13,8 +13,8 @@ function useFormik() {
 
 function ForceValidate() {
   const [done, setDone] = useState(false);
-  if (done) return null;
   const { validateForm } = useFormik();
+  if (done) return null;
   validateForm();
   setDone(true);
   return null;
@@ -22,8 +22,8 @@ function ForceValidate() {
 
 function ForceSubmit() {
   const [done, setDone] = useState(false);
-  if (done) return null;
   const { submitForm } = useFormik();
+  if (done) return null;
   submitForm();
   setDone(true);
   return null;

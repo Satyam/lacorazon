@@ -43,6 +43,7 @@ exports[`Storyshots Form/SubmitButton no props, nothing dirty to submit 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -129,6 +130,7 @@ exports[`Storyshots Form/SubmitButton with label, nothing dirty to submit 1`] = 
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -230,6 +232,7 @@ exports[`Storyshots Form/SubmitButton with label, something dirty to submit 1`] 
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {
@@ -339,6 +342,7 @@ exports[`Storyshots Form/SubmitButton with label, something dirty to submit, isS
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {
@@ -451,6 +455,7 @@ exports[`Storyshots Form/SubmitButton with label, with error 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {

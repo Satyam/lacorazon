@@ -54,6 +54,7 @@ exports[`Storyshots Form/TextField label and name 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -84,7 +85,7 @@ exports[`Storyshots Form/TextField label and name 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_TF_1"
@@ -160,6 +161,7 @@ exports[`Storyshots Form/TextField label and name 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -220,6 +222,7 @@ exports[`Storyshots Form/TextField label and name 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -311,6 +314,7 @@ a few lines",
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -344,7 +348,7 @@ a few lines",
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_TF_2"
@@ -423,6 +427,7 @@ a few lines",
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -491,6 +496,7 @@ a few lines",
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -578,6 +584,7 @@ exports[`Storyshots Form/TextField label, name and help 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -609,7 +616,7 @@ exports[`Storyshots Form/TextField label, name and help 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_TF_3"
@@ -685,6 +692,7 @@ exports[`Storyshots Form/TextField label, name and help 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -755,6 +763,7 @@ exports[`Storyshots Form/TextField label, name and help 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -842,6 +851,7 @@ exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {
@@ -882,7 +892,7 @@ exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_TF_6"
@@ -960,6 +970,7 @@ exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {
@@ -1034,6 +1045,7 @@ exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {
@@ -1131,6 +1143,7 @@ exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {
@@ -1167,7 +1180,7 @@ exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_TF_4"
@@ -1243,6 +1256,7 @@ exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {
@@ -1315,6 +1329,7 @@ exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {
@@ -1402,6 +1417,7 @@ exports[`Storyshots Form/TextField name, no label 1`] = `
               "setSubmitting": [Function],
               "setTouched": [Function],
               "setValues": [Function],
+              "status": undefined,
               "submitCount": 0,
               "submitForm": [Function],
               "touched": Object {},
@@ -1431,7 +1447,7 @@ exports[`Storyshots Form/TextField name, no label 1`] = `
                 tag="div"
               >
                 <div
-                  className="position-relative row form-group"
+                  className="row form-group"
                 >
                   <Label
                     for="F_TF_0"
@@ -1505,6 +1521,7 @@ exports[`Storyshots Form/TextField name, no label 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},
@@ -1565,6 +1582,7 @@ exports[`Storyshots Form/TextField name, no label 1`] = `
                               "setSubmitting": [Function],
                               "setTouched": [Function],
                               "setValues": [Function],
+                              "status": undefined,
                               "submitCount": 0,
                               "submitForm": [Function],
                               "touched": Object {},

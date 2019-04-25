@@ -99,12 +99,12 @@ describe('Form/DateField', () => {
       .props.onBlur();
     expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
   });
-  it.skip('should reject values below the min in the schema', done => {
+  it('should reject values below the min in the schema', done => {
     // since the out-of-range dates are not enabled, they can't be clicked
     const schema = Yup.object().shape({
       one: Yup.date()
-        .min(new Date(2019, 8, 5))
-        .default(new Date(2019, 8, 7)),
+        .min(new Date(2019, 8, 10))
+        .default(new Date(2019, 8, 20)),
       two: Yup.string().default('xxx')
     });
     const wrapper = mount(
@@ -114,11 +114,12 @@ describe('Form/DateField', () => {
       </Form>
     );
     wrapper.find('input[name="one"]').simulate('click');
-    console.log(wrapper.html());
-    wrapper.find('.react-datepicker__day--014').simulate('click');
+    wrapper.find('.react-datepicker__day--006').simulate('click');
     wrapper.find('input[name="two"]').simulate('click');
+    debugger
     setImmediate(() => {
       wrapper.update();
+      console.log(wrapper.find('input[name="one"]').html())
       expect(
         wrapper.find('input[name="one"]').hasClass('is-invalid')
       ).toBeTruthy();
