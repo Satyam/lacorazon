@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-
+import * as rtl from 'react-testing-library';
 import * as Yup from 'yup';
 
 import Form from '../Form';
@@ -8,6 +8,8 @@ import DateField from './';
 import TextField from '../TextField';
 
 import DatePicker from 'react-datepicker';
+
+afterEach(rtl.cleanup);
 
 describe('Form/DateField', () => {
   it('should throw with no props as name argument is mandatory', () => {
@@ -18,6 +20,20 @@ describe('Form/DateField', () => {
           <DateField />
         </Form>
       );
+    } catch (err) {
+      catcher();
+    }
+    expect(catcher).toBeCalled();
+  });
+  it.skip('RTL should throw with no props as name argument is mandatory', () => {
+    const catcher = jest.fn();
+    try {
+      rtl.render(
+        <Form>
+          <DateField />
+
+        </Form>
+      )
     } catch (err) {
       catcher();
     }
@@ -50,6 +66,16 @@ describe('Form/DateField', () => {
       .props.onChange(new Date(2019, 2, 2));
     expect(validate.mock.calls).toEqual([[new Date(2019, 2, 2)]]);
   });
+  it('RTL should validate on field change', () => {
+    const validate = jest.fn(() => '');
+    const wrapper = rtl.render(
+      <Form values={{ one: new Date(2019, 8, 7) }}>
+        <DateField label="one" name="one" validate={validate} />
+      </Form>
+    );
+    rtl.fireEvent.change(wrapper.getByLabelText('one'), { target: { value: new Date(2019, 2, 2) } })
+    expect(validate.mock.calls).toEqual([[new Date(2019, 2, 2)]]);
+  });
   it('should validate on field blur', () => {
     const validate = jest.fn(() => '');
     const wrapper = mount(
@@ -62,6 +88,17 @@ describe('Form/DateField', () => {
       .find(DatePicker)
       .instance()
       .props.onBlur();
+    expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
+  });
+  it('RTL should validate on field blur', () => {
+    const validate = jest.fn(() => '');
+    const wrapper = rtl.render(
+      <Form values={{ one: new Date(2019, 8, 7) }}>
+        <DateField label="one" name="one" validate={validate} />
+      </Form>
+    );
+
+    rtl.fireEvent.blur(wrapper.getByLabelText('one'))
     expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
   });
 
@@ -99,7 +136,20 @@ describe('Form/DateField', () => {
       .props.onBlur();
     expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
   });
-  it('should reject values below the min in the schema', done => {
+  it('RTL should take values from the schema', () => {
+    const schema = Yup.object().shape({
+      one: Yup.date().default(new Date(2019, 8, 7))
+    });
+    const validate = jest.fn(() => '');
+    const wrapper = rtl.render(
+      <Form schema={schema}>
+        <DateField label="one" name="one" validate={validate} />
+      </Form>
+    );
+    rtl.fireEvent.blur(wrapper.getByLabelText('one'))
+    expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
+  });
+  it.skip('should reject values below the min in the schema', done => {
     // since the out-of-range dates are not enabled, they can't be clicked
     const schema = Yup.object().shape({
       one: Yup.date()
@@ -126,4 +176,29 @@ describe('Form/DateField', () => {
       done();
     });
   });
+  it('RTL should reject values below the min in the schema', done => {
+    // since the out-of-range dates are not enabled, they can't be clicked
+    const schema = Yup.object().shape({
+      one: Yup.date()
+        .min(new Date(2019, 8, 10))
+        .default(new Date(2019, 8, 20)),
+    });
+    let wrapper;
+    rtl.act(() => {
+      wrapper = rtl.render(
+        <Form schema={schema}>
+          <DateField label="one" name="one" />
+        </Form>
+      );
+    })
+    rtl.fireEvent.click(wrapper.getByLabelText('one'));
+    rtl.fireEvent.click(wrapper.getByText('6'));
+    rtl.fireEvent.blur(wrapper.getByLabelText('one'))
+    setTimeout(() => {
+      expect(wrapper.getByLabelText('one')).toHaveClass('is-invalid')
+      expect(wrapper.container.querySelector('.invalid-feedback')).toBeVisible();
+      done()
+    }, 1)
+  });
 });
+
