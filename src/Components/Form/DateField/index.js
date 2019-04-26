@@ -22,7 +22,7 @@ export default function DateField({
   ...rest
 }) {
   if (process.env.NODE_ENV !== 'production' && !name) {
-    throw new Error('TextField: name argument is mandatory');
+    throw new Error('DateField: name argument is mandatory');
   }
   const {
     values,
