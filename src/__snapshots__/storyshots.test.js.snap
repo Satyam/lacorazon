@@ -1,0 +1,1820 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_8"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_8"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="2019/03/03"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField explicit minDate and maxDate properties should override schema 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_12"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_12"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates prior to may 13th or  after may 17th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label and name 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_1"
+    >
+      field two
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_1"
+            name="two"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label, name and help 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_2"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_2"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_5"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control is-invalid"
+            disabled={false}
+            id="F_DF_5"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+      <div
+        className="invalid-feedback"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
+      >
+        some error message
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_3"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_3"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField name, no label 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_0"
+    />
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_0"
+            name="one"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validate via schema 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_7"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_7"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validation schema with max date 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_10"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_10"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates after may 20th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validation schema with min and max date 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_11"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_11"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates prior to may 10th or  after may 20th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validation schema with min date 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_9"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_9"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates prior to may 10th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/Form no attributes 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+/>
+`;
+
+exports[`Storyshots Form/Form with error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+/>
+`;
+
+exports[`Storyshots Form/Form with rejected promise validation 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+/>
+`;
+
+exports[`Storyshots Form/Form with some border and child 1`] = `
+<form
+  className="form-border"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  Hello
+</form>
+`;
+
+exports[`Storyshots Form/Form with some child 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  Hello
+</form>
+`;
+
+exports[`Storyshots Form/LabeledText label and children 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    >
+      I'm a child
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText label and pre-formated children 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control labeled-pre"
+    >
+      I'm a child
+spread over
+a few lines
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText label and value 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    >
+      Some value
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText label, no value 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText no props 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  />
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText value, no label 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  />
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    >
+      some value
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/SubmitButton no props, nothing dirty to submit 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  />
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, nothing dirty to submit 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, something dirty to submit 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    disabled={false}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, something dirty to submit, isSubmitting true 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, with error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label and name 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_1"
+    >
+      field two
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_1"
+        name="two"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={2}
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label and pre-formated value in multi-row field 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_2"
+    >
+      multi-line field
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <textarea
+        className="form-control"
+        id="F_TF_2"
+        name="multi"
+        onBlur={[Function]}
+        onChange={[Function]}
+        rows={5}
+        value="I'm a child
+spread over
+a few lines"
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label, name and help 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_3"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_3"
+        name="three"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={3}
+      />
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_6"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control is-invalid"
+        id="F_TF_6"
+        name="three"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={3}
+      />
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+      <div
+        className="invalid-feedback"
+      >
+        some error message
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_4"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_4"
+        name="three"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={3}
+      />
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField name, no label 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_0"
+    />
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_0"
+        name="one"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={1}
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Icons/ButtonIconAdd Outlined 1`] = `
+<button
+  aria-label={null}
+  className="btn btn-outline-primary"
+  onClick={[Function]}
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-plus-circle fa-w-16 "
+    data-icon="plus-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={Object {}}
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <span
+    className="label"
+  >
+    Agregar
+  </span>
+</button>
+`;
+
+exports[`Storyshots Icons/ButtonIconAdd Outlined disabled 1`] = `
+<button
+  aria-label={null}
+  className="btn btn-outline-primary disabled"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-plus-circle fa-w-16 "
+    data-icon="plus-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={Object {}}
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <span
+    className="label"
+  >
+    Agregar
+  </span>
+</button>
+`;
+
+exports[`Storyshots Icons/ButtonIconAdd Plain 1`] = `
+<button
+  aria-label={null}
+  className="btn btn-primary"
+  onClick={[Function]}
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-plus-circle fa-w-16 "
+    data-icon="plus-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={Object {}}
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <span
+    className="label"
+  >
+    Agregar
+  </span>
+</button>
+`;
+
+exports[`Storyshots Icons/ButtonIconAdd Plain disabled 1`] = `
+<button
+  aria-label={null}
+  className="btn btn-primary disabled"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-plus-circle fa-w-16 "
+    data-icon="plus-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={Object {}}
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <span
+    className="label"
+  >
+    Agregar
+  </span>
+</button>
+`;
+
+exports[`Storyshots Icons/ButtonIconAdd no Text 1`] = `
+<button
+  aria-label={null}
+  className="btn btn-primary"
+  onClick={[Function]}
+>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-plus-circle fa-w-16 "
+    data-icon="plus-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={Object {}}
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <span
+    className="label"
+  />
+</button>
+`;
+
+exports[`Storyshots Icons/ButtonSet buttons 1`] = `
+<div
+  className="buttonSet"
+>
+  <button
+    aria-label={null}
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-plus-circle fa-w-16 "
+      data-icon="plus-circle"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Add
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-danger"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-trash-alt fa-w-14 "
+      data-icon="trash-alt"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Delete
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-edit fa-w-18 "
+      data-icon="edit"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 576 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Edit
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-calendar-alt fa-w-14 "
+      data-icon="calendar-alt"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Calendar
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-success"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-check-circle fa-w-16 "
+      data-icon="check-circle"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Check
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-warning"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-times-circle fa-w-16 "
+      data-icon="times-circle"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      NotCheck
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Icons/ButtonSet icons 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-plus-circle fa-w-16 icon-primary"
+    data-icon="plus-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-trash-alt fa-w-14 icon-danger"
+    data-icon="trash-alt"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 448 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-edit fa-w-18 icon-secondary"
+    data-icon="edit"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 576 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-calendar-alt fa-w-14 icon-secondary"
+    data-icon="calendar-alt"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 448 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-check-circle fa-w-16 icon-success"
+    data-icon="check-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-times-circle fa-w-16 icon-danger"
+    data-icon="times-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-exclamation-triangle fa-w-18 icon-warning"
+    data-icon="exclamation-triangle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 576 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+  <svg
+    aria-hidden="true"
+    className="svg-inline--fa fa-exclamation-circle fa-w-16 icon-danger"
+    data-icon="exclamation-circle"
+    data-prefix="fas"
+    focusable="false"
+    role="img"
+    style={
+      Object {
+        "margin": "1em",
+      }
+    }
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+      fill="currentColor"
+      style={Object {}}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Storyshots Icons/ButtonSet small buttons 1`] = `
+<div
+  className="buttonSet btn-group-sm"
+>
+  <button
+    aria-label={null}
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-plus-circle fa-w-16 "
+      data-icon="plus-circle"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Add
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-danger"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-trash-alt fa-w-14 "
+      data-icon="trash-alt"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Delete
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-edit fa-w-18 "
+      data-icon="edit"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 576 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Edit
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-calendar-alt fa-w-14 "
+      data-icon="calendar-alt"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Calendar
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-success"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-check-circle fa-w-16 "
+      data-icon="check-circle"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      Check
+    </span>
+  </button>
+  <button
+    aria-label={null}
+    className="btn btn-warning"
+    onClick={[Function]}
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-times-circle fa-w-16 "
+      data-icon="times-circle"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span
+      className="label"
+    >
+      NotCheck
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Icons/IconAdd Button 1`] = `
+<svg
+  aria-hidden="true"
+  className="svg-inline--fa fa-plus-circle fa-w-16 active-icon icon-primary"
+  data-icon="plus-circle"
+  data-prefix="fas"
+  focusable="false"
+  onClick={[Function]}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+    fill="currentColor"
+    style={Object {}}
+  />
+</svg>
+`;
+
+exports[`Storyshots Icons/IconAdd Button disabled 1`] = `
+<svg
+  aria-hidden="true"
+  className="svg-inline--fa fa-plus-circle fa-w-16 icon-primary disabled"
+  data-icon="plus-circle"
+  data-prefix="fas"
+  focusable="false"
+  role="img"
+  style={Object {}}
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+    fill="currentColor"
+    style={Object {}}
+  />
+</svg>
+`;
+
+exports[`Storyshots Icons/IconAdd Plain 1`] = `
+<svg
+  aria-hidden="true"
+  className="svg-inline--fa fa-plus-circle fa-w-16 icon-primary"
+  data-icon="plus-circle"
+  data-prefix="fas"
+  focusable="false"
+  onClick={[Function]}
+  role="img"
+  style={Object {}}
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+    fill="currentColor"
+    style={Object {}}
+  />
+</svg>
+`;
+
+exports[`Storyshots Loading not open 1`] = `null`;

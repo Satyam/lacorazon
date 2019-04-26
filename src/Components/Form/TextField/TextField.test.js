@@ -1,9 +1,11 @@
 import React from 'react';
-import { mount, render } from 'enzyme';
+import { render, fireEvent, cleanup } from 'react-testing-library';
 import * as Yup from 'yup';
 
 import Form from '../Form';
 import TextField from '.';
+
+afterEach(cleanup);
 
 describe('Form/TextField', () => {
   it('should throw with no props as name argument is mandatory', () => {
@@ -34,33 +36,33 @@ describe('Form/TextField', () => {
   });
   it('should validate on field change', () => {
     const validate = jest.fn(() => '');
-    const wrapper = mount(
+    const { getByLabelText } = render(
       <Form values={{ one: 1 }}>
         <TextField label="one" name="one" validate={validate} />
       </Form>
     );
-    wrapper
-      .find('input')
-      .simulate('change', { target: { name: 'one', value: '2' } });
+    fireEvent.change(getByLabelText('one'), {
+      target: { name: 'one', value: '2' }
+    })
     expect(validate.mock.calls).toEqual([['2']]);
   });
 
   it('should generate an id when no id provided', () => {
-    const wrapper = mount(
+    const { getByLabelText } = render(
       <Form values={{ one: 1 }}>
         <TextField label="one" name="one" />
       </Form>
     );
-    expect(wrapper.find('input').prop('id')).toMatch(/^F_TF_\d+$/);
+    expect(getByLabelText('one').id).toMatch(/^F_TF_\d+$/);
   });
 
   it('should respect the id provided', () => {
-    const wrapper = mount(
+    const { getByLabelText } = render(
       <Form values={{ one: 1 }}>
         <TextField label="one" name="one" id="abcd" />
       </Form>
     );
-    expect(wrapper.find('input').prop('id')).toBe('abcd');
+    expect(getByLabelText('one').id).toBe('abcd');
   });
 
   it('should cast value to an integer before validate with schema on field change', () => {
@@ -71,14 +73,14 @@ describe('Form/TextField', () => {
         .default(0)
     });
     const validate = jest.fn(() => '');
-    const wrapper = mount(
+    const { getByLabelText } = render(
       <Form values={{ one: 1 }} schema={schema}>
         <TextField label="one" name="one" validate={validate} />
       </Form>
     );
-    wrapper
-      .find('input')
-      .simulate('change', { target: { name: 'one', value: '2.5' } });
+    fireEvent.change(getByLabelText('one'), {
+      target: { name: 'one', value: '2.5' }
+    })
     // string '2.5' was transformed into a number 2
     expect(validate.mock.calls).toEqual([[2]]);
   });
