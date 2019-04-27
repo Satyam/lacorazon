@@ -38,7 +38,7 @@ export default function TextField({
         <KField
           component={rows ? 'textarea' : 'input'}
           className={classNames('form-control', {
-            'is-invalid': invalid
+            'is-invalid': invalid,
           })}
           rows={rows}
           name={name}
@@ -46,11 +46,11 @@ export default function TextField({
           validate={
             validate
               ? value =>
-                validate(
-                  validationSchema
-                    ? validationSchema.fields[name].cast(value)
-                    : value
-                )
+                  validate(
+                    validationSchema
+                      ? validationSchema.fields[name].cast(value)
+                      : value
+                  )
               : void 0
           }
           {...rest}
@@ -98,5 +98,5 @@ TextField.propTypes = {
   /**
    * Any other properties will be passed on to the `<input>` or `<textarea>` elements
    */
-  '...rest': PropTypes.object
+  '...rest': PropTypes.object,
 };

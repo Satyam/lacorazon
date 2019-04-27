@@ -4,7 +4,7 @@ import {
   GET_DISTRIBUIDOR,
   ADD_DISTRIBUIDOR,
   UPDATE_DISTRIBUIDOR,
-  DELETE_DISTRIBUIDOR
+  DELETE_DISTRIBUIDOR,
 } from './constants';
 import { db } from '../firebase';
 import schema from './schema';
@@ -17,7 +17,7 @@ export const acGetDistribuidores = () => ({
     .get()
     .then(querySnapshot =>
       querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-    )
+    ),
 });
 
 export const acGetDistribuidor = id => ({
@@ -28,13 +28,13 @@ export const acGetDistribuidor = id => ({
         .doc(id)
         .get()
         .then(doc => doc.exists && doc.data())
-    : {}
+    : {},
 });
 
 export const acAddDistribuidor = data => ({
   type: ADD_DISTRIBUIDOR,
   payload: data,
-  promise: collection.add(data).then(doc => ({ ...data, id: doc.id }))
+  promise: collection.add(data).then(doc => ({ ...data, id: doc.id })),
 });
 
 export const acUpdateDistribuidor = (id, data) => ({
@@ -44,12 +44,12 @@ export const acUpdateDistribuidor = (id, data) => ({
   promise: collection
     .doc(id)
     .set(data)
-    .then(() => data)
+    .then(() => data),
 });
 export const acDeleteDistribuidor = id => ({
   type: DELETE_DISTRIBUIDOR,
   id,
-  promise: collection.doc(id).delete()
+  promise: collection.doc(id).delete(),
 });
 
 export const distribuidorExists = id =>

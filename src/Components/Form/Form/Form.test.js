@@ -9,14 +9,12 @@ import SubmitButton from '../SubmitButton';
 afterEach(cleanup);
 
 function TestForm(props) {
-  return (<Form
-    values={{ one: 1 }}
-    isInitialValid={true}
-    {...props}
-  >
-    <TextField label="one" name="one" />
-    <SubmitButton>Submit</SubmitButton>
-  </Form>)
+  return (
+    <Form values={{ one: 1 }} isInitialValid={true} {...props}>
+      <TextField label="one" name="one" />
+      <SubmitButton>Submit</SubmitButton>
+    </Form>
+  );
 }
 describe('Form / Form', () => {
   describe('with no validationSchema', () => {
@@ -24,19 +22,16 @@ describe('Form / Form', () => {
       const submitHandler = jest.fn();
       const validate = jest.fn(() => ({}));
       const { getByText, getByLabelText } = render(
-        <TestForm
-          onSubmit={submitHandler}
-          validate={validate}
-        />
+        <TestForm onSubmit={submitHandler} validate={validate} />
       );
       expect(getByText('Submit')).toBeDisabled();
 
       fireEvent.change(getByLabelText('one'), {
-        target: { name: 'one', value: '2' }
-      })
+        target: { name: 'one', value: '2' },
+      });
       expect(getByText('Submit')).not.toBeDisabled();
       jest.clearAllMocks();
-      fireEvent.click(getByText('Submit'))
+      fireEvent.click(getByText('Submit'));
 
       expect(validate).toBeCalledWith({ one: '2' });
       expect(validate.mock.calls).toEqual([[{ one: '2' }]]);
@@ -53,21 +48,18 @@ describe('Form / Form', () => {
       const submitHandler = jest.fn();
       const validate = jest.fn(() => ({ one: 'some error' }));
       const { getByText, getByLabelText } = render(
-        <TestForm
-          onSubmit={submitHandler}
-          validate={validate}
-        />
+        <TestForm onSubmit={submitHandler} validate={validate} />
       );
 
       expect(getByText('Submit')).toBeDisabled();
 
       fireEvent.change(getByLabelText('one'), {
-        target: { name: 'one', value: '2' }
-      })
+        target: { name: 'one', value: '2' },
+      });
       expect(getByText('Submit')).not.toBeDisabled();
 
       jest.clearAllMocks();
-      fireEvent.click(getByText('Submit'))
+      fireEvent.click(getByText('Submit'));
 
       expect(validate).toBeCalledWith({ one: '2' });
       expect(validate.mock.calls).toEqual([[{ one: '2' }]]);
@@ -84,19 +76,16 @@ describe('Form / Form', () => {
       const submitHandler = jest.fn(() => Promise.resolve());
       const validate = jest.fn(() => ({}));
       const { getByText, getByLabelText } = render(
-        <TestForm
-          onSubmit={submitHandler}
-          validate={validate}
-        />
+        <TestForm onSubmit={submitHandler} validate={validate} />
       );
 
       expect(getByText('Submit')).toBeDisabled();
       fireEvent.change(getByLabelText('one'), {
-        target: { name: 'one', value: '2' }
-      })
+        target: { name: 'one', value: '2' },
+      });
       expect(getByText('Submit')).not.toBeDisabled();
       jest.clearAllMocks();
-      fireEvent.click(getByText('Submit'))
+      fireEvent.click(getByText('Submit'));
 
       expect(validate).toBeCalledWith({ one: '2' });
       expect(validate.mock.calls).toEqual([[{ one: '2' }]]);
@@ -114,7 +103,7 @@ describe('Form / Form', () => {
       one: Yup.number()
         .integer()
         .truncate()
-        .default(99)
+        .default(99),
     });
     it('should submit form', done => {
       const submitHandler = jest.fn();
@@ -123,11 +112,11 @@ describe('Form / Form', () => {
       );
       expect(getByText('Submit')).toBeDisabled();
       fireEvent.change(getByLabelText('one'), {
-        target: { name: 'one', value: '2.5' }
-      })
+        target: { name: 'one', value: '2.5' },
+      });
       expect(getByText('Submit')).not.toBeDisabled();
       jest.clearAllMocks();
-      fireEvent.click(getByText('Submit'))
+      fireEvent.click(getByText('Submit'));
 
       // validation is always async, so we have to wait for it
       setImmediate(() => {

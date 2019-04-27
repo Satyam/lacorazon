@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { FormikConsumer, ErrorMessage } from 'formik';
-import invariant from 'invariant'
+import invariant from 'invariant';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -31,7 +31,7 @@ export default function DateField({
     unregisterField,
     setFieldTouched,
     setFieldValue,
-    validationSchema
+    validationSchema,
   } = useFormik();
 
   useEffect(() => {
@@ -42,8 +42,8 @@ export default function DateField({
         help,
         className,
         id,
-        ...rest
-      }
+        ...rest,
+      },
     });
     return () =>
       unregisterField(name, {
@@ -53,8 +53,8 @@ export default function DateField({
           help,
           className,
           id,
-          ...rest
-        }
+          ...rest,
+        },
       });
   });
 
@@ -90,7 +90,7 @@ export default function DateField({
       <Col xs={12} lg={8}>
         <DatePicker
           className={classNames('form-control', className, {
-            'is-invalid': invalid
+            'is-invalid': invalid,
           })}
           name={name}
           id={actualId}

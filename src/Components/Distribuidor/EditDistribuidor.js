@@ -4,7 +4,7 @@ import useReactRouter from 'use-react-router';
 import {
   acAddDistribuidor,
   acUpdateDistribuidor,
-  acDeleteDistribuidor
+  acDeleteDistribuidor,
 } from '../../store/actions';
 
 import { useActions } from 'react-redux';
@@ -14,9 +14,11 @@ import Page from '../Page';
 
 export default function EditDistribuidor({ id, distribuidor }) {
   const { history } = useReactRouter();
-  const [addDistribuidor, updateDistribuidor, deleteDistribuidor] = useActions(
-    [acAddDistribuidor, acUpdateDistribuidor, acDeleteDistribuidor]
-  );
+  const [addDistribuidor, updateDistribuidor, deleteDistribuidor] = useActions([
+    acAddDistribuidor,
+    acUpdateDistribuidor,
+    acDeleteDistribuidor,
+  ]);
   return (
     <Page
       title={`Distribuidor - ${distribuidor ? distribuidor.nombre : 'nuevo'}`}

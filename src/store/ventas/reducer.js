@@ -3,7 +3,7 @@ import produce from 'immer';
 import {
   REQUEST_SENT,
   // REPLY_RECEIVED,
-  FAILURE_RECEIVED
+  FAILURE_RECEIVED,
 } from '../promiseMiddleware';
 
 export default (state, { stage, type, payload }) =>

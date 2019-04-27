@@ -12,7 +12,7 @@ import { acGetUser } from '../../store/actions';
 import { selUser, selUsersIsLoading } from '../../store/selectors';
 
 import { useActions } from 'react-redux';
-import { useSelector } from '../../store/useSelector'
+import { useSelector } from '../../store/useSelector';
 export default function User({ match, location }) {
   const id = match.params.id;
   const edit = querystring.parse(location.search.substring(1)).edit;
@@ -33,6 +33,6 @@ export default function User({ match, location }) {
   return edit || !id ? (
     <EditUser id={id} user={user} />
   ) : (
-      <ShowUser id={id} user={user} />
-    );
+    <ShowUser id={id} user={user} />
+  );
 }

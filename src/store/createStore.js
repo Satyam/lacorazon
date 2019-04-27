@@ -9,7 +9,7 @@ import distribuidores from './distribuidores/reducer';
 const reducers = combineReducers({
   users,
   status,
-  distribuidores
+  distribuidores,
 });
 
 export default initialState => {

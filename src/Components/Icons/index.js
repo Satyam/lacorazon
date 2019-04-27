@@ -19,7 +19,7 @@ export const Icon = ({
     className={cx(className, {
       'active-icon': button && !disabled,
       [`icon-${color}`]: color,
-      disabled: disabled
+      disabled: disabled,
     })}
     onClick={disabled ? undefined : onClick}
     {...props}

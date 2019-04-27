@@ -14,7 +14,7 @@ export default function EditUser({ id, user }) {
   const [addUser, updateUser, deleteUser] = useActions([
     acAddUser,
     acUpdateUser,
-    acDeleteUser
+    acDeleteUser,
   ]);
   return (
     <Page

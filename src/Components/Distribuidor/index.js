@@ -11,11 +11,11 @@ import { acGetDistribuidor } from '../../store/actions';
 
 import {
   selDistribuidor,
-  selDistribuidoresIsLoading
+  selDistribuidoresIsLoading,
 } from '../../store/selectors';
 
 import { useActions } from 'react-redux';
-import { useSelector } from '../../store/useSelector'
+import { useSelector } from '../../store/useSelector';
 
 export default function Distribuidor({ match, location }) {
   const id = match.params.id;
@@ -40,6 +40,6 @@ export default function Distribuidor({ match, location }) {
   return edit || !id ? (
     <EditDistribuidor id={id} distribuidor={distribuidor} />
   ) : (
-      <ShowDistribuidor id={id} distribuidor={distribuidor} />
-    );
+    <ShowDistribuidor id={id} distribuidor={distribuidor} />
+  );
 }

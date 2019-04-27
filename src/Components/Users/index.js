@@ -9,12 +9,12 @@ import Page from '../Page';
 import UserRow from './UserRow';
 
 import { useActions } from 'react-redux';
-import { useSelector } from '../../store/useSelector'
+import { useSelector } from '../../store/useSelector';
 import { acGetUsers, acDeleteUser } from '../../store/actions';
 import {
   selUsers,
   selUsersIsLoading,
-  selUsersGotAll
+  selUsersGotAll,
 } from '../../store/selectors';
 
 export default function Users() {

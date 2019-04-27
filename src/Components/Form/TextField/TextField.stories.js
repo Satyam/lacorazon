@@ -30,7 +30,7 @@ storiesOf('Form/TextField', module)
   .add('name, no label', () => (
     <Form
       values={{
-        one: 1
+        one: 1,
       }}
     >
       <TextField name="one" />
@@ -39,7 +39,7 @@ storiesOf('Form/TextField', module)
   .add('label and name', () => (
     <Form
       values={{
-        two: 2
+        two: 2,
       }}
     >
       <TextField label="field two" name="two" />
@@ -48,7 +48,7 @@ storiesOf('Form/TextField', module)
   .add('label and pre-formated value in multi-row field', () => (
     <Form
       values={{
-        multi: "I'm a child\nspread over\na few lines"
+        multi: "I'm a child\nspread over\na few lines",
       }}
     >
       <TextField label="multi-line field" rows={5} name="multi" />
@@ -57,7 +57,7 @@ storiesOf('Form/TextField', module)
   .add('label, name and help', () => (
     <Form
       values={{
-        three: 3
+        three: 3,
       }}
     >
       <TextField
@@ -70,7 +70,7 @@ storiesOf('Form/TextField', module)
   .add('label, name, help plus touched', () => (
     <Form
       values={{
-        three: 3
+        three: 3,
       }}
     >
       <TouchField name="three" />
@@ -84,7 +84,7 @@ storiesOf('Form/TextField', module)
   .add('label, name, help plus error', () => (
     <Form
       values={{
-        three: 3
+        three: 3,
       }}
     >
       <TouchField name="three" />

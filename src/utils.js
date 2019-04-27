@@ -9,7 +9,7 @@ export function indexBy(array, key) {
   return array.reduce(
     (result, item) => ({
       ...result,
-      [item[key]]: item
+      [item[key]]: item,
     }),
     {}
   );

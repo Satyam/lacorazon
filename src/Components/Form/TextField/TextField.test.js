@@ -27,7 +27,7 @@ afterEach(cleanup);
 describe('Form/TextField', () => {
   it('should throw with no props as name argument is mandatory', () => {
     const e = console.error;
-    console.error = msg => { };
+    console.error = msg => {};
     const { container } = render(
       <ErrorBoundary>
         <Form>
@@ -41,7 +41,7 @@ describe('Form/TextField', () => {
   });
   it('should throw with any extra property but name as argument is mandatory', () => {
     const e = console.error;
-    console.error = msg => { };
+    console.error = msg => {};
     const { container } = render(
       <ErrorBoundary>
         <Form>
@@ -60,8 +60,8 @@ describe('Form/TextField', () => {
       </Form>
     );
     fireEvent.change(getByLabelText('one'), {
-      target: { name: 'one', value: '2' }
-    })
+      target: { name: 'one', value: '2' },
+    });
     expect(validate.mock.calls).toEqual([['2']]);
   });
 
@@ -88,7 +88,7 @@ describe('Form/TextField', () => {
       one: Yup.number()
         .integer()
         .truncate()
-        .default(0)
+        .default(0),
     });
     const validate = jest.fn(() => '');
     const { getByLabelText } = render(
@@ -97,8 +97,8 @@ describe('Form/TextField', () => {
       </Form>
     );
     fireEvent.change(getByLabelText('one'), {
-      target: { name: 'one', value: '2.5' }
-    })
+      target: { name: 'one', value: '2.5' },
+    });
     // string '2.5' was transformed into a number 2
     expect(validate.mock.calls).toEqual([[2]]);
   });

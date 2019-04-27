@@ -8,20 +8,20 @@ export default function promiseMiddleware() {
     if (promise && typeof promise.then === 'function') {
       next({
         ...act,
-        stage: REQUEST_SENT
+        stage: REQUEST_SENT,
       });
       return promise.then(
         response =>
           next({
             ...act,
             stage: REPLY_RECEIVED,
-            response
+            response,
           }),
         error =>
           next({
             ...act,
             stage: FAILURE_RECEIVED,
-            error: error.toString()
+            error: error.toString(),
           })
       );
     }

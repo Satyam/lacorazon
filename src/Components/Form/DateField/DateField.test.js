@@ -19,7 +19,6 @@ class ErrorBoundary extends React.PureComponent {
   //   this.setState({ hasError: err.message });
   // }
 
-
   render() {
     return this.state.hasError || React.Children.only(this.props.children);
   }
@@ -28,26 +27,27 @@ class ErrorBoundary extends React.PureComponent {
 describe('Form/DateField', () => {
   it('should throw with no props as name argument is mandatory', () => {
     const e = console.error;
-    console.error = msg => { };
+    console.error = msg => {};
     const { container } = render(
       <ErrorBoundary>
         <Form>
           <DateField />
         </Form>
       </ErrorBoundary>
-    )
+    );
 
     expect(container.innerHTML).toMatchSnapshot();
     console.error = e;
   });
   it('should throw with any extra property but name as argument is mandatory', () => {
     const e = console.error;
-    console.error = msg => { };
-    const { container } = render(<ErrorBoundary>
-      <Form>
-        <DateField label="some label" value="Some value" />
-      </Form>
-    </ErrorBoundary>
+    console.error = msg => {};
+    const { container } = render(
+      <ErrorBoundary>
+        <Form>
+          <DateField label="some label" value="Some value" />
+        </Form>
+      </ErrorBoundary>
     );
     expect(container.innerHTML).toMatchSnapshot();
     console.error = e;
@@ -60,7 +60,9 @@ describe('Form/DateField', () => {
         <DateField label="one" name="one" validate={validate} />
       </Form>
     );
-    fireEvent.change(getByLabelText('one'), { target: { value: new Date(2019, 2, 2) } })
+    fireEvent.change(getByLabelText('one'), {
+      target: { value: new Date(2019, 2, 2) },
+    });
     expect(validate.mock.calls).toEqual([[new Date(2019, 2, 2)]]);
   });
 
@@ -72,7 +74,7 @@ describe('Form/DateField', () => {
       </Form>
     );
 
-    fireEvent.blur(getByLabelText('one'))
+    fireEvent.blur(getByLabelText('one'));
     expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
   });
 
@@ -94,10 +96,9 @@ describe('Form/DateField', () => {
     expect(getByLabelText('one').id).toBe('abcd');
   });
 
-
   it('should take values from the schema', () => {
     const schema = Yup.object().shape({
-      one: Yup.date().default(new Date(2019, 8, 7))
+      one: Yup.date().default(new Date(2019, 8, 7)),
     });
     const validate = jest.fn(() => '');
     const { getByLabelText } = render(
@@ -105,7 +106,7 @@ describe('Form/DateField', () => {
         <DateField label="one" name="one" validate={validate} />
       </Form>
     );
-    fireEvent.blur(getByLabelText('one'))
+    fireEvent.blur(getByLabelText('one'));
     expect(validate.mock.calls).toEqual([[new Date(2019, 8, 7)]]);
   });
   it('should reject values below the min in the schema', done => {
@@ -122,15 +123,16 @@ describe('Form/DateField', () => {
           <DateField label="one" name="one" />
         </Form>
       );
-    })
+    });
     fireEvent.click(wrapper.getByLabelText('one'));
     fireEvent.click(wrapper.getByText('6'));
-    fireEvent.blur(wrapper.getByLabelText('one'))
+    fireEvent.blur(wrapper.getByLabelText('one'));
     setTimeout(() => {
-      expect(wrapper.getByLabelText('one')).toHaveClass('is-invalid')
-      expect(wrapper.container.querySelector('.invalid-feedback')).toBeVisible();
-      done()
-    }, 1)
+      expect(wrapper.getByLabelText('one')).toHaveClass('is-invalid');
+      expect(
+        wrapper.container.querySelector('.invalid-feedback')
+      ).toBeVisible();
+      done();
+    }, 1);
   });
 });
-

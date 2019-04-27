@@ -11,7 +11,7 @@ import {
   faMinusCircle,
   faPlusCircle,
   faExclamationCircle,
-  faCalendarAlt
+  faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 import './index.css';
@@ -19,7 +19,7 @@ import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 
 import createStore from './store/createStore';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { AuthProvider } from './Components/Auth';
 
 library.add(

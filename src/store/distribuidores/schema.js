@@ -27,5 +27,5 @@ export default object().shape({
     .default(''),
   direccion: string()
     .trim()
-    .default('')
+    .default(''),
 });

@@ -2,7 +2,7 @@ import produce from 'immer';
 import {
   REQUEST_SENT,
   REPLY_RECEIVED,
-  FAILURE_RECEIVED
+  FAILURE_RECEIVED,
 } from '../promiseMiddleware';
 
 import {
@@ -10,7 +10,7 @@ import {
   GET_DISTRIBUIDOR,
   ADD_DISTRIBUIDOR,
   UPDATE_DISTRIBUIDOR,
-  DELETE_DISTRIBUIDOR
+  DELETE_DISTRIBUIDOR,
 } from './constants';
 
 import { indexBy } from '../../utils';
@@ -40,8 +40,8 @@ export default (
             message: error,
             actionType: type,
             id,
-            response
-          }
+            response,
+          },
         };
         break;
       case REPLY_RECEIVED:

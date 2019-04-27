@@ -18,7 +18,7 @@ import {
   IconEdit,
   IconNotCheck,
   IconStop,
-  IconWarning
+  IconWarning,
 } from './';
 
 storiesOf('Icons/ButtonIconAdd', module)

@@ -4,7 +4,7 @@ import useReactRouter from 'use-react-router';
 import { ButtonIconAdd } from '../Icons';
 
 import { useActions } from 'react-redux';
-import { useSelector } from '../../store/useSelector'
+import { useSelector } from '../../store/useSelector';
 import { isEmpty } from '../../utils';
 import Loading from '../Loading';
 import Page from '../Page';
@@ -14,7 +14,7 @@ import { acGetDistribuidores, acDeleteDistribuidor } from '../../store/actions';
 import {
   selDistribuidores,
   selDistribuidoresIsLoading,
-  selDistribuidoresGotAll
+  selDistribuidoresGotAll,
 } from '../../store/selectors';
 
 export default function Distribuidores() {
@@ -23,7 +23,7 @@ export default function Distribuidores() {
   const gotAll = useSelector(selDistribuidoresGotAll);
   const [getDistrib, deleteDistribuidor] = useActions([
     acGetDistribuidores,
-    acDeleteDistribuidor
+    acDeleteDistribuidor,
   ]);
   const { history } = useReactRouter();
   if (!isLoading && (isEmpty(distribuidores) || !gotAll)) {

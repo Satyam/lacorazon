@@ -1,4 +1,6 @@
-import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
+import initStoryshots, {
+  multiSnapshotWithOptions,
+} from '@storybook/addon-storyshots';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -10,7 +12,7 @@ import {
   faMinusCircle,
   faPlusCircle,
   faExclamationCircle,
-  faCalendarAlt
+  faCalendarAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(

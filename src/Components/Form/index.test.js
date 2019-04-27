@@ -6,7 +6,7 @@ describe('Form', () => {
       'TextField',
       'SubmitButton',
       'LabeledText',
-      'Form'
+      'Form',
     ]);
   });
 });

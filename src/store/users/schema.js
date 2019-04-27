@@ -7,5 +7,5 @@ export default object().shape({
     .default(''),
   nombre: string()
     .trim()
-    .default('')
+    .default(''),
 });
