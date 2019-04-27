@@ -25,4 +25,6 @@ library.add(
   faCalendarAlt
 );
 
-initStoryshots();
+initStoryshots({
+  storyKindRegex: /^((?!.*?Loading).)*$/
+});

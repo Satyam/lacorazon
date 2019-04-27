@@ -5,34 +5,52 @@ import * as Yup from 'yup';
 import Form from '../Form';
 import TextField from '.';
 
+class ErrorBoundary extends React.PureComponent {
+  state = { hasError: false };
+
+  static getDerivedStateFromError(err) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: err.message };
+  }
+
+  // componentDidCatch(err, info) {
+  //   this.setState({ hasError: err.message });
+  // }
+
+  render() {
+    return this.state.hasError || React.Children.only(this.props.children);
+  }
+}
+
 afterEach(cleanup);
 
 describe('Form/TextField', () => {
   it('should throw with no props as name argument is mandatory', () => {
-    const catcher = jest.fn();
-    try {
-      render(
+    const e = console.error;
+    console.error = msg => { };
+    const { container } = render(
+      <ErrorBoundary>
         <Form>
           <TextField />
         </Form>
-      );
-    } catch (err) {
-      catcher();
-    }
-    expect(catcher).toBeCalled();
+      </ErrorBoundary>
+    );
+
+    expect(container.innerHTML).toMatchSnapshot();
+    console.error = e;
   });
   it('should throw with any extra property but name as argument is mandatory', () => {
-    const catcher = jest.fn();
-    try {
-      render(
+    const e = console.error;
+    console.error = msg => { };
+    const { container } = render(
+      <ErrorBoundary>
         <Form>
           <TextField label="some label" value="Some value" />
         </Form>
-      );
-    } catch (err) {
-      catcher();
-    }
-    expect(catcher).toBeCalled();
+      </ErrorBoundary>
+    );
+    expect(container.innerHTML).toMatchSnapshot();
+    console.error = e;
   });
   it('should validate on field change', () => {
     const validate = jest.fn(() => '');

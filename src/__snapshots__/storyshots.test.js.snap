@@ -1816,5 +1816,3 @@ exports[`Storyshots Icons/IconAdd Plain 1`] = `
   />
 </svg>
 `;
-
-exports[`Storyshots Loading not open 1`] = `null`;

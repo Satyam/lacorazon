@@ -7,33 +7,50 @@ import DateField from './';
 
 afterEach(cleanup);
 
+class ErrorBoundary extends React.PureComponent {
+  state = { hasError: false };
+
+  static getDerivedStateFromError(err) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: err.message };
+  }
+
+  // componentDidCatch(err, info) {
+  //   this.setState({ hasError: err.message });
+  // }
+
+
+  render() {
+    return this.state.hasError || React.Children.only(this.props.children);
+  }
+}
+
 describe('Form/DateField', () => {
   it('should throw with no props as name argument is mandatory', () => {
-    const catcher = jest.fn();
-    try {
-      render(
+    const e = console.error;
+    console.error = msg => { };
+    const { container } = render(
+      <ErrorBoundary>
         <Form>
           <DateField />
-
         </Form>
-      )
-    } catch (err) {
-      catcher();
-    }
-    expect(catcher).toBeCalled();
+      </ErrorBoundary>
+    )
+
+    expect(container.innerHTML).toMatchSnapshot();
+    console.error = e;
   });
   it('should throw with any extra property but name as argument is mandatory', () => {
-    const catcher = jest.fn();
-    try {
-      render(
-        <Form>
-          <DateField label="some label" value="Some value" />
-        </Form>
-      );
-    } catch (err) {
-      catcher();
-    }
-    expect(catcher).toBeCalled();
+    const e = console.error;
+    console.error = msg => { };
+    const { container } = render(<ErrorBoundary>
+      <Form>
+        <DateField label="some label" value="Some value" />
+      </Form>
+    </ErrorBoundary>
+    );
+    expect(container.innerHTML).toMatchSnapshot();
+    console.error = e;
   });
 
   it('should validate on field change', () => {

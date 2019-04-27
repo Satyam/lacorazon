@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form/TextField should throw with any extra property but name as argument is mandatory 1`] = `"TextField: name argument is mandatory"`;
+
+exports[`Form/TextField should throw with no props as name argument is mandatory 1`] = `"TextField: name argument is mandatory"`;
