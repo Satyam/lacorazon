@@ -1,80 +1,81 @@
 {
-    "name": "lacorazon",
-    "version": "0.1.0",
-    "description": "Administración ventas libro La Corazón",
-    "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.12",
-        "@fortawesome/free-solid-svg-icons": "^5.6.3",
-        "@fortawesome/react-fontawesome": "^0.1.3",
-        "bootstrap": "^4.1.3",
-        "classnames": "^2.2.6",
-        "firebase": "^5.7.1",
-        "formik": "^1.4.1",
-        "immer": "^3.1.1",
-        "react": "^16.8.6",
-        "react-datepicker": "^2.0.0",
-        "react-dom": "^16.8.6",
-        "react-redux": "^7.1.0-alpha.1",
-        "react-router-dom": "^5.0.0",
-        "reactstrap": "^8.0.0",
-        "redux": "^4.0.1",
-        "redux-thunk": "^2.3.0",
-        "use-react-router": "^1.0.2",
-        "yup": "^0.27.0"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "upload": "node ./migrate/upload.js",
-        "analyze": "source-map-explorer build/static/js/main.* & source-map-explorer build/static/js/runtime*.* & source-map-explorer build/static/js/1.*",
-        "storybook": "start-storybook -p 6006",
-        "storybook:build": "build-storybook",
-        "test:debug": "react-scripts --inspect-brk test --runInBand",
-        "coverage": "react-scripts test --coverage",
-        "styleguide": "styleguidist server",
-        "styleguide:build": "styleguidist build",
-        "docs": "documentation serve src/store/**  --watch --document-exported --sort-order alpha",
-        "docs:build": "documentation build src/store/** -f html -o docs --document-exported --sort-order alpha"
-    },
-    "author": "Daniel Barreiro (Satyam)",
-    "license": "MIT",
-    "repository": "https://github.com/Satyam/lacorazon",
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ],
-    "devDependencies": {
-        "@babel/core": "^7.2.2",
-        "@storybook/addon-actions": "^5.0.10",
-        "@storybook/addon-links": "^5.0.10",
-        "@storybook/addon-storyshots": "^5.0.10",
-        "@storybook/addons": "^5.0.10",
-        "@storybook/react": "^5.0.10",
-        "babel-loader": "^8.0.5",
-        "documentation": "^10.0.0",
-        "firebase-admin": "^7.3.0",
-        "jest-dom": "^3.1.3",
-        "prop-types": "^15.6.2",
-        "rc-util": "^4.6.0",
-        "react-scripts": "^3.0.0",
-        "react-test-renderer": "^16.8.6",
-        "react-testing-library": "^6.1.2",
-        "redux-mock-store": "^1.5.3",
-        "require-context.macro": "^1.0.4",
-        "snapshot-diff": "^0.5.1",
-        "source-map-explorer": "^1.6.0"
-    },
-    "jest": {
-        "coverageReporters": [
-            "lcov"
-        ]
-    },
-    "homepage": "https://lacorazon-d66fd.firebaseapp.com/"
+  "name": "lacorazon",
+  "version": "0.1.0",
+  "description": "Administración ventas libro La Corazón",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/react-fontawesome": "^0.1.3",
+    "bootstrap": "^4.1.3",
+    "classnames": "^2.2.6",
+    "firebase": "^5.10.1",
+    "formik": "^1.5.4",
+    "immer": "^3.1.1",
+    "react": "^16.8.6",
+    "react-datepicker": "^2.5.0",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0-alpha.1",
+    "react-router-dom": "^5.0.0",
+    "reactstrap": "^8.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "use-react-router": "^1.0.2",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "upload": "node ./migrate/upload.js",
+    "analyze": "source-map-explorer build/static/js/main.* & source-map-explorer build/static/js/runtime*.* & source-map-explorer build/static/js/1.*",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "coverage": "react-scripts test --coverage  --watchAll=false",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "docs": "documentation serve src/store/**  --watch --document-exported --sort-order alpha",
+    "docs:build": "documentation build src/store/** -f html -o docs --document-exported --sort-order alpha"
+  },
+  "author": "Daniel Barreiro (Satyam)",
+  "license": "MIT",
+  "repository": "https://github.com/Satyam/lacorazon",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.10",
+    "@storybook/addon-links": "^5.0.10",
+    "@storybook/addon-storyshots": "^5.0.10",
+    "@storybook/addons": "^5.0.10",
+    "@storybook/react": "^5.0.10",
+    "babel-loader": "^8.0.5",
+    "documentation": "^10.1.0",
+    "firebase-admin": "^7.3.0",
+    "jest-dom": "^3.1.3",
+    "prop-types": "^15.6.2",
+    "rc-util": "^4.6.0",
+    "react-scripts": "^3.0.0",
+    "react-styleguidist": "^9.0.8",
+    "react-test-renderer": "^16.8.6",
+    "react-testing-library": "^7.0.0",
+    "redux-mock-store": "^1.5.3",
+    "require-context.macro": "^1.0.4",
+    "snapshot-diff": "^0.5.1",
+    "source-map-explorer": "^1.6.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "lcov"
+    ]
+  },
+  "homepage": "https://lacorazon-d66fd.firebaseapp.com/"
 }
