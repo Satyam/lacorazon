@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { FormikConsumer, ErrorMessage } from 'formik';
-
+import invariant from 'invariant'
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -21,9 +21,8 @@ export default function DateField({
   id,
   ...rest
 }) {
-  if (process.env.NODE_ENV !== 'production' && !name) {
-    throw new Error('DateField: name argument is mandatory');
-  }
+  invariant(name, 'DateField: name argument is mandatory');
+
   const {
     values,
     errors,

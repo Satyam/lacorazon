@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormGroup, Label, FormFeedback, FormText, Col } from 'reactstrap';
 import { Field as KField, FormikConsumer, ErrorMessage } from 'formik';
 import classNames from 'classnames';
+import invariant from 'invariant';
 
 function useFormik() {
   return useContext(FormikConsumer._context);
@@ -21,9 +22,8 @@ export default function TextField({
   validate,
   ...rest
 }) {
-  if (process.env.NODE_ENV !== 'production' && !name) {
-    throw new Error('TextField: name argument is mandatory');
-  }
+  invariant(name, 'TextField: name argument is mandatory');
+
   const { errors, touched, validationSchema } = useFormik();
   const invalid = errors[name] && touched[name];
   const [actualId] = useState(id || `F_TF_${counter}`);
@@ -46,11 +46,11 @@ export default function TextField({
           validate={
             validate
               ? value =>
-                  validate(
-                    validationSchema
-                      ? validationSchema.fields[name].cast(value)
-                      : value
-                  )
+                validate(
+                  validationSchema
+                    ? validationSchema.fields[name].cast(value)
+                    : value
+                )
               : void 0
           }
           {...rest}
