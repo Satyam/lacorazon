@@ -1,0 +1,603 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/DateField Passing a format for dates 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_8"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_8"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="2019/03/03"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField explicit minDate and maxDate properties should override schema 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_12"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_12"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates prior to may 13th or  after may 17th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label and name 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_1"
+    >
+      field two
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_1"
+            name="two"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label, name and help 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_2"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_2"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label, name, help plus error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_5"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control is-invalid"
+            disabled={false}
+            id="F_DF_5"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+      <div
+        className="invalid-feedback"
+        style={
+          Object {
+            "display": "block",
+          }
+        }
+      >
+        some error message
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField label, name, help plus touched 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_3"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_3"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField name, no label 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_0"
+    />
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_0"
+            name="one"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validate via schema 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_7"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_7"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="03/03/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validation schema with max date 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_10"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_10"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates after may 20th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validation schema with min and max date 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_11"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_11"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates prior to may 10th or  after may 20th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/DateField validation schema with min date 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_DF_9"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="form-control"
+            disabled={false}
+            id="F_DF_9"
+            name="three"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="06/15/2019"
+          />
+        </div>
+      </div>
+      <small
+        className="form-text text-muted"
+      >
+        should disable dates prior to may 10th
+      </small>
+    </div>
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Accept
+  </button>
+</form>
+`;

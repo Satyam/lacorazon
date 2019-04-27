@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/SubmitButton no props, nothing dirty to submit 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  />
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, nothing dirty to submit 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, something dirty to submit 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    disabled={false}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, something dirty to submit, isSubmitting true 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Form/SubmitButton with label, with error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <button
+    aria-label={null}
+    className="btn btn-secondary disabled"
+    disabled={true}
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

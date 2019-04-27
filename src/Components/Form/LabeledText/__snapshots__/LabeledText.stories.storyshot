@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/LabeledText label and children 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    >
+      I'm a child
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText label and pre-formated children 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control labeled-pre"
+    >
+      I'm a child
+spread over
+a few lines
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText label and value 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    >
+      Some value
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText label, no value 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  >
+    Some label
+  </label>
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText no props 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  />
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/LabeledText value, no label 1`] = `
+<div
+  className="row form-group"
+>
+  <label
+    className="col-12 col-lg-2 col-form-label"
+  />
+  <div
+    className="col-12 col-lg-8"
+  >
+    <div
+      className="form-control"
+    >
+      some value
+    </div>
+  </div>
+</div>
+`;

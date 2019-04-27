@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/Form no attributes 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+/>
+`;
+
+exports[`Storyshots Form/Form with error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+/>
+`;
+
+exports[`Storyshots Form/Form with rejected promise validation 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+/>
+`;
+
+exports[`Storyshots Form/Form with some border and child 1`] = `
+<form
+  className="form-border"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  Hello
+</form>
+`;
+
+exports[`Storyshots Form/Form with some child 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  Hello
+</form>
+`;

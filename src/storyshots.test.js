@@ -1,4 +1,4 @@
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -26,5 +26,6 @@ library.add(
 );
 
 initStoryshots({
-  storyKindRegex: /^((?!.*?Loading).)*$/
+  storyKindRegex: /^((?!.*?Loading).)*$/,
+  test: multiSnapshotWithOptions({}),
 });

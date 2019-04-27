@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Form/TextField label and name 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_1"
+    >
+      field two
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_1"
+        name="two"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={2}
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label and pre-formated value in multi-row field 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_2"
+    >
+      multi-line field
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <textarea
+        className="form-control"
+        id="F_TF_2"
+        name="multi"
+        onBlur={[Function]}
+        onChange={[Function]}
+        rows={5}
+        value="I'm a child
+spread over
+a few lines"
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label, name and help 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_3"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_3"
+        name="three"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={3}
+      />
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label, name, help plus error 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_6"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control is-invalid"
+        id="F_TF_6"
+        name="three"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={3}
+      />
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+      <div
+        className="invalid-feedback"
+      >
+        some error message
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField label, name, help plus touched 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_4"
+    >
+      Field 3
+    </label>
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_4"
+        name="three"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={3}
+      />
+      <small
+        className="form-text text-muted"
+      >
+        A little help from my friends
+      </small>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Storyshots Form/TextField name, no label 1`] = `
+<form
+  className=""
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="row form-group"
+  >
+    <label
+      className="col-12 col-lg-2 col-form-label"
+      htmlFor="F_TF_0"
+    />
+    <div
+      className="col-12 col-lg-8"
+    >
+      <input
+        className="form-control"
+        id="F_TF_0"
+        name="one"
+        onBlur={[Function]}
+        onChange={[Function]}
+        value={1}
+      />
+    </div>
+  </div>
+</form>
+`;
