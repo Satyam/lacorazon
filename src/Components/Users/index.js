@@ -8,7 +8,7 @@ import Loading from '../Loading';
 import Page from '../Page';
 import UserRow from './UserRow';
 
-import { useActions } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useSelector } from '../../store/useSelector';
 import { acGetUsers, acDeleteUser } from '../../store/actions';
 import {
@@ -21,12 +21,13 @@ export default function Users() {
   const users = useSelector(selUsers);
   const isLoading = useSelector(selUsersIsLoading);
   const gotAll = useSelector(selUsersGotAll);
-  const [getUsers, deleteUser] = useActions([acGetUsers, acDeleteUser]);
+  const dispatch = useDispatch();
   const { history } = useReactRouter();
   if (!isLoading && (isEmpty(users) || !gotAll)) {
-    getUsers();
+    dispatch(acGetUsers());
     return <Loading title="Usuarios" />;
   }
+  const deleteUser = id => dispatch(acDeleteUser(id));
 
   return (
     <Page title="Vendedores" heading="Vendedores">
@@ -40,7 +41,12 @@ export default function Users() {
         </thead>
         <tbody>
           {Object.keys(users).map(id =>
-            UserRow({ id, data: users[id], history, deleteUser })
+            UserRow({
+              id,
+              data: users[id],
+              history,
+              deleteUser,
+            })
           )}
         </tbody>
       </Table>

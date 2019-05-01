@@ -14,7 +14,7 @@ import {
   selDistribuidoresIsLoading,
 } from '../../store/selectors';
 
-import { useActions } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useSelector } from '../../store/useSelector';
 
 export default function Distribuidor({ match, location }) {
@@ -22,7 +22,7 @@ export default function Distribuidor({ match, location }) {
   const edit = querystring.parse(location.search.substring(1)).edit;
   const distribuidor = useSelector(selDistribuidor, id);
   const isLoading = useSelector(selDistribuidoresIsLoading, id);
-  const getDistribuidor = useActions(acGetDistribuidor);
+  const dispatch = useDispatch();
   const [notFound, setNotFound] = useState(false);
   if (notFound) {
     return (
@@ -30,7 +30,7 @@ export default function Distribuidor({ match, location }) {
     );
   } else if (id) {
     if (!isLoading && isEmpty(distribuidor)) {
-      getDistribuidor(id).then(action => {
+      dispatch(acGetDistribuidor(id)).then(action => {
         if (!action.response) setNotFound(true);
       });
       return <Loading title="Distribuidor" />;

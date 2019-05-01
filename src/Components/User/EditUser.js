@@ -5,17 +5,13 @@ import Page from '../Page';
 
 import { acAddUser, acUpdateUser, acDeleteUser } from '../../store/actions';
 
-import { useActions } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import userSchema from '../../store/users/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 
 export default function EditUser({ id, user }) {
   const { history } = useReactRouter();
-  const [addUser, updateUser, deleteUser] = useActions([
-    acAddUser,
-    acUpdateUser,
-    acDeleteUser,
-  ]);
+  const dispatch = useDispatch();
   return (
     <Page
       title={`Vendedor - ${user ? user.nombre : 'nuevo'}`}
@@ -24,11 +20,12 @@ export default function EditUser({ id, user }) {
       <Form
         values={user}
         onSubmit={(values, { setFieldError }) =>
-          (id ? updateUser(id, values) : addUser(values)).then(
-            ({ response }) => {
-              history.replace(`/user/${response.id}?edit=true`);
-            }
-          )
+          (id
+            ? dispatch(acUpdateUser(id, values))
+            : dispatch(acAddUser(values))
+          ).then(({ response }) => {
+            history.replace(`/user/${response.id}?edit=true`);
+          })
         }
         schema={userSchema}
       >
@@ -41,7 +38,7 @@ export default function EditUser({ id, user }) {
           <ButtonIconDelete
             disabled={!id}
             onClick={() => {
-              deleteUser(id).then(() => history.replace('/users'));
+              dispatch(acDeleteUser(id)).then(() => history.replace('/users'));
             }}
           >
             Borrar

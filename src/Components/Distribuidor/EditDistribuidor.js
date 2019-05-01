@@ -7,18 +7,14 @@ import {
   acDeleteDistribuidor,
 } from '../../store/actions';
 
-import { useActions } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import distribuidorSchema from '../../store/distribuidores/schema';
 import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
 import Page from '../Page';
 
 export default function EditDistribuidor({ id, distribuidor }) {
   const { history } = useReactRouter();
-  const [addDistribuidor, updateDistribuidor, deleteDistribuidor] = useActions([
-    acAddDistribuidor,
-    acUpdateDistribuidor,
-    acDeleteDistribuidor,
-  ]);
+  const dispatch = useDispatch();
   return (
     <Page
       title={`Distribuidor - ${distribuidor ? distribuidor.nombre : 'nuevo'}`}
@@ -27,7 +23,7 @@ export default function EditDistribuidor({ id, distribuidor }) {
       <Form
         values={distribuidor}
         onSubmit={(values, { setFieldError }) =>
-          (id ? updateDistribuidor(id, values) : addDistribuidor(values)).then(
+          (id ? dispatch(acUpdateDistribuidor)(id, values) : dispatch(acAddDistribuidor)(values)).then(
             ({ response }) => {
               history.replace(`/distribuidor/${response.id}?edit=true`);
             }
@@ -48,7 +44,7 @@ export default function EditDistribuidor({ id, distribuidor }) {
           <ButtonIconDelete
             disabled={!id}
             onClick={() => {
-              deleteDistribuidor(id).then(() =>
+              dispatch(acDeleteDistribuidor(id)).then(() =>
                 history.replace('/distribuidores')
               );
             }}
