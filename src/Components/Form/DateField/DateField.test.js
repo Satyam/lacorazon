@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, cleanup, act } from 'react-testing-library';
+import { render, fireEvent, cleanup, act } from '@testing-library/react';
 import * as Yup from 'yup';
 
 import Form from '../Form';

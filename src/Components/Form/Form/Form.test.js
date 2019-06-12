@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Yup from 'yup';
-import { render, fireEvent, cleanup } from 'react-testing-library';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 
 import Form from '.';
 import TextField from '../TextField';
