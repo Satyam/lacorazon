@@ -12,12 +12,12 @@ import { acGetUser } from '../../store/actions';
 import { selUser, selUsersIsLoading } from '../../store/selectors';
 
 import { useDispatch } from 'react-redux';
-import { useSelector } from '../../store/useSelector';
+import { useSel } from '../../store/useSel';
 export default function User({ match, location }) {
   const id = match.params.id;
   const edit = querystring.parse(location.search.substring(1)).edit;
-  const user = useSelector(selUser, id);
-  const isLoading = useSelector(selUsersIsLoading, id);
+  const user = useSel(selUser, id);
+  const isLoading = useSel(selUsersIsLoading, id);
   const dispatch = useDispatch();
   const [notFound, setNotFound] = useState(false);
   if (notFound) {

@@ -4,7 +4,7 @@ import useReactRouter from 'use-react-router';
 import { ButtonIconAdd } from '../Icons';
 
 import { useDispatch } from 'react-redux';
-import { useSelector } from '../../store/useSelector';
+import { useSel } from '../../store/useSel';
 import { isEmpty } from '../../utils';
 import Loading from '../Loading';
 import Page from '../Page';
@@ -18,9 +18,9 @@ import {
 } from '../../store/selectors';
 
 export default function Distribuidores() {
-  const distribuidores = useSelector(selDistribuidores);
-  const isLoading = useSelector(selDistribuidoresIsLoading);
-  const gotAll = useSelector(selDistribuidoresGotAll);
+  const distribuidores = useSel(selDistribuidores);
+  const isLoading = useSel(selDistribuidoresIsLoading);
+  const gotAll = useSel(selDistribuidoresGotAll);
   const dispatch = useDispatch();
   const { history } = useReactRouter();
   if (!isLoading && (isEmpty(distribuidores) || !gotAll)) {

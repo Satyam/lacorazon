@@ -15,13 +15,13 @@ import {
 } from '../../store/selectors';
 
 import { useDispatch } from 'react-redux';
-import { useSelector } from '../../store/useSelector';
+import { useSel } from '../../store/useSel';
 
 export default function Distribuidor({ match, location }) {
   const id = match.params.id;
   const edit = querystring.parse(location.search.substring(1)).edit;
-  const distribuidor = useSelector(selDistribuidor, id);
-  const isLoading = useSelector(selDistribuidoresIsLoading, id);
+  const distribuidor = useSel(selDistribuidor, id);
+  const isLoading = useSel(selDistribuidoresIsLoading, id);
   const dispatch = useDispatch();
   const [notFound, setNotFound] = useState(false);
   if (notFound) {

@@ -9,7 +9,7 @@ import Page from '../Page';
 import UserRow from './UserRow';
 
 import { useDispatch } from 'react-redux';
-import { useSelector } from '../../store/useSelector';
+import { useSel } from '../../store/useSel';
 import { acGetUsers, acDeleteUser } from '../../store/actions';
 import {
   selUsers,
@@ -18,9 +18,9 @@ import {
 } from '../../store/selectors';
 
 export default function Users() {
-  const users = useSelector(selUsers);
-  const isLoading = useSelector(selUsersIsLoading);
-  const gotAll = useSelector(selUsersGotAll);
+  const users = useSel(selUsers);
+  const isLoading = useSel(selUsersIsLoading);
+  const gotAll = useSel(selUsersGotAll);
   const dispatch = useDispatch();
   const { history } = useReactRouter();
   if (!isLoading && (isEmpty(users) || !gotAll)) {
