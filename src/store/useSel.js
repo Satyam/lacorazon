@@ -19,7 +19,8 @@ export function useSel(selector, ...args) {
                   state
                 )
           : selector(...args),
-      [args, selector]
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [...args, selector]
     )
   );
 }
