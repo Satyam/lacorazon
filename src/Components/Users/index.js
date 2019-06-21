@@ -1,21 +1,17 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
-import { isEmpty } from '../../utils';
+import { isEmpty } from 'Shared/utils';
 
-import { ButtonIconAdd } from '../Icons';
-import Loading from '../Loading';
-import Page from '../Page';
+import { ButtonIconAdd } from 'Components/Icons';
+import Loading from 'Components/Loading';
+import Page from 'Components/Page';
 import UserRow from './UserRow';
 
 import { useDispatch } from 'react-redux';
-import { useSel } from '../../store/useSel';
-import { acGetUsers, acDeleteUser } from '../../store/actions';
-import {
-  selUsers,
-  selUsersIsLoading,
-  selUsersGotAll,
-} from '../../store/selectors';
+import { useSel } from 'Store/useSel';
+import { acGetUsers, acDeleteUser } from 'Store/actions';
+import { selUsers, selUsersIsLoading, selUsersGotAll } from 'Store/selectors';
 
 export default function Users() {
   const users = useSel(selUsers);

@@ -2,8 +2,7 @@ import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import * as Yup from 'yup';
 
-import Form from '../Form';
-import TextField from '.';
+import { Form, TextField } from '../';
 
 class ErrorBoundary extends React.PureComponent {
   state = { hasError: false };

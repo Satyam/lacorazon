@@ -14,9 +14,9 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
-import laCorazon from '../../La Corazon.png';
+import laCorazon from 'Shared/La Corazon.png';
 
-import { UserContext, signIn, signOut } from '../Auth';
+import { UserContext, signIn, signOut } from 'Components/Auth';
 
 import styles from './styles.module.css';
 

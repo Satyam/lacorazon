@@ -1,13 +1,13 @@
 import React from 'react';
 import useReactRouter from 'use-react-router';
-import { Form, TextField, SubmitButton } from '../Form';
-import Page from '../Page';
+import { Form, TextField, SubmitButton } from 'Components/Form';
+import Page from 'Components/Page';
 
-import { acAddUser, acUpdateUser, acDeleteUser } from '../../store/actions';
+import { acAddUser, acUpdateUser, acDeleteUser } from 'Store/actions';
 
 import { useDispatch } from 'react-redux';
-import userSchema from '../../store/users/schema';
-import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
+import userSchema from 'Store/users/schema';
+import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from 'Components/Icons';
 
 export default function EditUser({ id, user }) {
   const { history } = useReactRouter();

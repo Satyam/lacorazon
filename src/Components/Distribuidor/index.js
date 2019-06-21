@@ -2,20 +2,17 @@ import React, { useState } from 'react';
 import { Alert } from 'reactstrap';
 import querystring from 'querystring';
 
-import { isEmpty } from '../../utils';
-import Loading from '../Loading';
+import { isEmpty } from 'Shared/utils';
+import Loading from 'Components/Loading';
 import EditDistribuidor from './EditDistribuidor';
 import ShowDistribuidor from './ShowDistribuidor';
 
-import { acGetDistribuidor } from '../../store/actions';
+import { acGetDistribuidor } from 'Store/actions';
 
-import {
-  selDistribuidor,
-  selDistribuidoresIsLoading,
-} from '../../store/selectors';
+import { selDistribuidor, selDistribuidoresIsLoading } from 'Store/selectors';
 
 import { useDispatch } from 'react-redux';
-import { useSel } from '../../store/useSel';
+import { useSel } from 'Store/useSel';
 
 export default function Distribuidor({ match, location }) {
   const id = match.params.id;

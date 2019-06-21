@@ -4,7 +4,7 @@ import {
   REQUEST_SENT,
   // REPLY_RECEIVED,
   FAILURE_RECEIVED,
-} from '../promiseMiddleware';
+} from 'Store/promiseMiddleware';
 
 export default (state, { stage, type, payload }) =>
   produce(state, draft => {

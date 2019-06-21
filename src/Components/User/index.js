@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Alert } from 'reactstrap';
 import querystring from 'querystring';
 
-import { isEmpty } from '../../utils';
-import Loading from '../Loading';
+import { isEmpty } from 'Shared/utils';
+import Loading from 'Components/Loading';
 
 import EditUser from './EditUser';
 import ShowUser from './ShowUser';
-import { acGetUser } from '../../store/actions';
+import { acGetUser } from 'Store/actions';
 
-import { selUser, selUsersIsLoading } from '../../store/selectors';
+import { selUser, selUsersIsLoading } from 'Store/selectors';
 
 import { useDispatch } from 'react-redux';
-import { useSel } from '../../store/useSel';
+import { useSel } from 'Store/useSel';
 export default function User({ match, location }) {
   const id = match.params.id;
   const edit = querystring.parse(location.search.substring(1)).edit;

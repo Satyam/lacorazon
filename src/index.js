@@ -15,12 +15,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './index.css';
-import App from './Components/App';
+import App from 'Components/App';
 import * as serviceWorker from './serviceWorker';
 
-import createStore from './store/createStore';
+import createStore from 'Store/createStore';
 import { Provider } from 'react-redux';
-import { AuthProvider } from './Components/Auth';
+import { AuthProvider } from 'Components/Auth';
 
 library.add(
   faTrashAlt,

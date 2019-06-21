@@ -1,9 +1,7 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 
-import Form from '../Form';
-import TextField from '../TextField';
-import SubmitButton from '.';
+import { Form, TextField, SubmitButton } from '../';
 
 afterEach(cleanup);
 

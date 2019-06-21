@@ -1,16 +1,16 @@
 import React from 'react';
-import { Form, TextField, SubmitButton } from '../Form';
+import { Form, TextField, SubmitButton } from 'Components/Form';
 import useReactRouter from 'use-react-router';
 import {
   acAddDistribuidor,
   acUpdateDistribuidor,
   acDeleteDistribuidor,
-} from '../../store/actions';
+} from 'Store/actions';
 
 import { useDispatch } from 'react-redux';
-import distribuidorSchema from '../../store/distribuidores/schema';
-import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from '../Icons';
-import Page from '../Page';
+import distribuidorSchema from 'Store/distribuidores/schema';
+import { ButtonIconAdd, ButtonIconDelete, ButtonSet } from 'Components/Icons';
+import Page from 'Components/Page';
 
 export default function EditDistribuidor({ id, distribuidor }) {
   const { history } = useReactRouter();
@@ -23,11 +23,12 @@ export default function EditDistribuidor({ id, distribuidor }) {
       <Form
         values={distribuidor}
         onSubmit={(values, { setFieldError }) =>
-          (id ? dispatch(acUpdateDistribuidor)(id, values) : dispatch(acAddDistribuidor)(values)).then(
-            ({ response }) => {
-              history.replace(`/distribuidor/${response.id}?edit=true`);
-            }
-          )
+          (id
+            ? dispatch(acUpdateDistribuidor)(id, values)
+            : dispatch(acAddDistribuidor)(values)
+          ).then(({ response }) => {
+            history.replace(`/distribuidor/${response.id}?edit=true`);
+          })
         }
         schema={distribuidorSchema}
       >

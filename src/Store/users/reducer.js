@@ -4,7 +4,7 @@ import {
   REQUEST_SENT,
   REPLY_RECEIVED,
   FAILURE_RECEIVED,
-} from '../promiseMiddleware';
+} from 'Store/promiseMiddleware';
 
 import {
   GET_USERS,
@@ -14,7 +14,7 @@ import {
   DELETE_USER,
 } from './constants';
 
-import { indexBy } from '../../utils';
+import { indexBy } from 'Shared/utils';
 
 export default (
   state = { data: {}, isLoading: 0, gotAll: false },

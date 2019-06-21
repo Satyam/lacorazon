@@ -3,8 +3,7 @@ import React, { useContext } from 'react';
 import { storiesOf } from '@storybook/react';
 import { decorate } from '@storybook/addon-actions';
 
-import SubmitButton from '.';
-import Form from '../Form';
+import { Form, SubmitButton } from '..';
 import { FormikConsumer } from 'formik';
 
 // next one cannot be execute in batch mode test

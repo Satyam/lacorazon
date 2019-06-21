@@ -1,18 +1,18 @@
 import {
   NAME,
-  GET_USERS,
-  GET_USER,
-  ADD_USER,
-  UPDATE_USER,
-  DELETE_USER,
+  GET_DISTRIBUIDORES,
+  GET_DISTRIBUIDOR,
+  ADD_DISTRIBUIDOR,
+  UPDATE_DISTRIBUIDOR,
+  DELETE_DISTRIBUIDOR,
 } from './constants';
-import { db } from '../firebase';
+import { db } from 'Store/firebase';
 import schema from './schema';
 
 const collection = db.collection(NAME);
 
-export const acGetUsers = () => ({
-  type: GET_USERS,
+export const acGetDistribuidores = () => ({
+  type: GET_DISTRIBUIDORES,
   promise: collection
     .get()
     .then(querySnapshot =>
@@ -20,8 +20,8 @@ export const acGetUsers = () => ({
     ),
 });
 
-export const acGetUser = id => ({
-  type: GET_USER,
+export const acGetDistribuidor = id => ({
+  type: GET_DISTRIBUIDOR,
   id,
   promise: id
     ? collection
@@ -31,14 +31,14 @@ export const acGetUser = id => ({
     : {},
 });
 
-export const acAddUser = data => ({
-  type: ADD_USER,
+export const acAddDistribuidor = data => ({
+  type: ADD_DISTRIBUIDOR,
   payload: data,
   promise: collection.add(data).then(doc => ({ ...data, id: doc.id })),
 });
 
-export const acUpdateUser = (id, data) => ({
-  type: UPDATE_USER,
+export const acUpdateDistribuidor = (id, data) => ({
+  type: UPDATE_DISTRIBUIDOR,
   id,
   payload: data,
   promise: collection
@@ -46,14 +46,13 @@ export const acUpdateUser = (id, data) => ({
     .set(data)
     .then(() => data),
 });
-
-export const acDeleteUser = id => ({
-  type: DELETE_USER,
+export const acDeleteDistribuidor = id => ({
+  type: DELETE_DISTRIBUIDOR,
   id,
   promise: collection.doc(id).delete(),
 });
 
-export const userExists = id =>
+export const distribuidorExists = id =>
   collection
     .doc(schema.fields.id.cast(id))
     .get()

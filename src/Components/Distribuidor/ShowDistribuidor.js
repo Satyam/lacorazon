@@ -1,6 +1,6 @@
 import React from 'react';
-import { LabeledText } from '../Form';
-import Page from '../Page';
+import { LabeledText } from 'Components/Form';
+import Page from 'Components/Page';
 
 export default function ShowDistribuidor({ id, distribuidor }) {
   return (

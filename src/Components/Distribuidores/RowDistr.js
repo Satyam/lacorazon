@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup } from 'reactstrap';
-import { ButtonIconEdit, ButtonIconDelete } from '../Icons';
+import { ButtonIconEdit, ButtonIconDelete } from 'Components/Icons';
 import styles from './styles.module.css';
 
 export default function RowDistr(id, data, history, deleteDistribuidor) {

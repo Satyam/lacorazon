@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonGroup } from 'reactstrap';
-import { ButtonIconEdit, ButtonIconDelete } from '../Icons';
+import { ButtonIconEdit, ButtonIconDelete } from 'Components/Icons';
 
 export default function UserRow({ id, data, history, deleteUser }) {
   return (

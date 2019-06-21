@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import TextField from '.';
-import Form from '../Form';
+import { Form, TextField } from '..';
 import { FormikConsumer } from 'formik';
 
 function useFormik() {

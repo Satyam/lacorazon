@@ -1,21 +1,21 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import useReactRouter from 'use-react-router';
-import { ButtonIconAdd } from '../Icons';
+import { ButtonIconAdd } from 'Components/Icons';
 
 import { useDispatch } from 'react-redux';
-import { useSel } from '../../store/useSel';
-import { isEmpty } from '../../utils';
-import Loading from '../Loading';
-import Page from '../Page';
+import { useSel } from 'Store/useSel';
+import { isEmpty } from 'Shared/utils';
+import Loading from 'Components/Loading';
+import Page from 'Components/Page';
 import RowDistr from './RowDistr';
-import { acGetDistribuidores, acDeleteDistribuidor } from '../../store/actions';
+import { acGetDistribuidores, acDeleteDistribuidor } from 'Store/actions';
 
 import {
   selDistribuidores,
   selDistribuidoresIsLoading,
   selDistribuidoresGotAll,
-} from '../../store/selectors';
+} from 'Store/selectors';
 
 export default function Distribuidores() {
   const distribuidores = useSel(selDistribuidores);
